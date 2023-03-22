@@ -432,120 +432,166 @@
 }
 
 .theme-dark .layui-form-checkbox {
-  background-color: #FFFFFF
+  background-color: rgb(24, 26, 27);
 }
 
 .theme-dark .layui-form-checkbox span {
-  background-color: #DBDBDB;
-  color: #FFFFFF
+  background-color: rgb(49, 54, 56);
+  color: rgb(232, 230, 227);
 }
 
 .theme-dark .layui-form-checkbox:hover span {
-  background-color: #CECECE
+  background-color: rgb(58, 63, 66);
 }
 
 .theme-dark .layui-form-checkbox i {
-  border: 1px solid #DBDBDB;
-  color: #FFFFFF
+  border-top-color: rgb(61, 66, 68);
+  border-right-color: rgb(61, 66, 68);
+  border-bottom-color: rgb(61, 66, 68);
+  border-left-color: initial;
+  color: rgb(232, 230, 227);
 }
 
 .theme-dark .layui-form-checkbox:hover i {
-  border-color: #CECECE;
-  color: #CECECE
+  border-color: rgb(65, 71, 73);
+  color: rgb(193, 188, 180);
 }
 
 .theme-dark .layui-form-checked,
 .theme-dark .layui-form-checked:hover {
-  border-color: #8EC69C
+  border-color: rgb(53, 119, 71);
 }
 
 .theme-dark .layui-form-checked span,
 .theme-dark .layui-form-checked:hover span {
-  background-color: #8EC69C
+  background-color: rgb(58, 131, 92);
 }
 
 .theme-dark .layui-form-checked i,
 .theme-dark .layui-form-checked:hover i {
-  color: #8EC69C
+  color: rgb(108, 190, 131);
 }
 
-.theme-dark .layui-form-checkbox[lay-skin=primary] span {
-  color: #7F7F7F
+.theme-dark .layui-form-checkbox[lay-skin="primary"] {
+  background-image: none;
+  background-color: initial;
+  border-color: initial !important;
 }
 
-.theme-dark .layui-form-checkbox[lay-skin=primary] i {
-  border: 1px solid #DBDBDB;
-  background-color: #FFFFFF
+.theme-dark .layui-form-checkbox[lay-skin="primary"] span {
+  background-image: none;
+  background-color: initial;
+  color: rgb(172, 165, 154);
 }
 
-.theme-dark .layui-form-checkbox[lay-skin=primary]:hover i {
-  border-color: #8EC69C;
-  color: #FFFFFF
+.theme-dark .layui-form-checkbox[lay-skin="primary"] i {
+  border-color: rgb(61, 66, 68);
+  background-color: rgb(24, 26, 27);
 }
 
-.theme-dark .layui-form-checked[lay-skin=primary] i {
-  border-color: #8EC69C !important;
-  background-color: #8EC69C;
-  color: #FFFFFF
+.theme-dark .layui-form-checkbox[lay-skin="primary"]:hover i {
+  border-color: rgb(53, 119, 71);
+  color: rgb(232, 230, 227);
 }
 
-.theme-dark .layui-checkbox-disabled[lay-skin=primary] span {
-  color: #CECECE !important
+.theme-dark .layui-form-checked[lay-skin="primary"] i {
+  background-color: rgb(58, 131, 92);
+  color: rgb(232, 230, 227);
+  border-color: rgb(53, 119, 71) !important;
 }
 
-.theme-dark .layui-form-checked.layui-checkbox-disabled[lay-skin=primary] i {
-  background: #F1F1F1 !important;
-  border-color: #F1F1F1 !important
+.theme-dark .layui-checkbox-disabled[lay-skin="primary"] span {
+  background-image: none !important;
+  background-color: initial !important;
+  color: rgb(193, 188, 180) !important;
 }
 
-.theme-dark .layui-checkbox-disabled[lay-skin=primary]:hover i {
-  border-color: #DBDBDB
+.theme-dark .layui-form-checked.layui-checkbox-disabled[lay-skin="primary"] i {
+  background-image: initial !important;
+  background-color: rgb(34, 36, 38) !important;
+  border-color: rgb(53, 57, 59) !important;
+}
+
+.theme-dark .layui-checkbox-disabled[lay-skin="primary"]:hover i {
+  border-color: rgb(61, 66, 68);
 }
 
 .theme-dark .layui-form-switch {
-  border: 1px solid #DBDBDB;
-  background-color: #FFFFFF
+  border-color: rgb(61, 66, 68);
+  background-color: rgb(24, 26, 27);
 }
 
 .theme-dark .layui-form-switch i {
-  background-color: #DBDBDB
+  background-color: rgb(49, 54, 56);
 }
 
 .theme-dark .layui-form-switch em {
-  color: #ADADAD !important
+  color: rgb(168, 160, 149) !important;
 }
 
 .theme-dark .layui-form-onswitch {
-  border-color: #8EC69C;
-  background-color: #8EC69C
+  border-color: rgb(53, 119, 71);
+  background-color: rgb(58, 131, 92);
 }
 
 .theme-dark .layui-form-onswitch i {
-  background-color: #FFFFFF
+  background-color: rgb(24, 26, 27);
 }
 
 .theme-dark .layui-form-onswitch em {
-  color: #FFFFFF !important
+  color: rgb(232, 230, 227) !important;
 }
 
 .theme-dark .layui-checkbox-disabled {
-  border-color: #F1F1F1 !important
+  border-color: rgb(53, 57, 59) !important;
 }
 
 .theme-dark .layui-checkbox-disabled span {
-  background-color: #F1F1F1 !important
+  background-color: rgb(34, 36, 38) !important;
 }
 
 .theme-dark .layui-checkbox-disabled i {
-  border-color: #F1F1F1 !important
+  border-color: rgb(53, 57, 59) !important;
 }
 
 .theme-dark .layui-checkbox-disabled em {
-  color: #DBDBDB !important
+  color: rgb(204, 199, 192) !important;
 }
 
 .theme-dark .layui-checkbox-disabled:hover i {
-  color: #FFFFFF !important
+  color: rgb(232, 230, 227) !important;
+}
+
+.theme-dark .layui-form-checkbox i:before {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.theme-dark .layui-form-checkbox:hover i:before {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.theme-dark .layui-form-checked i:before,
+.layui-form-checked:hover i:before,
+.layui-form-checked.layui-checkbox-disabled:hover i:before {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.theme-dark .layui-form-checkbox[lay-skin="primary"]:hover i:before {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.theme-dark .layui-form-checked[lay-skin="primary"]:hover i:before {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.theme-dark .layui-checkbox-disabled:hover i:before {
+  opacity: 0;
+  filter: alpha(opacity=0);
 }
 
 .theme-dark .layui-form-radio>i {
@@ -1867,47 +1913,7 @@
   background-color: #2d2d30;
 }
 
-.theme-dark .layui-form-checkbox {
-  background-color: unset;
-}
 
-.theme-dark .layui-form-checkbox span {
-  background-color: #4e4e52;
-}
-
-.theme-dark .layui-form-checked span,
-.theme-dark .layui-form-checked:hover span {
-  background-color: #8EC69C;
-}
-
-.theme-dark .layui-checkbox-disabled span {
-  background-color: #2e2e2f !important;
-}
-
-.theme-dark .layui-form-checkbox i {
-  border-color: #4e4e52;
-}
-
-.theme-dark .layui-form-checked i {
-  border-color: #8EC69C;
-}
-
-.theme-dark .layui-checkbox-disabled i {
-  border-color: #4e4e52 !important;
-}
-
-
-.theme-dark .layui-form-checkbox[lay-skin=primary] span {
-  background-color: unset;
-}
-
-.theme-dark .layui-checkbox-disabled[lay-skin=primary] span {
-  background-color: unset !important;
-}
-
-.theme-dark .layui-form-checkbox[lay-skin=primary] span {
-  color: #FEFEFE
-}
 
 .theme-dark .layui-laypage button {
   color: #FEFEFE;

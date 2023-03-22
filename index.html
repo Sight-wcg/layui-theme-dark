@@ -191,6 +191,28 @@
     </div>
   </div>
   <br><br><br>
+  <span>选择框: </span>
+  <form class="layui-form  layui-form-panel" action="" lay-filter="first">
+  <div class="layui-form-item" pane>
+    <label class="layui-form-label">复选框</label>
+    <div class="layui-input-block">
+      <input type="checkbox" name="like[write]" title="选中">
+      <input type="checkbox" name="like[read]" title="未选中">
+      <input type="checkbox" name="like[game]" title="选中-禁用" checked disabled>
+      <input type="checkbox" name="like[game]" title="未选中-禁用" disabled>
+    </div>
+  </div>
+  <div class="layui-form-item" pane>
+    <label class="layui-form-label">标签框</label>
+    <div class="layui-input-block">
+      <input type="checkbox" name="like1[write]" lay-skin="tag" checked title="选中">
+      <input type="checkbox" name="like1[read]" lay-skin="tag" title="未选中">
+      <input type="checkbox" name="like1[game]" lay-skin="tag" title="选中-禁用" checked disabled>
+      <input type="checkbox" name="like1[game]" lay-skin="tag" title="未选中-禁用" disabled>
+    </div>
+  </div>
+</form>
+  <br><br><br>
   <span>表格：</span>
   <hr>
   <script type="text/html" id="toolbarDemo">

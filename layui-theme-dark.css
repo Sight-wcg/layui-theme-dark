@@ -285,7 +285,8 @@
 
 .theme-dark .layui-btn {
   border: 1px solid transparent;
-  background-color: #313132;
+  /* background-color: #313132; */
+  background-color: #22AB98;
   color: rgba(255, 255, 255, 0.3)
 }
 
@@ -295,7 +296,8 @@
 
 .theme-dark .layui-btn-primary {
   border-color: #DBDBDB;
-  color: #7F7F7F
+  color: #7F7F7F;
+  background-color: #313132;
 }
 
 .theme-dark .layui-btn-primary:hover {

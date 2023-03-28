@@ -3,928 +3,185 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
   <title>layui-theme-dark</title>
-  <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="format-detection" content="telephone=no">
+  <!-- css-vars-ponyfill, 支持 IE9 -->
+  <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/layui@2.8.0-rc.13/dist/css/layui.min.css">
-  <link rel="stylesheet" href="./layui-theme-dark.css">
-  <style>
-    body {
-      padding: 100px;
-    }
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/layui@2.8.0-rc.14/dist/css/layui.min.css">
+  <link id="layui_theme_css" rel="stylesheet">
 
-    body.theme-dark {
-      background-color: #17171A;
-      color: rgba(255, 255, 255, 0.9)
-    }
-
-    body.theme-dark img {
-      opacity: 0.8;
-    }
-
-    #photos li {
-      float: left;
-      margin: 0 1px 1px;
-    }
-
-    #photos img {
-      max-height: 38px;
-    }
-  </style>
+  <!-- dev -->
+  <!-- <link rel="stylesheet" href="./src/css-variables.css">
+  <link rel="stylesheet" href="./src/theme.css"> -->
 </head>
 
 <body class="theme-dark">
-  <span>layer：</span>
-  <hr>
-  <div id="version"></div>
-  <div class="layui-btn-container">
-    <button class="layui-btn layui-btn-primary" lay-on="test">Alert</button>
-    <button class="layui-btn layui-btn-primary" lay-on="test2">Confirm</button>
-    <button class="layui-btn layui-btn-primary" lay-on="test3">Msg</button>
-    <button class="layui-btn layui-btn-primary" lay-on="test5">Page</button>
-    <button class="layui-btn layui-btn-primary" lay-on="test6">Iframe</button>
-    <button class="layui-btn layui-btn-primary" lay-on="testLoading">Loading</button>
-    <button class="layui-btn layui-btn-primary" lay-on="test4">Tips</button>
-    <button class="layui-btn layui-btn-primary" lay-on="test7">Prompt</button>
-    <button class="layui-btn layui-btn-primary" lay-on="test8">Tab</button>
-    <button class="layui-btn layui-btn-primary" lay-on="test9">Photo</button>
-    <button class="layui-btn layui-btn-primary" lay-on="testTime">自动关闭</button>
-    <a href="https://layui.gitee.io/v2/demo/layer.html" target="_blank" class="layui-btn layui-btn-primary">更多例子</a>
-  </div>
+  <div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+      <div class="layui-logo layui-hide-xs layui-bg-black">layout demo</div>
+      <!-- 头部区域（可配合layui 已有的水平导航） -->
+      <ul class="layui-nav layui-layout-left">
+        <!-- 移动端显示 -->
+        <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
+          <i class="layui-icon layui-icon-spread-left"></i>
+        </li>
 
-  <div id="test11111" style="display: none; padding: 20px;">
-    content 指向放置在页面的一段隐藏元素
-  </div>
-
-  <hr><br>
-
-  <div class="layui-list">
-    <ul class="layui-row" id="photos">
-      <li class="list"><img src="https://unpkg.com/outeres/demo/1.jpg" alt="123"></li>
-      <li class="list"><img src="https://unpkg.com/outeres/demo/2.jpg"></li>
-    </ul>
-  </div>
-  <br><br>
-  <hr>
-  <div class="layui-container">
-    <span>按钮色系：</span>
-    <hr>
-
-    <div class="layui-btn-container">
-      <a href="" class="layui-btn layui-btn-primary">原始按钮</a>
-      <div class="layui-btn">默认按钮</div>
-      <button class="layui-btn layui-btn-normal">百搭按钮</button>
-      <button class="layui-btn layui-btn-warm">暖色按钮</button>
-      <button class="layui-btn layui-btn-danger">警告按钮</button>
-      <button class="layui-btn layui-btn-disabled">禁用按钮</button>
-    </div>
-    <div class="layui-btn-container">
-      <a href="" class="layui-btn layui-btn-primary layui-border">原始按钮</a>
-      <a href="" class="layui-btn layui-btn-primary layui-border-green">主色按钮</a>
-      <button class="layui-btn layui-btn-primary layui-border-blue">百搭按钮</button>
-      <button class="layui-btn layui-btn-primary layui-border-orange">暖色按钮</button>
-      <button class="layui-btn layui-btn-primary layui-border-red">警告按钮</button>
-      <button class="layui-btn layui-btn-primary layui-border-black">深色按钮</button>
+        <li class="layui-nav-item layui-hide-xs"><a href="">nav 1</a></li>
+        <li class="layui-nav-item layui-hide-xs"><a href="">nav 2</a></li>
+        <li class="layui-nav-item layui-hide-xs"><a href="">nav 3</a></li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">nav groups</a>
+          <dl class="layui-nav-child">
+            <dd><a href="">menu 11</a></dd>
+            <dd><a href="">menu 22</a></dd>
+            <dd><a href="">menu 33</a></dd>
+          </dl>
+        </li>
+      </ul>
+      <ul class="layui-nav layui-layout-right">
+        <li class="layui-nav-item layui-hide layui-show-md-inline-block">
+          <a href="javascript:;">
+            主题
+          </a>
+          <dl class="layui-nav-child">
+            <dd><a lay-header-event="changeTheme" data-theme="dark" href="javascript:;">暗</a></dd>
+            <dd><a lay-header-event="changeTheme" data-theme="light" href="javascript:;">亮</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+          <a href="javascript:;">
+            <i class="layui-icon layui-icon-more-vertical"></i>
+          </a>
+        </li>
+      </ul>
     </div>
 
-    <br><br>
-
-    <span>按钮图标：</span>
-    <hr>
-
-    <div class="layui-btn-container">
-      <button class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe603;</i></button>
-      <button class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe602;</i></button>
-      <button class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe654;</i></button>
-      <button class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe642;</i></button>
-      <button class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe640;</i></button>
-      <button class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe641;</i></button>
-    </div>
-
-    <br><br>
-
-    <span>按钮尺寸：</span>
-    <hr>
-
-    <div class="layui-btn-container">
-      <button class="layui-btn layui-btn-lg">大型按钮</button>
-      <button class="layui-btn">默认按钮</button>
-      <button class="layui-btn layui-btn-sm">小型按钮</button>
-      <button class="layui-btn layui-btn-xs">迷你按钮</button>
-    </div>
-    <div class="layui-btn-container">
-      <button class="layui-btn layui-btn-primary layui-btn-lg">大型按钮</button>
-      <button class="layui-btn layui-btn-primary">默认按钮</button>
-      <button class="layui-btn layui-btn-primary layui-btn-sm">小型按钮</button>
-      <button class="layui-btn layui-btn-primary layui-btn-xs">迷你按钮</button>
-    </div>
-
-    <br><br>
-
-    <span>按钮圆角：</span>
-    <hr>
-
-    <div class="layui-btn-container">
-      <button class="layui-btn layui-btn-primary layui-btn-radius">原始按钮</button>
-      <button class="layui-btn layui-btn-radius">默认按钮</button>
-      <button class="layui-btn layui-btn-normal layui-btn-radius">百搭按钮</button>
-      <button class="layui-btn layui-btn-warm layui-btn-radius">暖色按钮</button>
-      <button class="layui-btn layui-btn-danger layui-btn-radius">警告按钮</button>
-      <button class="layui-btn layui-btn-disabled layui-btn-radius">禁用按钮</button>
-    </div>
-
-    <br><br>
-
-    <span>按钮图文：</span>
-    <hr>
-
-    <div class="layui-btn-container">
-      <button class="layui-btn layui-btn-big layui-btn-primary layui-btn-radius">大型加圆角</button>
-      <button class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-delete"></i> 删除</button>
-      <button class="layui-btn layui-btn-xs layui-btn-disabled"><i class="layui-icon layui-icon-share"></i> 禁分享</button>
-    </div>
-
-    <br><br>
-
-    <span>按钮组：</span>
-    <hr>
-
-    <div class="layui-btn-group">
-      <button class="layui-btn">增加</button>
-      <button class="layui-btn ">编辑</button>
-      <button class="layui-btn">删除</button>
-    </div>
-
-    <div class="layui-btn-group">
-      <button class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe654;</i></button>
-      <button class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe642;</i></button>
-      <button class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe640;</i></button>
-      <button class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe602;</i></button>
-    </div>
-
-    <div class="layui-btn-group">
-      <button class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe654;</i></button>
-      <button class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe642;</i></button>
-      <button class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe640;</i></button>
-      <button class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe602;</i></button>
-    </div>
-
-    <br><br><br>
-    <span>颜色选择器：</span>
-    <hr>
-    <div class="test-box">
-      <div class="layui-inline">
-        <input class="layui-input" id="LAY-test1">
+    <div class="layui-side layui-bg-black">
+      <div class="layui-side-scroll">
+        <!-- 左侧导航区域 -->
+        <ul class="layui-nav layui-nav-tree" lay-filter="nav-side">
+          <li class="layui-nav-item layui-nav-itemed">
+            <a class="" href="javascript:;">基本元素</a>
+            <dl class="layui-nav-child">
+              <dd><a data-path="view/button" href="javascript:;">按钮</a></dd>
+              <dd><a data-path="view/element.nav" href="javascript:;">导航/面包屑</a></dd>
+              <dd><a data-path="view/form" href="javascript:;">表单</a></dd>
+              <dd><a data-path="view/menu" href="javascript:;">基础菜单</a></dd>
+              <dd><a data-path="view/element.tab" href="javascript:;">选项卡</a></dd>
+              <dd><a data-path="view/progress" href="javascript:;">进度条</a></dd>
+              <dd><a data-path="view/panel" href="javascript:;">面板</a></dd>
+              <dd><a data-path="view/badge" href="javascript:;">徽章</a></dd>
+              <dd><a data-path="view/timeline" href="javascript:;">时间线</a></dd>
+              <dd><a data-path="view/table-static" href="javascript:;">静态表格</a></dd>
+              <dd><a data-path="view/auxiliar" href="javascript:;">辅助元素</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:;">组件示例</a>
+            <dl class="layui-nav-child">
+              <dd><a data-path="view/layer" href="javascript:;">弹出层</a></dd>
+              <dd><a data-path="view/laydate" href="javascript:;">日期与时间选择</a></dd>
+              <dd><a data-path="view/table" href="javascript:;">数据表格</a></dd>
+              <dd><a data-path="view/laypage" href="javascript:;">分页</a></dd>
+              <dd><a data-path="view/upload" href="javascript:;">上传</a></dd>
+              <dd><a data-path="view/dropdown" href="javascript:;">下拉菜单</a></dd>
+              <dd><a data-path="view/transfer" href="javascript:;">穿梭框</a></dd>
+              <dd><a data-path="view/tree" href="javascript:;">树形组件</a></dd>
+              <dd><a data-path="view/colorpicker" href="javascript:;">颜色选择器</a></dd>
+              <dd><a data-path="view/slider" href="javascript:;">滑块</a></dd>
+              <dd><a data-path="view/rate" href="javascript:;">评分</a></dd>
+              <dd><a data-path="view/carousel" href="javascript:;">轮播</a></dd>
+              <dd><a data-path="view/flow" href="javascript:;">流加载</a></dd>
+              <dd><a data-path="view/util" href="javascript:;">工具模块</a></dd>
+              <dd><a data-path="view/code" href="javascript:;">文本行修饰</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item"><a href="">Github</a></li>
+        </ul>
       </div>
-      <div id="test1"></div>
     </div>
-    <br><br><br>
-    <span>日期选择器：</span>
-    <hr>
-    <div class="layui-inline">
-      <input type="text" class="layui-input" id="date-test1">
+
+    <div class="layui-body">
+      <!-- 内容主体区域 -->
+      <div id="body-container" style="padding: 15px;">内容主体区域。记得修改 layui.css 和 js 的路径</div>
     </div>
+
+    <!-- <div class="layui-footer">
+      底部固定区域
+    </div> -->
   </div>
-  <br><br><br>
-  <span>选择框: </span>
-  <form class="layui-form  layui-form-panel" action="" lay-filter="first">
-  <div class="layui-form-item" pane>
-    <label class="layui-form-label">复选框</label>
-    <div class="layui-input-block">
-      <input type="checkbox" name="like[write]" title="选中">
-      <input type="checkbox" name="like[read]" title="未选中">
-      <input type="checkbox" name="like[game]" title="选中-禁用" checked disabled>
-      <input type="checkbox" name="like[game]" title="未选中-禁用" disabled>
-    </div>
-  </div>
-  <div class="layui-form-item" pane>
-    <label class="layui-form-label">标签框</label>
-    <div class="layui-input-block">
-      <input type="checkbox" name="like1[write]" lay-skin="tag" checked title="选中">
-      <input type="checkbox" name="like1[read]" lay-skin="tag" title="未选中">
-      <input type="checkbox" name="like1[game]" lay-skin="tag" title="选中-禁用" checked disabled>
-      <input type="checkbox" name="like1[game]" lay-skin="tag" title="未选中-禁用" disabled>
-    </div>
-  </div>
-</form>
-  <br><br><br>
-  <span>表格：</span>
-  <hr>
-  <script type="text/html" id="toolbarDemo">
-    <div class="layui-btn-container">
-      <button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
-      <button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="getData">获取当前页数据</button>
-  
-      <button class="layui-btn layui-btn-primary layui-btn-sm" id="setRowChecked">
-        设置行选中状态
-        <i class="layui-icon layui-icon-down layui-font-12"></i>
-      </button>
-      <button class="layui-btn layui-btn-primary layui-btn-sm" id="reloadTest">
-        重载测试 
-        <i class="layui-icon layui-icon-down layui-font-12"></i>
-      </button>
-      <button class="layui-btn layui-btn-primary layui-btn-sm" id="moreTest">
-        更多测试 
-        <i class="layui-icon layui-icon-down layui-font-12"></i>
-      </button>
-    </div>
-  </script>
-
-  <script type="text/html" id="barDemo">
-    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-    {{# if(layui.$.trim(d.email)){ }}
-    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
-    {{# } }}
-    <input type="checkbox" name="demoTableSwitch" lay-skin="switch" {{ d.demoTableSwitch }}>
-  </script>
-
-  <script type="text/html" id="usernameTpl">
-    <a href="" class="layui-table-link">{{d.username || ''}}</a>
-  </script>
-
-  <script type="text/html" id="switchTpl">
-    <input type="checkbox" name="yyy" lay-skin="switch" lay-text="女|男">
-  </script>
-
-  <script type="text/html" id="cityTpl">
-    <select id="demoCity1" lay-ignore>
-      <option value="浙江杭州">浙江杭州</option>
-      <option value="江西南昌">江西南昌</option>
-      <option value="湖北武汉">湖北武汉</option>
-    </select>
-  </script>
-
-  <script type="text/html" id="checkboxTpl">
-    <input type="checkbox" name="" title="锁定" checked>
-  </script>
-
-  <script type="text/html" id="pagebarDemo">
-    <div class="layui-btn-container">
-      <button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="footerDemoBtn1">底部按钮1</button>
-      <button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="footerDemoBtn2">底部按钮2</button>
-    </div>
-  </script>
-
-  <table id="test"></table>
-
-  <script src="https://cdn.jsdelivr.net/npm/layui@2.8.0-rc.13/dist/layui.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/layui@2.8.0-rc.14/dist/layui.min.js"></script>
   <script>
-    layui.use(function() {
-      const {jquery: $,util,colorpicker,laydate,layer,table,laytpl,dropdown,form}=layui;
+    layui.use(['element','layer','util'],function() {
+      var element=layui.element;
+      var form = layui.form;
+      var layer=layui.layer;
+      var util=layui.util;
+      var $=layui.$;
 
-      const clsTheme='theme-dark'
+      setTheme()
+      cssVars({
+        include: 'link[rel="stylesheet"],style',
+        exclude: '',
+        onlyLegacy: false,
+        watch: true,
+        updateDOM: false,
+        onComplete: function(cssText,styleElms,cssVariables,benchmark) {
+          addStyle('layui-theme-style',cssText)
+        }
+      });
 
-      util.fixbar({
-        default: false,
-        bars: [{
-          type: 'default',icon: 'layui-icon-theme',style: 'background-color: #44B4FF;',
-        }],
-        on: { // 任意事件 --  v2.8.0 新增
-          mouseenter: function(type) {
-            layer.tips('点击切换主题',this,{
-              tips: 4,
-              fixed: true
-            });
-          },
-          mouseleave: function(type) {
-            layer.closeAll('tips');
+      util.event('lay-header-event',{
+        changeTheme: function(othis) {
+          setTheme(othis.data('theme'))
+        }
+      });
+
+      element.on('nav(nav-side)',function(elem) {
+        var path = elem.data('path');
+        if(path){
+          renderView(
+            '#body-container',
+            path, 
+            './docs/',
+            '.html'
+          );
+        }
+      });
+
+      function renderView(elem, path, prefix, suffix){
+        var containerDom=$(elem)
+        $.ajax({
+          url: prefix + path + suffix,
+          dataType: "html",
+          success: function(res) {
+            containerDom.html(res);
+            element.render();
+            form.render();
           }
-        },
-        click: function(type) {
-          $('body').toggleClass(clsTheme)
+        })
+      }
+
+      function setTheme(theme){
+        theme = theme ? theme : 'dark'
+        if(theme === 'dark'){
+          $('#layui_theme_css').prop('href','./dist/layui-theme-dark.css')
+        }else{
+          $('#layui_theme_css').prop('href','')
         }
-      })
+      }
 
-      colorpicker.render({
-        elem: '#test1'
-        //,predefine: true //开启预定义颜色
-        //,colors: ['#F00','#0F0','#00F','rgb(255, 69, 0)','rgba(255, 69, 0, 0.5)']
-        ,change: function(color) {
-          this.done(color);
+      function addStyle(id, cssStr){
+        var el = document.getElementById(id) || document.createElement('style')
+        if(!el.isConnected) {
+          el.type='text/css';
+          el.id=id;
+          document.head.appendChild(el);
         }
-        ,done: function(color) {
-          layui.$('#LAY-test1').val(color);
-          document.body.style.backgroundColor=color;
-        }
-        ,cancel: function(color) {
-          this.done(color);
-          console.log('cancel',color);
-        }
-        ,close: function(color) {
-          console.log('close',color);
-        }
-      });
-
-      //范围选择1
-      laydate.render({
-        elem: '#date-test1' //指定元素
-        ,type: 'datetime'
-        ,trigger: 'click'
-        //,lang: 'en'
-        //,theme: 'grid'
-        ,range: true //开启日期范围，默认使用“-”分割
-        //,min: '1970-1-1'
-        //,max: '2021-5-9'
-        //,value: '2021-05-09 12:06:09'
-        //,value: '2021-05-08 - 2021-03-27'
-        ,done: function(value,date,endDate) {
-          console.log(value,date,endDate);
-
-          //this.elem.val(123);
-        }
-        ,change: function(value,date,endDate) {
-          console.log(value,date,endDate);
-        }
-      });
-
-      var index=layer.msg('Hello World');
-      //layer.close(index);
-      //runTest(1, $, layer);
-
-
-      // 触发事件
-      util.on('lay-on',{
-        test: function() {
-          var icon=-1;
-          (function changeIcon() {
-            var index=layer.alert('Hi，你好！ 点击确认更换图标',{
-              icon: icon,
-              shadeClose: true,
-              title: icon===-1? 'Alert':('icon: '+icon)
-            },changeIcon);
-            if(icon++>6) {
-              layer.close(index);
-              icon=-1;
-            }
-          }());
-        }
-        ,test2: function() {
-          layer.confirm('一个询问层的测试示例？',{
-            btn: ['确定','关闭'] //按钮
-          },function() {
-            layer.msg('第一个回调',{icon: 1});
-          },function() {
-            layer.msg('第二个回调',{
-              time: 20000, //20s后自动关闭
-              btn: ['明白了','知道了']
-            });
-          });
-        }
-        ,test3: function() {
-          !0? layer.msg('一个常用消息框')
-            :layer.msg('一个常用消息框',{closeBtn: 0,time: 0,icon: 16});
-        }
-        ,test4: function() {
-          layer.tips('Hi，我是一个小提示',this,{tips: 1});
-        }
-        ,test5: function() {
-          layer.open({
-            title: '自定义页面层',
-            type: 1,
-            skin: 'layui-layer-border',
-            area: ['1000px','580px'],
-            content: $('#test11111'),
-            maxmin: true,
-            shade: false,
-            minStack: false, //最小化不堆叠在左下角
-            id: 'page1', //定义 ID，防止重复弹出
-            min: function(layero,index) {
-              layer.msg('阻止了默认的最小化');
-              layer.style(index,{top: 'auto',bottom: 0});
-              return false;
-            }
-          });
-        }
-        ,test6: function() {
-          layer.open({
-            type: 2
-            ,content: 'https://www.aliyun.com/activity?userCode=ap0255is'
-            ,area: ['375px','500px']
-            ,maxmin: true
-          });
-        }
-        ,testLoading: function() {
-          layer.load(2,{
-            time: 20*1000
-            //content: '123'
-          });
-        }
-        ,test7: function() {
-          layer.prompt({title: '输入任何口令，并确认',formType: 1},function(pass,index) {
-            layer.close(index);
-            layer.prompt({title: '随便写点啥，并确认',formType: 2},function(text,index) {
-              layer.close(index);
-              layer.msg('演示完毕！您的口令：'+util.escape(pass)+'<br>您最后写下了：'+util.escape(text));
-            });
-          });
-        }
-        ,test8: function() {
-          layer.tab({
-            area: ['600px','300px'],
-            tab: [{
-              title: 'TAB1',
-              content: '内容1'
-            },{
-              title: 'TAB2',
-              content: '内容2'
-            },{
-              title: 'TAB3',
-              content: '内容3'
-            }]
-          });
-        }
-        ,test9: function() {
-          layer.photos({
-            photos: {
-              "data": [{
-                "src": "https://unpkg.com/outeres/demo/layer.png"
-              }]
-            },
-            hideFooter: true  // 是否隐藏图片底部栏（v2.8.0 新增）
-          });
-        }
-        ,testTime: function() {
-          layer.alert('你好么，体验者。<br>在标题栏显示自动关闭倒计秒数',{
-            time: 5*1000
-            ,success: function(layero,index) {
-              var timeNum=this.time/1000,setText=function(start) {
-                layer.title((start? timeNum:--timeNum)+' 秒后关闭',index);
-              };
-              setText(!0);
-              this.timer=setInterval(setText,1000);
-              if(timeNum<=0) clearInterval(this.timer);
-            }
-            ,end: function() {
-              clearInterval(this.timer);
-            }
-          });
-        }
-      });
-
-      // 相册层
-      layer.photos({
-        photos: '#photos' //$('#photos')
-      });
-
-      //动态追加
-      $('#photos').append('<li class="list"><img src="https://unpkg.com/outeres/demo/3.jpg"></li>');
-      //输出版本号
-      $('#version').html(layer.v)
-
-      // 仅用于各类测试的表头
-      var test_cols=[[
-        {type: 'checkbox',fixed: 'left'}
-        ,{field: 'id',title: 'ID',width: 80,fixed: 'left',unresize: true,sort: true,totalRowText: '合计：'}
-        ,{field: 'username',title: '用户名',width: 120,edit: 'text'}
-        ,{field: 'email',title: '邮箱 <i class="layui-icon layui-icon-email"></i>',hide: 0,width: 150,edit: 'text'}
-        ,{field: 'sex',title: '性别',width: 80,edit: 'text',sort: true}
-        ,{field: 'city',title: '城市',width: 120}
-        ,{field: 'sign',title: '签名'}
-        ,{field: 'experience',title: '积分',width: 80,sort: true,align: 'center',totalRow: '{{ d.TOTAL_NUMS }} 😊'}
-        ,{fixed: 'right',title: '操作',toolbar: '#barDemo',width: 150}
-      ]];
-
-      // 全局设定某参数
-      table.set({
-        where: {
-          token: '默认 token 参数'
-        }
-        //,defaultToolbar: ['filter']
-        ,limit: 30
-        //,url: 'list'
-        //,height: 300
-      });
-
-      //渲染
-      window.ins1=table.render({
-        elem: '#test'
-        ,height: 520
-        //,width: 600
-        ,title: '用户数据表'
-        ,url: './json/demo1.json'
-        //,method: 'post'
-
-
-        //,lineStyle: 'height: 95px;' // 行样式
-        ,css: [ // 自定义样式
-          '.layui-table-page{text-align: right;}'
-          ,'.layui-table-pagebar{float: left;}'
-        ].join('')
-        //,className: '.demo-table-view'
-
-        //,size: 'sm'
-        //,skin: 'line'
-        //,even: true
-        //,loading: false
-
-        ,totalRow: true
-        ,pagebar: '#pagebarDemo' // 分页栏模板
-        ,page: !1? false:{
-          //curr: layui.data('tableCache').curr || 1 // 读取记录中的页码，赋值给起始页
-        }
-        ,limit: 30
-        ,toolbar: '#toolbarDemo'
-        ,defaultToolbar: ['filter','exports','print',{
-          title: '帮助'
-          ,layEvent: 'LAYTABLE_TIPS'
-          ,icon: 'layui-icon-tips'
-        }]
-        //,escape: false
-        ,editTrigger: 'dblclick'
-        //,cellMaxWidth: 320
-        ,cols: !1? test_cols:[[
-          {type: 'checkbox',fixed: 'left'}
-          //,{type: 'numbers', fixed: 'left'}
-          ,{field: 'id',title: 'ID',width: 80,fixed: 'left',unresize: true,sort: true,totalRowText: '合计：'}
-          ,{
-            field: 'username',title: '用户名',width: 120,edit: function(d) {
-              return !d.LAY_DISABLED;
-            },templet: '#usernameTpl'
-          }
-          ,{field: 'xxx',title: '测试',edit: 'text'}
-          ,{
-            field: 'email',minWidth: 160,maxWidth: 320,title: '邮箱 <i class="layui-icon layui-icon-email"></i>',fieldTitle: '邮箱',hide: 0,edit: 'text',templet: function(d) {
-              return '<em>'+layui.util.escape(d.email)+'</em>'
-            }
-          }
-          ,{field: 'sex',title: '性别',width: 80,edit: 'text',sort: true,escape: false}
-          ,{
-            field: 'city',title: '城市',width: 120,templet: '#cityTpl',exportTemplet: function(d,obj) {
-              // return '=HYPERLINK("https://abc.com/a.jpg","截图")'; // 测试内容存在特殊符
-              // console.log(obj)
-              var td=obj.td(this.field); //获取当前 td
-              return td.find('select').val();
-            }
-          }
-          ,{field: 'sign',title: '签名',minWidth: 200,style: 'color: #5FB878',edit: 'textarea'}
-          ,{field: 'experience',title: '积分',width: 100,sort: true,align: 'center',totalRow: !1? true:'{{= d.TOTAL_NUMS }} 分 😊',templet: '<div><a href="" class="layui-table-link">{{= d[d.LAY_COL.field] }}</a> 分</div>'}
-          ,{field: 'ip',title: 'IP',width: 120,align: 'right'}
-          ,{field: 'checkin',title: '打卡',width: 100,sort: true,totalRow: '{{= parseInt(d.TOTAL_NUMS) }} 次'}
-          ,{field: 'joinTime',title: '加入时间',width: 120}
-          ,{fixed: 'right',title: '操作',toolbar: '#barDemo',width: 180}
-        ]]
-
-        //,autoSort: false // 禁用前端自动排序，由服务的完成排序
-        ,initSort111: { // 初始排序状态
-          field: 'experience' //排序字段，对应 cols 设定的各字段名
-          ,type: 'desc' //排序方式  asc: 升序、desc: 降序、null: 默认排序
-        }
-
-        ,headers: {headers_token: 'sasasas'}
-        ,where: {
-          test: '初始 test 参数'
-          ,token: '初始 token'
-          ,key: 'experience'
-          ,order: 'asc'
-        }
-        ,before: function(options) {
-          options.where.AAAAA=123;
-          //console.log(options)
-        }
-        ,done: function(res,curr,count) {
-          var id=this.id;
-
-          // 记录当前页码
-          /*
-          layui.data('tableCache', {
-            key: 'curr',
-            value: curr
-          });
-          */
-
-          // 设置选中行状态
-          dropdown.render({
-            elem: '#setRowChecked' //可绑定在任意元素中，此处以上述按钮为例
-            ,data: [{
-              id: 'checked',
-              title: '选中某行'
-            },{
-              id: 'unchecked',
-              title: '取消选中某行'
-            },{
-              id: 'reset-checked',
-              title: '给选中行取消选中状态'
-            }]
-            //菜单被点击的事件
-            ,click: function(obj) {
-              if(obj.id==='reset-checked') {
-                // 给选中行取消选中状态
-                table.setRowChecked(id,{
-                  index: 'all',
-                  checked: false
-                });
-              } else {
-                layer.prompt({
-                  title: '请输入表格行号',
-                  value: 1,
-                  shade: false
-                },function(value,i) {
-                  switch(obj.id) {
-                    case 'checked':
-                      table.setRowChecked(id,{
-                        index: value
-                      });
-                      break;
-                    case 'unchecked':
-                      table.setRowChecked(id,{
-                        index: value,
-                        checked: false
-                      });
-                      break;
-                  }
-                  layer.close(i);
-                });
-              }
-            }
-          });
-
-          // 重载测试
-          dropdown.render({
-            elem: '#reloadTest' //可绑定在任意元素中，此处以上述按钮为例
-            ,data: [{
-              id: 'reload',
-              title: '重载'
-            },{
-              id: 'reload-deep',
-              title: '重载 - 参数叠加'
-            },{
-              id: 'reloadData',
-              title: '仅重载数据'
-            },{
-              id: 'reloadData-deep',
-              title: '仅重载数据 - 参数叠加'
-            }]
-            // 菜单被点击的事件
-            ,click: function(obj) {
-              switch(obj.id) {
-                case 'reload':
-                  // 重载 - 默认（参数重置）
-                  table.reload('test',{
-                    where: {
-                      abc: '123456'
-                      //,test: '新的 test2'
-                      //,token: '新的 token2'
-                    }
-                    ,height: 'full-130' // 重载高度
-                    /*
-                    ,cols: [[ // 重置表头
-                      {type: 'checkbox', fixed: 'left'}
-                      ,{field:'id', title:'ID', width:80, fixed: 'left', unresize: true, sort: true, totalRowText: '合计：'}
-                      ,{field:'sex', title:'性别', width:80, edit: 'text', sort: true}
-                      ,{field:'experience', title:'积分', width:80, sort: true, totalRow: true, templet: '<div>{{ d.experience }} 分</div>'}
-                      ,{field:'logins', title:'登入次数', width:100, sort: true, totalRow: true}
-                      ,{field:'joinTime', title:'加入时间', width:120}
-                    ]]
-                    */
-
-                  });
-                  break;
-                case 'reload-deep':
-                  // 重载 - 深度（参数叠加）
-                  table.reload('test',{
-                    where: {
-                      abc: 123
-                      ,test: '新的 test1'
-                    }
-                    //,defaultToolbar: ['print'] // 重载头部工具栏右侧图标
-                    ,page: {curr: 5,limit: 20}
-                    //,cols: ins1.config.cols
-                  },true);
-                  break;
-                case 'reloadData':
-                  // 数据重载 - 参数重置
-                  table.reloadData('test',{
-                    where: {
-                      abc: '123456'
-                      //,test: '新的 test2'
-                      //,token: '新的 token2'
-                    }
-                    ,height: 2000 // 测试无效参数
-                    //,url: '404'
-                    //,elem: null
-                    //,page: {curr: 5, limit: 20}
-                    ,scrollPos: 'fixed' // 保持滚动条位置不变
-                  });
-                  break;
-                case 'reloadData-deep':
-                  // 数据重载 - 参数叠加
-                  table.reloadData('test',{
-                    where: {
-                      abc: 123
-                      ,test: '新的 test1'
-                    }
-                  },true);
-                  break;
-              }
-              layer.msg('可观察 Network 请求参数的变化');
-            }
-          });
-
-
-          // 更多测试
-          dropdown.render({
-            elem: '#moreTest' //可绑定在任意元素中，此处以上述按钮为例
-            ,data: [{
-              id: 'add',
-              title: '添加'
-            },{
-              id: 'update',
-              title: '编辑'
-            },{
-              id: 'delete',
-              title: '删除'
-            }]
-            //菜单被点击的事件
-            ,click: function(obj) {
-              var checkStatus=table.checkStatus(id)
-              var data=checkStatus.data; // 获取选中的数据
-
-              switch(obj.id) {
-                case 'add':
-                  layer.open({
-                    title: '添加',
-                    type: 1,
-                    area: ['80%','80%'],
-                    content: '<div style="padding: 16px;">自定义表单元素</div>'
-                  });
-                  break;
-                case 'update':
-                  layer.open({
-                    title: '编辑',
-                    type: 1,
-                    area: ['80%','80%'],
-                    content: '<div style="padding: 16px;">自定义表单元素</div>'
-                  });
-                  break;
-                case 'delete':
-                  if(data.length===0) {
-                    return layer.msg('请选择一行');
-                  }
-                  layer.msg('delete event');
-                  break;
-              }
-            }
-          });
-        }
-
-        ,error: function(res,msg) {
-          console.log(res,msg)
-        }
-
-        /*
-        ,request: { // 自定义请求参数名称
-          pageName: 'curr' //页码的参数名称，默认：page
-          ,limitName: 'nums' //每页数据量的参数名，默认：limit
-        }
-        ,parseData: function(res){ // 任意数据格式的解析
-          return {
-            "status": res.status
-            ,"msg": res.message
-            ,"count": res.total
-            ,"data": res.data.list
-          };
-        }
-        */
-      });
-
-      //排序事件
-      table.on('sort(test)',function(obj) {
-        //console.log(obj);
-
-        //return;
-        layer.msg('服务端排序。order by '+obj.field+' '+obj.type);
-
-        //服务端排序
-        table.reloadData('test',{
-          //initSort: obj,
-          //page: {curr: 1}, //重新从第一页开始
-          where: { // 向服务端传入排序参数
-            key: obj.field, //排序字段
-            order: obj.type //排序方式
-          }
-        });
-      });
-
-      // 工具栏事件
-      table.on('toolbar(test)',function(obj) {
-        var id=obj.config.id;
-        var checkStatus=table.checkStatus(id);
-
-        switch(obj.event) {
-          case 'getCheckData':
-            var data=checkStatus.data;
-            layer.alert(layui.util.escape(JSON.stringify(data)));
-            break;
-          case 'getData':
-            var getData=table.getData(id);
-            console.log(getData);
-            layer.alert(layui.util.escape(JSON.stringify(getData)));
-            break;
-          case 'isAll':
-            layer.msg(checkStatus.isAll? '全选':'未全选')
-            break;
-          case 'LAYTABLE_TIPS':
-            layer.alert('Table for layui-v'+layui.v);
-            break;
-        };
-      });
-
-      //触发单元格工具事件
-      table.on('tool(test)',function(obj) { // 双击 toolDouble
-        var data=obj.data;
-        //console.log(obj)
-        if(obj.event==='del') {
-          layer.confirm('真的删除行么',function(index) {
-            obj.del();
-            layer.close(index);
-          });
-        } else if(obj.event==='edit') {
-          layer.prompt({
-            formType: 2
-            ,value: data.email
-          },function(value,index) {
-            obj.update({
-              email: value
-            },true); // 参数 true 为新版新增功能，详见文档
-
-            /*
-            // 上述 obj.update() 只是在前端临时更新数据视图
-            // 在实际业务中，当发送修改请求成功后，可再执行 reloadData 来重载数据
-            table.reloadData('test', {
-              scrollPos: 'fixed' // 保持滚动条位置不变
-            });
-            */
-            layer.close(index);
-          });
-        }
-      });
-
-
-
-      //触发表格复选框选择
-      table.on('checkbox(test)',function(obj) {
-        console.log(obj)
-      });
-
-      //触发表格单选框选择
-      table.on('radio(test)',function(obj) {
-        console.log(obj)
-      });
-
-      // 行单击事件
-      table.on('row(test)',function(obj) {
-        //console.log(obj);
-        //layer.closeAll('tips');
-      });
-      // 行双击事件
-      table.on('rowDouble(test)',function(obj) {
-        console.log(obj);
-      });
-
-      // 单元格编辑事件
-      table.on('edit(test)',function(obj) {
-        var field=obj.field // 得到字段
-        var value=obj.value // 得到修改后的值
-        var oldValue=obj.oldValue // 得到修改前的值 -- v2.8.0 新增
-        var data=obj.data; // 得到当前编辑所在行的数据
-        var col=obj.getCol(); // 得到当前列的表头配置属性
-
-        // 值的校验
-        if(field==='email') {
-          if(!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(obj.value)) {
-            layer.tips('输入的'+col.fieldTitle+'格式不正确，请重新编辑',this,{tips: 1});
-            return obj.reedit(); // 重新编辑 -- v2.8.0 新增
-          }
-        }
-
-        // 编辑后续操作，如提交更新请求，以完成真实的数据更新
-        // …
-        layer.msg('编辑成功',{icon: 1});
-
-        // 其他更新操作
-        var update={};
-        update[field]=value;
-        obj.update(update,true); // 参数 true 为 v2.7.4 新增功能，即同步更新其他包含自定义模板并可能存在关联的列视图
-      });
-
-
-      // 列拖拽宽度后的事件 -- v2.8.0 新增
-      table.on('colResized(test)',function(obj) {
-        console.log(obj);
-      });
-
-      // 列拖拽宽度后的事件 -- v2.8.0 新增
-      table.on('colToggled(test)',function(obj) {
-        console.log(obj);
-      });
-
-    })
+        el.textContent = cssStr;
+      }
+    });
   </script>
 </body>
 

@@ -1,0 +1,26 @@
+{
+  "name": "layui-theme-dark",
+  "version": "1.0.0",
+  "description": "layui 暗色主题。",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "npx http-server",
+    "genCssVar": "node ./script/gen-css-var.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sight-wcg/layui-theme-dark.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sight-wcg/layui-theme-dark/issues"
+  },
+  "homepage": "https://github.com/Sight-wcg/layui-theme-dark#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@arco-design/color": "^0.4.0"
+  }
+}

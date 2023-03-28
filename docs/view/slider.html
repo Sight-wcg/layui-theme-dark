@@ -1,0 +1,199 @@
+<style>
+.demo-slider {
+  margin: 45px 30px;
+  width: 40%;
+}
+</style>
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+  <legend>基本滑块</legend>
+</fieldset>
+
+<div id="slideTest1" class="demo-slider"></div>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+  <legend>定义初始值</legend>
+</fieldset>
+
+<div id="slideTest2" class="demo-slider"></div>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+  <legend>设置最大最小值</legend>
+</fieldset>
+
+<div id="slideTest3" class="demo-slider"></div>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+  <legend>设置步长</legend>
+</fieldset>
+
+<div id="slideTest4" class="demo-slider"></div>
+<div id="slideTest5" class="demo-slider"></div>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+  <legend>设置提示文本</legend>
+</fieldset>
+
+<div id="slideTest6" class="demo-slider"></div>
+<div id="slideTest7" class="demo-slider"></div>
+<div id="test-slider-tips1" style="position:relative; left: 30px; top: -20px;"></div>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+  <legend>开启输入框</legend>
+</fieldset>
+
+<div id="slideTest8" class="demo-slider"></div>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+  <legend>开启范围选择</legend>
+</fieldset>
+
+<div id="slideTest9" class="demo-slider"></div>
+<div id="test-slider-tips2" style="position:relative; left: 30px; margin-top: -10px;"></div>
+
+<div id="slideTest10" class="demo-slider"></div>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+  <legend>垂直滑块</legend>
+</fieldset>
+
+<div id="slideTest11" style="margin: 45px 30px; display: inline-block;"></div>
+<div id="slideTest12" style="margin: 45px 30px; display: inline-block;"></div>
+<div id="slideTest13" style="margin: 45px 30px; display: inline-block;"></div>
+<div id="slideTest14" style="margin: 45px 30px; display: inline-block;"></div>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+  <legend>自定义颜色</legend>
+</fieldset>
+
+<div id="slideTest15" class="demo-slider"></div>
+<div id="slideTest16" class="demo-slider"></div>
+<div id="slideTest17" class="demo-slider"></div>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+  <legend>禁用滑块</legend>
+</fieldset>
+
+<div id="slideTest18" class="demo-slider"></div>
+
+
+<script>
+  layui.use('slider',function() {
+    var $=layui.$
+      ,slider=layui.slider;
+    //默认滑块
+    slider.render({
+      elem: '#slideTest1'
+    });
+
+    //定义初始值
+    slider.render({
+      elem: '#slideTest2'
+      ,value: 20 //初始值
+    });
+
+    //设置最大最小值
+    slider.render({
+      elem: '#slideTest3'
+      ,min: 20 //最小值
+      ,max: 50 //最大值
+    });
+
+    //设置步长
+    slider.render({
+      elem: '#slideTest4'
+      ,step: 10 //步长
+    });
+
+    slider.render({
+      elem: '#slideTest5'
+      ,step: 10 //步长
+      ,showstep: true //开启间隔点
+    });
+
+    //设置提示文本
+    slider.render({
+      elem: '#slideTest6'
+      ,min: 20
+      ,max: 1000
+      ,setTips: function(value) { //自定义提示文本
+        return value+'GB';
+      }
+    });
+    slider.render({
+      elem: '#slideTest7'
+      ,tips: false //关闭默认提示层
+      ,change: function(value) {
+        $('#test-slider-tips1').html('当前数值：'+value);
+      }
+    });
+
+    //开启输入框
+    slider.render({
+      elem: '#slideTest8'
+      ,input: true //输入框
+    });
+
+    //开启范围选择
+    slider.render({
+      elem: '#slideTest9'
+      ,value: 40 //初始值
+      ,range: true //范围选择
+      ,change: function(vals) {
+        $('#test-slider-tips2').html('开始值：'+vals[0]+'、结尾值：'+vals[1]);
+      }
+    });
+    slider.render({
+      elem: '#slideTest10'
+      ,value: [30,60] //初始值
+      ,range: true //范围选择
+    });
+
+    //垂直滑块
+    slider.render({
+      elem: '#slideTest11'
+      ,type: 'vertical' //垂直滑块
+    });
+    slider.render({
+      elem: '#slideTest12'
+      ,value: 30
+      ,type: 'vertical' //垂直滑块
+    });
+    slider.render({
+      elem: '#slideTest13'
+      ,value: 50
+      ,range: true //范围选择
+      ,type: 'vertical' //垂直滑块
+    });
+    slider.render({
+      elem: '#slideTest14'
+      ,value: 80
+      ,input: true //输入框
+      ,type: 'vertical' //垂直滑块
+    });
+
+    //自定义颜色
+    slider.render({
+      elem: '#slideTest15'
+      ,theme: '#1E9FFF' //主题色
+    });
+    slider.render({
+      elem: '#slideTest16'
+      ,value: 50
+      ,theme: '#5FB878' //主题色
+    });
+    slider.render({
+      elem: '#slideTest17'
+      ,value: [30,70]
+      ,range: true
+      ,theme: '#FF5722' //主题色
+    });
+
+    //禁用滑块
+    slider.render({
+      elem: '#slideTest18'
+      ,value: 35
+      ,disabled: true //禁用滑块
+    });
+
+  });
+</script>

@@ -1,0 +1,194 @@
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+  <legend>普通面板</legend>
+</fieldset>
+
+<div style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+    <div class="layui-col-md6">
+      <div class="layui-panel">
+        <div style="padding: 50px 30px;">一个面板</div>
+      </div>
+    </div>
+    <div class="layui-col-md6">
+      <div class="layui-panel">
+        <div style="padding: 50px 30px;">一个面板</div>
+      </div>
+    </div>
+  </div>
+</div>
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+  <legend>卡片面板</legend>
+</fieldset>
+
+<div style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+    <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">卡片面板</div>
+        <div class="layui-card-body">
+          卡片式面板面板通常用于非白色背景色的主体内<br>
+          从而映衬出边框投影
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">卡片面板</div>
+        <div class="layui-card-body">
+          结合 layui 的栅格系统<br>
+          轻松实现响应式布局
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+  <legend>常规折叠面板</legend>
+</fieldset>
+<div class="layui-collapse" lay-filter="test">
+  <div class="layui-colla-item">
+    <h2 class="layui-colla-title">Collapse Title 1</h2>
+    <div class="layui-colla-content">
+      <p>Content 1</p>
+    </div>
+  </div>
+  <div class="layui-colla-item">
+    <h2 class="layui-colla-title">Collapse Title 2</h2>
+    <div class="layui-colla-content">
+      <p>Content 2</p>
+    </div>
+  </div>
+  <div class="layui-colla-item">
+    <h2 class="layui-colla-title">Collapse Title 3</h2>
+    <div class="layui-colla-content">
+      <ul>
+        <li>Content list</li>
+        <li>Content list</li>
+      </ul>
+    </div>
+  </div>
+  <div class="layui-colla-item">
+    <h2 class="layui-colla-title">折叠面板的标题</h2>
+    <div class="layui-colla-content">
+      <p>折叠面板的内容</p>
+    </div>
+  </div>
+</div>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+  <legend>手风琴折叠</legend>
+</fieldset>
+<div class="layui-collapse" lay-accordion="">
+  <div class="layui-colla-item">
+    <h2 class="layui-colla-title">layui 主要面向哪些用户群体？</h2>
+    <div class="layui-colla-content layui-show">
+      Layui 作为一个前端界面组件库，但面向的却主要是后端开发者。
+      <br>你无需涉足前端的各种工具，只需面对浏览器本身，让一切你所需要的元素与交互，从这里信手拈来。
+    </div>
+  </div>
+  <div class="layui-colla-item">
+    <h2 class="layui-colla-title">为什么我的眼里常含泪水？</h2>
+    <div class="layui-colla-content">
+      <p>因为我对这片土地爱的深沉。</p>
+    </div>
+  </div>
+  <div class="layui-colla-item">
+    <h2 class="layui-colla-title">Why are my eyes always brimming with tears?</h2>
+    <div class="layui-colla-content">
+      <p>Because I love this land so deeply…</p>
+    </div>
+  </div>
+  <div class="layui-colla-item">
+    <h2 class="layui-colla-title">一个折叠面板的标题？</h2>
+    <div class="layui-colla-content">
+      <p>一个折叠面板的内容。</p>
+    </div>
+  </div>
+</div>
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+  <legend>面板嵌套</legend>
+</fieldset>
+<div class="layui-collapse" lay-accordion="">
+  <div class="layui-colla-item">
+    <h2 class="layui-colla-title">文学家</h2>
+    <div class="layui-colla-content layui-show">
+
+      <div class="layui-collapse" lay-accordion="">
+        <div class="layui-colla-item">
+          <h2 class="layui-colla-title">唐代</h2>
+          <div class="layui-colla-content layui-show">
+
+            <div class="layui-collapse" lay-accordion="">
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">杜甫</h2>
+                <div class="layui-colla-content layui-show">
+                  一代诗圣
+                </div>
+              </div>
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">李白</h2>
+                <div class="layui-colla-content">
+                  <p>一代诗仙</p>
+                </div>
+              </div>
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">王勃</h2>
+                <div class="layui-colla-content">
+                  <p>千古绝唱《滕王阁序》</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="layui-colla-item">
+          <h2 class="layui-colla-title">宋代</h2>
+          <div class="layui-colla-content">
+            <p>一个属于文人的时代</p>
+          </div>
+        </div>
+        <div class="layui-colla-item">
+          <h2 class="layui-colla-title">现代</h2>
+          <div class="layui-colla-content">
+            <p>文学大师纷纷登场</p>
+          </div>
+        </div>
+        <div class="layui-colla-item">
+          <h2 class="layui-colla-title">当代</h2>
+          <div class="layui-colla-content">
+            <p>文人、作家</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="layui-colla-item">
+    <h2 class="layui-colla-title">科学家</h2>
+    <div class="layui-colla-content">
+      <p>伟大的科学家</p>
+    </div>
+  </div>
+  <div class="layui-colla-item">
+    <h2 class="layui-colla-title">艺术家</h2>
+    <div class="layui-colla-content">
+      <p>浑身散发着艺术细胞</p>
+    </div>
+  </div>
+</div>
+
+<br>
+<p>支持无限嵌套，应用场景非常多！</p>
+
+<script>
+  layui.use(['dropdown','util','layer'],function() {
+    var element=layui.element;
+    var layer=layui.layer;
+
+    element.render();
+    //折叠面板点击事件
+    element.on('collapse(test)',function(data) {
+      layer.msg('展开状态：'+data.show);
+    });
+  });
+</script>

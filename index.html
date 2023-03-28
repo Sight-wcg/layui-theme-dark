@@ -60,7 +60,7 @@
     <div class="layui-side layui-bg-black">
       <div class="layui-side-scroll">
         <!-- 左侧导航区域 -->
-        <ul class="layui-nav layui-nav-tree" lay-filter="nav-side">
+        <ul class="layui-nav layui-nav-tree" lay-shrink="all" lay-unselect lay-filter="nav-side">
           <li class="layui-nav-item layui-nav-itemed">
             <a class="" href="javascript:;">基本元素</a>
             <dl class="layui-nav-child">
@@ -113,14 +113,26 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/layui@2.8.0-rc.14/dist/layui.min.js"></script>
   <script>
-    layui.use(['element','layer','util'],function() {
+    layui.config({
+        base: './docs/lib/'
+      }).extend({ 
+        drawer: 'drawer/drawer'
+    });
+    layui.use(['element','layer','util', 'drawer'],function() {
       var element=layui.element;
       var form = layui.form;
       var layer=layui.layer;
       var util=layui.util;
+      var drawer = layui.drawer;
       var $=layui.$;
 
       setTheme()
+      renderView(
+        '#body-container',
+        'view/button',
+        './docs/',
+        '.html'
+      );
       cssVars({
         include: 'link[rel="stylesheet"],style',
         exclude: '',
@@ -135,6 +147,12 @@
       util.event('lay-header-event',{
         changeTheme: function(othis) {
           setTheme(othis.data('theme'))
+        },
+        menuRight: function(){
+          drawer.open({
+            area: '23%',
+            url: './docs/tpl/theme.html',
+          })
         }
       });
 

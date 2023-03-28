@@ -1,0 +1,170 @@
+<!-- <style>
+  :root:root {
+    --lay-color-primary: #1890ff;
+    --lay-color-secondary: #1890ff;
+    --lay-color-warning: #faad14;
+    --lay-color-success: #52c41a;
+    --lay-color-danger: #f5222d;
+  }
+
+</style> -->
+<div class="layui-form" style="padding: 15px;" lay-filter="theme">
+  <div class="layui-form-item">
+    <label class="layui-form-label">主色</label>
+    <div class="layui-input-inline" style="width: 90px;">
+      <input class="layui-input" name="primary" id="color-primary" >
+    </div>
+    <div id="cp-primary" style="left: -11px;"></div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">次色</label>
+    <div class="layui-input-inline" style="width: 90px;">
+      <input class="layui-input" name="secondary" id="color-secondary">
+    </div>
+    <div id="cp-secondary" style="left: -11px;"></div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">成功</label>
+    <div class="layui-input-inline" style="width: 90px;">
+      <input class="layui-input" name="success" id="color-success">
+    </div>
+    <div id="cp-success" style="left: -11px;"></div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">警示</label>
+    <div class="layui-input-inline" style="width: 90px;">
+      <input class="layui-input" name="warning" id="color-warning">
+    </div>
+    <div id="cp-warning" style="left: -11px;"></div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">错误</label>
+    <div class="layui-input-inline" style="width: 90px;">
+      <input class="layui-input" name="danger" id="color-danger">
+    </div>
+    <div id="cp-danger" style="left: -11px;"></div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">背景色</label>
+    <div class="layui-input-inline" style="width: 90px;">
+      <input class="layui-input" name="bg" id="color-bg">
+    </div>
+    <div id="cp-bg" style="left: -11px;"></div>
+  </div>
+</div>
+<div class="layui-btn-container" style="padding-left:50px">
+  <button type="button" id="setcssvar" class="layui-btn layui-btn-primary layui-border-green" style="width:120px;border-style: dashed;" >加载样式</button>
+  <button type="button" id="removecssvar" class="layui-btn layui-btn-primary layui-border-red" style="width:120px;border-style: dashed;" >重置样式</button>
+</div>
+<script>
+  layui.use(function(){
+    var $ = layui.jquery;
+    var form = layui.form;
+    var colorpicker = layui.colorpicker;
+    form.render();
+    
+    var themeInfo = layui.data('custom_theme');
+     
+    form.val("theme",{
+      primary: themeInfo.primary ||'#009688',
+      secondary: themeInfo.secondary || '#5FB878',
+      success: themeInfo.success ||'#5FB878',
+      warning: themeInfo.warning ||'#FFB800',
+      danger: themeInfo.danger ||'#FF7A4A',
+      bg: themeInfo.bg ||'#17171A',
+    })
+
+    colorpicker.render({
+      elem: '#cp-primary'
+      ,color: themeInfo.primary || '#009688' //设置默认色
+      ,predefine: true
+      ,alpha: true  //开启透明度
+      ,format: 'hex'
+      ,change: function(color) {
+        $('#color-primary').val(color)
+      }
+    });
+    colorpicker.render({
+      elem: '#cp-secondary'
+      ,color: themeInfo.secondary || '#5FB878' //设置默认色
+      ,predefine: true
+      ,alpha: true  //开启透明度
+      ,format: 'hex'
+      ,change: function(color) {
+        $('#color-secondary').val(color)
+      }
+    });
+    colorpicker.render({
+      elem: '#cp-success'
+      ,color: themeInfo.success || '#5FB878' //设置默认色
+      ,predefine: true
+      ,alpha: true  //开启透明度
+      ,format: 'hex'
+      ,change: function(color) {
+        $('#color-success').val(color)
+      }
+    });
+    colorpicker.render({
+      elem: '#cp-warning'
+      ,color: themeInfo.warning || '#FFB800' //设置默认色
+      ,predefine: true
+      ,alpha: true  //开启透明度
+      ,format: 'hex'
+      ,change: function(color) {
+        $('#color-warning').val(color)
+      }
+    });
+    colorpicker.render({
+      elem: '#cp-danger'
+      ,color: themeInfo.danger || '#FF7A4A' //设置默认色
+      ,predefine: true
+      ,alpha: true  //开启透明度
+      ,format: 'hex'
+      ,change: function(color) {
+        $('#color-danger').val(color)
+      }
+    });
+    colorpicker.render({
+      elem: '#cp-bg'
+      ,color: themeInfo.bg || '#17171A' //设置默认色
+      ,predefine: true
+      ,alpha: true  //开启透明度
+      ,format: 'hex'
+      ,change: function(color) {
+        $('#color-bg').val(color)
+      }
+    });
+
+    $('#setcssvar').on('click',function(data) {
+      form.submit('theme',function(data) { 
+        var field=data.field;
+        var cssStr = ":root:root{";
+        $.each(field,function(key,val){
+          cssStr += "--lay-color-" + (key === "bg" ? "bg-1" : key) + ":" + val + ";";
+          if(val){
+            layui.data('custom_theme',{key: key,value: val});
+          }
+        })
+        cssStr += "}"
+
+        addStyle('custom_theme', cssStr);
+      });
+      return false;
+    });
+
+    $('#removecssvar').on('click', function(){
+      layui.data('custom_theme',null);
+      window.location.reload();
+    })
+
+    function addStyle(id,cssStr) {
+      var el=document.getElementById(id)||document.createElement('style')
+      if(!el.isConnected) {
+        el.type='text/css';
+        el.id=id;
+        document.head.appendChild(el);
+      }
+      el.textContent=cssStr;
+    }
+  })
+</script>

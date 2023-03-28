@@ -496,7 +496,7 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-slider-tips:after{border-color:var(--lay-color-black) transparent transparent transparent}
 .layui-slider-input{border:1px solid  var(--lay-color-border-2)}
 .layui-slider-input-btn{border-left:1px solid  var(--lay-color-border-2)}
-.layui-slider-input-btn i{color:var(--lay-color-black-7)}
+.layui-slider-input-btn i{color:var(--lay-color-gray-9)}
 .layui-slider-input-btn i:first-child{border-bottom:1px solid  var(--lay-color-border-2)}
 .layui-slider-input-btn i:hover{color:var(--lay-color-primary)}
 /** 树组件 **/
@@ -647,4 +647,7 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 }
 .layui-layer-tab .layui-layer-title span:first-child{
   border-left: none !important;
+}
+.layui-slider-input.layui-input, .layui-slider-input .layui-input {
+  background-color: var(--lay-color-bg-2);
 }

@@ -313,7 +313,7 @@
 .theme-dark .layui-slider-tips:after{border-color:var(--lay-color-black) transparent transparent transparent}
 .theme-dark .layui-slider-input{border:1px solid  var(--lay-color-border-2)}
 .theme-dark .layui-slider-input-btn{border-left:1px solid  var(--lay-color-border-2)}
-.theme-dark .layui-slider-input-btn i{color:var(--lay-color-black-7)}
+.theme-dark .layui-slider-input-btn i{color:var(--lay-color-gray-9)}
 .theme-dark .layui-slider-input-btn i:first-child{border-bottom:1px solid  var(--lay-color-border-2)}
 .theme-dark .layui-slider-input-btn i:hover{color:var(--lay-color-primary)}
 /** 树组件 **/
@@ -465,4 +465,8 @@
 }
 .theme-dark .layui-layer-tab .layui-layer-title span:first-child{
   border-left: none !important;
+}
+.layui-slider-input.layui-input,
+.layui-slider-input .layui-input {
+  background-color: var(--lay-color-bg-2);
 }

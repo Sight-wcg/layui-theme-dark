@@ -143,8 +143,8 @@ a:hover{color:var(--lay-color-text-3)}
 /*单选框*/
 .layui-form-radio>i{color:var(--lay-color-gray-8)}
 .layui-form-radio:hover *,.layui-form-radioed,.layui-form-radioed>i{color:var(--lay-color-secondary)}
-.layui-radio-disabled>i{color:var(--lay-color-gray-3)!important}
-.layui-radio-disabled *{color:var(--lay-color-gray-8)!important}
+.layui-radio-disabled>i{color:var(--lay-color-text-4)!important}
+.layui-radio-disabled *{color:var(--lay-color-text-4)!important}
 /* 表单方框风格 */
 .layui-form-pane .layui-form-label{background-color:var(--lay-color-bg-2)}
 /** 分页 **/

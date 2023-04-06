@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width">
   <title>layui-theme-dark</title>
   <!-- css-vars-ponyfill, 支持 IE9 -->
-  <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script> -->
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/layui@2.8.0-rc.14/dist/css/layui.min.css">
-  <link id="layui_theme_css" rel="stylesheet">
+  <link id="layui_theme_css" href="./dist/layui-theme-dark-legacy.css" rel="stylesheet">
 
   <!-- dev -->
   <!-- <link rel="stylesheet" href="./src/css-variables.css">
@@ -19,11 +19,11 @@
 <body class="theme-dark">
   <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
-      <div class="layui-logo layui-hide-xs layui-bg-black">layout demo</div>
+      <div class="layui-logo layui-hide-xs layui-bg-black">dark demo</div>
       <!-- 头部区域（可配合layui 已有的水平导航） -->
       <ul class="layui-nav layui-layout-left">
         <!-- 移动端显示 -->
-        <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
+        <!-- <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
           <i class="layui-icon layui-icon-spread-left"></i>
         </li>
 
@@ -37,7 +37,7 @@
             <dd><a href="">menu 22</a></dd>
             <dd><a href="">menu 33</a></dd>
           </dl>
-        </li>
+        </li> -->
       </ul>
       <ul class="layui-nav layui-layout-right">
         <li class="layui-nav-item layui-hide layui-show-md-inline-block">
@@ -126,23 +126,21 @@
       var drawer = layui.drawer;
       var $=layui.$;
 
-      setTheme()
+     // setTheme()
       renderView(
         '#body-container',
         'view/button',
-        './docs/',
-        '.html'
       );
-      cssVars({
-        include: 'link[rel="stylesheet"],style',
-        exclude: '',
-        onlyLegacy: true,
-        watch: true,
-        updateDOM: false,
-        onComplete: function(cssText,styleElms,cssVariables,benchmark) {
-          addStyle('layui-theme-style',cssText)
-        }
-      });
+      // cssVars({
+      //   include: 'link[rel="stylesheet"],style',
+      //   exclude: '',
+      //   onlyLegacy: true,
+      //   watch: true,
+      //   updateDOM: false,
+      //   onComplete: function(cssText,styleElms,cssVariables,benchmark) {
+      //     addStyle('layui-theme-style',cssText)
+      //   }
+      // });
 
       util.event('lay-header-event',{
         changeTheme: function(othis) {
@@ -152,6 +150,7 @@
           drawer.open({
             area: '23%',
             url: './docs/tpl/theme.html',
+            shade: 0.01
           })
         }
       });
@@ -159,17 +158,14 @@
       element.on('nav(nav-side)',function(elem) {
         var path = elem.data('path');
         if(path){
-          renderView(
-            '#body-container',
-            path, 
-            './docs/',
-            '.html'
-          );
+          renderView( '#body-container',path);
         }
       });
 
       function renderView(elem, path, prefix, suffix){
         var containerDom=$(elem)
+        if(!prefix) prefix = './docs/';
+        if(!suffix) suffix = '.html';
         $.ajax({
           url: prefix + path + suffix,
           dataType: "html",

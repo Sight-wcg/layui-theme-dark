@@ -1,5 +1,5 @@
-:root {
-  /* =====色板===== */
+:root{
+   /* =====色板===== */
   /*常量,不随明暗主题变化*/
   --color-white: #FFFFFF;
   --color-black: #000000;
@@ -7,15 +7,15 @@
   --lay-color-white: #FAFAFA;
   --lay-color-black: #333333;
 
-  --lay-color-red-1: #FFF1E8;
-  --lay-color-red-2: #FFD7C0;
-  --lay-color-red-3: #FFBB99;
-  --lay-color-red-4: #FF9C71;
-  --lay-color-red-5: #FF7A4A;
-  --lay-color-red-6: #FF5722;
-  --lay-color-red-7: #D23B15;
-  --lay-color-red-8: #A6250B;
-  --lay-color-red-9: #791404;
+  --lay-color-red-1: #FFF1E8; 
+  --lay-color-red-2: #FFD7C0; 
+  --lay-color-red-3: #FFBB99; 
+  --lay-color-red-4: #FF9C71; 
+  --lay-color-red-5: #FF7A4A; 
+  --lay-color-red-6: #FF5722; 
+  --lay-color-red-7: #D23B15; 
+  --lay-color-red-8: #A6250B; 
+  --lay-color-red-9: #791404; 
   --lay-color-red-10: #4D0800;
 
   --lay-color-blue-1: #E8F9FF;
@@ -108,7 +108,7 @@
 
   /* =====语义===== */
   /* 主色 */
-  --lay-color-primary: var(--lay-color-green-6);
+  --lay-color-primary: var(--lay-color-green-6); 
   --lay-color-primary-hover: var(--lay-color-green-5);
   --lay-color-primary-active: var(--lay-color-green-7);
   --lay-color-primary-disabled: var(--lay-color-green-3);
@@ -155,12 +155,12 @@
   --lay-color-danger-disabled: var(--lay-color-red-3);
   --lay-color-danger-light: var(--lay-color-red-4);
 
-  --lay-color-bg-1: #17171A;/*整体背景*/
-  --lay-color-bg-2: #232324;/*一级容器背景,卡片,面板*/
+  --lay-color-bg-1: #17171A; /*整体背景*/
+  --lay-color-bg-2: #232324; /*一级容器背景,卡片,面板*/
   --lay-color-bg-3: #2a2a2b; /*二级容器背景*/
-  --lay-color-bg-4: #313132;/*三级容器背景*/
-  --lay-color-bg-5: #373739;/*下拉弹出框、Tooltip 背景颜色*/
-  --lay-color-bg-white: #f6f6f6;/*白色背景*/
+  --lay-color-bg-4: #313132; /*三级容器背景*/
+  --lay-color-bg-5: #373739; /*下拉弹出框、Tooltip 背景颜色*/
+  --lay-color-bg-white: #f6f6f6; /*白色背景*/
 
   --lay-color-text-1: rgba(255,255,255,.9); /*强调/正文标题*/
   --lay-color-text-2: rgba(255,255,255,.7); /*次强调/语句*/
@@ -179,10 +179,8 @@
 
   --lay-color-active: var(--lay-color-fill-4); /*layui-this*/
 }
-
 blockquote,body,button,dd,div,dl,dt,form,h1,h2,h3,h4,h5,h6,input,li,ol,p,pre,td,textarea,th,ul{-webkit-tap-highlight-color: rgba(0, 0, 0, 0)} /*danger: 勿改*/
-body{color:var(--lay-color-text-1); background-color: var(--lay-color-bg-1); color-scheme: dark;}
-body img{opacity: 0.8;}
+body{color:var(--lay-color-text-1);background-color: var(--lay-color-bg-1); color-scheme: dark;}
 hr{border-bottom:1px solid var(--lay-color-border-2)!important}
 a{color:var(--lay-color-text-1);}
 a:hover{color:var(--lay-color-text-3)}
@@ -346,12 +344,12 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-flow-more a cite{background-color: var(--lay-color-bg-4);color: var(--lay-color-text-1)}
 .layui-flow-more a i{color:var(--lay-color-text-2)}
 /** 表格 **/
-.layui-table{background-color: var(--lay-color-bg-1);color: var(--lay-color-text-2)}
+.layui-table{background-color: var(--lay-color-bg-2);color: var(--lay-color-text-2)}
 .layui-table-mend{background-color: var(--lay-color-bg-2)}
 .layui-table-click,.layui-table-hover,.layui-table[lay-even] tbody tr:nth-child(even){background-color:var(--lay-color-bg-2)}
 .layui-table td,.layui-table th,.layui-table-col-set,.layui-table-fixed-r,.layui-table-grid-down,.layui-table-header,.layui-table-mend,.layui-table-page,.layui-table-tips-main,.layui-table-tool,.layui-table-total,.layui-table-view,.layui-table[lay-skin=line],.layui-table[lay-skin=row]{border-color: var(--lay-color-border-2)}
 .layui-table-view .layui-table td[data-edit]:hover:after{border:1px solid var(--lay-color-primary-active)}
-.layui-table-init .layui-icon{color:var(--lay-color-gray-8)}
+.layui-table-init .layui-icon{color:var(--lay-color-gray-8);}
 .layui-table-tool .layui-inline[lay-event]{color:var(--lay-color-text-3);border:1px solid var(--lay-color-border-2)}
 .layui-table-tool .layui-inline[lay-event]:hover{border:1px solid var(--lay-color-border-3)}
 .layui-table-tool-panel{color: var(--lay-color-text-1); border:1px solid  var(--lay-color-border-2);background-color: var(--lay-color-bg-5);box-shadow:0 2px 4px rgba(0,0,0,.12)}
@@ -385,7 +383,7 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 1px 6px rgba(0,0,0,.12)
 .layui-menu{background-color: var( --lay-color-bg-5)}
 .layui-menu li{color: var(--lay-color-text-1)}
 .layui-menu li:hover{background-color: var( --lay-color-bg-5)}
-.layui-menu li.layui-disabled,.layui-menu li.layui-disabled *{color:var(--lay-color-gray-6)!important}
+.layui-menu li.layui-disabled,.layui-menu li.layui-disabled *{color:var(--lay-color-text-4)!important}
 .layui-menu .layui-menu-item-group>.layui-menu-body-title{color: var(--lay-color-text-1)}
 .layui-menu .layui-menu-item-none{color:var(--lay-color-black)}
 .layui-menu .layui-menu-item-divider{border-bottom:1px solid  var( --lay-color-border-2)}
@@ -622,32 +620,20 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-btn-primary{border-color:transparent}
 .layui-btn-group .layui-btn:first-child{border-left:none}
 .layui-btn-group .layui-btn-primary:hover{border-top-color:transparent; border-bottom-color: transparent;}
-.layui-menu li:hover{background-color:#4e4e52}
-/* .layui-timeline-axis{background-color: var(--lay-color-bg-4)} */
-/* .layui-elem-quote{background-color: var(--lay-color-bg-2)} */
-.layui-nav-child dd.layui-this{background-color:#4e4e52}
-.layui-nav .layui-nav-child a:hover{background-color:#4e4e52}
+.layui-menu li:hover{background-color:var(--lay-color-fill-2)}
+.layui-nav-child dd.layui-this{background-color:var(--lay-color-fill-2)}
+.layui-nav .layui-nav-child a:hover{background-color:var(--lay-color-fill-2)}
 .layui-nav .layui-nav-item a:hover,.layui-nav .layui-this a{background-color: var(--lay-color-fill-2)}
 .layui-nav-child dd.layui-this{background-color: var(--lay-color-fill-2)}
 .layui-tab-card>.layui-tab-title .layui-this:after,.layui-tab-title .layui-this:after{border-bottom-color:var(--lay-color-bg-1)}
-/* .layui-tab-card>.layui-tab-title .layui-this{background-color:var(--lay-color-bg-1)} */
-.layui-form-select dl dd:hover{background-color:#4e4e52}
-.layui-form-select dl dd.layui-this{background-color:#4e4e52}
-.layui-form-select dl dd.layui-disabled{background-color:#2d2d30}
+.layui-form-select dl dd:hover{background-color:var(--lay-color-fill-2)}
+.layui-form-select dl dd.layui-this{background-color:var(--lay-color-fill-2)}
+.layui-form-select dl dd.layui-disabled{background-color:var(--lay-color-fill-1)}
 .layui-laypage button{color:var(--lay-color-text-1)}
-.layui-table-click,.layui-table-hover,.layui-table[lay-even] tbody tr:nth-child(even){background-color:#48484a}
-/* .layui-form-switch i{background-color:#353333} */
-/* .layui-table-tool-panel{color:var(--lay-color-text-1)} */
-/* .layui-table-tool-panel li:hover{background-color: var(--lay-color-active)} */
+.layui-table-click,.layui-table-hover,.layui-table[lay-even] tbody tr:nth-child(even){background-color:var(--lay-color-fill-3)}
 .layui-transfer-data li:hover{background-color:var(--lay-color-active)}
-.layui-menu .layui-menu-item-checked,.layui-menu .layui-menu-item-checked2{background-color:#4e4e52!important}
-/* .layui-table-tool .layui-inline[lay-event]{border-color: var(--lay-color-border)} */
-.layui-input-split{
-  background-color: var(--lay-color-bg-2);
-}
-.layui-layer-tab .layui-layer-title span:first-child{
-  border-left: none !important;
-}
-.layui-slider-input.layui-input, .layui-slider-input .layui-input {
-  background-color: var(--lay-color-bg-2);
-}
+.layui-menu .layui-menu-item-checked,.layui-menu .layui-menu-item-checked2{background-color:var(--lay-color-fill-2)!important}
+.layui-input-split{background-color: var(--lay-color-bg-2);}
+.layui-layer-tab .layui-layer-title span:first-child{border-left: none !important;}
+.layui-slider-input.layui-input,
+.layui-slider-input .layui-input {background-color: var(--lay-color-bg-2);}

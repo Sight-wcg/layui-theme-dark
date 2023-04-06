@@ -1,4 +1,4 @@
-:root {
+:root{
    /* =====色板===== */
   /*常量,不随明暗主题变化*/
   --color-white: #FFFFFF;
@@ -162,20 +162,20 @@
   --lay-color-bg-5: #373739; /*下拉弹出框、Tooltip 背景颜色*/
   --lay-color-bg-white: #f6f6f6; /*白色背景*/
 
-  --lay-color-text-1: rgb(255 255 255 / 90%); /*强调/正文标题*/
-  --lay-color-text-2: rgb(255 255 255 / 70%); /*次强调/语句*/
-  --lay-color-text-3: rgb(255 255 255 / 50%);; /*次要信息*/
-  --lay-color-text-4: rgb(255 255 255 / 30%);; /*禁用状态文字 */
+  --lay-color-text-1: rgba(255,255,255,.9); /*强调/正文标题*/
+  --lay-color-text-2: rgba(255,255,255,.7); /*次强调/语句*/
+  --lay-color-text-3: rgba(255,255,255,.5); /*次要信息*/
+  --lay-color-text-4: rgba(255,255,255,.3);/*禁用状态文字 */
 
   --lay-color-border-1: #2e2e30;
   --lay-color-border-2: #484849;
   --lay-color-border-3: #5f5f60;
   --lay-color-border-4: #929293;
 
-  --lay-color-fill-1: rgb(255 255 255 / 4%);; /*浅/禁用*/
-  --lay-color-fill-2: rgb(255 255 255 / 8%); /*常规/白底悬浮*/
-  --lay-color-fill-3: rgb(255 255 255 / 12%); /*深/灰底悬浮*/
-  --lay-color-fill-4: rgb(255 255 255 / 16%); /*重/特殊场景*/
+  --lay-color-fill-1: rgba(255,255,255,.04);/*浅/禁用*/
+  --lay-color-fill-2: rgba(255,255,255,.08);/*常规/白底悬浮*/
+  --lay-color-fill-3: rgba(255,255,255,.12); /*深/灰底悬浮*/
+  --lay-color-fill-4: rgba(255,255,255,.16);/*重/特殊场景*/
 
   --lay-color-active: var(--lay-color-fill-4); /*layui-this*/
 }

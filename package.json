@@ -21,6 +21,15 @@
   "homepage": "https://github.com/Sight-wcg/layui-theme-dark#readme",
   "dependencies": {},
   "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.1.4",
+    "postcss": "^8.4.21",
+    "cssgrace": "^3.0.0",
+    "postcss-nested": "^6.0.1",
+    "postcss-css-variables": "^0.18.0",
     "@arco-design/color": "^0.4.0"
   }
 }

@@ -349,7 +349,7 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-laydate-footer span.layui-laydate-preview{border-color:transparent!important;}
 .layui-laydate-footer span.layui-laydate-preview:hover{color:var(--lay-color-black-7)}
 .layui-laydate-shortcut+.layui-laydate-main{border-left:1px solid  var(--lay-color-border-2)}
-.layui-laydate-list{background-color: var(--lay-color-bg-5)}
+.layui-laydate .layui-laydate-list{background-color: var(--lay-color-bg-5)}
 .layui-laydate-hint{color:var(--lay-color-danger)}
 .layui-laydate-range .laydate-main-list-1 .layui-laydate-content,.layui-laydate-range .laydate-main-list-1 .layui-laydate-header{border-left:1px solid  var(--lay-color-border-2)}
 .layui-laydate,.layui-laydate-hint{border:1px solid  var(--lay-color-border-2);box-shadow:0 2px 4px rgba(0,0,0,.12);background-color: var(--lay-color-bg-5);color: var(--lay-color-text-1)}
@@ -398,9 +398,14 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-layer-btn .layui-layer-btn0{border-color: var(--lay-color-normal);background-color: var(--lay-color-normal);color: var(--lay-color-text-1)}
 .layui-layer-dialog .layui-layer-content .layui-layer-face{color:var(--lay-color-gray-9)}
 .layui-layer-dialog .layui-layer-content .layui-icon-tips{color:var(--lay-color-warning)}
-.layui-layer-dialog .layui-layer-content .layui-icon-ok{color:var(--lay-color-success)}
+/* 2.8.0-rc.15 移除 */
+/* .layui-layer-dialog .layui-layer-content .layui-icon-ok{color:var(--lay-color-success)}
 .layui-layer-dialog .layui-layer-content .layui-icon-close-fill{color:var(--lay-color-danger)}
-.layui-layer-dialog .layui-layer-content .layui-icon-password{color:var(--lay-color-gray-10)}
+.layui-layer-dialog .layui-layer-content .layui-icon-password{color:var(--lay-color-gray-10)} */
+.layui-layer-dialog .layui-layer-content .layui-icon-success{color: var(--lay-color-success)}
+.layui-layer-dialog .layui-layer-content .layui-icon-error{top: 19px; color: var(--lay-color-danger)}
+.layui-layer-dialog .layui-layer-content .layui-icon-question{color: var(--lay-color-warning);}
+.layui-layer-dialog .layui-layer-content .layui-icon-lock{color: var(--lay-color-gray-10)}
 .layui-layer-dialog .layui-layer-content .layui-icon-face-cry{color:var(--lay-color-danger)}
 .layui-layer-dialog .layui-layer-content .layui-icon-face-smile{color:var(--lay-color-success)}
 .layui-layer-rim{border:6px solid var(--lay-color-gray-8);border:6px solid var(--lay-color-border-2)}

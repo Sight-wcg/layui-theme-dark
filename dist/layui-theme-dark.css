@@ -40,7 +40,7 @@
   --lay-color-lightblue-9: #064E74;
   --lay-color-lightblue-10: #002F4D;
 
-  --lay-color-green-1: #E8FFF9;
+  /* --lay-color-green-1: #E8FFF9;
   --lay-color-green-2: #AAEADB;
   --lay-color-green-3: #74D5C2;
   --lay-color-green-4: #46C0AC;
@@ -49,9 +49,20 @@
   --lay-color-green-7: #00847B;
   --lay-color-green-8: #00716D;
   --lay-color-green-9: #005F5F;
+  --lay-color-green-10: #004A4D; */
+
+  --lay-color-green-1: #E8FFF9;
+  --lay-color-green-2: #B5F1E3;
+  --lay-color-green-3: #87E3D1;
+  --lay-color-green-4: #5DD6C1;
+  --lay-color-green-5: #37C8B5;
+  --lay-color-green-6: #16BAAA;
+  --lay-color-green-7: #0E9F95;
+  --lay-color-green-8: #08837F;
+  --lay-color-green-9: #036868;
   --lay-color-green-10: #004A4D;
 
-  --lay-color-lightgreen-1: #E8FFEB;
+  /* --lay-color-lightgreen-1: #E8FFEB;
   --lay-color-lightgreen-2: #C8F1CE;
   --lay-color-lightgreen-3: #ABE3B5;
   --lay-color-lightgreen-4: #8FD49E;
@@ -60,7 +71,18 @@
   --lay-color-lightgreen-7: #3D9D5B;
   --lay-color-lightgreen-8: #228243;
   --lay-color-lightgreen-9: #0D6730;
-  --lay-color-lightgreen-10: #004D20;
+  --lay-color-lightgreen-10: #004D20; */
+
+  --lay-color-lightgreen-1: #E8FFF2;
+  --lay-color-lightgreen-2: #B5F1D1;
+  --lay-color-lightgreen-3: #86E2B4;
+  --lay-color-lightgreen-4: #5CD49C;
+  --lay-color-lightgreen-5: #37C588;
+  --lay-color-lightgreen-6: #16B777;
+  --lay-color-lightgreen-7: #0E9C68;
+  --lay-color-lightgreen-8: #088259;
+  --lay-color-lightgreen-9: #036749;
+  --lay-color-lightgreen-10: #004D38;
 
   --lay-color-orange-1: #FFFCE8;
   --lay-color-orange-2: #FFF5BA;
@@ -530,7 +552,7 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-laydate-footer span.layui-laydate-preview{border-color:transparent!important;}
 .layui-laydate-footer span.layui-laydate-preview:hover{color:var(--lay-color-black-7)}
 .layui-laydate-shortcut+.layui-laydate-main{border-left:1px solid  var(--lay-color-border-2)}
-.layui-laydate-list{background-color: var(--lay-color-bg-5)}
+.layui-laydate .layui-laydate-list{background-color: var(--lay-color-bg-5)}
 .layui-laydate-hint{color:var(--lay-color-danger)}
 .layui-laydate-range .laydate-main-list-1 .layui-laydate-content,.layui-laydate-range .laydate-main-list-1 .layui-laydate-header{border-left:1px solid  var(--lay-color-border-2)}
 .layui-laydate,.layui-laydate-hint{border:1px solid  var(--lay-color-border-2);box-shadow:0 2px 4px rgba(0,0,0,.12);background-color: var(--lay-color-bg-5);color: var(--lay-color-text-1)}
@@ -579,9 +601,14 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-layer-btn .layui-layer-btn0{border-color: var(--lay-color-normal);background-color: var(--lay-color-normal);color: var(--lay-color-text-1)}
 .layui-layer-dialog .layui-layer-content .layui-layer-face{color:var(--lay-color-gray-9)}
 .layui-layer-dialog .layui-layer-content .layui-icon-tips{color:var(--lay-color-warning)}
-.layui-layer-dialog .layui-layer-content .layui-icon-ok{color:var(--lay-color-success)}
+/* 2.8.0-rc.15 移除 */
+/* .layui-layer-dialog .layui-layer-content .layui-icon-ok{color:var(--lay-color-success)}
 .layui-layer-dialog .layui-layer-content .layui-icon-close-fill{color:var(--lay-color-danger)}
-.layui-layer-dialog .layui-layer-content .layui-icon-password{color:var(--lay-color-gray-10)}
+.layui-layer-dialog .layui-layer-content .layui-icon-password{color:var(--lay-color-gray-10)} */
+.layui-layer-dialog .layui-layer-content .layui-icon-success{color: var(--lay-color-success)}
+.layui-layer-dialog .layui-layer-content .layui-icon-error{top: 19px; color: var(--lay-color-danger)}
+.layui-layer-dialog .layui-layer-content .layui-icon-question{color: var(--lay-color-warning);}
+.layui-layer-dialog .layui-layer-content .layui-icon-lock{color: var(--lay-color-gray-10)}
 .layui-layer-dialog .layui-layer-content .layui-icon-face-cry{color:var(--lay-color-danger)}
 .layui-layer-dialog .layui-layer-content .layui-icon-face-smile{color:var(--lay-color-success)}
 .layui-layer-rim{border:6px solid var(--lay-color-gray-8);border:6px solid var(--lay-color-border-2)}

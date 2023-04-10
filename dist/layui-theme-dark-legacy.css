@@ -2,6 +2,28 @@
    /* =====色板===== */
   /*常量,不随明暗主题变化*/
 
+  /* --lay-color-green-1: #E8FFF9;
+  --lay-color-green-2: #AAEADB;
+  --lay-color-green-3: #74D5C2;
+  --lay-color-green-4: #46C0AC;
+  --lay-color-green-5: #1FAB98;
+  --lay-color-green-6: #009688;
+  --lay-color-green-7: #00847B;
+  --lay-color-green-8: #00716D;
+  --lay-color-green-9: #005F5F;
+  --lay-color-green-10: #004A4D; */
+
+  /* --lay-color-lightgreen-1: #E8FFEB;
+  --lay-color-lightgreen-2: #C8F1CE;
+  --lay-color-lightgreen-3: #ABE3B5;
+  --lay-color-lightgreen-4: #8FD49E;
+  --lay-color-lightgreen-5: #76C68A;
+  --lay-color-lightgreen-6: #5FB878;
+  --lay-color-lightgreen-7: #3D9D5B;
+  --lay-color-lightgreen-8: #228243;
+  --lay-color-lightgreen-9: #0D6730;
+  --lay-color-lightgreen-10: #004D20; */
+
   /* =====语义===== */
   /* 主色 */
 
@@ -36,12 +58,12 @@ a:hover{color:rgba(255,255,255,.5)}
 /* admin 布局 */
 .layui-layout-admin .layui-header{background-color:#232324}
 .layui-layout-admin .layui-footer{box-shadow:-1px 0 4px rgb(0 0 0 / 12%);background-color:#232324}
-.layui-layout-admin .layui-logo{color:#009688;box-shadow:0 1px 2px 0 rgb(0 0 0 / 15%)}
+.layui-layout-admin .layui-logo{color:#16BAAA;box-shadow:0 1px 2px 0 rgb(0 0 0 / 15%)}
 /* 引用 */
-.layui-elem-quote{border-left:5px solid #5FB878;background-color:#232324}
+.layui-elem-quote{border-left:5px solid #16B777;background-color:#232324}
 /* 进度条 */
 .layui-progress{background-color: #2a2a2b}
-.layui-progress-bar{background-color:#5FB878}
+.layui-progress-bar{background-color:#16B777}
 .layui-progress-text{color:rgba(255,255,255,.7)}
 .layui-progress-big .layui-progress-text{color: rgba(255,255,255,.9)}
 /* 折叠面板 */
@@ -57,7 +79,7 @@ a:hover{color:rgba(255,255,255,.5)}
 /* 背景颜色 */
 .layui-bg-red{background-color:#FF5722!important;color: #FAFAFA!important}
 .layui-bg-orange{background-color:#FFB800!important;color: #FAFAFA!important}
-.layui-bg-green{background-color:#009688!important;color: #FAFAFA!important}
+.layui-bg-green{background-color:#16BAAA!important;color: #FAFAFA!important}
 .layui-bg-cyan{background-color:#2F4056!important;color: #FAFAFA!important}
 .layui-bg-blue{background-color: #1E9FFF!important;color: #FAFAFA!important}
 .layui-bg-black{background-color:#393D49!important;color: #FAFAFA!important}
@@ -85,7 +107,7 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-border{color:rgba(255,255,255,.9)!important}
 .layui-border-red{border-color:#FF5722!important;color:#FF5722!important}
 .layui-border-orange{border-color:#FFB800!important;color:#FFB800!important}
-.layui-border-green{border-color:#009688!important;color:#009688!important}
+.layui-border-green{border-color:#16BAAA!important;color:#16BAAA!important}
 .layui-border-cyan{border-color:#2F4056!important;color:#2F4056!important}
 .layui-border-blue{border-color: #1E9FFF!important;color: #1E9FFF!important}
 .layui-border-black{border-color:#393D49!important;color:#585E6D!important}
@@ -105,25 +127,25 @@ a:hover{color:rgba(255,255,255,.5)}
 /* 字体颜色 */
 .layui-font-red{color:#FF5722!important}
 .layui-font-orange{color:#FFB800!important}
-.layui-font-green{color:#009688!important}
+.layui-font-green{color:#16BAAA!important}
 .layui-font-cyan{color:#2F4056!important}
 .layui-font-blue{color:#31BDEC!important}
 .layui-font-black{color:#333333!important}
 .layui-font-gray{color:#CCCCCC!important}
 /* 按钮 */
-.layui-btn{border:1px solid transparent;background-color:#009688;color: rgba(255,255,255,.9)}
+.layui-btn{border:1px solid transparent;background-color:#16BAAA;color: rgba(255,255,255,.9)}
 .layui-btn:hover{color: rgba(255,255,255,.7)}
 .layui-btn-primary{border-color:#484849;color:rgba(255,255,255,.9);background-color: #313132}
-.layui-btn-primary:hover{border-color:#009688;color:rgba(255,255,255,.7)}
+.layui-btn-primary:hover{border-color:#16BAAA;color:rgba(255,255,255,.7)}
 .layui-btn-normal{background-color: #1E9FFF}
 .layui-btn-warm{background-color:#FFB800}
 .layui-btn-danger{background-color:#FF5722}
-.layui-btn-checked{background-color:#5FB878}
+.layui-btn-checked{background-color:#16B777}
 .layui-btn-disabled{border-color: #484849!important;background-color: #232324!important;color: rgba(255,255,255,.3)!important}
 .layui-btn-disabled:active{border-color: #484849!important;background-color: #232324!important;color: rgba(255,255,255,.3)!important}
 .layui-btn-disabled:hover{border-color: #484849!important;background-color: #232324!important;color: rgba(255,255,255,.3)!important}
 .layui-btn-group .layui-btn{border-left:1px solid  #484849}
-.layui-btn-group .layui-btn-primary:hover{border-color:#484849;color:#009688}
+.layui-btn-group .layui-btn-primary:hover{border-color:#484849;color:#16BAAA}
 .layui-btn-group .layui-btn-primary:first-child{border-left:1px solid #DDDDDD}
 /*表单*/
 .layui-input{background-color: rgba(255,255,255,.08);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14ffffff', endColorstr='#14ffffff');color: rgba(255,255,255,.9)}
@@ -177,20 +199,20 @@ a:hover{color:rgba(255,255,255,.5)}
 :root .layui-form-checkbox i{filter: none\9
 }
 .layui-form-checkbox:hover i{border-color:#484849;color:rgba(255,255,255,.3)}
-.layui-form-checked{border-color:#3D9D5B}
-.layui-form-checked:hover{border-color:#3D9D5B}
-.layui-form-checked span{background-color:#5FB878}
-.layui-form-checked:hover span{background-color:#5FB878}
-.layui-form-checked i{color:#76C68A}
-.layui-form-checked:hover i{color:#76C68A}
+.layui-form-checked{border-color:#0E9C68}
+.layui-form-checked:hover{border-color:#0E9C68}
+.layui-form-checked span{background-color:#16B777}
+.layui-form-checked:hover span{background-color:#16B777}
+.layui-form-checked i{color:#37C588}
+.layui-form-checked:hover i{color:#37C588}
 /* 复选框-默认风格 */
 .layui-form-checkbox[lay-skin=primary]{background-image:none;background-color:initial;border-color:initial!important}
 .layui-form-checkbox[lay-skin=primary] span{background-image:none;background-color:initial;color:rgba(255,255,255,.9)}
 .layui-form-checkbox[lay-skin=primary] i{border-color:#2e2e30;background-color:rgba(255,255,255,.08);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14ffffff', endColorstr='#14ffffff')}
 :root .layui-form-checkbox[lay-skin=primary] i{filter: none\9
 }
-.layui-form-checkbox[lay-skin=primary]:hover i{border-color:#76C68A;color:rgba(255,255,255,.9)}
-.layui-form-checked[lay-skin=primary] i{background-color:#5FB878;color:rgba(255,255,255,.9);border-color:#3D9D5B!important}
+.layui-form-checkbox[lay-skin=primary]:hover i{border-color:#37C588;color:rgba(255,255,255,.9)}
+.layui-form-checked[lay-skin=primary] i{background-color:#16B777;color:rgba(255,255,255,.9);border-color:#0E9C68!important}
 .layui-checkbox-disabled[lay-skin=primary] span{background-image:none!important;background-color:initial!important;color:rgba(255,255,255,.3)!important}
 .layui-form-checked.layui-checkbox-disabled[lay-skin=primary] i{background-image:initial!important;background-color:rgba(255,255,255,.04)!important;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0affffff', endColorstr='#0affffff');border-color:#484849!important}
 :root .layui-form-checked.layui-checkbox-disabled[lay-skin=primary] i{filter: none\9
@@ -202,7 +224,7 @@ a:hover{color:rgba(255,255,255,.5)}
 }
 .layui-form-switch i{background-color:#CCCCCC}
 .layui-form-switch em{color:#C2C2C2!important}
-.layui-form-onswitch{border-color:#3D9D5B;background-color:#5FB878}
+.layui-form-onswitch{border-color:#0E9C68;background-color:#16B777}
 .layui-form-onswitch i{background-color:#CCCCCC}
 .layui-form-onswitch em{color:rgba(255,255,255,.9)!important}
 .layui-checkbox-disabled{border-color:#484849!important}
@@ -219,9 +241,9 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-checkbox-disabled:hover i:before{opacity:0;filter: alpha(opacity=0);filter:alpha(opacity=0)}
 /*单选框*/
 .layui-form-radio>i{color:#C2C2C2}
-.layui-form-radio:hover *{color:#5FB878}
-.layui-form-radioed{color:#5FB878}
-.layui-form-radioed>i{color:#5FB878}
+.layui-form-radio:hover *{color:#16B777}
+.layui-form-radioed{color:#16B777}
+.layui-form-radioed>i{color:#16B777}
 .layui-radio-disabled>i{color:rgba(255,255,255,.3)!important}
 .layui-radio-disabled *{color:rgba(255,255,255,.3)!important}
 /* 表单方框风格 */
@@ -235,15 +257,15 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-laypage a{background-color: #232324;color: rgba(255,255,255,.7)}
 .layui-laypage span{background-color: #232324;color: rgba(255,255,255,.7)}
 .layui-laypage a[data-page]{color:rgba(255,255,255,.9)}
-.layui-laypage a:hover{color: #009688}
+.layui-laypage a:hover{color: #16BAAA}
 .layui-laypage .layui-laypage-spr{color:rgba(255,255,255,.5)}
 .layui-laypage .layui-laypage-curr em{color: #FAFAFA}
-.layui-laypage .layui-laypage-curr .layui-laypage-em{background-color: #009688}
+.layui-laypage .layui-laypage-curr .layui-laypage-em{background-color: #16BAAA}
 .layui-laypage .layui-laypage-skip{color:rgba(255,255,255,.5)}
 .layui-laypage button{background-color: #232324}
 .layui-laypage input{background-color: #232324}
-.layui-laypage input:focus{border-color: #009688!important}
-.layui-laypage select:focus{border-color: #009688!important}
+.layui-laypage input:focus{border-color: #16BAAA!important}
+.layui-laypage select:focus{border-color: #16BAAA!important}
 /** 流加载 **/
 .layui-flow-more{color:rgba(255,255,255,.9)}
 .layui-flow-more a cite{background-color: #313132;color: rgba(255,255,255,.9)}
@@ -268,7 +290,7 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-table-view{border-color: #484849}
 .layui-table[lay-skin=line]{border-color: #484849}
 .layui-table[lay-skin=row]{border-color: #484849}
-.layui-table-view .layui-table td[data-edit]:hover:after{border:1px solid #00847B}
+.layui-table-view .layui-table td[data-edit]:hover:after{border:1px solid #0E9F95}
 .layui-table-init .layui-icon{color:#C2C2C2;}
 .layui-table-tool .layui-inline[lay-event]{color:rgba(255,255,255,.5);border:1px solid #484849}
 .layui-table-tool .layui-inline[lay-event]:hover{border:1px solid #5f5f60}
@@ -290,7 +312,7 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-table-edit{box-shadow:1px 1px 20px rgba(0,0,0,.15);background-color: rgba(255,255,255,.12);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1effffff', endColorstr='#1effffff')}
 :root .layui-table-edit{filter: none\9
 }
-.layui-table-edit:focus{border-color:#5FB878!important}
+.layui-table-edit:focus{border-color:#16B777!important}
 select.layui-table-edit{border-color:#484849}
 .layui-table-grid-down{background-color: #373739;color:#C2C2C2}
 .layui-table-grid-down:hover{background-color:#373739}
@@ -301,8 +323,8 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 1px 6px rgba(0,0,0,.12)
 /** 文件上传 **/
 .layui-upload-choose{color:#C2C2C2}
 .layui-upload-drag{border:1px dashed #484849;background-color: #313132;color: rgba(255,255,255,.7)}
-.layui-upload-drag .layui-icon{color: #009688}
-.layui-upload-drag[lay-over]{border-color: #009688}
+.layui-upload-drag .layui-icon{color: #16BAAA}
+.layui-upload-drag[lay-over]{border-color: #16BAAA}
 /* 基础菜单元素 */
 .layui-menu{background-color: #373739}
 .layui-menu li{color: rgba(255,255,255,.9)}
@@ -315,38 +337,38 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 1px 6px rgba(0,0,0,.12)
 .layui-menu .layui-menu-item-up>.layui-menu-body-title{color: rgba(255,255,255,.9)}
 .layui-menu .layui-menu-item-down:hover>.layui-menu-body-title>.layui-icon{color: rgba(255,255,255,.9)}
 .layui-menu .layui-menu-item-up>.layui-menu-body-title:hover>.layui-icon{color: rgba(255,255,255,.9)}
-.layui-menu .layui-menu-item-checked{background-color:rgba(255,255,255,.16)!important;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#28ffffff', endColorstr='#28ffffff');color:#5FB878}
+.layui-menu .layui-menu-item-checked{background-color:rgba(255,255,255,.16)!important;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#28ffffff', endColorstr='#28ffffff');color:#16B777}
 :root .layui-menu .layui-menu-item-checked{filter: none\9
 }
-.layui-menu .layui-menu-item-checked2{background-color:rgba(255,255,255,.16)!important;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#28ffffff', endColorstr='#28ffffff');color:#5FB878}
+.layui-menu .layui-menu-item-checked2{background-color:rgba(255,255,255,.16)!important;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#28ffffff', endColorstr='#28ffffff');color:#16B777}
 :root .layui-menu .layui-menu-item-checked2{filter: none\9
 }
-.layui-menu .layui-menu-item-checked a{color:#5FB878}
-.layui-menu .layui-menu-item-checked2 a{color:#5FB878}
-.layui-menu .layui-menu-item-checked:after{border-right:3px solid #5FB878}
+.layui-menu .layui-menu-item-checked a{color:#16B777}
+.layui-menu .layui-menu-item-checked2 a{color:#16B777}
+.layui-menu .layui-menu-item-checked:after{border-right:3px solid #16B777}
 .layui-menu-body-title a{color: rgba(255,255,255,.9)}
-.layui-menu-lg .layui-menu-body-title a:hover{color:#5FB878}
-.layui-menu-lg li:hover{color:#5FB878}
+.layui-menu-lg .layui-menu-body-title a:hover{color:#16B777}
+.layui-menu-lg li:hover{color:#16B777}
 /** 导航菜单 **/
 .layui-nav{background-color:#393d49;color: #FAFAFA}
 .layui-nav .layui-nav-item a{color: rgba(255,255,255,.9);color: rgba(255,255,255,.9)}
-.layui-nav .layui-this:after{background-color:#5FB878}
-.layui-nav-bar{background-color:#5FB878}
+.layui-nav .layui-this:after{background-color:#16B777}
+.layui-nav-bar{background-color:#16B777}
 .layui-nav .layui-nav-item a:hover{color: #FAFAFA}
 .layui-nav .layui-this a{color: #FAFAFA}
 .layui-nav-child{box-shadow:0 2px 4px rgba(0,0,0,.12);border:1px solid #484849;background-color: #373739}
 .layui-nav .layui-nav-child a{color: rgba(255,255,255,.9);color: rgba(255,255,255,.9)}
 .layui-nav .layui-nav-child a:hover{background-color: #373739;color: rgba(255,255,255,.9)}
 .layui-nav-child dd.layui-this{background-color: #373739;color: rgba(255,255,255,.9)}
-.layui-nav-tree .layui-nav-child dd.layui-this{background-color: #009688;color: #FAFAFA}
-.layui-nav-tree .layui-nav-child dd.layui-this a{background-color: #009688;color: #FAFAFA}
-.layui-nav-tree .layui-this{background-color: #009688;color: #FAFAFA}
-.layui-nav-tree .layui-this>a{background-color: #009688;color: #FAFAFA}
-.layui-nav-tree .layui-this>a:hover{background-color: #009688;color: #FAFAFA}
+.layui-nav-tree .layui-nav-child dd.layui-this{background-color: #16BAAA;color: #FAFAFA}
+.layui-nav-tree .layui-nav-child dd.layui-this a{background-color: #16BAAA;color: #FAFAFA}
+.layui-nav-tree .layui-this{background-color: #16BAAA;color: #FAFAFA}
+.layui-nav-tree .layui-this>a{background-color: #16BAAA;color: #FAFAFA}
+.layui-nav-tree .layui-this>a:hover{background-color: #16BAAA;color: #FAFAFA}
 .layui-nav-itemed>a{color: #FAFAFA!important}
 .layui-nav-tree .layui-nav-title a{color: #FAFAFA!important}
 .layui-nav-tree .layui-nav-title a:hover{color: #FAFAFA!important}
-.layui-nav-tree .layui-nav-bar{background-color:#009688}
+.layui-nav-tree .layui-nav-bar{background-color:#16BAAA}
 .layui-nav-tree .layui-nav-child a{color: #FAFAFA;color: #FAFAFA}
 .layui-nav-tree .layui-nav-child{color: #FAFAFA}
 .layui-nav-tree .layui-nav-child a:hover{color: #FAFAFA}
@@ -357,15 +379,15 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 1px 6px rgba(0,0,0,.12)
 .layui-nav.layui-bg-gray .layui-nav-item a{color: #798192}
 .layui-nav.layui-bg-gray .layui-nav-child{background-color: #FAFAFA;}
 .layui-nav-tree.layui-bg-gray .layui-nav-itemed>a{color:#333!important}
-.layui-nav.layui-bg-gray .layui-this a{color:#5FB878}
-.layui-nav-tree.layui-bg-gray .layui-nav-child dd.layui-this{color:#5FB878!important}
-.layui-nav-tree.layui-bg-gray .layui-nav-child dd.layui-this a{color:#5FB878!important}
-.layui-nav-tree.layui-bg-gray .layui-this{color:#5FB878!important}
-.layui-nav-tree.layui-bg-gray .layui-this>a{color:#5FB878!important}
-.layui-nav-tree.layui-bg-gray .layui-nav-bar{background-color:#5FB878}
+.layui-nav.layui-bg-gray .layui-this a{color:#16B777}
+.layui-nav-tree.layui-bg-gray .layui-nav-child dd.layui-this{color:#16B777!important}
+.layui-nav-tree.layui-bg-gray .layui-nav-child dd.layui-this a{color:#16B777!important}
+.layui-nav-tree.layui-bg-gray .layui-this{color:#16B777!important}
+.layui-nav-tree.layui-bg-gray .layui-this>a{color:#16B777!important}
+.layui-nav-tree.layui-bg-gray .layui-nav-bar{background-color:#16B777}
 /** 面包屑 **/
 .layui-breadcrumb a{color:#CCCCCC!important}
-.layui-breadcrumb a:hover{color:#5FB878!important}
+.layui-breadcrumb a:hover{color:#16B777!important}
 .layui-breadcrumb a cite{color:#C2C2C2}
 .layui-breadcrumb span[lay-separator]{color:#CCCCCC}
 /** Tab 选项卡 **/
@@ -375,16 +397,16 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 1px 6px rgba(0,0,0,.12)
 .layui-tab-more li.layui-this:after{border-bottom-color:#EEEEEE}
 .layui-tab-title li .layui-tab-close{color:#C2C2C2}
 .layui-tab-title li .layui-tab-close:hover{background-color:#FF5722;color: #FAFAFA}
-.layui-tab-brief>.layui-tab-title .layui-this{color:#009688}
-.layui-tab-brief>.layui-tab-more li.layui-this:after{border-bottom:2px solid #5FB878}
-.layui-tab-brief>.layui-tab-title .layui-this:after{border-bottom:2px solid #5FB878}
+.layui-tab-brief>.layui-tab-title .layui-this{color:#16BAAA}
+.layui-tab-brief>.layui-tab-more li.layui-this:after{border-bottom:2px solid #16B777}
+.layui-tab-brief>.layui-tab-title .layui-this:after{border-bottom:2px solid #16B777}
 .layui-tab-card{box-shadow:0 2px 5px 0 rgba(0,0,0,.1)}
 .layui-tab-card>.layui-tab-title{background-color: #232324}
 .layui-tab-card>.layui-tab-title .layui-this{background-color: #17171A}
 .layui-tab-card>.layui-tab-title .layui-this:after{border-bottom-color: #17171A}
-.layui-tab-card>.layui-tab-more .layui-this{color:#5FB878}
+.layui-tab-card>.layui-tab-more .layui-this{color:#16B777}
 /*时间线*/
-.layui-timeline-axis{background-color: #313132;color:#5FB878}
+.layui-timeline-axis{background-color: #313132;color:#16B777}
 .layui-timeline-axis:hover{color:#FF5722}
 .layui-timeline-item:before{background-color: #2a2a2b}
 /*徽章*/
@@ -427,7 +449,7 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-transfer-search{border-color: #484849}
 .layui-transfer-box{background-color: #232324}
 .layui-transfer-search .layui-icon-search{color:#C2C2C2}
-.layui-transfer-active .layui-btn{background-color:#5FB878;border-color:#5FB878;color: #FAFAFA}
+.layui-transfer-active .layui-btn{background-color:#16B777;border-color:#16B777;color: #FAFAFA}
 .layui-transfer-active .layui-btn-disabled{background-color:#F6F6F6;border-color:#EEEEEE;color:#C2C2C2}
 .layui-transfer-data li:hover{background-color:#F6F6F6}
 .layui-transfer-data .layui-none{color:#CCCCCC}
@@ -458,7 +480,7 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-slider-input-btn{border-left:1px solid  #484849}
 .layui-slider-input-btn i{color:#AAAAAA}
 .layui-slider-input-btn i:first-child{border-bottom:1px solid  #484849}
-.layui-slider-input-btn i:hover{color:#009688}
+.layui-slider-input-btn i:hover{color:#16BAAA}
 /** 树组件 **/
 .layui-tree-line .layui-tree-set .layui-tree-set:after{border-top:1px dotted #CCCCCC}
 .layui-tree-entry:hover{background-color: #313132}
@@ -490,25 +512,25 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .laydate-day-holidays:before{color:#FF5722}
 .layui-laydate .layui-this .laydate-day-holidays:before{color: #FAFAFA}
 .layui-laydate-footer span{border:1px solid  #484849;background-color: #373739}
-.layui-laydate-footer span:hover{color:#5FB878}
+.layui-laydate-footer span:hover{color:#16B777}
 .layui-laydate-footer span.layui-laydate-preview{border-color:transparent!important;}
 .layui-laydate-footer span.layui-laydate-preview:hover{color:#2B3149}
 .layui-laydate-shortcut+.layui-laydate-main{border-left:1px solid  #484849}
-.layui-laydate-list{background-color: #373739}
+.layui-laydate .layui-laydate-list{background-color: #373739}
 .layui-laydate-hint{color:#FF5722}
 .layui-laydate-range .laydate-main-list-1 .layui-laydate-content{border-left:1px solid  #484849}
 .layui-laydate-range .laydate-main-list-1 .layui-laydate-header{border-left:1px solid  #484849}
 .layui-laydate{border:1px solid  #484849;box-shadow:0 2px 4px rgba(0,0,0,.12);background-color: #373739;color: rgba(255,255,255,.9)}
 .layui-laydate-hint{border:1px solid  #484849;box-shadow:0 2px 4px rgba(0,0,0,.12);background-color: #373739;color: rgba(255,255,255,.9)}
 .layui-laydate-header{border-bottom:1px solid  #484849}
-.layui-laydate-header i:hover{color:#5FB878}
-.layui-laydate-header span:hover{color:#5FB878}
+.layui-laydate-header i:hover{color:#16B777}
+.layui-laydate-header span:hover{color:#16B777}
 .layui-laydate-content th{color: rgba(255,255,255,.9)}
 .layui-laydate-content td{color: rgba(255,255,255,.9)}
-.layui-laydate-content td.laydate-day-now{color:#5FB878}
-.layui-laydate-content td.laydate-day-now:after{border:1px solid #5FB878}
-.layui-laydate-linkage .layui-laydate-content td.laydate-selected>div{background-color:#8FD49E}
-.layui-laydate-linkage .laydate-selected:hover>div{background-color:#8FD49E!important}
+.layui-laydate-content td.laydate-day-now{color:#16B777}
+.layui-laydate-content td.laydate-day-now:after{border:1px solid #16B777}
+.layui-laydate-linkage .layui-laydate-content td.laydate-selected>div{background-color:#5CD49C}
+.layui-laydate-linkage .laydate-selected:hover>div{background-color:#5CD49C!important}
 .layui-laydate-content td>div:hover{background-color: rgba(255,255,255,.16);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#28ffffff', endColorstr='#28ffffff');color: rgba(255,255,255,.7)}
 :root .layui-laydate-content td>div:hover{filter: none\9
 }
@@ -525,13 +547,13 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-laydate-linkage .laydate-selected.laydate-day-prev>div{background-color: #373739!important}
 .layui-laydate-footer{border-top:1px solid  #484849}
 .layui-laydate-hint{color:#FF5722}
-.laydate-day-mark:after{background-color:#5FB878}
-.layui-laydate-footer span[lay-type=date]{color:#5FB878}
-.layui-laydate .layui-this{background-color:#009688!important;color: #FAFAFA!important}
-.layui-laydate .layui-this>div{background-color:#009688!important;color: #FAFAFA!important}
+.laydate-day-mark:after{background-color:#16B777}
+.layui-laydate-footer span[lay-type=date]{color:#16B777}
+.layui-laydate .layui-this{background-color:#16BAAA!important;color: #FAFAFA!important}
+.layui-laydate .layui-this>div{background-color:#16BAAA!important;color: #FAFAFA!important}
 .layui-laydate .laydate-disabled{color: rgba(255,255,255,.3)!important}
 .layui-laydate .laydate-disabled:hover{color: rgba(255,255,255,.3)!important}
-.laydate-theme-molv .layui-laydate-header{background-color:#009688}
+.laydate-theme-molv .layui-laydate-header{background-color:#16BAAA}
 .laydate-theme-molv .layui-laydate-header i{color:#F6F6F6}
 .laydate-theme-molv .layui-laydate-header span{color:#F6F6F6}
 .laydate-theme-molv .layui-laydate-header i:hover{color: #FAFAFA}
@@ -542,8 +564,8 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .laydate-theme-grid .laydate-year-list>li{border:1px solid  #484849}
 .laydate-theme-grid .layui-laydate-content td{border:1px solid  #484849}
 .laydate-theme-grid .layui-laydate-content thead{border:1px solid  #484849}
-.layui-laydate-linkage.laydate-theme-grid .laydate-selected{background-color:#EEEEEE!important;color:#009688!important}
-.layui-laydate-linkage.laydate-theme-grid .laydate-selected:hover{background-color:#EEEEEE!important;color:#009688!important}
+.layui-laydate-linkage.laydate-theme-grid .laydate-selected{background-color:#EEEEEE!important;color:#16BAAA!important}
+.layui-laydate-linkage.laydate-theme-grid .laydate-selected:hover{background-color:#EEEEEE!important;color:#16BAAA!important}
 .layui-laydate-linkage.laydate-theme-grid .laydate-selected.laydate-day-next{color:#D2D2D2!important}
 .layui-laydate-linkage.laydate-theme-grid .laydate-selected.laydate-day-prev{color:#D2D2D2!important}
 .layui-laydate.laydate-theme-circle .layui-laydate-content table td.layui-this{background-color:transparent!important}
@@ -570,11 +592,16 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-layer-btn .layui-layer-btn0{border-color: #1E9FFF;background-color: #1E9FFF;color: rgba(255,255,255,.9)}
 .layui-layer-dialog .layui-layer-content .layui-layer-face{color:#AAAAAA}
 .layui-layer-dialog .layui-layer-content .layui-icon-tips{color:#FFB800}
-.layui-layer-dialog .layui-layer-content .layui-icon-ok{color:#5FB878}
-.layui-layer-dialog .layui-layer-content .layui-icon-close-fill{color:#FF5722}
-.layui-layer-dialog .layui-layer-content .layui-icon-password{color:#939393}
+/* 2.8.0-rc.15 移除 */
+/* .layui-layer-dialog .layui-layer-content .layui-icon-ok{color:var(--lay-color-success)}
+.layui-layer-dialog .layui-layer-content .layui-icon-close-fill{color:var(--lay-color-danger)}
+.layui-layer-dialog .layui-layer-content .layui-icon-password{color:var(--lay-color-gray-10)} */
+.layui-layer-dialog .layui-layer-content .layui-icon-success{color: #16B777}
+.layui-layer-dialog .layui-layer-content .layui-icon-error{top: 19px; color: #FF5722}
+.layui-layer-dialog .layui-layer-content .layui-icon-question{color: #FFB800;}
+.layui-layer-dialog .layui-layer-content .layui-icon-lock{color: #939393}
 .layui-layer-dialog .layui-layer-content .layui-icon-face-cry{color:#FF5722}
-.layui-layer-dialog .layui-layer-content .layui-icon-face-smile{color:#5FB878}
+.layui-layer-dialog .layui-layer-content .layui-icon-face-smile{color:#16B777}
 .layui-layer-rim{border:6px solid #C2C2C2;border:6px solid #484849}
 .layui-layer-msg{border:1px solid #484849}
 .layui-layer-hui{background-color: #2a2a2b;color: rgba(255,255,255,.9)}
@@ -593,8 +620,8 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-layer-lan .layui-layer-btn{border-top:1px solid #5f5f60}
 .layui-layer-lan .layui-layer-btn a{background: #FAFAFA;border-color:#5f5f60;color: #2B3149}
 .layui-layer-lan .layui-layer-btn .layui-layer-btn1{background: #CCCCCC}
-.layui-layer-molv .layui-layer-title{background:#009688;color: rgba(255,255,255,.9)}
-.layui-layer-molv .layui-layer-btn a{background:#009688;border-color:#009688}
+.layui-layer-molv .layui-layer-title{background:#16BAAA;color: rgba(255,255,255,.9)}
+.layui-layer-molv .layui-layer-btn a{background:#16BAAA;border-color:#16BAAA}
 .layui-layer-molv .layui-layer-btn .layui-layer-btn1{background:#CCCCCC}
 .layui-layer-prompt .layui-layer-input{border:1px solid  #484849;color: rgba(255,255,255,.7)}
 .layui-layer-tab{box-shadow:1px 1px 50px rgba(0,0,0,.4)}

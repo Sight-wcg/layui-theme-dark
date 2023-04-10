@@ -186,8 +186,8 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-table-sort[lay-sort=desc] .layui-table-sort-desc{border-top-color:var(--lay-color-bg-5)}
 .layui-table-cell .layui-table-link{color: var(--lay-color-lightblue-5)}
 .layui-table-body .layui-none{color:var(--lay-color-gray-8)}
-.layui-table-fixed-l{box-shadow:1px 0 8px rgba(0,0,0,.08)}
-.layui-table-fixed-r{box-shadow:-1px 0 8px rgba(0,0,0,.08)}
+.layui-table-fixed-l{box-shadow:1px 0 8px rgba(0,0,0,1)}
+.layui-table-fixed-r{box-shadow:-1px 0 8px rgba(0,0,0,1)}
 .layui-table-edit{box-shadow:1px 1px 20px rgba(0,0,0,.15);background-color: var(--lay-color-bg-2)}
 .layui-table-edit:focus{border-color:var(--lay-color-secondary)!important}
 select.layui-table-edit{border-color:var(--lay-color-border-2)}

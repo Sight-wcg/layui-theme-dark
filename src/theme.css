@@ -397,7 +397,7 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-layer-setwin .layui-layer-max:after,.layui-layer-setwin .layui-layer-max:before{border:1px solid var(--lay-color-text-3)}
 .layui-layer-setwin .layui-layer-max:hover:after,.layui-layer-setwin .layui-layer-max:hover:before{border-color:var(--lay-color-info-hover)}
 .layui-layer-setwin .layui-layer-min:hover:before{background-color:var(--lay-color-info-hover)}
-.layui-layer-setwin .layui-layer-maxmin:after,.layui-layer-setwin .layui-layer-maxmin:before{background-color: var(--lay-color-white)}
+.layui-layer-setwin .layui-layer-maxmin:after,.layui-layer-setwin .layui-layer-maxmin:before{background-color: var(--lay-color-bg-5)}
 .layui-layer-setwin .layui-layer-close2{color:var(--lay-color-text-1);background-color:var(--lay-color-gray-10)}
 .layui-layer-setwin .layui-layer-close2:hover{background-color:var(--lay-color-normal)}
 .layui-layer-btn a{border:1px solid  var(--lay-color-border-2);background-color: var( --lay-color-bg-3);color: var(--lay-color-text-2)}

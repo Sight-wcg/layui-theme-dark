@@ -201,7 +201,7 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 1px 6px rgba(0,0,0,.12)
 .layui-upload-drag .layui-icon{color: var(--lay-color-primary)}
 .layui-upload-drag[lay-over]{border-color: var(--lay-color-primary)}
 /* 基础菜单元素 */
-.layui-menu{background-color: var( --lay-color-bg-5)}
+.layui-menu{background-color: var( --lay-color-bg-2)}
 .layui-menu li{color: var(--lay-color-text-1)}
 .layui-menu li:hover{background-color: var( --lay-color-bg-5)}
 .layui-menu li.layui-disabled,.layui-menu li.layui-disabled *{color:var(--lay-color-text-4)!important}
@@ -215,6 +215,10 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 1px 6px rgba(0,0,0,.12)
 .layui-menu .layui-menu-item-checked:after{border-right:3px solid var(--lay-color-secondary)}
 .layui-menu-body-title a{color: var(--lay-color-text-1)}
 .layui-menu-lg .layui-menu-body-title a:hover,.layui-menu-lg li:hover{color:var(--lay-color-secondary)}
+/* 下拉菜单 */
+.layui-dropdown{background-color: var(--lay-color-bg-5)}
+.layui-dropdown.layui-panel,.layui-dropdown .layui-panel{background-color: var(--lay-color-bg-5)}
+.layui-dropdown.layui-panel .layui-menu{background-color: var(--lay-color-bg-5)}
 /** 导航菜单 **/
 .layui-nav{background-color:#393d49;color: var(--lay-color-white)}
 .layui-nav .layui-nav-item a{color: var(--lay-color-text-1);color: var(--lay-color-text-1)}

@@ -332,7 +332,7 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-tree-icon{border:1px solid var(--lay-color-gray-8)}
 .layui-tree-icon .layui-icon{color:var(--lay-color-text-1)}
 .layui-tree-iconArrow:after{border-color:transparent transparent transparent var(--lay-color-gray-7)}
-.layui-tree-txt{color:var(--lay-color-text-3)}
+.layui-tree-txt{color:var(--lay-color-text-2)}
 .layui-tree-search{color:var(--lay-color-black-7)}
 .layui-tree-btnGroup .layui-icon:hover{color:var(--lay-color-text-2)}
 .layui-tree-editInput{background-color:var(--lay-color-fill-2)}

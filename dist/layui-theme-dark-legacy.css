@@ -306,6 +306,7 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-table[lay-skin=line]{border-color: #484849}
 .layui-table[lay-skin=row]{border-color: #484849}
 .layui-table-view .layui-table td[data-edit]:hover:after{border:1px solid #0E9F95}
+.layui-table-init{background-color: #232324;}
 .layui-table-init .layui-icon{color:#C2C2C2;}
 .layui-table-page{background-color: #232324;}
 .layui-table-tool{background-color: #232324;}
@@ -324,9 +325,9 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-table-sort[lay-sort=desc] .layui-table-sort-desc{border-top-color:#373739}
 .layui-table-cell .layui-table-link{color: #53CEF0}
 .layui-table-body .layui-none{color:#C2C2C2}
-.layui-table-fixed-l{box-shadow:1px 0 8px rgba(0,0,0,.8)}
-.layui-table-fixed-r{box-shadow:-1px 0 8px rgba(0,0,0,.8)}
-.layui-table-edit{box-shadow:1px 1px 20px rgba(0,0,0,.5);background-color: #232324}
+.layui-table-fixed-l{box-shadow:1px 0 8px rgba(0,0,0,1)}
+.layui-table-fixed-r{box-shadow:-1px 0 8px rgba(0,0,0,1)}
+.layui-table-edit{box-shadow:1px 1px 20px rgba(0,0,0,.15);background-color: #232324}
 .layui-table-edit:focus{border-color:#16B777!important}
 select.layui-table-edit{border-color:#484849}
 .layui-table-grid-down{background-color: #373739;color:#C2C2C2}

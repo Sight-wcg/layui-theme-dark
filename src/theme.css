@@ -152,7 +152,7 @@ a:hover{color:var(--lay-color-text-3)}
 /** 分页 **/
 .layui-laypage a,.layui-laypage button,.layui-laypage input,.layui-laypage select,.layui-laypage span{border:1px solid  var(--lay-color-border-2)}
 .layui-laypage a,.layui-laypage span{background-color: var(--lay-color-bg-2);color: var(--lay-color-text-2)}
-.layui-laypage a[data-page]{color:var(--lay-color-text-1)}
+.layui-laypage a[data-page]{color:var(--lay-color-text-2)}
 .layui-laypage a:hover{color: var(--lay-color-primary)}
 .layui-laypage .layui-laypage-spr{color:var(--lay-color-text-3)}
 .layui-laypage .layui-laypage-curr em{color: var(--lay-color-white)}

@@ -9,7 +9,7 @@
 <table id="test-json"></table>
 
 <div style="display: none1;">
-  <table class="layui-table" lay-data="{width:800, height: 300, url:'json/table/demo2.json', page: true, even: true, limit: 6, toolbar: true}">
+  <table class="layui-table" lay-data="{width:800, height: 300, url:'docs/json/table/demo2.json', page: true, even: true, limit: 6, toolbar: true}">
     <thead>
       <tr>
         <th lay-data="{checkbox:true, fixed:'left'}" rowspan="2"></th>
@@ -28,7 +28,7 @@
     </thead>
   </table>
 
-  <table class="layui-table" lay-data="{url:'json/table/demo2.json', page: true, limit: 6, toolbar: true}">
+  <table class="layui-table" lay-data="{url:'docs/json/table/demo2.json', page: true, limit: 6, toolbar: true}">
     <thead>
       <tr>
         <th lay-data="{field:'username'}" rowspan="3">联系人</th>
@@ -135,7 +135,7 @@ layui.use('table', function(){
   // 常规示例
   table.render({
     elem: '#test'
-    ,url: 'json/table/demo1.json'
+    ,url: 'docs/json/table/demo1.json'
     //,contentType: 'application/json' // 参数为 json 格式传递
     ,page: !0 || { //详细参数可参考 laypage 组件文档
       curr: 5

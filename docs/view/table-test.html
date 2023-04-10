@@ -1,37 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>表格操作 - layui</title>
-
-  <link rel="stylesheet" href="../src/css/layui.css">
-  <style>
-    body {padding: 32px; /*overflow-y: scroll;*/}
-  </style>
-</head>
-<body>
-
-<div class="layui-btn-container">
-  <a href="table.html" class="layui-btn">表格综合</a>
-  <a href="table-test.html" class="layui-btn layui-btn-primary layui-border-green">表格操作</a>
-  <a href="table-static.html" class="layui-btn">静态表格</a>
-</div>
-
 <script type="text/html" id="toolbarDemo">
   <div class="layui-btn-container">
-    <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
-    <button class="layui-btn layui-btn-sm" lay-event="getData">获取当前页数据</button>
+    <button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
+    <button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="getData">获取当前页数据</button>
 
-    <button class="layui-btn layui-btn-sm" id="setRowChecked">
+    <button class="layui-btn layui-btn-primary layui-btn-sm" id="setRowChecked">
       设置行选中状态
       <i class="layui-icon layui-icon-down layui-font-12"></i>
     </button>
-    <button class="layui-btn layui-btn-sm" id="reloadTest">
+    <button class="layui-btn layui-btn-primary layui-btn-sm" id="reloadTest">
       重载测试 
       <i class="layui-icon layui-icon-down layui-font-12"></i>
     </button>
-    <button class="layui-btn layui-btn-sm" id="moreTest">
+    <button class="layui-btn layui-btn-primary layui-btn-sm" id="moreTest">
       更多测试 
       <i class="layui-icon layui-icon-down layui-font-12"></i>
     </button>
@@ -68,14 +48,13 @@
 
 <script type="text/html" id="pagebarDemo">
   <div class="layui-btn-container">
-    <button class="layui-btn layui-btn-sm" lay-event="footerDemoBtn1">底部按钮1</button>
-    <button class="layui-btn layui-btn-sm" lay-event="footerDemoBtn2">底部按钮2</button>
+    <button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="footerDemoBtn1">底部按钮1</button>
+    <button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="footerDemoBtn2">底部按钮2</button>
   </div>
 </script>
 
 <table id="test"></table>
 
-<script src="../src/layui.js" src1="https://cdn.staticfile.org/layui/2.7.6/layui.js"></script>
 <script>
 (function(off){
   if(!off) return;
@@ -122,7 +101,7 @@ layui.use(['table', 'dropdown'], function(){
     ,height: 520
     //,width: 600
     ,title: '用户数据表'
-    ,url: 'json/table/demo1.json'
+    ,url: 'docs/json/table/demo1.json'
     //,method: 'post'
 
     
@@ -534,5 +513,3 @@ layui.use(['table', 'dropdown'], function(){
   });
 });
 </script>
-</body>
-</html>

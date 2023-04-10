@@ -342,7 +342,7 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-code-title{border-bottom:1px solid var(--lay-color-border-2)}
 .layui-code-title>.layui-code-about{color:#c5c5c5}
 .layui-code-view>.layui-code-ol>li{border-left:1px solid var(--lay-color-border-2);background-color: var(--lay-color-bg-2)}
-.layui-code-view>.layui-code-ul>li{background-color: var(--lay-color-white)}
+.layui-code-view>.layui-code-ul>li{background-color: var(--lay-color-bg-2)}
 .layui-code-dark{border:1px solid #3d3d3d;border-left-color:#656565;background-color:#3d3d3d;color:var(--lay-color-gray-8)}
 .layui-code-dark>.layui-code-ol>li,.layui-code-dark>.layui-code-ul>li{background-color:#3f3f3f}
 .layui-code-full{background-color: var(--lay-color-white)}

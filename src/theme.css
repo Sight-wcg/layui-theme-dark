@@ -171,6 +171,8 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-table td,.layui-table th,.layui-table-col-set,.layui-table-fixed-r,.layui-table-grid-down,.layui-table-header,.layui-table-mend,.layui-table-page,.layui-table-tips-main,.layui-table-tool,.layui-table-total,.layui-table-view,.layui-table[lay-skin=line],.layui-table[lay-skin=row]{border-color: var(--lay-color-border-2)}
 .layui-table-view .layui-table td[data-edit]:hover:after{border:1px solid var(--lay-color-primary-active)}
 .layui-table-init .layui-icon{color:var(--lay-color-gray-8);}
+.layui-table-page{background-color: var(--lay-color-bg-2);}
+.layui-table-tool{background-color: var(--lay-color-bg-2);}
 .layui-table-tool .layui-inline[lay-event]{color:var(--lay-color-text-3);border:1px solid var(--lay-color-border-2)}
 .layui-table-tool .layui-inline[lay-event]:hover{border:1px solid var(--lay-color-border-3)}
 .layui-table-tool-panel{color: var(--lay-color-text-1); border:1px solid  var(--lay-color-border-2);background-color: var(--lay-color-bg-5);box-shadow:0 2px 4px rgba(0,0,0,.12)}

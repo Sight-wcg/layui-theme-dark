@@ -2,6 +2,8 @@
 
 [Github](https://github.com/Sight-wcg/layui-theme-dark/) | [Demo](https://sight-wcg.github.io/layui-theme-dark/)
 
+🚧开发中
+
 layui 暗色主题
 
 # 使用

@@ -177,7 +177,7 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-input-split .layui-icon{color: #C2C2C2}
 .layui-input-suffix .layui-icon{color: #C2C2C2}
 .layui-input-wrap .layui-input:focus+.layui-input-split{border-color: #484849}
-.layui-input-affix .layui-icon{color: #333333}
+.layui-input-affix .layui-icon{color: rgba(255,255,255,.7)}
 .layui-input-affix .layui-icon-clear{color:rgba(255,255,255,.7)}
 .layui-input-affix .layui-icon:hover{color:rgba(255,255,255,.5)}
 /* 下拉选择 */

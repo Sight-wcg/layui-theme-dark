@@ -292,7 +292,7 @@ a:hover{color:var(--lay-color-text-3)}
 /* 输入框点缀  */
 .layui-input-prefix .layui-icon,.layui-input-split .layui-icon,.layui-input-suffix .layui-icon{color: var(--lay-color-gray-8)}
 .layui-input-wrap .layui-input:focus+.layui-input-split{border-color: var(--lay-color-border-2)}
-.layui-input-affix .layui-icon{color: var(--lay-color-black)}
+.layui-input-affix .layui-icon{color: var(--lay-color-text-2)}
 .layui-input-affix .layui-icon-clear{color:var(--lay-color-text-2)}
 .layui-input-affix .layui-icon:hover{color:var(--lay-color-text-3)}
 /* 下拉选择 */

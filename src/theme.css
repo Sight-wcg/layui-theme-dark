@@ -224,11 +224,11 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 1px 6px rgba(0,0,0,.12)
 .layui-dropdown.layui-panel .layui-menu{background-color: var(--lay-color-bg-5)}
 /** 导航菜单 **/
 .layui-nav{background-color:#393d49;color: var(--lay-color-white)}
-.layui-nav .layui-nav-item a{color: var(--lay-color-text-1);color: var(--lay-color-text-1)}
+.layui-nav .layui-nav-item a{color: var(--lay-color-text-1);}
 .layui-nav .layui-this:after,.layui-nav-bar{background-color:var(--lay-color-secondary)}
-.layui-nav .layui-nav-item a:hover,.layui-nav .layui-this a{color: var(--lay-color-white)}
+.layui-nav .layui-nav-item a:hover,.layui-nav .layui-this a{color: var(--lay-color-text-1)}
 .layui-nav-child{box-shadow:0 2px 4px rgba(0,0,0,.12);border:1px solid var(--lay-color-border-2);background-color: var(--lay-color-bg-5)}
-.layui-nav .layui-nav-child a{color: var(--lay-color-text-1);color: var(--lay-color-text-1)}
+.layui-nav .layui-nav-child a{color: var(--lay-color-text-1)}
 .layui-nav .layui-nav-child a:hover{background-color: var(--lay-color-bg-5);color: var(--lay-color-text-1)}
 .layui-nav-child dd.layui-this{background-color: var(--lay-color-bg-5);color: var(--lay-color-text-1)}
 .layui-nav-tree .layui-nav-child dd.layui-this,.layui-nav-tree .layui-nav-child dd.layui-this a,.layui-nav-tree .layui-this,.layui-nav-tree .layui-this>a,.layui-nav-tree .layui-this>a:hover{background-color: var(--lay-color-primary);color: var(--lay-color-white)}

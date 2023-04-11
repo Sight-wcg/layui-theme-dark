@@ -44,9 +44,10 @@
         <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
           <i class="layui-icon layui-icon-spread-left"></i>
         </li>
+        <li class="layui-nav-item"><span id="layuiv" style="margin-left: 10px; font-size: 10px;"></span></li>
       </ul>
       <ul class="layui-nav layui-layout-right">
-        <li class="layui-nav-item layui-hide layui-show-md-inline-block">
+        <li class="layui-nav-item layui-hide layui-show-md-inline-block" style="display: inline-block !important;">
           <a href="javascript:;">
             主题
           </a>
@@ -56,8 +57,8 @@
           </dl>
         </li>
         <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
-          <a href="javascript:;">
-            <i class="layui-icon layui-icon-more-vertical"></i>
+          <a href="https://github.com/Sight-wcg/layui-theme-dark" target="_blank">
+            <i class="layui-icon layui-icon-github" style="font-size: 20px;"></i>
           </a>
         </li>
       </ul>
@@ -104,7 +105,7 @@
               <dd><a data-path="view/code" href="javascript:;">文本行修饰</a></dd>
             </dl>
           </li>
-          <li class="layui-nav-item"><a href="https://github.com/Sight-wcg/layui-theme-dark" target="_blank">Github</a></li>
+          <!-- <li class="layui-nav-item"><a href="https://github.com/Sight-wcg/layui-theme-dark" target="_blank">Github</a></li> -->
         </ul>
       </div>
     </div>
@@ -166,9 +167,9 @@
         var path = elem.data('path');
         if(path){
           renderView( '#body-container',path);
-        }
-        if($(window).width() <= 768){
-          $('.layui-layout-admin .layui-side').animate({left: '-300px'})
+          if($(window).width() <= 768){
+            $('.layui-layout-admin .layui-side').animate({left: '-300px'})
+          }
         }
       });
 
@@ -177,6 +178,8 @@
           $('.layui-layout-admin .layui-side').animate({left: '0px'})
         }
       })
+
+      $('#layuiv').text(layui.v)
 
       function renderView(elem, path, prefix, suffix){
         var containerDom=$(elem)

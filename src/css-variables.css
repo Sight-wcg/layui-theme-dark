@@ -199,5 +199,6 @@
   --lay-color-fill-3: rgba(255,255,255,.12); /*深/灰底悬浮*/
   --lay-color-fill-4: rgba(255,255,255,.16);/*重/特殊场景*/
 
-  --lay-color-active: var(--lay-color-fill-4); /*layui-this*/
+  --lay-color-hover: var(--lay-color-fill-3); /*bg*/
+  --lay-color-active: var(--lay-color-fill-3); /*bg*/
 }

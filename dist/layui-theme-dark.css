@@ -199,7 +199,8 @@
   --lay-color-fill-3: rgba(255,255,255,.12); /*深/灰底悬浮*/
   --lay-color-fill-4: rgba(255,255,255,.16);/*重/特殊场景*/
 
-  --lay-color-active: var(--lay-color-fill-4); /*layui-this*/
+  --lay-color-hover: var(--lay-color-fill-3); /*bg*/
+  --lay-color-active: var(--lay-color-fill-3); /*bg*/
 }
 blockquote,body,button,dd,div,dl,dt,form,h1,h2,h3,h4,h5,h6,input,li,ol,p,pre,td,textarea,th,ul{-webkit-tap-highlight-color: rgba(0, 0, 0, 0)} /*danger: 勿改*/
 body{color:var(--lay-color-text-2);background-color: var(--lay-color-bg-1); color-scheme: dark;}

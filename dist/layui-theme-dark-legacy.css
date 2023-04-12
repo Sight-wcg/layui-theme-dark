@@ -37,7 +37,7 @@
 
   /* 成功 */
 
-  /* 错误 */ /*整体背景*/ /*一级容器背景,卡片,面板*/ /*二级容器背景*/ /*三级容器背景*/ /*下拉弹出框、Tooltip 背景颜色*/ /*白色背景*/ /*强调/正文标题*/ /*次强调/语句*/ /*次要信息*//*禁用状态文字 *//*浅/禁用*//*常规/白底悬浮*/ /*深/灰底悬浮*//*重/特殊场景*/ /*layui-this*/
+  /* 错误 */ /*整体背景*/ /*一级容器背景,卡片,面板*/ /*二级容器背景*/ /*三级容器背景*/ /*下拉弹出框、Tooltip 背景颜色*/ /*白色背景*/ /*强调/正文标题*/ /*次强调/语句*/ /*次要信息*//*禁用状态文字 *//*浅/禁用*//*常规/白底悬浮*/ /*深/灰底悬浮*//*重/特殊场景*/ /*bg*/ /*bg*/
 }
 blockquote,body,button,dd,div,dl,dt,form,h1,h2,h3,h4,h5,h6,input,li,ol,p,pre,td,textarea,th,ul{-webkit-tap-highlight-color: rgba(0, 0, 0, 0)} /*danger: 勿改*/
 body{color:rgba(255,255,255,.7);background-color: #17171A; color-scheme: dark;}
@@ -185,11 +185,11 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-form-select .layui-edge{border-top-color:#C2C2C2}
 .layui-form-select dl{border:1px solid  #484849;background-color: #373739;box-shadow:1px 1px 4px rgb(0 0 0 / 8%)}
 .layui-form-select dl dt{color:#C2C2C2}
-.layui-form-select dl dd:hover{background-color:rgba(255,255,255,.16);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#28ffffff', endColorstr='#28ffffff')}
+.layui-form-select dl dd:hover{background-color:rgba(255,255,255,.12);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1effffff', endColorstr='#1effffff')}
 :root .layui-form-select dl dd:hover{filter: none\9
 }
 .layui-form-select dl dd.layui-select-tips{color:rgba(255,255,255,.7)}
-.layui-form-select dl dd.layui-this{background-color: rgba(255,255,255,.16);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#28ffffff', endColorstr='#28ffffff');color: rgba(255,255,255,.9)}
+.layui-form-select dl dd.layui-this{background-color: rgba(255,255,255,.12);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1effffff', endColorstr='#1effffff');color: rgba(255,255,255,.9)}
 :root .layui-form-select dl dd.layui-this{filter: none\9
 }
 .layui-form-select dl dd.layui-disabled{background-color: #373739}
@@ -204,7 +204,7 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-form-checkbox span{background-color:rgba(255,255,255,.12);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1effffff', endColorstr='#1effffff');color:rgba(255,255,255,.7)}
 :root .layui-form-checkbox span{filter: none\9
 }
-.layui-form-checkbox:hover span{background-color: rgba(255,255,255,.16);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#28ffffff', endColorstr='#28ffffff')}
+.layui-form-checkbox:hover span{background-color: rgba(255,255,255,.12);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1effffff', endColorstr='#1effffff')}
 :root .layui-form-checkbox:hover span{filter: none\9
 }
 .layui-form-checkbox i{background-color: rgba(255,255,255,.04);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0affffff', endColorstr='#0affffff');border-top-color:#2e2e30;border-right-color:#2e2e30;border-bottom-color:#2e2e30;border-left-color:initial;color:rgba(255,255,255,.9)}
@@ -313,7 +313,7 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-table-tool .layui-inline[lay-event]{color:rgba(255,255,255,.5);border:1px solid #484849}
 .layui-table-tool .layui-inline[lay-event]:hover{border:1px solid #5f5f60}
 .layui-table-tool-panel{color: rgba(255,255,255,.9); border:1px solid  #484849;background-color: #373739;box-shadow:0 2px 4px rgba(0,0,0,.12)}
-.layui-table-tool-panel li:hover{background-color:rgba(255,255,255,.16);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#28ffffff', endColorstr='#28ffffff')}
+.layui-table-tool-panel li:hover{background-color:rgba(255,255,255,.12);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1effffff', endColorstr='#1effffff')}
 :root .layui-table-tool-panel li:hover{filter: none\9
 }
 .layui-table-col-set{background-color: #FAFAFA}
@@ -353,10 +353,10 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 1px 6px rgba(0,0,0,.12)
 .layui-menu .layui-menu-item-up>.layui-menu-body-title{color: rgba(255,255,255,.9)}
 .layui-menu .layui-menu-item-down:hover>.layui-menu-body-title>.layui-icon{color: rgba(255,255,255,.9)}
 .layui-menu .layui-menu-item-up>.layui-menu-body-title:hover>.layui-icon{color: rgba(255,255,255,.9)}
-.layui-menu .layui-menu-item-checked{background-color:rgba(255,255,255,.16)!important;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#28ffffff', endColorstr='#28ffffff');color:#16B777}
+.layui-menu .layui-menu-item-checked{background-color:rgba(255,255,255,.12)!important;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1effffff', endColorstr='#1effffff');color:#16B777}
 :root .layui-menu .layui-menu-item-checked{filter: none\9
 }
-.layui-menu .layui-menu-item-checked2{background-color:rgba(255,255,255,.16)!important;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#28ffffff', endColorstr='#28ffffff');color:#16B777}
+.layui-menu .layui-menu-item-checked2{background-color:rgba(255,255,255,.12)!important;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1effffff', endColorstr='#1effffff');color:#16B777}
 :root .layui-menu .layui-menu-item-checked2{filter: none\9
 }
 .layui-menu .layui-menu-item-checked a{color:#16B777}
@@ -704,7 +704,7 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-table[lay-even] tbody tr:nth-child(even){background-color:rgba(255,255,255,.12);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1effffff', endColorstr='#1effffff')}
 :root .layui-table[lay-even] tbody tr:nth-child(even){filter: none\9
 }
-.layui-transfer-data li:hover{background-color:rgba(255,255,255,.16);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#28ffffff', endColorstr='#28ffffff')}
+.layui-transfer-data li:hover{background-color:rgba(255,255,255,.12);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1effffff', endColorstr='#1effffff')}
 :root .layui-transfer-data li:hover{filter: none\9
 }
 .layui-menu .layui-menu-item-checked{background-color:rgba(255,255,255,.08)!important;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14ffffff', endColorstr='#14ffffff')}

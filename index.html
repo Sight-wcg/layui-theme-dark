@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>layui-theme-dark</title>
+  <script src="./docs/lib/dom-inspector.iife.js"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script> -->
 
   <link rel="stylesheet" href="https://unpkg.com/layui@2.8.0-rc.15/dist/css/layui.css">
@@ -35,6 +36,7 @@
 </head>
 
 <body>
+  <wc-dom-inspector id="domInspector" includes="#body-container"></wc-dom-inspector>
   <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
       <div class="layui-logo layui-hide-xs layui-bg-black">dark demo</div>
@@ -47,14 +49,17 @@
         <li class="layui-nav-item"><span id="layuiv" style="margin-left: 10px; font-size: 10px;"></span></li>
       </ul>
       <ul class="layui-nav layui-layout-right">
-        <li class="layui-nav-item layui-hide layui-show-md-inline-block" style="display: inline-block !important;">
-          <a href="javascript:;">
-            主题
-          </a>
-          <dl class="layui-nav-child">
-            <dd><a lay-header-event="changeTheme" data-theme="dark" href="javascript:;">暗</a></dd>
-            <dd><a lay-header-event="changeTheme" data-theme="light" href="javascript:;">亮</a></dd>
-          </dl>
+        <li class="layui-nav-item">
+          <label style="display: flex;">
+            <input type="checkbox" name="domInspector">
+            &nbsp;&nbsp;dom-inspector&nbsp;&nbsp;
+          </label>
+        </li>
+        <li class="layui-nav-item">
+          <label style="display: flex;">
+            <input type="checkbox" name="dark" checked>
+            &nbsp;&nbsp;dark&nbsp;&nbsp;
+          </label>
         </li>
         <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
           <a href="https://github.com/Sight-wcg/layui-theme-dark" target="_blank">
@@ -105,7 +110,6 @@
               <dd><a data-path="view/code" href="javascript:;">文本行修饰</a></dd>
             </dl>
           </li>
-          <!-- <li class="layui-nav-item"><a href="https://github.com/Sight-wcg/layui-theme-dark" target="_blank">Github</a></li> -->
         </ul>
       </div>
     </div>
@@ -135,28 +139,8 @@
       var $=layui.$;
 
       renderView('#body-container','view/button');
-      // cssVars({
-      //   include: 'link[rel="stylesheet"],style',
-      //   exclude: '',
-      //   onlyLegacy: true,
-      //   watch: true,
-      //   updateDOM: false,
-      //   onComplete: function(cssText,styleElms,cssVariables,benchmark) {
-      //     addStyle('layui-theme-style',cssText)
-      //   }
-      // });
 
       util.event('lay-header-event',{
-        changeTheme: function(othis) {
-          setTheme(othis.data('theme'))
-        },
-        menuRight: function(){
-          // drawer.open({
-          //   area: '23%',
-          //   url: './docs/tpl/theme.html',
-          //   shade: 0.01
-          // })
-        },
         menuLeft: function(){
           var side = $('.layui-layout-admin .layui-side')
           side.animate({left:side.css('left') === '0px'? '-300px' : '0px'})
@@ -181,6 +165,22 @@
 
       $('#layuiv').text(layui.v)
 
+      $('input[name=domInspector]').on('click', function(){
+        if($(this).prop('checked')){
+          $('#domInspector').attr('enable', '')
+        }else{
+          $('#domInspector').removeAttr('enable')
+        }
+      })
+
+      $('input[name=dark]').on('click', function(){
+        if($(this).prop('checked')) {
+          $('#layui_theme_css').prop('href','./dist/layui-theme-dark.css')
+        }else{
+          $('#layui_theme_css').prop('href','')
+        }
+      })
+
       function renderView(elem, path, prefix, suffix){
         var containerDom=$(elem)
         if(!prefix) prefix = './docs/';
@@ -196,14 +196,6 @@
         })
       }
 
-      function setTheme(theme){
-        theme = theme ? theme : 'dark'
-        if(theme === 'dark'){
-          $('#layui_theme_css').prop('href','./dist/layui-theme-dark.css')
-        }else{
-          $('#layui_theme_css').prop('href','')
-        }
-      }
 
       function addStyle(id, cssStr){
         var el = document.getElementById(id) || document.createElement('style')

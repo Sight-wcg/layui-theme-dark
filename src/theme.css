@@ -41,6 +41,7 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-bg-cyan{background-color:var(--lay-color-cyan-6)!important;color: var(--lay-color-white)!important}
 .layui-bg-blue{background-color: var(--lay-color-blue-6)!important;color: var(--lay-color-white)!important}
 .layui-bg-black{background-color:var(--lay-color-black-6)!important;color: var(--lay-color-white)!important}
+.layui-bg-purple{background-color: var(--lay-color-purple-6)!important; color: var(--lay-color-white)!important;}
 .layui-bg-gray{background-color:var(--lay-color-gray-1)!important;color: var(--lay-color-black-6)!important}
 /* 徽章 */
 .layui-badge-rim,.layui-border,.layui-colla-content,.layui-colla-item,.layui-collapse,.layui-elem-field,.layui-form-pane .layui-form-item[pane],.layui-form-pane .layui-form-label,.layui-input,.layui-input-split,.layui-panel,.layui-quote-nm,.layui-select,.layui-tab-bar,.layui-tab-card,.layui-tab-title,.layui-tab-title .layui-this:after,.layui-textarea{border-color: var(--lay-color-border-1)}
@@ -51,6 +52,7 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-border-green{border-color:var(--lay-color-green-6)!important;color:var(--lay-color-green-6)!important}
 .layui-border-cyan{border-color:var(--lay-color-cyan-6)!important;color:var(--lay-color-cyan-6)!important}
 .layui-border-blue{border-color: var(--lay-color-blue-6)!important;color: var(--lay-color-blue-6)!important}
+.layui-border-purple{border-color: var(--lay-color-purple-6)!important; color: var(--lay-color-purple-6)!important;}
 .layui-border-black{border-color:var(--lay-color-black-6)!important;color:var(--lay-color-black-5)!important}
 /* 文本区域 */
 .layui-text{color:var(--lay-color-text-3)}
@@ -66,6 +68,7 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-font-cyan{color:var(--lay-color-cyan-6)!important}
 .layui-font-blue{color:var(--lay-color-lightblue-6)!important}
 .layui-font-black{color:var(--lay-color-black)!important}
+.layui-font-purple{color:var(--lay-color-purple-6)!important;}
 .layui-font-gray{color:var(--lay-color-gray-7)!important}
 /* 按钮 */
 .layui-btn{border:1px solid transparent;background-color:var(--lay-color-primary);color: var(--lay-color-text-1)}
@@ -122,13 +125,17 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-checkbox-disabled[lay-skin=primary] span{background-image:none!important;background-color:initial!important;color:var(--lay-color-text-4)!important}
 .layui-form-checked.layui-checkbox-disabled[lay-skin=primary] i{background-image:initial!important;background-color:var(--lay-color-fill-1)!important;border-color:var(--lay-color-border-2)!important}
 .layui-checkbox-disabled[lay-skin=primary]:hover i{border-color:var(--lay-color-border-1)}
+.layui-form-checkbox[lay-skin="primary"] > i.layui-icon-subtraction,
+.layui-form-checkbox[lay-skin="primary"]:hover i.layui-icon-subtraction {border-color: var(--lay-color-border-2);}
+.layui-form-checkbox[lay-skin="primary"] > i.layui-icon-subtraction:before,
+.layui-form-checkbox[lay-skin="primary"]:hover i.layui-icon-subtraction:before {color: darkgray; opacity: 1;}
 /* 复选框-开关风格 */
 .layui-form-switch{border-color:var(--lay-color-border-2);background-color:var(--lay-color-fill-2)}
-.layui-form-switch i{background-color:var(--lay-color-gray-7)}
-.layui-form-switch.layui-checkbox-disabled i{background-color:var(--lay-color-gray-7)}
+.layui-form-switch i{background-color:var(--lay-color-gray-4)}
+.layui-form-switch.layui-checkbox-disabled i{background-color:var(--lay-color-gray-4)}
 .layui-form-switch em{color:var(--lay-color-gray-8)!important}
 .layui-form-onswitch{border-color:var(--lay-color-secondary-active);background-color:var(--lay-color-secondary)}
-.layui-form-onswitch i{background-color:var(--lay-color-gray-7)}
+.layui-form-onswitch i{background-color:var(--lay-color-gray-4)}
 .layui-form-onswitch em{color:var(--lay-color-text-1)!important}
 .layui-checkbox-disabled{border-color:var(--lay-color-border-2)!important}
 .layui-checkbox-disabled span{background-color:var(--lay-color-fill-3)!important;color: var(--lay-color-text-4);}

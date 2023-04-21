@@ -276,6 +276,7 @@
         <input type="checkbox" name="like[read]" title="未选中">
         <input type="checkbox" name="like[game]" title="选中-禁用" checked disabled>
         <input type="checkbox" name="like[game]" title="未选中-禁用" disabled>
+        <input type="checkbox" id="check" name="like[write]" title="半选">
       </div>
     </div>
     <div class="layui-form-item" pane>
@@ -572,6 +573,9 @@
         }
       }
     });
+
+    var Check=document.getElementById('check');
+    Check.indeterminate=true;
     
   });
 

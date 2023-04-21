@@ -10,7 +10,9 @@ const colorList = {
   // lightgreen: '#5FB878',
   orange: '#FFB800',
   cyan: '#2F4056',
-  black: '#393D49',
+  purple: '#a233c6',
+  black: '#2f363c',
+  //black: '#393D49',
   // gray: 'FAFAFA',
 };
 

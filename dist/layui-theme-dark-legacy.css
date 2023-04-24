@@ -244,10 +244,10 @@ a:hover{color:rgba(255,255,255,.5)}
 :root .layui-form-checked.layui-checkbox-disabled[lay-skin=primary] i{filter: none\9
 }
 .layui-checkbox-disabled[lay-skin=primary]:hover i{border-color:#2e2e30}
-.layui-form-checkbox[lay-skin="primary"] > i.layui-icon-subtraction {border-color: #484849;}
-.layui-form-checkbox[lay-skin="primary"]:hover i.layui-icon-subtraction {border-color: #484849;}
-.layui-form-checkbox[lay-skin="primary"] > i.layui-icon-subtraction:before,
-.layui-form-checkbox[lay-skin="primary"]:hover i.layui-icon-subtraction:before {color: darkgray; opacity: 1; filter: alpha(opacity=100);}
+.layui-form-checkbox[lay-skin="primary"] .layui-icon-indeterminate:before{background-color: #D2D2D2;opacity: 1;filter: alpha(opacity=100);}
+.layui-form-checkbox[lay-skin="primary"]:hover .layui-icon-indeterminate:before{background-color: #37C588;opacity: 1;filter: alpha(opacity=100);}
+.layui-form-checkbox[lay-skin="primary"] .layui-icon-indeterminate{border-color: #484849;}
+.layui-form-checkbox[lay-skin="primary"]:hover .layui-icon-indeterminate {border-color: #37C588;}
 /* 复选框-开关风格 */
 .layui-form-switch{border-color:#484849;background-color:rgba(255,255,255,.08);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14ffffff', endColorstr='#14ffffff')}
 :root .layui-form-switch{filter: none\9

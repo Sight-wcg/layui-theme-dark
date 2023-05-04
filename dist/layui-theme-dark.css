@@ -351,10 +351,9 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-checkbox-disabled[lay-skin=primary] span{background-image:none!important;background-color:initial!important;color:var(--lay-color-text-4)!important}
 .layui-form-checked.layui-checkbox-disabled[lay-skin=primary] i{background-image:initial!important;background-color:var(--lay-color-fill-1)!important;border-color:var(--lay-color-border-2)!important}
 .layui-checkbox-disabled[lay-skin=primary]:hover i{border-color:var(--lay-color-border-1)}
-.layui-form-checkbox[lay-skin="primary"] .layui-icon-indeterminate:before{background-color: var(--lay-color-gray-6);opacity: 1;}
-.layui-form-checkbox[lay-skin="primary"]:hover .layui-icon-indeterminate:before{background-color: var(--lay-color-secondary-hover);opacity: 1;}
-.layui-form-checkbox[lay-skin="primary"] .layui-icon-indeterminate{border-color: var(--lay-color-border-2);}
-.layui-form-checkbox[lay-skin="primary"]:hover .layui-icon-indeterminate {border-color: var(--lay-color-secondary-hover);}
+.layui-form-checkbox[lay-skin="primary"] .layui-icon-indeterminate:before{background-color: var(--lay-color-secondary-hover);opacity: 1;}
+.layui-form-checkbox[lay-skin="primary"]:hover .layui-icon-indeterminate:before{opacity: 1;}
+.layui-form-checkbox[lay-skin="primary"] .layui-icon-indeterminate{border-color: var(--lay-color-secondary-hover);}
 /* 复选框-开关风格 */
 .layui-form-switch{border-color:var(--lay-color-border-2);background-color:var(--lay-color-fill-2)}
 .layui-form-switch i{background-color:var(--lay-color-gray-4)}

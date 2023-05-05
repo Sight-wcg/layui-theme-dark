@@ -388,7 +388,7 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 1px 6px rgba(0,0,0,.12)
 .layui-dropdown .layui-panel{background-color: #373739}
 .layui-dropdown.layui-panel .layui-menu{background-color: #373739}
 /** 导航菜单 **/
-.layui-nav{background-color:#393d49;color: #FAFAFA}
+.layui-nav{background-color:#2F363C;color: #FAFAFA}
 .layui-nav .layui-nav-item a{color: rgba(255,255,255,.9);}
 .layui-nav .layui-this:after{background-color:#16B777}
 .layui-nav-bar{background-color:#16B777}

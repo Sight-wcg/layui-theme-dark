@@ -2,24 +2,28 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
   <title>layui-theme-dark</title>
+  <script>
+    var VERSION='2.8.2';
+    var ENV='pord';
+  </script>
   <script src="./docs/lib/dom-inspector.iife.js"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script> -->
-  <link rel="stylesheet" href="https://unpkg.com/layui@2.8.2/dist/css/layui.css">
-  <link id="layui_theme_css" href="./dist/layui-theme-dark-legacy.css" rel="stylesheet">
-
-  <!-- dev -->
-  <!-- <link rel="stylesheet" href="./src/css-variables.css">
-  <link rel="stylesheet" href="./src/theme.css"> -->
   <style>
     /* 移动端 */
     @media screen and (max-width: 768px) {
+
       .layui-layout-admin .layui-layout-left,
       .layui-layout-admin .layui-body,
-      .layui-layout-admin .layui-footer{left: 0;}
-      .layui-layout-admin .layui-side{left: -300px;}
+      .layui-layout-admin .layui-footer {
+        left: 0;
+      }
+
+      .layui-layout-admin .layui-side {
+        left: -300px;
+      }
+
       .site-mobile-shade {
         content: '';
         position: fixed;
@@ -27,7 +31,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: rgba(0,0,0,.8);
+        background-color: rgba(0, 0, 0, 0.8);
         z-index: 9999;
       }
     }
@@ -45,24 +49,22 @@
         <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
           <i class="layui-icon layui-icon-spread-left"></i>
         </li>
-        <li class="layui-nav-item"><span id="layuiv" style="margin-left: 10px; font-size: 10px;"></span></li>
+        <li class="layui-nav-item"><span id="layuiv" style="margin-left: 10px; font-size: 10px"></span></li>
       </ul>
       <ul class="layui-nav layui-layout-right">
         <li class="layui-nav-item">
-          <label style="display: flex;">
-            <input type="checkbox" name="domInspector">
+          <label style="display: flex">
+            <input type="checkbox" name="domInspector" />
             &nbsp;&nbsp;dom-inspector&nbsp;&nbsp;
           </label>
         </li>
         <li class="layui-nav-item">
-          <label style="display: flex;">
-            <input type="checkbox" name="dark" checked>
-            &nbsp;&nbsp;dark&nbsp;&nbsp;
-          </label>
+          <i id="toggle-theme" class="layui-icon layui-icon-moon"
+            style="display:block;font-size: 20px;padding:0 10px"></i>
         </li>
         <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
-          <a href="https://github.com/Sight-wcg/layui-theme-dark" target="_blank">
-            <i class="layui-icon layui-icon-github" style="font-size: 20px;"></i>
+          <a href="https://github.com/Sight-wcg/layui-theme-dark" target="_blank" style="padding:0 10px">
+            <i class="layui-icon layui-icon-github" style="font-size: 20px"></i>
           </a>
         </li>
       </ul>
@@ -71,7 +73,7 @@
     <div class="layui-side layui-bg-black">
       <div class="layui-side-scroll">
         <!-- 左侧导航区域 -->
-        <ul class="layui-nav layui-nav-tree" lay-shrink="all"  lay-unselect lay-filter="nav-side">
+        <ul class="layui-nav layui-nav-tree" lay-shrink="all" lay-unselect lay-filter="nav-side">
           <li class="layui-nav-item layui-nav-itemed">
             <a class="" href="javascript:;">基本元素</a>
             <dl class="layui-nav-child">
@@ -116,97 +118,153 @@
 
     <div class="layui-body">
       <!-- 内容主体区域 -->
-      <div id="body-container" style="padding: 15px;">内容主体区域。记得修改 layui.css 和 js 的路径</div>
+      <div id="body-container" style="padding: 15px">内容主体区域。记得修改 layui.css 和 js 的路径</div>
     </div>
 
     <!-- <div class="layui-footer">
       底部固定区域
     </div> -->
   </div>
-  <script src="https://unpkg.com/layui@2.8.2/dist/layui.js"></script>
   <script>
-    layui.config({
-        base: './docs/lib/'
-      }).extend({ 
-        drawer: 'drawer/drawer'
-    });
-    layui.use(['element','layer','util', 'drawer'],function() {
-      var element=layui.element;
-      var form = layui.form;
-      var layer=layui.layer;
-      var util=layui.util;
-      var drawer = layui.drawer;
-      var $=layui.$;
-
-      renderView('#body-container','view/button');
-
-      util.event('lay-header-event',{
-        menuLeft: function(){
-          var side = $('.layui-layout-admin .layui-side')
-          side.animate({left:side.css('left') === '0px'? '-300px' : '0px'})
-        }
+    var layuicss="https://unpkg.com/layui@"+VERSION+"/dist/css/layui.css";
+    var layuijs="https://unpkg.com/layui@"+VERSION+"/dist/layui.js";
+    var CSS={
+      dev: [
+        {href: layuicss},
+        {href: "./src/css-variables.css"},
+        {href: "./src/theme.css"}
+      ],
+      pord: [
+        {href: layuicss},
+        {id: "layui_theme_css",href: "./dist/layui-theme-dark-legacy.css"}
+      ]
+    };
+    for(var i=0;i<CSS[ENV].length;i++) {
+      var css=CSS[ENV][i];
+      addLink({
+        id: css.id||"",
+        href: css.href
       });
-
-      element.on('nav(nav-side)',function(elem) {
-        var path = elem.data('path');
-        if(path){
-          renderView( '#body-container',path);
-          if($(window).width() <= 768){
-            $('.layui-layout-admin .layui-side').animate({left: '-300px'})
-          }
-        }
-      });
-
-      $(window).resize(function() {
-        if($(window).width() > 768){
-          $('.layui-layout-admin .layui-side').animate({left: '0px'})
-        }
-      })
-
-      $('#layuiv').text(layui.v)
-
-      $('input[name=domInspector]').on('click', function(){
-        if($(this).prop('checked')){
-          $('#domInspector').attr('enable', '')
-        }else{
-          $('#domInspector').removeAttr('enable')
-        }
-      })
-
-      $('input[name=dark]').on('click', function(){
-        if($(this).prop('checked')) {
-          $('#layui_theme_css').prop('href','./dist/layui-theme-dark.css')
-        }else{
-          $('#layui_theme_css').prop('href','')
-        }
-      })
-
-      function renderView(elem, path, prefix, suffix){
-        var containerDom=$(elem)
-        if(!prefix) prefix = './docs/';
-        if(!suffix) suffix = '.html';
-        $.ajax({
-          url: prefix + path + suffix,
-          dataType: "html",
-          success: function(res) {
-            containerDom.html(res);
-            element.render();
-            form.render();
-          }
+    }
+    loadScript(layuijs,function() {
+      layui
+        .config({
+          base: './docs/lib/',
         })
-      }
+        .extend({
+          drawer: 'drawer/drawer',
+        });
+      layui.use(['element','layer','util'],function() {
+        var element=layui.element;
+        var form=layui.form;
+        var layer=layui.layer;
+        var util=layui.util;
+        var $=layui.$;
 
+        renderView('#body-container','view/button');
 
-      function addStyle(id, cssStr){
-        var el = document.getElementById(id) || document.createElement('style')
-        if(!el.isConnected) {
-          el.type='text/css';
-          el.id=id;
-          document.head.appendChild(el);
+        util.event('lay-header-event',{
+          menuLeft: function() {
+            var side=$('.layui-layout-admin .layui-side');
+            side.animate({left: side.css('left')==='0px'? '-300px':'0px'});
+          },
+        });
+
+        element.on('nav(nav-side)',function(elem) {
+          var path=elem.data('path');
+          if(path) {
+            renderView('#body-container',path);
+            if($(window).width()<=768) {
+              $('.layui-layout-admin .layui-side').animate({left: '-300px'});
+            }
+          }
+        });
+
+        $(window).resize(function() {
+          if($(window).width()>768) {
+            $('.layui-layout-admin .layui-side').animate({left: '0px'});
+          }
+        });
+
+        $('#layuiv').text(layui.v);
+
+        $('input[name=domInspector]').on('click',function() {
+          if($(this).prop('checked')) {
+            $('#domInspector').attr('enable','');
+          } else {
+            $('#domInspector').removeAttr('enable');
+          }
+        });
+
+        $('#toggle-theme').on('click',function() {
+          var othis=$(this);
+          var css=$('#layui_theme_css');
+          var lightIcon="layui-icon-light";
+          var darkIcon="layui-icon-moon";
+
+          if(othis.hasClass(darkIcon)) {
+            othis.removeClass(darkIcon).addClass(lightIcon);
+            css.prop("href","");
+          } else {
+            othis.removeClass(lightIcon).addClass(darkIcon);
+            css.prop('href','./dist/layui-theme-dark.css');
+          }
+        });
+
+        function renderView(elem,path,prefix,suffix) {
+          var containerDom=$(elem);
+          if(!prefix) prefix='./docs/';
+          if(!suffix) suffix='.html';
+          $.ajax({
+            url: prefix+path+suffix,
+            dataType: 'html',
+            success: function(res) {
+              containerDom.html(res);
+              element.render();
+              form.render();
+            },
+          });
         }
-        el.textContent = cssStr;
-      }
+      });
     });
+
+    function addStyle(id,cssStr) {
+      var el=document.getElementById(id)||document.createElement('style');
+      if(!el.isConnected) {
+        el.type='text/css';
+        el.id=id;
+        document.head.appendChild(el);
+      }
+      el.textContent=cssStr;
+    }
+
+    function addLink(opt) {
+      var link=document.createElement('link');
+      link.id=opt.id;
+      link.rel='stylesheet';
+      link.href=opt.href;
+      document.head.appendChild(link);
+    }
+
+    function loadScript(url,callback) {
+      var script=document.createElement('script');
+      script.type='text/javascript';
+      script.async='async';
+      script.src=url;
+      document.body.appendChild(script);
+      if(script.readyState) {
+        script.onreadystatechange=function() {
+          if(script.readyState=='complete'||script.readyState=='loaded') {
+            script.onreadystatechange=null;
+            callback&&callback();
+          }
+        };
+      } else {
+        script.onload=function() {
+          callback&&callback();
+        };
+      }
+    }
   </script>
 </body>
 

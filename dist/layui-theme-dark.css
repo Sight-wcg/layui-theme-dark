@@ -335,50 +335,51 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-select-disabled .layui-edge{border-top-color:var(--lay-color-gray-6)}
 /* 复选框 */
 .layui-form-checkbox{background-color:var(--lay-color-fill-2)}
-.layui-form-checkbox span{background-color:var(--lay-color-fill-3);color:var(--lay-color-text-2)}
-.layui-form-checkbox:hover span{background-color: var(--lay-color-active)}
-.layui-form-checkbox i{background-color: var(--lay-color-fill-1);border-top-color:var(--lay-color-border-1);border-right-color:var(--lay-color-border-1);border-bottom-color:var(--lay-color-border-1);border-left-color:initial;color:var(--lay-color-text-1)}
-.layui-form-checkbox:hover i{border-color:var(--lay-color-border-2);color:var(--lay-color-text-4)}
+.layui-form-checkbox > div{background-color:var(--lay-color-fill-3);color:var(--lay-color-text-2)}
+.layui-form-checkbox:hover  >div{background-color: var(--lay-color-active)}
+.layui-form-checkbox > i{background-color: var(--lay-color-fill-1);border-top-color:var(--lay-color-border-1);border-right-color:var(--lay-color-border-1);border-bottom-color:var(--lay-color-border-1);border-left-color:initial;color:var(--lay-color-text-1)}
+.layui-form-checkbox:hover > i{border-color:var(--lay-color-border-2);color:var(--lay-color-text-4)}
 .layui-form-checked,.layui-form-checked:hover{border-color:var(--lay-color-secondary-active)}
-.layui-form-checked span,.layui-form-checked:hover span{background-color:var(--lay-color-secondary)}
-.layui-form-checked i,.layui-form-checked:hover i{color:var(--lay-color-secondary-hover)}
+.layui-form-checked > div,.layui-form-checked:hover > div{background-color:var(--lay-color-secondary)}
+.layui-form-checked > i,.layui-form-checked:hover > i{color:var(--lay-color-secondary-hover)}
+.layui-form-checkbox.layui-checkbox-disabled > div{background-color: var(--lay-color-fill-3) !important;}
 /* 复选框-默认风格 */
 .layui-form-checkbox[lay-skin=primary]{background-image:none;background-color:initial;border-color:initial!important}
-.layui-form-checkbox[lay-skin=primary] span{background-image:none;background-color:initial;color:var(--lay-color-text-2)}
-.layui-form-checkbox[lay-skin=primary] i{border-color:var(--lay-color-border-1);background-color:var(--lay-color-fill-2)}
-.layui-form-checkbox[lay-skin=primary]:hover i{border-color:var(--lay-color-secondary-hover);color:var(--lay-color-text-1)}
-.layui-form-checked[lay-skin=primary] i{background-color:var(--lay-color-secondary);color:var(--lay-color-text-1);border-color:var(--lay-color-secondary-active)!important}
-.layui-checkbox-disabled[lay-skin=primary] span{background-image:none!important;background-color:initial!important;color:var(--lay-color-text-4)!important}
-.layui-form-checked.layui-checkbox-disabled[lay-skin=primary] i{background-image:initial!important;background-color:var(--lay-color-fill-1)!important;border-color:var(--lay-color-border-2)!important}
-.layui-checkbox-disabled[lay-skin=primary]:hover i{border-color:var(--lay-color-border-1)}
-.layui-form-checkbox[lay-skin="primary"] .layui-icon-indeterminate:before{background-color: var(--lay-color-secondary-hover);opacity: 1;}
-.layui-form-checkbox[lay-skin="primary"]:hover .layui-icon-indeterminate:before{opacity: 1;}
-.layui-form-checkbox[lay-skin="primary"] .layui-icon-indeterminate{border-color: var(--lay-color-secondary-hover);}
+.layui-form-checkbox[lay-skin=primary] > div{background-image:none;background-color:initial;color:var(--lay-color-text-2)}
+.layui-form-checkbox[lay-skin=primary] > i{border-color:var(--lay-color-border-1);background-color:var(--lay-color-fill-2)}
+.layui-form-checkbox[lay-skin=primary]:hover > i{border-color:var(--lay-color-secondary-hover);color:var(--lay-color-text-1)}
+.layui-form-checked[lay-skin=primary] > i{background-color:var(--lay-color-secondary);color:var(--lay-color-text-1);border-color:var(--lay-color-secondary-active)!important}
+.layui-checkbox-disabled[lay-skin=primary]  > div{background:none!important;color:var(--lay-color-text-4)!important}
+.layui-form-checked.layui-checkbox-disabled[lay-skin=primary] > i{background-color:var(--lay-color-fill-1)!important;border-color:var(--lay-color-border-2)!important}
+.layui-checkbox-disabled[lay-skin=primary]:hover > i{border-color:var(--lay-color-border-1)}
+.layui-form-checkbox[lay-skin="primary"] > .layui-icon-indeterminate:before{background-color: var(--lay-color-secondary-hover);opacity: 1;}
+.layui-form-checkbox[lay-skin="primary"]:hover > .layui-icon-indeterminate:before{opacity: 1;}
+.layui-form-checkbox[lay-skin="primary"] > .layui-icon-indeterminate{border-color: var(--lay-color-secondary-hover);}
 /* 复选框-开关风格 */
 .layui-form-switch{border-color:var(--lay-color-border-2);background-color:var(--lay-color-fill-2)}
-.layui-form-switch i{background-color:var(--lay-color-gray-4)}
-.layui-form-switch.layui-checkbox-disabled i{background-color:var(--lay-color-gray-4)}
-.layui-form-switch em{color:var(--lay-color-gray-8)!important}
+.layui-form-switch > i{background-color:var(--lay-color-gray-4)}
+.layui-form-switch.layui-checkbox-disabled > i{background-color:var(--lay-color-gray-4)}
+.layui-form-switch > div{color:var(--lay-color-gray-8)!important}
 .layui-form-onswitch{border-color:var(--lay-color-secondary-active);background-color:var(--lay-color-secondary)}
-.layui-form-onswitch i{background-color:var(--lay-color-gray-4)}
-.layui-form-onswitch em{color:var(--lay-color-text-1)!important}
+.layui-form-onswitch > i{background-color:var(--lay-color-gray-4)}
+.layui-form-onswitch > div{color:var(--lay-color-text-1)!important}
 .layui-checkbox-disabled{border-color:var(--lay-color-border-2)!important}
-.layui-checkbox-disabled span{background-color:var(--lay-color-fill-3)!important;color: var(--lay-color-text-4);}
-.layui-checkbox-disabled i{border-color:var(--lay-color-border-2)!important}
-.layui-checkbox-disabled em{color:var(--lay-color-text-4)!important}
-.layui-checkbox-disabled:hover i{color:var(--lay-color-text-1)!important}
+.layui-checkbox-disabled > div{background-color:var(--lay-color-fill-3)!important;color: var(--lay-color-text-4)!important;}
+.layui-checkbox-disabled > i{border-color:var(--lay-color-border-2)!important}
+.layui-checkbox-disabled:hover > i{color:var(--lay-color-text-1)!important}
+.layui-form-switch.layui-checkbox-disabled > div{background-color:initial!important;}
 /*复选框背景优化*/
-.layui-form-checkbox i:before{opacity:0;filter:alpha(opacity=0)}
-.layui-form-checkbox:hover i:before{opacity:1;filter:alpha(opacity=100)}
-.layui-form-checked.layui-checkbox-disabled:hover i:before,.layui-form-checked:hover i:before,.layui-form-checked i:before{opacity:1;filter:alpha(opacity=100)}
-.layui-form-checkbox[lay-skin=primary]:hover i:before{opacity:0;filter:alpha(opacity=0)}
-.layui-form-checked[lay-skin=primary]:hover i:before{opacity:1;filter:alpha(opacity=100)}
-.layui-checkbox-disabled:hover i:before{opacity:0;filter:alpha(opacity=0)}
+.layui-form-checkbox > i:before{opacity:0;filter:alpha(opacity=0)}
+.layui-form-checkbox:hover > i:before{opacity:1;filter:alpha(opacity=100)}
+.layui-form-checked.layui-checkbox-disabled:hover > i:before,.layui-form-checked:hover > i:before,.layui-form-checked > i:before{opacity:1;filter:alpha(opacity=100)}
+.layui-form-checkbox[lay-skin=primary]:hover > i:before{opacity:0;filter:alpha(opacity=0)}
+.layui-form-checked[lay-skin=primary]:hover > i:before{opacity:1;filter:alpha(opacity=100)}
+.layui-checkbox-disabled:hover > i:before{opacity:0;filter:alpha(opacity=0)}
 /*单选框*/
-.layui-form-radio>i{color:var(--lay-color-gray-8)}
-.layui-form-radio:hover *,.layui-form-radioed,.layui-form-radioed>i{color:var(--lay-color-secondary)}
-.layui-radio-disabled>i{color:var(--lay-color-text-4)!important}
-.layui-radio-disabled *{color:var(--lay-color-text-4)!important}
+.layui-form-radio > i{color:var(--lay-color-gray-8)}
+.layui-form-radio:hover > *,.layui-form-radioed,.layui-form-radioed > i{color:var(--lay-color-secondary)}
+.layui-radio-disabled > i{color:var(--lay-color-text-4)!important}
+.layui-radio-disabled > *{color:var(--lay-color-text-4)!important}
 /* 表单方框风格 */
 .layui-form-pane .layui-form-label{background-color:var(--lay-color-bg-2)}
 /** 分页 **/

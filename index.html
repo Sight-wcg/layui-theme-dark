@@ -7,8 +7,6 @@
   <title>layui-theme-dark</title>
   <script>
     var VERSION='2.8.3';
-    var ENV='pord';
-    //  var ENV='dev';
   </script>
   <script src="./docs/lib/dom-inspector.iife.js"></script>
   <style>
@@ -159,24 +157,8 @@
     // var layuijs="https://unpkg.com/layui@"+VERSION+"/dist/layui.js";
     var layuicss="https://cdn.jsdelivr.net/gh/layui/layui@"+ VERSION +"/dist/css/layui.css";
     var layuijs="https://cdn.jsdelivr.net/gh/layui/layui@"+VERSION+"/dist/layui.js";
-    var CSS={
-      dev: [
-        {href: layuicss},
-        {href: "./src/css-variables.css"},
-        {href: "./src/theme.css"}
-      ],
-      pord: [
-        {href: layuicss},
-        {id: "layui_theme_css",href: ""}
-      ]
-    };
-    for(var i=0;i<CSS[ENV].length;i++) {
-      var css=CSS[ENV][i];
-      addLink({
-        id: css.id||"",
-        href: css.href
-      });
-    }
+    addLink({href: layuicss});
+    addLink({id:"layui_theme_css" , href: ""});
     loadScript(layuijs,function() {
       layui
         .config({

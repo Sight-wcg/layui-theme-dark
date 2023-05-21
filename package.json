@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "npx http-server",
+    "dev": "gulp watch",
     "genCssVar": "node ./script/gen-css-var.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,6 +30,7 @@
     "cssgrace": "^3.0.0",
     "postcss-nested": "^6.0.1",
     "postcss-css-variables": "^0.18.0",
-    "@arco-design/color": "^0.4.0"
+    "@arco-design/color": "^0.4.0",
+    "http-server": "^14.1.1"
   }
 }

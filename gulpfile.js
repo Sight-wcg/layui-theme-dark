@@ -6,9 +6,10 @@ import replace  from 'gulp-replace';
 import * as cssgrace from 'cssgrace';
 import cssnested from 'postcss-nested';
 import cssvar from 'postcss-css-variables';
+import { exec, spawn, execSync } from 'child_process';
 
 
-const {parallel, series, src, dest} = gulp;
+const {src, dest} = gulp;
 
 export function build(){
   const fileName = 'layui-theme-dark';
@@ -19,6 +20,10 @@ export function build(){
     .pipe(postcss([/*ie8RgbaHack(),*/ cssvar({ preserve: false, preserveInjectedVariables: false }), cssgrace]))
     .pipe(rename({ basename: `${fileName}-legacy` }))
     .pipe(dest('./dist'));
+}
+
+export function watch(){
+  gulp.watch('src/*.css', gulp.series(['build']));
 }
 
 // IE8

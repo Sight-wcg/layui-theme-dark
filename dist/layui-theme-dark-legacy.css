@@ -209,7 +209,7 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-form-select dl dd.layui-disabled{background-color: #373739}
 .layui-form-select dl dd:hover.layui-disabled{background-color: #373739}
 .layui-select-none{color:#18293C}
-.layui-select-disabled .layui-disabled{border-color:#EEEEEE!important}
+.layui-select-disabled .layui-disabled{border-color:#484849!important}
 .layui-select-disabled .layui-edge{border-top-color:#D2D2D2}
 /* 复选框 */
 .layui-form-checkbox{background-color:rgba(255,255,255,.08);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14ffffff', endColorstr='#14ffffff')}
@@ -218,8 +218,8 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-form-checkbox > div{background-color:rgba(255,255,255,.12);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1effffff', endColorstr='#1effffff');color:rgba(255,255,255,.7)}
 :root .layui-form-checkbox > div{filter: none\9
 }
-.layui-form-checkbox:hover  >div{background-color: rgba(255,255,255,.12);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1effffff', endColorstr='#1effffff')}
-:root .layui-form-checkbox:hover  >div{filter: none\9
+.layui-form-checkbox:hover  > div{background-color: rgba(255,255,255,.12);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1effffff', endColorstr='#1effffff')}
+:root .layui-form-checkbox:hover  > div{filter: none\9
 }
 .layui-form-checkbox > i{background-color: rgba(255,255,255,.04);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0affffff', endColorstr='#0affffff');border-top-color:#2e2e30;border-right-color:#2e2e30;border-bottom-color:#2e2e30;border-left-color:initial;color:rgba(255,255,255,.9)}
 :root .layui-form-checkbox > i{filter: none\9
@@ -737,3 +737,28 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-layer-tab .layui-layer-title span:first-child{border-left: none !important;}
 .layui-slider-input.layui-input {background-color: #232324;}
 .layui-slider-input .layui-input {background-color: #232324;}
+
+/* 部分效果对齐 layui.dev */
+a {
+  color: rgba(255,255,255,.9)
+}
+
+.layui-code {
+  background-color: #232324
+}
+
+pre>code {
+  background-color: #232324
+}
+
+.layui-code-full {
+  background-color: #17171A
+}
+
+.layui-btn-primary {
+  border-color: transparent !important
+}
+
+.layui-border-black {
+  color: rgba(255,255,255,.9) !important
+}

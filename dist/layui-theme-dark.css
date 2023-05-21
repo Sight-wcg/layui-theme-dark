@@ -331,12 +331,12 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-form-select dl dd.layui-this{background-color: var(--lay-color-active);color: var(--lay-color-text-1)}
 .layui-form-select dl dd.layui-disabled,.layui-form-select dl dd:hover.layui-disabled{background-color: var(--lay-color-bg-5)}
 .layui-select-none{color:var(--lay-color-black-8)}
-.layui-select-disabled .layui-disabled{border-color:var(--lay-color-gray-3)!important}
+.layui-select-disabled .layui-disabled{border-color:var(--lay-color-border-2)!important}
 .layui-select-disabled .layui-edge{border-top-color:var(--lay-color-gray-6)}
 /* 复选框 */
 .layui-form-checkbox{background-color:var(--lay-color-fill-2)}
 .layui-form-checkbox > div{background-color:var(--lay-color-fill-3);color:var(--lay-color-text-2)}
-.layui-form-checkbox:hover  >div{background-color: var(--lay-color-active)}
+.layui-form-checkbox:hover  > div{background-color: var(--lay-color-active)}
 .layui-form-checkbox > i{background-color: var(--lay-color-fill-1);border-top-color:var(--lay-color-border-1);border-right-color:var(--lay-color-border-1);border-bottom-color:var(--lay-color-border-1);border-left-color:initial;color:var(--lay-color-text-1)}
 .layui-form-checkbox:hover > i{border-color:var(--lay-color-border-2);color:var(--lay-color-text-4)}
 .layui-form-checked,.layui-form-checked:hover{border-color:var(--lay-color-secondary-active)}
@@ -702,3 +702,25 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-layer-tab .layui-layer-title span:first-child{border-left: none !important;}
 .layui-slider-input.layui-input,
 .layui-slider-input .layui-input {background-color: var(--lay-color-bg-2);}
+
+/* 部分效果对齐 layui.dev */
+a {
+  color: var(--lay-color-text-1)
+}
+
+.layui-code,
+pre>code {
+  background-color: var(--lay-color-bg-2)
+}
+
+.layui-code-full {
+  background-color: var(--lay-color-bg-1)
+}
+
+.layui-btn-primary {
+  border-color: transparent !important
+}
+
+.layui-border-black {
+  color: var(--lay-color-text-1) !important
+}

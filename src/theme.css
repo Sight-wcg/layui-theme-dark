@@ -105,7 +105,7 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-form-select dl dd.layui-this{background-color: var(--lay-color-active);color: var(--lay-color-text-1)}
 .layui-form-select dl dd.layui-disabled,.layui-form-select dl dd:hover.layui-disabled{background-color: var(--lay-color-bg-5)}
 .layui-select-none{color:var(--lay-color-black-8)}
-.layui-select-disabled .layui-disabled{border-color:var(--lay-color-gray-3)!important}
+.layui-select-disabled .layui-disabled{border-color:var(--lay-color-border-2)!important}
 .layui-select-disabled .layui-edge{border-top-color:var(--lay-color-gray-6)}
 /* 复选框 */
 .layui-form-checkbox{background-color:var(--lay-color-fill-2)}

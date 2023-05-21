@@ -476,3 +476,25 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-layer-tab .layui-layer-title span:first-child{border-left: none !important;}
 .layui-slider-input.layui-input,
 .layui-slider-input .layui-input {background-color: var(--lay-color-bg-2);}
+
+/* 部分效果对齐 layui.dev */
+a {
+  color: var(--lay-color-text-1)
+}
+
+.layui-code,
+pre>code {
+  background-color: var(--lay-color-bg-2)
+}
+
+.layui-code-full {
+  background-color: var(--lay-color-bg-1)
+}
+
+.layui-btn-primary {
+  border-color: transparent !important
+}
+
+.layui-border-black {
+  color: var(--lay-color-text-1) !important
+}

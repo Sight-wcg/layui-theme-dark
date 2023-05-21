@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark">
+<html>
 
 <head>
   <meta charset="utf-8" />
@@ -35,6 +35,10 @@
         background-color: rgba(0, 0, 0, 0.8);
         z-index: 9999;
       }
+    }
+
+    .layui-layout-right .layui-nav-bar{
+      background-color: unset !important;
     }
   </style>
   <style>
@@ -77,17 +81,18 @@
       </ul>
       <ul class="layui-nav layui-layout-right">
         <li class="layui-nav-item">
-          <label style="display: flex">
-            <input type="checkbox" name="domInspector" />
-            &nbsp;&nbsp;dom-inspector&nbsp;&nbsp;
-          </label>
-        </li>
-        <li class="layui-nav-item">
-          <i id="toggle-theme" class="layui-icon layui-icon-moon"
-            style="display:block;font-size: 20px;padding:0 10px"></i>
+          <div class="layui-form">
+            <div class="layui-form-item">
+              <input type="checkbox" name="theme" value="dark" lay-skin="switch" lay-filter="toggle-theme">
+              <div lay-checkbox>
+                <i class="layui-icon layui-icon-moon"></i> |
+                <i class="layui-icon layui-icon-light"></i>
+              </div>
+            </div>
+          </div>
         </li>
         <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
-          <a href="https://github.com/Sight-wcg/layui-theme-dark" target="_blank" style="padding:0 10px">
+          <a href="https://github.com/Sight-wcg/layui-theme-dark" target="_blank" style="background-color: unset;">
             <i class="layui-icon layui-icon-github" style="font-size: 20px"></i>
           </a>
         </li>
@@ -97,8 +102,8 @@
     <div class="layui-side layui-bg-black">
       <div class="layui-side-scroll">
         <!-- 左侧导航区域 -->
-        <ul class="layui-nav layui-nav-tree" lay-shrink="all" lay-unselect lay-filter="nav-side">
-          <li class="layui-nav-item layui-nav-itemed">
+        <ul class="layui-nav layui-nav-tree" lay-shrink="all" lay-unselect lay-filter="nav-side" id="ws-nav-side">
+          <li class="layui-nav-item">
             <a class="" href="javascript:;">基本元素</a>
             <dl class="layui-nav-child">
               <dd><a data-path="view/button" href="javascript:;">按钮</a></dd>
@@ -162,7 +167,7 @@
       ],
       pord: [
         {href: layuicss},
-        {id: "layui_theme_css",href: "./dist/layui-theme-dark-legacy.css"}
+        {id: "layui_theme_css",href: ""}
       ]
     };
     for(var i=0;i<CSS[ENV].length;i++) {
@@ -187,7 +192,18 @@
         var util=layui.util;
         var $=layui.$;
 
-        renderView('#body-container','view/button');
+        var APPERANCE_KEY = 'layui-theme-demo-prefer-dark'
+        var savedPreferDark=localStorage.getItem(APPERANCE_KEY)
+        if(
+          savedPreferDark==='true'||
+          (!savedPreferDark&&window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+          document.documentElement.classList.add('dark')
+          $('#layui_theme_css').prop("href", './dist/layui-theme-dark.css');
+          $('[lay-filter="toggle-theme"]').prop('checked',true)
+        }
+
+        renderView('#body-container', location.hash.slice(1));
 
         util.event('lay-header-event',{
           menuLeft: function() {
@@ -205,88 +221,69 @@
             }
           }
         });
+        
+        form.on('switch(toggle-theme)',function(data) {
+          toggleDark({appearanceTransition: true})
+        });
 
         $(window).resize(function() {
           if($(window).width()>768) {
             $('.layui-layout-admin .layui-side').animate({left: '0px'});
           }
         });
-
         $('#layuiv').text(layui.v);
 
-        $('input[name=domInspector]').on('click',function() {
-          if($(this).prop('checked')) {
-            $('#domInspector').attr('enable','');
-          } else {
-            $('#domInspector').removeAttr('enable');
-          }
-        });
-
-        $('#toggle-theme').on('click',function(e) {
-          var isDark=document.documentElement.classList.contains('dark');
-          var othis=$(this);
-          var css=$('#layui_theme_css');
-          var lightIcon="layui-icon-light";
-          var darkIcon="layui-icon-moon";
-          
-          // https://github.com/vuejs/vitepress/pull/2347
-          var isAppearanceTransition=document.startViewTransition&&!window.matchMedia(`(prefers-reduced-motion: reduce)`).matches
-          if(isAppearanceTransition) {
-            var x=event.clientX
-            var y=event.clientY
-            var endRadius=Math.hypot(
-              Math.max(x,innerWidth-x),
-              Math.max(y,innerHeight-y),
-            )
-
-            var transition=document.startViewTransition(() => {
-              if(isDark) {
-                othis.removeClass(darkIcon).addClass(lightIcon);
-                css.prop("href","");
-                document.documentElement.classList.remove('dark')
-              } else {
-                othis.removeClass(lightIcon).addClass(darkIcon);
-                css.prop('href','./dist/layui-theme-dark.css');
-                document.documentElement.classList.add('dark')
-              }
-              isDark=!isDark
-            })
-            transition.ready.then(() => {
-              const clipPath=[
-                `circle(0px at ${x}px ${y}px)`,
-                `circle(${endRadius}px at ${x}px ${y}px)`,
-              ]
-              console.log(isDark)
-              document.documentElement.animate(
-                {
-                  clipPath: isDark? clipPath:[...clipPath].reverse(),
-                },
-                {
-                  duration: 300,
-                  easing: 'ease-in',
-                  pseudoElement: isDark? '::view-transition-new(root)':'::view-transition-old(root)',
-                },
-              )
-            })
-          }else{
-            if(isDark) {
-              othis.removeClass(darkIcon).addClass(lightIcon);
-              css.prop("href","");
-              document.documentElement.classList.remove('dark')
-            } else {
-              othis.removeClass(lightIcon).addClass(darkIcon);
-              css.prop('href','./dist/layui-theme-dark.css');
-              document.documentElement.classList.add('dark')
-            }
-            isDark=!isDark
-          }
+        function toggleDark(opt){
+          var isAppearanceTransition=document.startViewTransition &&
+            !window.matchMedia(`(prefers-reduced-motion: reduce)`).matches &&
+            opt.appearanceTransition;
+          var isDark=false;
+          var themeLink=$('#layui_theme_css');
+          var cls=document.documentElement.classList;
          
-        });
+          if(!isAppearanceTransition){
+            cls.toggle('dark');
+            isDark = cls.contains('dark')
+            themeLink.prop("href",isDark? './dist/layui-theme-dark.css':'');
+            localStorage.setItem(APPERANCE_KEY,String(isDark))
+            return
+          }
+          //移植自 https://github.com/vuejs/vitepress/pull/2347，支持 chrome 111
+          var x=event.clientX
+          var y=event.clientY
+          var endRadius=Math.hypot(
+            Math.max(x,innerWidth-x),
+            Math.max(y,innerHeight-y),
+          )
+          var transition=document.startViewTransition(function(){
+            cls.toggle('dark');
+            isDark=cls.contains('dark')
+            themeLink.prop("href",isDark? './dist/layui-theme-dark.css':'');
+            localStorage.setItem(APPERANCE_KEY,String(isDark))
+          })
+          transition.ready.then(function(){
+            const clipPath=[
+              `circle(0px at ${x}px ${y}px)`,
+              `circle(${endRadius}px at ${x}px ${y}px)`,
+            ]
+            document.documentElement.animate(
+              {
+                clipPath: isDark? clipPath:[...clipPath].reverse(),
+              },
+              {
+                duration: 300,
+                easing: 'ease-in',
+                pseudoElement: isDark? '::view-transition-new(root)':'::view-transition-old(root)',
+              },
+            )
+          })
+          
+        }
 
         function renderView(elem,path,prefix,suffix) {
           var containerDom=$(elem);
-          if(!prefix) prefix='./docs/';
-          if(!suffix) suffix='.html';
+          prefix= prefix || './docs/';
+          suffix= suffix || '.html';
           $.ajax({
             url: prefix+path+suffix,
             dataType: 'html',
@@ -296,8 +293,16 @@
               form.render();
             },
           });
+          history.replaceState({},'','#'+path);
+          $('#ws-nav-side')
+            .find("[data-path='"+ path +"']")
+            .parent('dd')
+            .addClass('layui-this')
+            .closest('.layui-nav-item')
+            .addClass('layui-nav-itemed')
         }
       });
+
     });
 
     function addStyle(id,cssStr) {

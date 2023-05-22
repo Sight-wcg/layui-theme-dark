@@ -755,8 +755,8 @@ pre>code {
   background-color: #17171A
 }
 
-.layui-btn-primary {
-  border-color: transparent !important
+.layui-btn-primary:hover {
+  border-color: transparent
 }
 
 .layui-border-black {

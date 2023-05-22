@@ -717,8 +717,8 @@ pre>code {
   background-color: var(--lay-color-bg-1)
 }
 
-.layui-btn-primary {
-  border-color: transparent !important
+.layui-btn-primary:hover {
+  border-color: transparent
 }
 
 .layui-border-black {

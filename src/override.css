@@ -414,10 +414,6 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-layer-btn .layui-layer-btn0{border-color: var(--lay-color-normal);background-color: var(--lay-color-normal);color: var(--lay-color-text-1)}
 .layui-layer-dialog .layui-layer-content .layui-layer-face{color:var(--lay-color-gray-9)}
 .layui-layer-dialog .layui-layer-content .layui-icon-tips{color:var(--lay-color-warning)}
-/* 2.8.0-rc.15 移除 */
-/* .layui-layer-dialog .layui-layer-content .layui-icon-ok{color:var(--lay-color-success)}
-.layui-layer-dialog .layui-layer-content .layui-icon-close-fill{color:var(--lay-color-danger)}
-.layui-layer-dialog .layui-layer-content .layui-icon-password{color:var(--lay-color-gray-10)} */
 .layui-layer-dialog .layui-layer-content .layui-icon-success{color: var(--lay-color-success)}
 .layui-layer-dialog .layui-layer-content .layui-icon-error{top: 19px; color: var(--lay-color-danger)}
 .layui-layer-dialog .layui-layer-content .layui-icon-question{color: var(--lay-color-warning);}

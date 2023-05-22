@@ -44,14 +44,20 @@
 </style>
 <div style="padding: 20px;background-color: var(--ms-color-bg);">
   <div style="display: flex;justify-content: space-between;align-items: center;">
-    <div >
-      <label style="display: flex;" title="降低饱和度，提高亮度，看起来更舒适">
-        <input name="colorpicker" type="checkbox" style="height: 18px; width: 18px;">深色色板
+    <div style="display: flex;" >
+      <label style="display: flex; position: relative; top: 1px; margin-right: 10px;" title="降低饱和度，提高亮度，暗色下更舒适">
+        深色色板
+        <input name="colorpicker" type="checkbox" style="height: 20px; width: 20px;">
       </label>
+      <label title="类名/属性名例如 .dark,[theme-mode='dark']">
+        自定义主题类名/属性名
+        <input name="theme-prefix" type="input" style="height: 18px; width: 150px;">
+      </label>
+      <i id="theme-prefix-tips" class="layui-icon layui-icon-tips" style="position: relative; top: 3.5px;margin-left: 2px;"></i>
     </div>
-    <div>
-      <span title="重置"><i id="resetTheme" style="font-size: 25px;" class="layui-icon layui-icon-refresh"></i></span>
-      <span title="下载"><i id="downloadCSS" style="font-size: 25px;" class="layui-icon layui-icon-download-circle"></i></span>
+    <div style="display: flex;" >
+      <span title="重置"><i id="resetTheme" style="font-size: 23px;" class="layui-icon layui-icon-refresh"></i></span>
+      <span title="下载"><i id="downloadCSS" style="font-size: 23px;margin-left: 10px;" class="layui-icon layui-icon-download-circle"></i></span>
     </div>
   </div>
   <hr>
@@ -80,10 +86,41 @@
     </div>
   {{# }) }}
 </template>
-
+<template id="tpl-theme-prefix-example">
+<pre class="layui-code code-demo" lay-options="{}">
+/** .dark，通过改变 html 标签的类名切换主题*/
+:root{                     :root.dark{
+  --color-bg: #000;          --color-bg: #000
+}                     ==>  }
+.lay-card{                 .dark .lay-card{}
+  coloe: #FFF;               coloe: #FFF;
+}                          }
+/** js */
+// 设置为暗色主题
+document.documentElement.classList.add('dark')
+// 恢复亮色主题
+document.documentElement.classList.remove('dark')
+// 切换亮/暗主题
+document.documentElement.classList.toggle('dark')
+----------------------------------------------------------
+/** [theme-mode='dark']，通过改变 html 标签上 theme-mode 的属性切换主题*/
+:root{                     :root[theme-mode='dark']{
+  --color-bg: #000;          --color-bg: #000
+}                     ==>  }
+.lay-card{                 [theme-mode='dark'] .lay-card{}
+  coloe: #FFF;               coloe: #FFF;
+}                          }
+/** js */
+// 设置为暗色主题
+document.documentElement.setAttribute('theme-mode', 'dark') 
+// 恢复亮色主题
+document.documentElement.removeAttribute('theme-mode');
+</pre>
+</template>
+<script src="docs/lib/less.js"></script>
 <script>
   layui.use(async ()=> {
-    const {jquery:$,laytpl,colorpicker} = layui;
+    const {jquery:$,laytpl,colorpicker,layer} = layui;
     
     const originalData=await (await fetch('./docs/themes.json')).json()
     let customTheme = {};
@@ -106,6 +143,18 @@
     })
     $('#downloadCSS').on('click',function(){
        dropdownCSS()
+    })
+    $('#theme-prefix-tips').hover(function(){
+      layer.tips($('#tpl-theme-prefix-example').html(),this,{
+        tips: 3,
+        time: false,
+        area: ['700px','auto'],
+        success: function(){
+          layui.code({elem: '.code-demo'});
+        }
+      });
+    },function(){
+      layer.closeLast('tips');
     })
 
     function renderColorPicker(){
@@ -155,14 +204,25 @@
     }
 
     async function dropdownCSS(){
+      const hasPrefix = $('input[name="theme-prefix"]').val()
       const overrideCSS = await(await fetch('./src/override.css')).text()
-      const finalCSS = `${getCSS({...originalData.Default, ...customTheme})}\n${overrideCSS}`;
-      const alink=document.createElement("a");
-      alink.download='layui-theme-dark-custom.css';
+      const varsCSS = getCSS({...originalData.Default, ...customTheme})
+      let finalCSS=`
+${hasPrefix 
+  ? varsCSS.replace(':root',`:root${hasPrefix}`) 
+  : varsCSS}\n
+${hasPrefix 
+  ? `${hasPrefix}{${overrideCSS}}` 
+  : overrideCSS}`;
+
+      /** css-next 插件太大，暂时用 less */
+      finalCSS = (await window.less.render(finalCSS)).css
+      const alink=document.createElement("a")
+      alink.download='layui-theme-dark-custom.css'
       alink.href=URL.createObjectURL(new Blob([finalCSS]))
-      document.body.appendChild(alink);
-      alink.click();
-      document.body.removeChild(alink);
+      document.body.appendChild(alink)
+      alink.click()
+      document.body.removeChild(alink)
     }
 
     function addStyle(id,cssStr) {

@@ -2,39 +2,6 @@
    /* =====色板===== */
   /*常量,不随明暗主题变化*/
 
-  /* --lay-color-green-1: #E8FFF9;
-  --lay-color-green-2: #AAEADB;
-  --lay-color-green-3: #74D5C2;
-  --lay-color-green-4: #46C0AC;
-  --lay-color-green-5: #1FAB98;
-  --lay-color-green-6: #009688;
-  --lay-color-green-7: #00847B;
-  --lay-color-green-8: #00716D;
-  --lay-color-green-9: #005F5F;
-  --lay-color-green-10: #004A4D; */
-
-  /* --lay-color-lightgreen-1: #E8FFEB;
-  --lay-color-lightgreen-2: #C8F1CE;
-  --lay-color-lightgreen-3: #ABE3B5;
-  --lay-color-lightgreen-4: #8FD49E;
-  --lay-color-lightgreen-5: #76C68A;
-  --lay-color-lightgreen-6: #5FB878;
-  --lay-color-lightgreen-7: #3D9D5B;
-  --lay-color-lightgreen-8: #228243;
-  --lay-color-lightgreen-9: #0D6730;
-  --lay-color-lightgreen-10: #004D20; */
-
-  /* --lay-color-black-1: #E8F2FF;
-  --lay-color-black-2: #C1CBDB;
-  --lay-color-black-3: #9CA5B6;
-  --lay-color-black-4: #798192;
-  --lay-color-black-5: #585E6D;
-  --lay-color-black-6: #393D49;
-  --lay-color-black-7: #2B3149;
-  --lay-color-black-8: #1D2549;
-  --lay-color-black-9: #0E1749;
-  --lay-color-black-10: #000949; */
-
   /* =====语义===== */
   /* 主色 */
 
@@ -635,10 +602,6 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-layer-btn .layui-layer-btn0{border-color: #1E9FFF;background-color: #1E9FFF;color: rgba(255,255,255,.9)}
 .layui-layer-dialog .layui-layer-content .layui-layer-face{color:#AAAAAA}
 .layui-layer-dialog .layui-layer-content .layui-icon-tips{color:#FFB800}
-/* 2.8.0-rc.15 移除 */
-/* .layui-layer-dialog .layui-layer-content .layui-icon-ok{color:var(--lay-color-success)}
-.layui-layer-dialog .layui-layer-content .layui-icon-close-fill{color:var(--lay-color-danger)}
-.layui-layer-dialog .layui-layer-content .layui-icon-password{color:var(--lay-color-gray-10)} */
 .layui-layer-dialog .layui-layer-content .layui-icon-success{color: #16B777}
 .layui-layer-dialog .layui-layer-content .layui-icon-error{top: 19px; color: #FF5722}
 .layui-layer-dialog .layui-layer-content .layui-icon-question{color: #FFB800;}

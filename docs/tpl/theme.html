@@ -87,7 +87,7 @@
   {{# }) }}
 </template>
 <template id="tpl-theme-prefix-example">
-<pre class="layui-code code-demo" lay-options="{}">
+<pre class="layui-code code-demo" lay-options="{}" style="margin: 0; padding: 0;">
 /** .dark，通过改变 html 标签的类名切换主题*/
 :root{                     :root.dark{
   --color-bg: #000;          --color-bg: #000
@@ -149,8 +149,10 @@ document.documentElement.removeAttribute('theme-mode');
         tips: 3,
         time: false,
         area: ['700px','auto'],
-        success: function(){
+        success: function(layero){
           layui.code({elem: '.code-demo'});
+          layero.find('.layui-layer-content').css({padding:0,margin:0})
+          layero.css('top','50px') //阻止反转
         }
       });
     },function(){

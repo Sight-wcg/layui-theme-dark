@@ -1,161 +1,169 @@
-<!-- <style>
-  :root:root {
-    --lay-color-primary: #1890ff;
-    --lay-color-secondary: #1890ff;
-    --lay-color-warning: #faad14;
-    --lay-color-success: #52c41a;
-    --lay-color-danger: #f5222d;
+<style>
+  :root{
+   --ms-color-bg: #FFF;
+  }
+  :root.dark{
+   --ms-color-bg: #000;
+  }
+  .ms-color-palette{
+    font-size:0;
+  }
+  .ms-color-palette .ms-color-gradient:nth-child(10n){
+    margin-right: 20px;
+  }
+  .ms-color-palette .ms-color-gradient:nth-child(20n){
+   display: table-column;
+  }
+  .ms-color-gradient{
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height:20px;
+    margin-bottom: 15px;
+    margin-right: 5px;
+    transition-duration:0.1s;
+  }
+  .ms-color-gradient:hover{
+    transform:scale(1.5);
+    z-index: 999;
   }
 
-</style> -->
-<div class="layui-form" style="padding: 15px;" lay-filter="theme">
-  <div class="layui-form-item">
-    <label class="layui-form-label">主色</label>
-    <div class="layui-input-inline" style="width: 90px;">
-      <input class="layui-input" name="primary" id="color-primary" >
+  .ms-color-edit-picker>div{
+    border-color: transparent !important;
+  }
+  .ms-color-edit-picker i{
+    display: none;
+  }
+  .ms-color-edit-picker span{
+    border-color: #5f5f60;
+  }
+  .ms-color-edit-picker .layui-colorpicker-trigger-bgcolor{
+    display: inline;
+  }
+
+</style>
+<div style="padding: 20px;background-color: var(--ms-color-bg);">
+  <div style="display: flex;justify-content: space-between;align-items: center;">
+    <div >
+      <label style="display: flex;" title="降低饱和度，提高亮度，看起来更舒适">
+        <input name="colorpicker" type="checkbox" style="height: 18px; width: 18px;">深色色板
+      </label>
     </div>
-    <div id="cp-primary" style="left: -11px;"></div>
+    <div>
+      <span title="重置"><i id="resetTheme" style="font-size: 25px;" class="layui-icon layui-icon-refresh"></i></span>
+      <span title="下载"><i id="downloadCSS" style="font-size: 25px;" class="layui-icon layui-icon-download-circle"></i></span>
+    </div>
   </div>
-  <div class="layui-form-item">
-    <label class="layui-form-label">次色</label>
-    <div class="layui-input-inline" style="width: 90px;">
-      <input class="layui-input" name="secondary" id="color-secondary">
-    </div>
-    <div id="cp-secondary" style="left: -11px;"></div>
+  <hr>
+  <div class="ms-color-palette">
+    <!-- 色板 tpl 生成 -->
   </div>
-  <div class="layui-form-item">
-    <label class="layui-form-label">成功</label>
-    <div class="layui-input-inline" style="width: 90px;">
-      <input class="layui-input" name="success" id="color-success">
-    </div>
-    <div id="cp-success" style="left: -11px;"></div>
-  </div>
-  <div class="layui-form-item">
-    <label class="layui-form-label">警示</label>
-    <div class="layui-input-inline" style="width: 90px;">
-      <input class="layui-input" name="warning" id="color-warning">
-    </div>
-    <div id="cp-warning" style="left: -11px;"></div>
-  </div>
-  <div class="layui-form-item">
-    <label class="layui-form-label">错误</label>
-    <div class="layui-input-inline" style="width: 90px;">
-      <input class="layui-input" name="danger" id="color-danger">
-    </div>
-    <div id="cp-danger" style="left: -11px;"></div>
-  </div>
-  <div class="layui-form-item">
-    <label class="layui-form-label">背景色</label>
-    <div class="layui-input-inline" style="width: 90px;">
-      <input class="layui-input" name="bg" id="color-bg">
-    </div>
-    <div id="cp-bg" style="left: -11px;"></div>
+  <div class="ms-color-edit">
+    <!-- 编辑区 tpl 生成 -->
   </div>
 </div>
-<div class="layui-btn-container" style="padding-left:50px">
-  <button type="button" id="setcssvar" class="layui-btn layui-btn-primary layui-border-green" style="width:120px;border-style: dashed;" >加载样式</button>
-  <button type="button" id="removecssvar" class="layui-btn layui-btn-primary layui-border-red" style="width:120px;border-style: dashed;" >重置样式</button>
-</div>
+
+<template id="tpl-color-palette">
+  {{# layui.each(d.ColorPaletteLight, function(key, val){  }}
+    <div class="ms-color-gradient" style="background-color: var({{- key }});" title="{{- key.replace('--lay-color-','') }}"></div>
+  {{#  })  }}
+</template>
+
+<template id="tpl-color-editable">
+  {{# layui.each(d.editable, function(key, val){ }}
+    <div style="display: flex; align-items: center; height:30px">
+      <div>{{= key }}</div>
+      <div style="flex: 1 1 auto;"></div>
+      <input type="text" name="color" value="{{= val }}" placeholder=""
+        style="text-align: right;height:28px;width: 150px;background-color: transparent;border-color: transparent;">
+      <div class="ms-color-edit-picker" lay-options="{color: '{{= val }}', format: '{{- /^rgb/.test(val) ? 'rgb':'hex'  }}' }" data-key="{{= key}}"></div>
+    </div>
+  {{# }) }}
+</template>
+
 <script>
-  layui.use(function(){
-    var $ = layui.jquery;
-    var form = layui.form;
-    var colorpicker = layui.colorpicker;
-    form.render();
+  layui.use(async ()=> {
+    const {jquery:$,laytpl,colorpicker} = layui;
     
-    var themeInfo = layui.data('custom_theme');
-     
-    form.val("theme",{
-      primary: themeInfo.primary ||'#009688',
-      secondary: themeInfo.secondary || '#5FB878',
-      success: themeInfo.success ||'#5FB878',
-      warning: themeInfo.warning ||'#FFB800',
-      danger: themeInfo.danger ||'#FF7A4A',
-      bg: themeInfo.bg ||'#17171A',
+    const originalData=await (await fetch('./docs/themes.json')).json()
+    let customTheme = {};
+    
+    laytpl($('#tpl-color-palette').html()).render(originalData,function(str) {
+      $('.ms-color-palette').html(str);
+    });
+
+    laytpl($('#tpl-color-editable').html()).render(originalData,function(str) {
+      $('.ms-color-edit').html(str);
+      renderColorPicker();
+    });
+
+    $('input[name=colorpicker]').on('click',function(){
+      applyColorPalette(this.checked)
+    })
+    $('#resetTheme').on('click',function(){
+       resetTheme()
+       $('input[name=colorpicker]').prop('checked',false)
+    })
+    $('#downloadCSS').on('click',function(){
+       dropdownCSS()
     })
 
-    colorpicker.render({
-      elem: '#cp-primary'
-      ,color: themeInfo.primary || '#009688' //设置默认色
-      ,predefine: true
-      ,alpha: true  //开启透明度
-      ,format: 'hex'
-      ,change: function(color) {
-        $('#color-primary').val(color)
-      }
-    });
-    colorpicker.render({
-      elem: '#cp-secondary'
-      ,color: themeInfo.secondary || '#5FB878' //设置默认色
-      ,predefine: true
-      ,alpha: true  //开启透明度
-      ,format: 'hex'
-      ,change: function(color) {
-        $('#color-secondary').val(color)
-      }
-    });
-    colorpicker.render({
-      elem: '#cp-success'
-      ,color: themeInfo.success || '#5FB878' //设置默认色
-      ,predefine: true
-      ,alpha: true  //开启透明度
-      ,format: 'hex'
-      ,change: function(color) {
-        $('#color-success').val(color)
-      }
-    });
-    colorpicker.render({
-      elem: '#cp-warning'
-      ,color: themeInfo.warning || '#FFB800' //设置默认色
-      ,predefine: true
-      ,alpha: true  //开启透明度
-      ,format: 'hex'
-      ,change: function(color) {
-        $('#color-warning').val(color)
-      }
-    });
-    colorpicker.render({
-      elem: '#cp-danger'
-      ,color: themeInfo.danger || '#FF7A4A' //设置默认色
-      ,predefine: true
-      ,alpha: true  //开启透明度
-      ,format: 'hex'
-      ,change: function(color) {
-        $('#color-danger').val(color)
-      }
-    });
-    colorpicker.render({
-      elem: '#cp-bg'
-      ,color: themeInfo.bg || '#17171A' //设置默认色
-      ,predefine: true
-      ,alpha: true  //开启透明度
-      ,format: 'hex'
-      ,change: function(color) {
-        $('#color-bg').val(color)
-      }
-    });
-
-    $('#setcssvar').on('click',function(data) {
-      form.submit('theme',function(data) { 
-        var field=data.field;
-        var cssStr = ":root:root{";
-        $.each(field,function(key,val){
-          cssStr += "--lay-color-" + (key === "bg" ? "bg-1" : key) + ":" + val + ";";
-          if(val){
-            layui.data('custom_theme',{key: key,value: val});
-          }
-        })
-        cssStr += "}"
-
-        addStyle('custom_theme', cssStr);
+    function renderColorPicker(){
+      colorpicker.render({
+        elem: '.ms-color-edit-picker',
+        alpha: true,
+        change: function(color) {
+          const elem=this.elem
+          elem.prev().val(color)
+          applyTheme(elem.data('key'),color)
+        },
+        done: function(color) {
+          const elem=this.elem
+          elem.prev().val(color)
+          applyTheme(elem.data('key'),color)
+        },
+        close: function(color){
+          const elem=this.elem
+          elem.prev().val(color)
+          applyTheme(elem.data('key'),color)
+        }
       });
-      return false;
-    });
+    }
 
-    $('#removecssvar').on('click', function(){
-      layui.data('custom_theme',null);
-      window.location.reload();
-    })
+    function resetTheme() {
+      customTheme={}
+      addStyle('demo-customTheme',getCSS(customTheme))
+      renderColorPicker()
+    }
+
+    function applyTheme(key,val){
+      customTheme = {...customTheme,...{[key]:val} }
+      addStyle('demo-customTheme',getCSS(customTheme))
+    }
+
+    function applyColorPalette(isDark=false){
+      customTheme={...customTheme, ...originalData[isDark ? 'ColorPaletteDark' : 'ColorPaletteLight']}
+      addStyle('demo-customTheme',getCSS(customTheme))
+    }
+
+    function getCSS(cssVarsObj){
+      return `:root {\n ${
+        Object.entries(cssVarsObj)
+          .map(([key,val])=> `  ${key}: ${val};`)
+          .join('\n')
+      }\n}`
+    }
+
+    async function dropdownCSS(){
+      const overrideCSS = await(await fetch('./src/override.css')).text()
+      const finalCSS = `${getCSS({...originalData.Default, ...customTheme})}\n${overrideCSS}`;
+      const alink=document.createElement("a");
+      alink.download='layui-theme-dark-custom.css';
+      alink.href=URL.createObjectURL(new Blob([finalCSS]))
+      document.body.appendChild(alink);
+      alink.click();
+      document.body.removeChild(alink);
+    }
 
     function addStyle(id,cssStr) {
       var el=document.getElementById(id)||document.createElement('style')

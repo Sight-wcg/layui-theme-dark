@@ -84,9 +84,9 @@ layui.define(['jquery', 'layer'], function (exports) {
   }
 
   /**
-   * 规格化 layer.open 选项
+   * 规范化 layer.open 选项
    * @param {object} option layer.open 的选项
-   * @returns 规格化后的选项
+   * @returns 规范化后的选项
    */
   function normalizeOption(option) {
     option.type = option.iframe ? 2 : 1;

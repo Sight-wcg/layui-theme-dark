@@ -8,8 +8,19 @@
   <script>
     var VERSION='2.8.3';
   </script>
-  <script src="./docs/lib/dom-inspector.iife.js"></script>
   <style>
+    .aside-right {
+      position: fixed;
+      top: 60px;
+      width: 200px;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 999;
+      width: 200px;
+      overflow-x: hidden;
+    }
+
     /* 移动端 */
     @media screen and (max-width: 768px) {
 
@@ -35,7 +46,7 @@
       }
     }
 
-    .layui-layout-right .layui-nav-bar{
+    .layui-layout-right .layui-nav-bar {
       background-color: unset !important;
     }
   </style>
@@ -45,19 +56,19 @@
       animation: none;
       mix-blend-mode: normal;
     }
-  
+
     ::view-transition-old(root) {
       z-index: 9999;
     }
-  
+
     ::view-transition-new(root) {
       z-index: 1;
     }
-  
+
     .dark::view-transition-old(root) {
       z-index: 1;
     }
-  
+
     .dark::view-transition-new(root) {
       z-index: 9999;
     }
@@ -65,7 +76,6 @@
 </head>
 
 <body>
-  <wc-dom-inspector id="domInspector" includes="#body-container"></wc-dom-inspector>
   <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
       <div class="layui-logo layui-hide-xs layui-bg-black">dark demo</div>
@@ -89,14 +99,18 @@
             </div>
           </div>
         </li>
-        <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+        <li class="layui-nav-item" lay-unselect>
           <a href="https://github.com/Sight-wcg/layui-theme-dark" target="_blank" style="background-color: unset;">
             <i class="layui-icon layui-icon-github" style="font-size: 20px"></i>
           </a>
         </li>
+        <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+          <a href="javascript:;" style="background-color: unset;padding-left: 0;">
+           <i class="layui-icon layui-icon-more-vertical"></i>
+         </a>
+        </li>
       </ul>
     </div>
-
     <div class="layui-side layui-bg-black">
       <div class="layui-side-scroll">
         <!-- 左侧导航区域 -->
@@ -155,10 +169,10 @@
   <script>
     // var layuicss="https://unpkg.com/layui@"+VERSION+"/dist/css/layui.css";
     // var layuijs="https://unpkg.com/layui@"+VERSION+"/dist/layui.js";
-    var layuicss="https://cdn.jsdelivr.net/gh/layui/layui@"+ VERSION +"/dist/css/layui.css";
+    var layuicss="https://cdn.jsdelivr.net/gh/layui/layui@"+VERSION+"/dist/css/layui.css";
     var layuijs="https://cdn.jsdelivr.net/gh/layui/layui@"+VERSION+"/dist/layui.js";
     addLink({href: layuicss});
-    addLink({id:"layui_theme_css" , href: ""});
+    addLink({id: "layui_theme_css",href: ""});
     loadScript(layuijs,function() {
       layui
         .config({
@@ -167,31 +181,41 @@
         .extend({
           drawer: 'drawer/drawer',
         });
-      layui.use(['element','layer','util'],function() {
+      layui.use(['element','layer','util','drawer'],function() {
         var element=layui.element;
         var form=layui.form;
         var layer=layui.layer;
         var util=layui.util;
         var $=layui.$;
+        var drawer=layui.drawer;
 
-        var APPERANCE_KEY = 'layui-theme-demo-prefer-dark'
+        var APPERANCE_KEY='layui-theme-demo-prefer-dark'
         var savedPreferDark=localStorage.getItem(APPERANCE_KEY)
         if(
           savedPreferDark==='true'||
           (!savedPreferDark&&window.matchMedia('(prefers-color-scheme: dark)').matches)
         ) {
           document.documentElement.classList.add('dark')
-          $('#layui_theme_css').prop("href", './dist/layui-theme-dark.css');
+          $('#layui_theme_css').prop("href",'./dist/layui-theme-dark.css');
           $('[lay-filter="toggle-theme"]').prop('checked',true)
         }
 
-        renderView('#body-container', location.hash.slice(1) || 'view/button');
+        renderView('#body-container',location.hash.slice(1)||'view/button');
 
         util.event('lay-header-event',{
           menuLeft: function() {
             var side=$('.layui-layout-admin .layui-side');
             side.animate({left: side.css('left')==='0px'? '-300px':'0px'});
           },
+          menuRight: function() {
+            drawer.open({
+              area: '600px',
+              url: './docs/tpl/theme.html',
+              hideOnClose: true,
+              id: 'drawer-theme-tpl',
+              shade: 0.01
+            })
+          }
         });
 
         element.on('nav(nav-side)',function(elem) {
@@ -203,7 +227,7 @@
             }
           }
         });
-        
+
         form.on('switch(toggle-theme)',function(data) {
           toggleDark({appearanceTransition: true})
         });
@@ -215,17 +239,17 @@
         });
         $('#layuiv').text(layui.v);
 
-        function toggleDark(opt){
-          var isAppearanceTransition=document.startViewTransition &&
-            !window.matchMedia(`(prefers-reduced-motion: reduce)`).matches &&
+        function toggleDark(opt) {
+          var isAppearanceTransition=document.startViewTransition&&
+            !window.matchMedia(`(prefers-reduced-motion: reduce)`).matches&&
             opt.appearanceTransition;
           var isDark=false;
           var themeLink=$('#layui_theme_css');
           var cls=document.documentElement.classList;
-         
-          if(!isAppearanceTransition){
+
+          if(!isAppearanceTransition) {
             cls.toggle('dark');
-            isDark = cls.contains('dark')
+            isDark=cls.contains('dark')
             themeLink.prop("href",isDark? './dist/layui-theme-dark.css':'');
             localStorage.setItem(APPERANCE_KEY,String(isDark))
             return
@@ -237,13 +261,13 @@
             Math.max(x,innerWidth-x),
             Math.max(y,innerHeight-y),
           )
-          var transition=document.startViewTransition(function(){
+          var transition=document.startViewTransition(function() {
             cls.toggle('dark');
             isDark=cls.contains('dark')
             themeLink.prop("href",isDark? './dist/layui-theme-dark.css':'');
             localStorage.setItem(APPERANCE_KEY,String(isDark))
           })
-          transition.ready.then(function(){
+          transition.ready.then(function() {
             const clipPath=[
               `circle(0px at ${x}px ${y}px)`,
               `circle(${endRadius}px at ${x}px ${y}px)`,
@@ -259,13 +283,13 @@
               },
             )
           })
-          
+
         }
 
         function renderView(elem,path,prefix,suffix) {
           var containerDom=$(elem);
-          prefix= prefix || './docs/';
-          suffix= suffix || '.html';
+          prefix=prefix||'./docs/';
+          suffix=suffix||'.html';
           $.ajax({
             url: prefix+path+suffix,
             dataType: 'html',
@@ -277,7 +301,7 @@
           });
           history.replaceState({},'','#'+path);
           $('#ws-nav-side')
-            .find("[data-path='"+ path +"']")
+            .find("[data-path='"+path+"']")
             .parent('dd')
             .addClass('layui-this')
             .closest('.layui-nav-item')

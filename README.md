@@ -17,7 +17,7 @@ layui 暗色主题
    --color-bg: #000;           --color-bg: #000;
  }                     ==>   }
  .lay-card{                  .dark .lay-card{
-   coloe: #FFF;                coloe: #FFF;
+   color: #FFF;                color: #FFF;
  }                           }
  ```
  ```js
@@ -39,7 +39,7 @@ document.documentElement.classList.toggle('dark')
   --color-bg: #000;           --color-bg: #000;
 }                     ==>   }
 .lay-card{                  [theme-mode='dark'] .lay-card{
-  coloe: #FFF;                coloe: #FFF;
+  color: #FFF;                color: #FFF;
 }                           }
 ```
 ```js

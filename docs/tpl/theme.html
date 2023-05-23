@@ -90,10 +90,10 @@
 <pre class="layui-code code-demo" lay-options="{}" style="margin: 0; padding: 0;">
 /** .dark，通过改变 html 标签的类名切换主题*/
 :root{                     :root.dark{
-  --color-bg: #000;          --color-bg: #000
+  --color-bg: #000;          --color-bg: #000;
 }                     ==>  }
 .lay-card{                 .dark .lay-card{}
-  coloe: #FFF;               coloe: #FFF;
+  color: #FFF;               color: #FFF;
 }                          }
 /** js */
 // 设置为暗色主题
@@ -105,10 +105,10 @@ document.documentElement.classList.toggle('dark')
 ----------------------------------------------------------
 /** [theme-mode='dark']，通过改变 html 标签上 theme-mode 的属性切换主题*/
 :root{                     :root[theme-mode='dark']{
-  --color-bg: #000;          --color-bg: #000
+  --color-bg: #000;          --color-bg: #000;
 }                     ==>  }
 .lay-card{                 [theme-mode='dark'] .lay-card{}
-  coloe: #FFF;               coloe: #FFF;
+  color: #FFF;               color: #FFF;
 }                          }
 /** js */
 // 设置为暗色主题

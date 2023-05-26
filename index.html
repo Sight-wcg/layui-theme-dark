@@ -153,13 +153,16 @@
               <dd><a data-path="view/code" href="javascript:;">文本行修饰</a></dd>
             </dl>
           </li>
+          <!-- <li class="layui-nav-item">
+            <a href="javascript:;" data-path="view/color-mode">插件</a>
+          </li> -->
         </ul>
       </div>
     </div>
 
     <div class="layui-body">
       <!-- 内容主体区域 -->
-      <div id="body-container" style="padding: 15px">内容主体区域。记得修改 layui.css 和 js 的路径</div>
+      <div id="body-container" style="padding: 15px"></div>
     </div>
 
     <!-- <div class="layui-footer">
@@ -181,24 +184,78 @@
         .extend({
           drawer: 'drawer/drawer',
         });
-      layui.use(['element','layer','util','drawer'],function() {
+      layui.use(['element','layer','util','drawer','colorMode'],function() {
         var element=layui.element;
         var form=layui.form;
         var layer=layui.layer;
         var util=layui.util;
         var $=layui.$;
         var drawer=layui.drawer;
+        var colorMode = layui.colorMode;
 
         var APPERANCE_KEY='layui-theme-demo-prefer-dark'
-        var savedPreferDark=localStorage.getItem(APPERANCE_KEY)
-        if(
-          savedPreferDark==='true'||
-          (!savedPreferDark&&window.matchMedia('(prefers-color-scheme: dark)').matches)
-        ) {
-          document.documentElement.classList.add('dark')
-          $('#layui_theme_css').prop("href",'./dist/layui-theme-dark.css');
-          $('[lay-filter="toggle-theme"]').prop('checked',true)
-        }
+
+        // 为方便定制主题，这里用改变 href 属性的方式切换主题
+        var theme = colorMode.init({
+          selector: '#layui_theme_css',
+          attribute: 'href',
+          initialValue: 'dark',
+          modes: {
+            light: '',
+            dark: './dist/layui-theme-dark.css'
+          },
+          storageKey: APPERANCE_KEY,
+          disableTransition: false,
+          onChanged: function(mode, defaultHandler){
+            var isAppearanceTransition = document.startViewTransition &&
+              !window.matchMedia(`(prefers-reduced-motion: reduce)`).matches
+            var isDark = mode === 'dark';
+
+            if(isDark) $('[lay-filter="toggle-theme"]').prop('checked', true)
+
+            if (!isAppearanceTransition) defaultHandler();
+
+            // 移植自 https://github.com/vuejs/vitepress/pull/2347
+            var x = event.clientX
+            var y = event.clientY
+            var endRadius = Math.hypot(
+              Math.max(x, innerWidth - x),
+              Math.max(y, innerHeight - y),
+            )
+            var transition = document.startViewTransition(function () {
+              // 动画需要
+              document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
+              defaultHandler();
+            })
+            transition.ready.then(function () {
+              const clipPath = [
+                `circle(0px at ${x}px ${y}px)`,
+                `circle(${endRadius}px at ${x}px ${y}px)`,
+              ]
+              document.documentElement.animate(
+                {
+                  clipPath: isDark ? clipPath : [...clipPath].reverse(),
+                },
+                {
+                  duration: 250,
+                  easing: 'ease-in',
+                  pseudoElement: isDark ? '::view-transition-new(root)' : '::view-transition-old(root)',
+                },
+              )
+            })
+
+          }
+        });
+
+        // var savedPreferDark=localStorage.getItem(APPERANCE_KEY)
+        // if(
+        //   savedPreferDark==='true'||
+        //   (!savedPreferDark&&window.matchMedia('(prefers-color-scheme: dark)').matches)
+        // ) {
+        //   document.documentElement.classList.add('dark')
+        //   $('#layui_theme_css').prop("href",'./dist/layui-theme-dark.css');
+        //   $('[lay-filter="toggle-theme"]').prop('checked',true)
+        // }
 
         renderView('#body-container',location.hash.slice(1)||'view/button');
 
@@ -229,7 +286,8 @@
         });
 
         form.on('switch(toggle-theme)',function(data) {
-          toggleDark({appearanceTransition: true})
+          // toggleDark({appearanceTransition: true})
+          theme.setMode(data.elem.checked ? 'dark' : 'light')
         });
 
         $(window).resize(function() {
@@ -239,52 +297,52 @@
         });
         $('#layuiv').text(layui.v);
 
-        function toggleDark(opt) {
-          var isAppearanceTransition=document.startViewTransition&&
-            !window.matchMedia(`(prefers-reduced-motion: reduce)`).matches&&
-            opt.appearanceTransition;
-          var isDark=false;
-          var themeLink=$('#layui_theme_css');
-          var cls=document.documentElement.classList;
+        // function toggleDark(opt) {
+        //   var isAppearanceTransition=document.startViewTransition&&
+        //     !window.matchMedia(`(prefers-reduced-motion: reduce)`).matches&&
+        //     opt.appearanceTransition;
+        //   var isDark=false;
+        //   var themeLink=$('#layui_theme_css');
+        //   var cls=document.documentElement.classList;
 
-          if(!isAppearanceTransition) {
-            cls.toggle('dark');
-            isDark=cls.contains('dark')
-            themeLink.prop("href",isDark? './dist/layui-theme-dark.css':'');
-            localStorage.setItem(APPERANCE_KEY,String(isDark))
-            return
-          }
-          //移植自 https://github.com/vuejs/vitepress/pull/2347，支持 chrome 111
-          var x=event.clientX
-          var y=event.clientY
-          var endRadius=Math.hypot(
-            Math.max(x,innerWidth-x),
-            Math.max(y,innerHeight-y),
-          )
-          var transition=document.startViewTransition(function() {
-            cls.toggle('dark');
-            isDark=cls.contains('dark')
-            themeLink.prop("href",isDark? './dist/layui-theme-dark.css':'');
-            localStorage.setItem(APPERANCE_KEY,String(isDark))
-          })
-          transition.ready.then(function() {
-            const clipPath=[
-              `circle(0px at ${x}px ${y}px)`,
-              `circle(${endRadius}px at ${x}px ${y}px)`,
-            ]
-            document.documentElement.animate(
-              {
-                clipPath: isDark? clipPath:[...clipPath].reverse(),
-              },
-              {
-                duration: 300,
-                easing: 'ease-in',
-                pseudoElement: isDark? '::view-transition-new(root)':'::view-transition-old(root)',
-              },
-            )
-          })
+        //   if(!isAppearanceTransition) {
+        //     cls.toggle('dark');
+        //     isDark=cls.contains('dark')
+        //     themeLink.prop("href",isDark? './dist/layui-theme-dark.css':'');
+        //     localStorage.setItem(APPERANCE_KEY,String(isDark))
+        //     return
+        //   }
+        //   //移植自 https://github.com/vuejs/vitepress/pull/2347，支持 chrome 111
+        //   var x=event.clientX
+        //   var y=event.clientY
+        //   var endRadius=Math.hypot(
+        //     Math.max(x,innerWidth-x),
+        //     Math.max(y,innerHeight-y),
+        //   )
+        //   var transition=document.startViewTransition(function() {
+        //     cls.toggle('dark');
+        //     isDark=cls.contains('dark')
+        //     themeLink.prop("href",isDark? './dist/layui-theme-dark.css':'');
+        //     localStorage.setItem(APPERANCE_KEY,String(isDark))
+        //   })
+        //   transition.ready.then(function() {
+        //     const clipPath=[
+        //       `circle(0px at ${x}px ${y}px)`,
+        //       `circle(${endRadius}px at ${x}px ${y}px)`,
+        //     ]
+        //     document.documentElement.animate(
+        //       {
+        //         clipPath: isDark? clipPath:[...clipPath].reverse(),
+        //       },
+        //       {
+        //         duration: 300,
+        //         easing: 'ease-in',
+        //         pseudoElement: isDark? '::view-transition-new(root)':'::view-transition-old(root)',
+        //       },
+        //     )
+        //   })
 
-        }
+        // }
 
         function renderView(elem,path,prefix,suffix) {
           var containerDom=$(elem);

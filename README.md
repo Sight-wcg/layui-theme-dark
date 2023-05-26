@@ -21,7 +21,7 @@ layui 暗色主题
  }                           }
  ```
  ```js
-/** JavasSript */
+/** JavaScript */
 // 设置为暗色主题
 document.documentElement.classList.add('dark')
 // 恢复亮色主题
@@ -43,7 +43,7 @@ document.documentElement.classList.toggle('dark')
 }                           }
 ```
 ```js
-/** JavasSript */
+/** JavaScript */
 // 设置为暗色主题
 document.documentElement.setAttribute('theme-mode', 'dark')
 // 恢复亮色主题
@@ -60,7 +60,7 @@ document.documentElement.removeAttribute('theme-mode')
  <link id="layui_theme_css" rel="stylesheet" href="./layui-theme-dark.css">
  ```
  ```js
- /** JavasSript */
+ /** JavaScript */
  // 设置为暗色主题
  document.getElementById('#layui_theme_css').setAttribute('href','./layui-theme-dark.css')
  // 恢复亮色主题

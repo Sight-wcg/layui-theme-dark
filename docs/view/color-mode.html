@@ -1,0 +1,226 @@
+<pre id="test" class="layui-code" lay-options="{preview: 'iframe'}">
+  <textarea>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo</title>
+  <!-- 请勿在项目正式环境中引用该 layui.css 地址 -->
+  <link href="//unpkg.com/layui@2.8.3/dist/css/layui.css" rel="stylesheet">
+  <style>
+    html.green {
+      filter: sepia(0.9) hue-rotate(415deg) brightness(0.9);
+    }
+    html.cafe {
+      filter: sepia(0.9) hue-rotate(315deg) brightness(0.9);
+    }
+    .cafe body{
+      color-scheme: light;
+      background-color: #FEFEFE !important;
+    }
+
+    html.dark{
+      color-scheme: dark;
+    }
+    .dark .layui-dropdown{
+      color: #EEE !important;
+      border-style: unset;
+      background-color: #212121;
+    }
+    .dark .layui-menu {
+      color: #EEE !important;
+      background-color: #212121;
+    }
+    .dark .layui-btn-primary{
+      color: #cecece;
+      background-color: #2f2f32;
+      border-color: transparent;
+    }
+    .contrast .layui-elem-quote,
+    .dark .layui-elem-quote{
+      color:#EEE;
+      background-color: #2f2f32;
+    }
+  
+    html.contrast {
+      filter: contrast(1.7);
+      color-scheme: dark;
+      color: #FEFEFE ;
+      background-color: #000;
+    }
+
+    .dark .layui-icon,
+    .contrast .layui-icon{
+      color: #cecece;
+    }
+    .contrast .layui-dropdown{
+      border-style: unset;
+      background-color: #494949;
+    }
+    .contrast .layui-menu {
+      color: #FEFEFE !important;
+      background-color: #494949;
+    }
+    .dark .layui-menu li:hover,
+    .contrast .layui-menu li:hover {
+      background-color: rgba(255,255,255,.12) !important;
+    }
+    .contrast .layui-btn-primary{
+      color: #cecece;
+      background-color: #222326;
+      border-color: #cecece;
+    }
+  </style>
+</head>
+<body style="padding: 20px;">
+<div style="display: flex; width: 500px; height: 500px; align-items: flex-start; justify-content: flex-end; flex-direction: row-reverse">
+  <i id="ID-dropdown-theme" class="layui-icon layui-icon-theme" style="font-size: 25px;"></i>
+  <div>
+    <div class="layui-btn-container">
+      <button type="button" class="layui-btn layui-btn-primary">原始按钮</button>
+      <button type="button" class="layui-btn">默认按钮</button>
+      <button class="layui-btn layui-btn-primary layui-border-green">主色按钮</button>
+    </div>
+    <div>
+      <blockquote class="layui-elem-quote">
+        引用内容，默认风格
+      </blockquote>
+    </div>
+  </div>
+</div>
+  <script src="//unpkg.com/layui@2.8.3/dist/layui.js"></script>
+  <script>
+    layui.config({base: './docs/lib/'})
+
+    layui.use(['code', 'colorMode','dropdown'], function () {
+      var colorMode = layui.colorMode
+      var $ = layui.jquery
+      var dropdown = layui.dropdown
+      
+      var theme = colorMode.init({
+        modes: {
+          contrast: 'contrast',
+          cafe: 'cafe',
+          green: 'green',
+        },
+        storageKey: null,
+        onChanged: async function (mode, defaultHandler) {
+          if(mode === 'purple'){
+            var VERSION = '2.8.3';
+            var url = `https://unpkg.com/layui@${VERSION}/dist/css/layui.css`;
+            var newColors = ['#4b53bc','#4b53bc'];
+            var presetColors = ['#16baaa', '#16b777'] // 预设主色和次色
+
+            var style = await (await fetch(url)).text();
+            style = style.replace(/@font-face{[^}]+}/, '');
+
+            var newStyle = style;
+            presetColors.forEach((color,index) => {
+              newStyle= newStyle.replace(new RegExp(color,'ig'),newColors[index])
+            })
+            colorMode.addStyle('customTheme', newStyle);
+          }else{
+            $('#customTheme').remove()
+          }
+          defaultHandler()
+        }
+      })
+
+      var dropdownItemTpl = `<span style="display: flex;"><i class="layui-icon {{= d.icon}}" style="margin-right: 8px"></i>{{= d.title }}</span>`
+
+      dropdown.render({
+        elem: '#ID-dropdown-theme',
+        style: 'height: 100px',
+        data: [
+        {
+          title: '暗黑模式',
+          id: 'dark',
+          icon: 'layui-icon-moon',
+          templet: dropdownItemTpl,
+        },
+        {
+          title: '亮色模式',
+          id: 'light',
+          icon: 'layui-icon-light',
+          templet: dropdownItemTpl, 
+        },
+        {
+          title: '跟随系统',
+          id: 'auto',
+          icon: 'layui-icon-console',
+          templet: dropdownItemTpl,
+        },
+        {
+          title: '高对比度',
+          id: 'contrast',
+          icon: 'layui-icon-rate-half',
+          templet: dropdownItemTpl,
+        },
+        {
+          title: '护眼模式',
+          id: 'cafe',
+          icon: 'layui-icon-eye',
+          templet: dropdownItemTpl,
+        },
+        {
+          title: '自定义紫色',
+          id: 'purple',
+          icon: 'layui-icon-eye',
+          templet: dropdownItemTpl,
+        }
+       ],
+        click: function(obj){
+          this.elem.attr('class','').addClass(`layui-icon ${obj.icon}`);
+          theme.setMode(obj.id);
+        }
+      })
+
+    })
+  </script>
+</body>
+
+</html>
+  </textarea>
+</pre>
+
+<script>
+  layui.use(function () {
+
+    var $ = layui.jquery
+
+    layui.code({
+      elem: '#test',
+      layout: ['preview','code'],
+      tools: ['full', 'window'],
+      copy: true,
+      header: true,
+      previewStyle: 'height: 800px'
+    })
+
+    // 开启编辑
+    $('.layui-code-preview')
+      .children('.layui-code-view')
+      .prop('contenteditable', true)
+      .css('outline', 'none');
+    var previewTab = $('.layui-code-preview').find("[lay-id='preview']");
+    previewTab.on('click', function () {
+      var code = $(this).parents('.layui-code-preview').children('.layui-code-view');
+      var preview = $(this).parents('.layui-code-preview').children('.layui-code-item-preview');
+      var codes = [];
+      $.each(code.find('li'), function (_, v) {
+        codes.push(v.innerText + '\n');
+      });
+
+      setTimeout(function () {
+        if (/preview\:\s+\'iframe\'/.test(code.attr('lay-options'))) {
+          preview.html($('<iframe>').prop('srcdoc', codes.join('')));
+        } else {
+          preview.html(codes.join(''));
+        }
+      }, 0);
+    });
+
+  });
+</script>

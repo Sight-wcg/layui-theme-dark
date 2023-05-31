@@ -1,0 +1,279 @@
+/* 配色方案*/
+.layui-red {
+  color: var(--lay-color-red-6)
+}
+
+.layui-orange {
+  color: var(--lay-color-orange-6)
+}
+
+.layui-green {
+  color: var(--lay-color-green-6)
+}
+
+.layui-cyan {
+  color: var(--lay-color-cyan-6)
+}
+
+.layui-blue {
+  color: var(--lay-color-blue-6)
+}
+
+.layui-black {
+  color: var(--lay-color-black-6)
+}
+
+.layui-gray {
+  color: var(--lay-color-gray-3)
+}
+
+.layui-firebrick {
+  color: firebrick;
+}
+
+.layui-deeppink {
+  color: deeppink;
+}
+
+.layui-blueviolet {
+  color: blueviolet;
+}
+
+/* 表格排序样式*/
+.soul-edge {
+  border-color: transparent;
+}
+
+.soul-table-sort .soul-table-sort-asc {
+  border-bottom-color: var(--lay-color-border-2)
+}
+
+.soul-table-sort .soul-table-sort-asc:hover {
+  border-bottom-color: var(--lay-color-border-3)
+}
+
+.soul-table-sort .soul-table-sort-desc {
+  border-top-color: var(--lay-color-border-2)
+}
+
+.soul-table-sort .soul-table-sort-desc:hover {
+  border-top-color: var(--lay-color-border-3)
+}
+
+.soul-table-sort[soul-sort=asc] .soul-table-sort-asc {
+  border-bottom-color: var(--lay-color-border-1)
+}
+
+.soul-table-sort[soul-sort=desc] .soul-table-sort-desc {
+  border-top-color: var(--lay-color-border-1)
+}
+
+.multiOption {
+  color: var(--lay-color-text-2);
+}
+
+/*表格筛选*/
+.soul-table-filter {
+  color: var(--lay-color-text-2);
+}
+
+.soul-table-filter[lay-sort="asc"] .soul-icon-filter-asc {
+  color: var(--lay-color-fill-4);
+}
+
+.soul-table-filter[lay-sort="desc"] .soul-icon-filter-desc {
+  color: var(--lay-color-fill-4);
+}
+
+.soul-table-filter[soul-filter="true"] i {
+  color: var(--lay-color-primary) !important;
+}
+
+
+[id^=main-list],
+[id^=soul-columns],
+[id^=soul-dropList],
+[id^=soul-condition],
+[id^=soul-bf-prefix],
+[id^=soul-bf-column],
+[id^=soul-bf-type],
+[id^=soul-bf-cond2] {
+  background-color: var(--lay-color-bg-5);
+  border: 1px solid var(--lay-color-border-2);
+  box-shadow: 2px 2px 8px -2px rgba(0, 0, 0, 1);
+}
+
+[id^=soul-filter-list] ul li:hover {
+  /* background-color: var(--lay-color-normal-hover); */
+  background-color: var(--lay-color-hover);
+}
+
+[id^=soul-condition] .layui-form-switch {
+  background-color: var(--lay-color-normal);
+  border: 1px solid var(--lay-color-normal);
+}
+
+[id^=soul-condition] .layui-form-switch.layui-form-onswitch {
+  background-color: var(--lay-color-secondary);
+  border: 1px solid var(--lay-color-secondary);
+}
+
+[id^=soul-condition] .layui-form-switch div {
+  color: var(--lay-color-text-1) !important;
+}
+
+[id^=soul-condition] .layui-form-switch i {
+  background-color: var(--lay-color-gray-4);
+}
+
+/*表格筛选*/
+
+/*底部筛选*/
+.soul-bottom-contion {
+  border-top: solid 1px var(--lay-color-border-2);
+}
+
+.soul-bottom-contion .condition-items .condition-item {
+  border: solid 1px darkslateblue;
+}
+
+.soul-bottom-contion .editCondtion a {
+  border-left: solid 1px var(--lay-color-border-2);
+}
+
+.soul-bottom-contion .condition-items .condition-item .condition-item-close:hover {
+  color: var(--lay-color-danger)
+}
+
+.soul-bottom-contion .condition-items .condition-item .condition-item-close:before {
+  background: var(--lay-color-bg-2);
+}
+
+[id^=soul-bf] li {
+  color: var(--lay-color-text-2);
+}
+
+[id^=soul-bf] li.soul-bf-selected {
+  /* background-color: var(--lay-color-normal); */
+  color: var(--lay-color-text-2);
+  background-color: var(--lay-color-hover);
+}
+
+[id^=soul-bf] li:hover {
+  /* background-color: var(--lay-color-normal); */
+  color: var(--lay-color-text-2);
+  background-color: var(--lay-color-hover);
+}
+
+
+/*子表格*/
+.layui-table tbody tr.noHover:hover {
+  background-color: var(--lay-color-bg-2);
+}
+
+/*编辑筛选*/
+
+.soul-edit-out ul.group.line {
+  border-left: 1px dashed var(--lay-color-border-2);
+}
+
+.soul-edit-out table td[data-type='top'] {
+  width: 12px;
+  height: 12px;
+  border-left: dashed 1px var(--lay-color-border-2);
+  border-bottom: dashed 1px var(--lay-color-border-2);
+}
+
+.soul-edit-out table td[data-type='bottom'] {
+  border-left: dashed 1px var(--lay-color-border-2);
+}
+
+.soul-edit-out .layui-form-switch {
+  background-color: var(--lay-color-normal);
+  border: 1px solid var(--lay-color-normal);
+}
+
+.soul-edit-out .layui-form-switch div {
+  color: var(--lay-color-text-1) !important;
+}
+
+.soul-edit-out .layui-form-switch i {
+  background-color: var(--lay-color-gray-4);
+}
+
+.soul-edit-out .layui-form-switch.layui-form-onswitch {
+  background-color: var(--lay-color-secondary);
+  border: 1px solid var(--lay-color-secondary);
+}
+
+/* 拖拽相关 */
+.soul-drag-bar {
+  color: var(--lay-color-text-1);
+  box-shadow: 0 1px 20px rgba(0, 0, 0, .9);
+}
+
+.soul-drag-bar>div {
+  background-color: var(--lay-color-primary-active);
+}
+
+.soul-drag-bar>div.active,
+.soul-drag-bar[data-type='left']>div[data-type='left'],
+.soul-drag-bar[data-type='right']>div[data-type='right'],
+.soul-drag-bar[data-type='none']>div[data-type='none'] {
+  background-color: var(--lay-color-primary);
+}
+
+/* 动画 */
+.animated {
+  -webkit-animation-duration: .3s;
+  -moz-animation-duration: .3s;
+  -o-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.soul-table-contextmenu {
+  border: 1px solid var(--lay-color-border-2);
+  box-shadow: 2px 2px 8px -2px rgba(0, 0, 0, 1);
+  background: var(--lay-color-bg-5);
+}
+
+.soul-table-contextmenu li:hover {
+  background: var(--lay-color-hover);
+}
+
+.layui-table-sort-invalid .layui-table-sort-asc {
+  border-bottom-color: var(--lay-color-border-2);
+}
+
+.layui-table-sort-invalid .layui-table-sort-desc {
+  border-top-color: var(--lay-color-border-2);
+}
+
+
+/* fix style */
+/* 表格行 hover */
+.layui-table-hover.soul-table-hover{
+  background-color: var(--lay-color-hover) !important;
+}
+.soul-sort[data-value=desc]{
+  border-bottom-color: var(--lay-color-border-3) !important;
+}
+.layui-table-view .layui-table td{
+  border-left-color: var(--lay-color-border-2) !important;
+}
+/* 拖动边框 */
+.layui-table-view .layui-table th.isDrag{
+  border-left-color: var(--lay-color-border-2) !important;
+}
+/* 合计行 */
+.layui-table-total .layui-table{
+  background-color: var(--lay-color-bg-2) !important;
+}
+/* 子表卡片 */
+.layui-table-body .layui-tab-card{
+  background-color: var(--lay-color-bg-2) !important;
+}

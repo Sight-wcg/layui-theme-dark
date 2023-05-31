@@ -144,6 +144,7 @@
   --lay-color-normal-hover: var(--lay-color-blue-5);
   --lay-color-normal-active: var(--lay-color-blue-7);
   --lay-color-normal-disabled: var(--lay-color-blue-3);
+  --lay-color-normal-light: var(--lay-color-blue-4);
 
   /* 警示 */
   --lay-color-warning: var(--lay-color-orange-6);

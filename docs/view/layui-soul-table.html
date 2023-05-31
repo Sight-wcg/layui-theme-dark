@@ -1,0 +1,180 @@
+<link rel="stylesheet" href="https://unpkg.com/layui-soul-table/docs/soulTable.css" media="all" />
+<link rel="stylesheet" href="./ext/soulTable-dark.css" media="all" />
+
+<table id="myTable"></table>
+
+<script type="text/html" id="toolbar">
+    <div><button class="layui-btn layui-btn-sm" lay-event="clearFilter">清除所有筛选条件</button></div>
+</script>
+<script type="text/html" id="bar">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+<script>
+  layui.extend({
+    soulTable: '{/}https://unpkg.com/layui-soul-table/docs/ext/soulTable',
+    tableChild: '{/}https://unpkg.com/layui-soul-table/docs/ext/tableChild',
+    tableMerge: '{/}https://unpkg.com/layui-soul-table/docs/ext/tableMerge',
+    tableFilter: '{/}https://unpkg.com/layui-soul-table/docs/ext/tableFilter',
+    excel: '{/}https://unpkg.com/layui-soul-table/docs/ext/excel'
+  });
+
+  layui.use(['form', 'table', 'soulTable'], function () {
+    var table = layui.table,
+      soulTable = layui.soulTable;
+
+    // 后台分页
+    table.render({
+      elem: '#myTable'
+      , id: 'myTable'
+      , url: 'https://soultable.saodiyang.com/layui-soul-table-java/poetry/dataGrid'
+      , height: 500
+      , toolbar: '#toolbar'
+      , page: true
+      , cols: [[
+        { type: 'checkbox', fixed: 'left' },
+        { field: 'title', title: '诗词', width: 200, sort: true, filter: true },
+        { field: 'dynasty', title: '朝代', width: 100, sort: true, filter: true },
+        { field: 'author', title: '作者', width: 165, filter: true },
+        { field: 'type', title: '类型', width: 112, filter: { split: ',' }, sort: true },
+        { field: 'content', title: '内容', width: 823, filter: true },
+        { field: 'heat', title: '点赞数', width: 112, filter: true, sort: true, excel: { cellType: 'n' } },
+        { field: 'createTime', title: '录入时间', width: 165, filter: { type: 'date[yyyy-MM-dd HH:mm:ss]' }, sort: true },
+        { title: '操作', width: 156, fixed: 'right', templet: '#bar' }
+      ]],
+      rowDrag: {/*trigger: 'row',*/ done: function (obj) {}},
+      drag: { toolbar: true }
+      , contextmenu: {
+        // 表头右键菜单配置
+        header: [
+          {
+            name: '复制',
+            icon: 'layui-icon layui-icon-template',
+            click: function (obj) {
+              soulTable.copy(obj.text)
+              layer.msg('复制成功！')
+            }
+          },
+          {
+            name: '导出excel',
+            click: function () {
+              soulTable.export(this.id)
+            }
+          },
+          {
+            name: '重载表格',
+            icon: 'layui-icon layui-icon-refresh-1',
+            click: function () {
+              table.reload(this.id)
+            }
+          },
+          {
+            name: '字体颜色',
+            icon: 'layui-icon layui-icon-theme',
+            children: [
+              {
+                name: '红色',
+                children: [
+                  {
+                    name: '大红色',
+                    click: function (obj) {
+                      obj.elem.css('color', 'red')
+                    }
+                  },
+                  {
+                    name: '粉红色',
+                    click: function (obj) {
+                      obj.elem.css('color', 'pink')
+                    }
+                  },
+                ]
+              },
+              {
+                name: '绿色',
+                click: function (obj) {
+                  obj.elem.css('color', '#009688')
+                }
+              }
+            ]
+          }
+          ,
+          {
+            name: '背景色',
+            icon: 'layui-icon layui-icon-theme',
+            children: [
+              {
+                name: '蓝色',
+                click: function (obj) {
+                  obj.elem.css('background', '#01AAED')
+                }
+              },
+              {
+                name: '黄色',
+                click: function (obj) {
+                  obj.elem.css('background', '#FFB800')
+                }
+              }
+            ]
+          }
+        ],
+        // 表格内容右键菜单配置
+        body: [
+          {
+            name: '复制',
+            icon: 'layui-icon layui-icon-template',
+            click: function (obj) {
+              soulTable.copy(obj.text)
+              layer.msg('复制成功！')
+            }
+          },
+          {
+            name: '删除当前行数据',
+            click: function (obj) {
+              obj.del()
+            }
+          },
+          {
+            name: '更新数据',
+            click: function (obj) {
+              obj.update({ author: obj.row.author + '+1' })
+            }
+          },
+          {
+            name: '行-蓝色',
+            click: function (obj) {
+              obj.trElem.css('background', '#01AAED')
+            }
+          },
+          {
+            name: '红色',
+            click: function (obj) {
+              obj.elem.css('color', 'red')
+            }
+          }
+        ],
+        // 合计栏右键菜单配置
+        total: [
+          {
+            name: '背景黄色',
+            click: function (obj) {
+              obj.elem.css('background', '#FFB800')
+            }
+          }
+        ]
+      }
+      , done: function () {
+        soulTable.render(this)
+      }
+    });
+
+    table.on('toolbar(myTable)', function (obj) {
+      if (obj.event === 'clearFilter') {
+        // 清除所有筛选条件并重载表格
+        // 参数: tableId
+        soulTable.clearFilter('myTable')
+      }
+    });
+  }, null, 'define')
+
+</script>

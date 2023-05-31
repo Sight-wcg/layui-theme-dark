@@ -158,6 +158,9 @@ layui.define(['jquery'], function (exports) {
           } 
           onChanged(mode);
         },
+        mode: function(){
+          return state;
+        }
       };
     },
     addStyle: function (id, cssStr) {

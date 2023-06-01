@@ -15,10 +15,12 @@
     }
     html.cafe {
       filter: sepia(0.9) hue-rotate(315deg) brightness(0.9);
+      background-color: #FFF;
     }
     .cafe body{
       color-scheme: light;
-      background-color: #FEFEFE !important;
+      background-blend-mode: luminosity;
+      background-color: #EEE;
     }
 
     html.dark{
@@ -102,12 +104,13 @@
       
       var theme = colorMode.init({
         modes: {
-          contrast: 'contrast',
+          contrast: 'dark contrast',
           cafe: 'cafe',
-          green: 'green',
+          purple: 'light purple',
         },
         storageKey: null,
         onChanged: async function (mode, defaultHandler) {
+          console.log(mode);
           if(mode === 'purple'){
             var VERSION = '2.8.3';
             var url = `https://unpkg.com/layui@${VERSION}/dist/css/layui.css`;

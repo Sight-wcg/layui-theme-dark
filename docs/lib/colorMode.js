@@ -1,5 +1,6 @@
 /**
- * WIP 施工中...
+ * WIP 
+ * 移植自 https://github.com/vueuse/vueuse/tree/main/packages/core/useColorMode
  */
 // @ts-ignore
 layui.define(['jquery'], function (exports) {
@@ -87,19 +88,24 @@ layui.define(['jquery'], function (exports) {
         }
 
         if (attribute === 'class') {
-          $.each(opts.modes, function (_, v) {
-            if (!v) return;
-            if (value === v) {
-              el.classList.add(v);
-            } else {
-              el.classList.remove(v);
-            }
+          var current = value.split(/\s/g);
+          $.each(opts.modes, function (_, modeval) {
+            $.each((modeval || '').split(/\s/g),function(_, v){
+              if (!v) return;
+              if (current.indexOf(v) !== -1) {
+                el.classList.add(v);
+              } else {
+                el.classList.remove(v);
+              }
+            });
           });
         } else {
           el.setAttribute(attribute, value);
         }
 
         if (opts.disableTransition) {
+          // 调用 getComputedStyle 强制浏览器重绘
+          // @ts-expect-error unused variable
           var _ = window.getComputedStyle(style).opacity;
           document.head.removeChild(style);
         }
@@ -139,7 +145,7 @@ layui.define(['jquery'], function (exports) {
       })();
 
       function defaultOnChanged() {
-        updateHTMLAttrs(opts.selector, opts.attribute, opts.modes[state]);
+        updateHTMLAttrs(opts.selector, opts.attribute, opts.modes[state] || state);
       }
 
       function onChanged(mode) {

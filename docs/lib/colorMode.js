@@ -6,7 +6,7 @@
 layui.define(['jquery'], function (exports) {
   'use strict';
 
-  // @ts-ignore
+  /** @type {jQuery}*/
   var $ = layui.jquery;
 
   var MOD_NAME = 'colorMode';
@@ -14,15 +14,21 @@ layui.define(['jquery'], function (exports) {
 
   var colorMode = {
     /**
+     * @typedef {object} initOptions
+     * @prop {string} [selector="html"] - 应用于目标元素的 CSS 选择器
+     * @prop {string} [attribute="class"] - 应用于目标元素的 HTML 属性
+     * @prop {string} [initialValue='auto'] - 初始颜色模式
+     * @prop {Object.<string, string>} [modes]- 颜色模式。value 为添加到 HTML 属性上的值
+     * @prop {(mode: string, defaultHandler: () => void) => void} [onChanged] - 用于处理更新的自定义处理程序，指定时，默认行为将被覆盖。
+     * @prop {Storage} [storage=localStorage] - 将数据持久化到 localStorage/sessionStorage 的键。传递 `null` 以禁用持久性
+     * @prop {string | null} [storageKey='color-scheme'] - 持久化使用的 key
+     * @prop {boolean} [disableTransition=true] - 禁用切换时的过渡 {@link https://paco.me/writing/disable-theme-transitions}
      *
-     * @param {Object} options
-     * @param {String} [options.selector=html] - 应用于目标元素的 CSS 选择器
-     * @param {String} [options.attribute=class] - 应用于目标元素的 HTML 属性
-     * @param {String} [options.initialValue=auto] - 初始颜色模式
-     * @param {Object} [options.modes] - 颜色模式。value 为添加到 HTML 属性上的值
-     * @param {Function} [options.onChanged=undefined] - 用于处理更新的自定义处理程序，指定时，默认行为将被覆盖。
-     * @param {String} [options.storageKey=color-scheme] - 将数据持久化到 localStorage/sessionStorage 的键。传递 `null` 以禁用持久性
-     * @param {Boolean} [options.disableTransition=true] - 禁用切换时的过渡
+     */
+
+    /**
+     *
+     * @param {initOptions} options
      */
     init: function (options) {
       var defaults = {
@@ -34,13 +40,8 @@ layui.define(['jquery'], function (exports) {
           light: 'light',
           dark: 'dark',
         },
-        onChanged: undefined,
         storage: localStorage,
         storageKey: 'color-scheme',
-        /**
-         * 禁用切换时的过渡
-         * @see https://paco.me/writing/disable-theme-transitions
-         */
         disableTransition: true,
       };
 
@@ -68,7 +69,6 @@ layui.define(['jquery'], function (exports) {
        * @param {String} selector
        * @param {String} attribute
        * @param {String} value
-       * @returns
        */
       var updateHTMLAttrs = function (selector, attribute, value) {
         var el = typeof selector === 'string' ? document.querySelector(selector) : undefined;
@@ -90,7 +90,7 @@ layui.define(['jquery'], function (exports) {
         if (attribute === 'class') {
           var current = value.split(/\s/g);
           $.each(opts.modes, function (_, modeval) {
-            $.each((modeval || '').split(/\s/g),function(_, v){
+            $.each((modeval || '').split(/\s/g), function (_, v) {
               if (!v) return;
               if (current.indexOf(v) !== -1) {
                 el.classList.add(v);
@@ -145,7 +145,7 @@ layui.define(['jquery'], function (exports) {
       })();
 
       function defaultOnChanged() {
-        updateHTMLAttrs(opts.selector, opts.attribute, opts.modes[state] || state);
+        updateHTMLAttrs(opts.selector, opts.attribute, opts.modes[state]);
       }
 
       function onChanged(mode) {
@@ -159,18 +159,18 @@ layui.define(['jquery'], function (exports) {
 
       return {
         setMode: function (mode) {
-          if (opts.storageKey){
+          if (opts.storageKey) {
             opts.storage.setItem(opts.storageKey, mode);
-          } 
+          }
           onChanged(mode);
         },
-        mode: function(){
+        mode: function () {
           return state;
-        }
+        },
       };
     },
     addStyle: function (id, cssStr) {
-      var el = document.getElementById(id) || document.createElement('style');
+      var el = /** @type {HTMLStyleElement} */ (document.getElementById(id) || document.createElement('style'));
       if (!el.isConnected) {
         el.type = 'text/css';
         el.id = id;

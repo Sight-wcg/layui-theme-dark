@@ -53,7 +53,7 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-border-cyan{border-color:var(--lay-color-cyan-6)!important;color:var(--lay-color-cyan-6)!important}
 .layui-border-blue{border-color: var(--lay-color-blue-6)!important;color: var(--lay-color-blue-6)!important}
 .layui-border-purple{border-color: var(--lay-color-purple-6)!important; color: var(--lay-color-purple-6)!important;}
-.layui-border-black{border-color:var(--lay-color-black-6)!important;color:var(--lay-color-black-5)!important}
+.layui-border-black{border-color:var(--lay-color-black-6)!important;color:var(--lay-color-text-1)!important}
 /* 文本区域 */
 .layui-text{color:var(--lay-color-text-3)}
 .layui-text h1,.layui-text h2,.layui-text h3,.layui-text h4,.layui-text h5,.layui-text h6{color: var(--lay-color-text-2)}
@@ -74,7 +74,7 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-btn{border:1px solid transparent;background-color:var(--lay-color-primary);color: var(--lay-color-text-1)}
 .layui-btn:hover{color: var(--lay-color-text-2)}
 .layui-btn-primary{border-color:var(--lay-color-border-2);color:var(--lay-color-text-1);background-color: var(--lay-color-bg-4)}
-.layui-btn-primary:hover{border-color:var(--lay-color-primary);color:var(--lay-color-text-2)}
+.layui-btn-primary:hover{border-color: transparent;color:var(--lay-color-text-2)}
 .layui-btn-normal{background-color: var(--lay-color-normal)}
 .layui-btn-warm{background-color:var(--lay-color-warning)}
 .layui-btn-danger{background-color:var(--lay-color-danger)}
@@ -85,9 +85,11 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-btn-group .layui-btn-primary:first-child{border-left:1px solid var(--lay-color-gray-5)}
 /*表单*/
 .layui-input,.layui-select,.layui-textarea{background-color: var(--lay-color-fill-2);color: var(--lay-color-text-2)}
-.layui-input[disabled],.layui-select[disabled],.layui-textarea[disabled]{background-color: var(--lay-color-fill-1);color: var(--lay-color-text-4)}
+.layui-input[disabled],.layui-select[disabled],.layui-textarea[disabled]{background-color: var(--lay-color-fill-1);color: var(--lay-color-text-4);border-color: var(--lay-color-border-1)!important;}
 .layui-input:hover,.layui-textarea:hover{border-color: var(--lay-color-border-2)!important}
 .layui-input:focus,.layui-textarea:focus{border-color: var(--lay-color-border-2)!important}
+.layui-input:hover[disabled],.layui-textarea:hover[disabled]{border-color: var(--lay-color-border-1)!important}
+.layui-input:focus[disabled],.layui-textarea:focus[disabled]{border-color: var(--lay-color-border-1)!important}
 .layui-form-danger+.layui-form-select .layui-input,.layui-form-danger:focus{border-color:var(--lay-color-danger)!important}
 /* 输入框点缀  */
 .layui-input-prefix .layui-icon,.layui-input-split .layui-icon,.layui-input-suffix .layui-icon{color: var(--lay-color-gray-8)}
@@ -105,7 +107,7 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-form-select dl dd.layui-this{background-color: var(--lay-color-active);color: var(--lay-color-text-1)}
 .layui-form-select dl dd.layui-disabled,.layui-form-select dl dd:hover.layui-disabled{background-color: var(--lay-color-bg-5)}
 .layui-select-none{color:var(--lay-color-black-8)}
-.layui-select-disabled .layui-disabled{border-color:var(--lay-color-border-2)!important}
+.layui-select-disabled .layui-disabled{border-color:var(--lay-color-border-1)!important}
 .layui-select-disabled .layui-edge{border-top-color:var(--lay-color-gray-6)}
 /* 复选框 */
 .layui-form-checkbox{background-color:var(--lay-color-fill-2)}
@@ -302,7 +304,9 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-transfer-search .layui-icon-search{color:var(--lay-color-gray-8)}
 .layui-transfer-active .layui-btn{background-color:var( --lay-color-secondary);border-color:var( --lay-color-secondary);color: var(--lay-color-white)}
 .layui-transfer-active .layui-btn-disabled{background-color:var(--lay-color-gray-2);border-color:var(--lay-color-gray-3);color:var(--lay-color-gray-8)}
-.layui-transfer-data li:hover{background-color:var(--lay-color-gray-2)}
+.layui-transfer-data li:hover{background-color:var(--lay-color-active)}
+/* chrome 105 */
+.layui-transfer-data li:hover:has([lay-filter="layTransferCheckbox"][disabled]){background-color:var(--lay-color-bg-2)}
 .layui-transfer-data .layui-none{color:var(--lay-color-gray-7)}
 /** 评分组件 **/
 .layui-rate li i.layui-icon{color:var(--lay-color-orange-6)}
@@ -337,6 +341,7 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-tree-entry:hover{background-color: var(--lay-color-bg-4)}
 .layui-tree-line .layui-tree-entry:hover{background-color:var(--lay-color-black)}
 .layui-tree-line .layui-tree-entry:hover .layui-tree-txt{color:var(--lay-color-text-3)}
+.layui-tree-entry:hover:has(span.layui-tree-txt.layui-disabled){background-color: transparent !important}
 .layui-tree-line .layui-tree-set:before{border-left:1px dotted var(--lay-color-gray-7)}
 .layui-tree-iconClick{color:var(--lay-color-gray-7)}
 .layui-tree-icon{border:1px solid var(--lay-color-gray-8)}
@@ -355,7 +360,7 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-code-view>.layui-code-ul>li{background-color: var(--lay-color-bg-2)}
 .layui-code-dark{border:1px solid #3d3d3d;border-left-color:#656565;background-color:#3d3d3d;color:var(--lay-color-gray-8)}
 .layui-code-dark>.layui-code-ol>li,.layui-code-dark>.layui-code-ul>li{background-color:#3f3f3f}
-.layui-code-full{background-color: var(--lay-color-white)}
+.layui-code-full{background-color: var(--lay-color-bg-1)}
 /*日期选择器*/
 .layui-laydate-header i{color:var(--lay-color-gray-8)}
 .laydate-day-holidays:before{color:var(--lay-color-red-6)}
@@ -466,14 +471,12 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-form-select dl dd.layui-this{background-color:var(--lay-color-fill-2)}
 .layui-laypage button{color:var(--lay-color-text-1)}
 .layui-table-click,.layui-table-hover,.layui-table[lay-even] tbody tr:nth-child(even){background-color:var(--lay-color-fill-3)}
-.layui-transfer-data li:hover{background-color:var(--lay-color-active)}
 .layui-menu .layui-menu-item-checked,.layui-menu .layui-menu-item-checked2{background-color:var(--lay-color-fill-2)!important}
 .layui-input-split{background-color: var(--lay-color-bg-2);}
 .layui-layer-tab .layui-layer-title span:first-child{border-left: none !important;}
 .layui-slider-input.layui-input,
 .layui-slider-input .layui-input {background-color: var(--lay-color-bg-2);}
 
-/* 部分效果对齐 layui.dev */
 a {
   color: var(--lay-color-text-1)
 }
@@ -481,16 +484,4 @@ a {
 .layui-code,
 pre>code {
   background-color: var(--lay-color-bg-2)
-}
-
-.layui-code-full {
-  background-color: var(--lay-color-bg-1)
-}
-
-.layui-btn-primary:hover {
-  border-color: transparent
-}
-
-.layui-border-black {
-  color: var(--lay-color-text-1) !important
 }

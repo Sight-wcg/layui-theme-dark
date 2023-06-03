@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@arco-design/color': ^0.4.0
+  '@types/jquery': ^3.5.16
   cssgrace: ^3.0.0
   gulp: ^4.0.2
   gulp-concat: ^2.6.1
@@ -15,6 +16,7 @@ specifiers:
 
 devDependencies:
   '@arco-design/color': 0.4.0
+  '@types/jquery': 3.5.16
   cssgrace: 3.0.0
   gulp: 4.0.2
   gulp-concat: 2.6.1
@@ -38,8 +40,18 @@ packages:
     resolution: {integrity: sha512-Q5Vn3yjTDyCMV50TB6VRIbQNxSE4OmZR86VSbGaNpfUolm0iePBB4KdEEHmxoY5sT2+2DIvXW0rvMDP2nHZ4Mg==}
     dev: true
 
+  /@types/jquery/3.5.16:
+    resolution: {integrity: sha512-bsI7y4ZgeMkmpG9OM710RRzDFp+w4P1RGiIt30C1mSBT+ExCleeh4HObwgArnDFELmRrOpXgSYN9VF1hj+f1lw==}
+    dependencies:
+      '@types/sizzle': 2.3.3
+    dev: true
+
   /@types/node/18.15.11:
     resolution: {integrity: sha512-E5Kwq2n4SbMzQOn6wnmBjuK9ouqlURrcZDVfbo9ftDDTFt3nk7ZKK4GMOzoYgnpQJKcxwQw+lGaBvvlMo0qN/Q==}
+    dev: true
+
+  /@types/sizzle/2.3.3:
+    resolution: {integrity: sha512-JYM8x9EGF163bEyhdJBpR2QX1R5naCJHC8ucJylJ3w9/CVBaskdQ8WqBf8MmQrd1kRvp/a4TS8HJ+bxzR7ZJYQ==}
     dev: true
 
   /@types/vinyl/2.0.7:

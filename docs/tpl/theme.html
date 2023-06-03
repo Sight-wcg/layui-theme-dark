@@ -50,7 +50,7 @@
         <input name="colorpicker" type="checkbox" style="height: 20px; width: 20px;">
       </label>
       <label title="类名/属性名例如 .dark,[theme-mode='dark']">
-        自定义主题类名/属性名
+        自定义主题类/属性选择器
         <input name="theme-prefix" type="input" style="height: 18px; width: 150px;">
       </label>
       <i id="theme-prefix-tips" class="layui-icon layui-icon-tips" style="position: relative; top: 3.5px;margin-left: 2px;"></i>
@@ -217,7 +217,7 @@ ${hasPrefix
   ? `${hasPrefix}{${overrideCSS}}` 
   : overrideCSS}`;
 
-      /** css-next 插件太大，暂时用 less */
+      // css-next 插件太大，暂时用 less
       finalCSS = (await window.less.render(finalCSS)).css
       const alink=document.createElement("a")
       alink.download='layui-theme-dark-custom.css'

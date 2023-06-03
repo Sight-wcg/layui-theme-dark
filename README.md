@@ -9,7 +9,7 @@ layui 暗色主题
 
  #### 方式一
  
- 通过[示例](https://sight-wcg.github.io/layui-theme-dark/)中的主题面板，自定义主题类名，例如 `.dark`，通过改变 HTML 标签的类名切换主题
+ 通过[演示](https://sight-wcg.github.io/layui-theme-dark/)中的主题面板，自定义主题类选择器，例如 `.dark`，通过改变 HTML 标签的类名切换主题
  
  ```css
  /** CSS 生成 */
@@ -31,7 +31,7 @@ document.documentElement.classList.toggle('dark')
 ```
 #### 方式二
 
-通过[示例](https://sight-wcg.github.io/layui-theme-dark/)中的主题面板，自定义主题属性名，例如`[theme-mode='dark']`，通过改变 HTML 标签上 `theme-mode` 属性的值切换主题
+通过[演示](https://sight-wcg.github.io/layui-theme-dark/)中的主题面板，自定义主题属性选择器，例如`[theme-mode='dark']`，通过改变 HTML 标签上 `theme-mode` 属性的值切换主题
 
 ```css
 /** CSS 生成 */
@@ -66,6 +66,13 @@ document.documentElement.removeAttribute('theme-mode')
  // 恢复亮色主题
  document.getElementById('#layui_theme_css').removeAttribute('href')
  ```
+# 第三方模块
+
+  对一些高质量且使用广泛的第三方模块行了支持，存放在 ext 目录，默认不会集成
+  - layui-soul-table
+  - xm-select
+
+# ColorMode 模块（WIP）
 
 # IE9+ 
 

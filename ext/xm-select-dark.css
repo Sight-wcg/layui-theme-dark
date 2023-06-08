@@ -1,11 +1,11 @@
 xm-select {
   background-color: var(--lay-color-fill-2);
-  border: 1px solid var(--lay-color-border-2);
+  border: 1px solid var(--lay-color-border-1);
 }
 
 xm-select:hover,
 xm-select:focus {
-  border-color: var(--lay-color-border-3) !important;
+  border-color: var(--lay-color-border-2) !important;
 }
 
 xm-select>.xm-tips {

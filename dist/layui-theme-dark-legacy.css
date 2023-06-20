@@ -149,19 +149,21 @@ a:hover{color:rgba(255,255,255,.5)}
 }
 .layui-input:hover{border-color: #484849!important}
 .layui-textarea:hover{border-color: #484849!important}
-.layui-input:focus{border-color: #484849!important}
-.layui-textarea:focus{border-color: #484849!important}
+.layui-input:focus{border-color: #37C588!important;box-shadow: 0 0 0 3px rgba(22, 183, 119, 0.08);}
+.layui-textarea:focus{border-color: #37C588!important;box-shadow: 0 0 0 3px rgba(22, 183, 119, 0.08);}
 .layui-input:hover[disabled]{border-color: #2e2e30!important}
 .layui-textarea:hover[disabled]{border-color: #2e2e30!important}
-.layui-input:focus[disabled]{border-color: #2e2e30!important}
-.layui-textarea:focus[disabled]{border-color: #2e2e30!important}
-.layui-form-danger+.layui-form-select .layui-input{border-color:#FF5722!important}
-.layui-form-danger:focus{border-color:#FF5722!important}
+.layui-input:focus[disabled]{border-color: #2e2e30!important;}
+.layui-textarea:focus[disabled]{border-color: #2e2e30!important;}
+.layui-input:focus.layui-disabled{border-color: #2e2e30!important;box-shadow: 0 0 0 0}
+.layui-textarea:focus.layui-disabled{border-color: #2e2e30!important;box-shadow: 0 0 0 0}
+.layui-form-danger+.layui-form-select .layui-input{border-color:#FF5722!important;box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.08);}
+.layui-form-danger:focus{border-color:#FF5722!important;box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.08);}
 /* 输入框点缀  */
 .layui-input-prefix .layui-icon{color: #C2C2C2}
 .layui-input-split .layui-icon{color: #C2C2C2}
 .layui-input-suffix .layui-icon{color: #C2C2C2}
-.layui-input-wrap .layui-input:focus+.layui-input-split{border-color: #484849}
+.layui-input-wrap .layui-input:focus+.layui-input-split{border-color: #37C588}
 .layui-input-affix .layui-icon{color: rgba(255,255,255,.7)}
 .layui-input-affix .layui-icon-clear{color:rgba(255,255,255,.7)}
 .layui-input-affix .layui-icon:hover{color:rgba(255,255,255,.5)}

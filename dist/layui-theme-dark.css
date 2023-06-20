@@ -281,13 +281,14 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-input,.layui-select,.layui-textarea{background-color: var(--lay-color-fill-2);color: var(--lay-color-text-2)}
 .layui-input[disabled],.layui-select[disabled],.layui-textarea[disabled]{background-color: var(--lay-color-fill-1);color: var(--lay-color-text-4);border-color: var(--lay-color-border-1)!important;}
 .layui-input:hover,.layui-textarea:hover{border-color: var(--lay-color-border-2)!important}
-.layui-input:focus,.layui-textarea:focus{border-color: var(--lay-color-border-2)!important}
+.layui-input:focus,.layui-textarea:focus{border-color: var(--lay-color-secondary-hover)!important;box-shadow: 0 0 0 3px rgba(22, 183, 119, 0.08);}
 .layui-input:hover[disabled],.layui-textarea:hover[disabled]{border-color: var(--lay-color-border-1)!important}
-.layui-input:focus[disabled],.layui-textarea:focus[disabled]{border-color: var(--lay-color-border-1)!important}
-.layui-form-danger+.layui-form-select .layui-input,.layui-form-danger:focus{border-color:var(--lay-color-danger)!important}
+.layui-input:focus[disabled],.layui-textarea:focus[disabled]{border-color: var(--lay-color-border-1)!important;}
+.layui-input:focus.layui-disabled,.layui-textarea:focus.layui-disabled{border-color: var(--lay-color-border-1)!important;box-shadow: 0 0 0 0}
+.layui-form-danger+.layui-form-select .layui-input,.layui-form-danger:focus{border-color:var(--lay-color-danger)!important;box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.08);}
 /* 输入框点缀  */
 .layui-input-prefix .layui-icon,.layui-input-split .layui-icon,.layui-input-suffix .layui-icon{color: var(--lay-color-gray-8)}
-.layui-input-wrap .layui-input:focus+.layui-input-split{border-color: var(--lay-color-border-2)}
+.layui-input-wrap .layui-input:focus+.layui-input-split{border-color: var(--lay-color-secondary-hover)}
 .layui-input-affix .layui-icon{color: var(--lay-color-text-2)}
 .layui-input-affix .layui-icon-clear{color:var(--lay-color-text-2)}
 .layui-input-affix .layui-icon:hover{color:var(--lay-color-text-3)}

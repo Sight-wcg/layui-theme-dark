@@ -6,6 +6,7 @@
 components.d.ts
 index.json
 indexes.json
+package-lock.json
 node_modules
 cache
 packages/*/LICENSE

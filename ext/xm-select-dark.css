@@ -151,7 +151,7 @@ xm-select>.xm-body.cascader .disabled .xm-right-arrow {
 }
 
 xm-select>.xm-body.cascader .hide-icon.disabled .xm-right-arrow {
-  color: var(--lay-color-text-4) !important; !important;
+  color: var(--lay-color-text-4) !important;
 }
 
 xm-select .xm-input {

@@ -29,6 +29,7 @@ layui.define(['jquery'], function (exports) {
     /**
      *
      * @param {initOptions} options
+     * @returns {{mode: () => string; setMode: (mode: string) => void; }}
      */
     init: function (options) {
       var defaults = {
@@ -61,7 +62,7 @@ layui.define(['jquery'], function (exports) {
                 opts.storage.setItem(opts.storageKey, opts.initialValue);
                 return opts.initialValue;
               }
-              return opts.storage.getItem(opts.storageKey);
+              return v;
             })();
 
       /**

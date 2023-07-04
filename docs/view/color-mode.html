@@ -8,11 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Demo</title>
   <!-- 请勿在项目正式环境中引用该 layui.css 地址 -->
-  <link href="//unpkg.com/layui@2.8.3/dist/css/layui.css" rel="stylesheet">
+  <link href="//unpkg.com/layui/dist/css/layui.css" rel="stylesheet">
   <style>
-    html.green {
-      filter: sepia(0.9) hue-rotate(415deg) brightness(0.9);
-    }
     html.cafe {
       filter: sepia(0.9) hue-rotate(315deg) brightness(0.9);
       background-color: #FFF;
@@ -25,6 +22,9 @@
 
     html.dark{
       color-scheme: dark;
+    }
+    .dark body{
+      color: #EEE;
     }
     .dark .layui-dropdown{
       color: #EEE !important;
@@ -77,7 +77,6 @@
   </style>
 </head>
 <body style="padding: 20px;">
-<h1>WIP</h1>
 <div style="display: flex; width: 500px; height: 500px; align-items: flex-start; justify-content: flex-end; flex-direction: row-reverse">
   <i id="ID-dropdown-theme" class="layui-icon layui-icon-theme" style="font-size: 25px;"></i>
   <div>
@@ -93,7 +92,7 @@
     </div>
   </div>
 </div>
-  <script src="//unpkg.com/layui@2.8.3/dist/layui.js"></script>
+  <script src="//unpkg.com/layui/dist/layui.js"></script>
   <script>
     layui.config({base: './docs/lib/'})
 
@@ -106,29 +105,6 @@
         modes: {
           contrast: 'dark contrast',
           cafe: 'cafe',
-          purple: 'light purple',
-        },
-        storageKey: null,
-        onChanged: async function (mode, defaultHandler) {
-          console.log(mode);
-          if(mode === 'purple'){
-            var VERSION = '2.8.3';
-            var url = `https://unpkg.com/layui@${VERSION}/dist/css/layui.css`;
-            var newColors = ['#4b53bc','#4b53bc'];
-            var presetColors = ['#16baaa', '#16b777'] // 预设主色和次色
-
-            var style = await (await fetch(url)).text();
-            style = style.replace(/@font-face{[^}]+}/, '');
-
-            var newStyle = style;
-            presetColors.forEach((color,index) => {
-              newStyle= newStyle.replace(new RegExp(color,'ig'),newColors[index])
-            })
-            colorMode.addStyle('customTheme', newStyle);
-          }else{
-            $('#customTheme').remove()
-          }
-          defaultHandler()
         }
       })
 
@@ -139,7 +115,7 @@
         style: 'height: 100px',
         data: [
         {
-          title: '暗黑模式',
+          title: '暗色模式',
           id: 'dark',
           icon: 'layui-icon-moon',
           templet: dropdownItemTpl,
@@ -157,20 +133,14 @@
           templet: dropdownItemTpl,
         },
         {
-          title: '高对比度',
+          title: '高对比度(dark)',
           id: 'contrast',
           icon: 'layui-icon-rate-half',
           templet: dropdownItemTpl,
         },
         {
-          title: '护眼模式',
+          title: '护眼模式？',
           id: 'cafe',
-          icon: 'layui-icon-eye',
-          templet: dropdownItemTpl,
-        },
-        {
-          title: '自定义紫色',
-          id: 'purple',
           icon: 'layui-icon-eye',
           templet: dropdownItemTpl,
         }
@@ -178,6 +148,9 @@
         click: function(obj){
           this.elem.attr('class','').addClass(`layui-icon ${obj.icon}`);
           theme.setMode(obj.id);
+          if(obj.id === 'auto'){
+            layer.msg('尝试更改系统主题，观察界面主题变化')
+          }
         }
       })
 

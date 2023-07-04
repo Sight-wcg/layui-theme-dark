@@ -85,6 +85,28 @@ darkThemeMediaQuery.addEventListener(function(e){
 
 ```
 
+持久化
+
+```js
+var APPERANCE_KEY = "layui-theme-mode-prefer-dark"
+
+var savedPreferDark = localStorage.getItem(APPERANCE_KEY)
+
+if(
+  savedPreferDark === "true" ||
+  (!savedPreferDark && window.matchMedia("(prefers-color-scheme: dark)").matches)
+){
+  document.documentElement.classList.add("dark")
+  $('[lay-filter="toggle-theme"]').prop("checked", true)
+}
+
+form.on("switch(toggle-theme)", function(data) {
+  var cls=document.documentElement.classList;
+  cls.toggle("dark");
+  localStorage.setItem(APPERANCE_KEY, String(cls.contains("dark")))
+});
+```
+
 # 第三方模块
 
 对一些高质量且使用广泛的第三方模块行了支持，存放在 ext 目录，默认未集成
@@ -187,11 +209,11 @@ npm run build
 
 - 为什么包含所有的颜色规则，而不是仅包含暗色必须的颜色规则？
 
-  1. 暗色色板降低饱和度，提高亮度，暗色下看起来更舒适一些，可以在主题面板自定义是否使用暗色色板
+  - 暗色色板降低饱和度，提高亮度，暗色下看起来更舒适一些，可以在主题面板自定义是否使用暗色色板
 
-  2. 避免意外破坏样式优先级，降低维护成本
+  - 避免意外破坏样式优先级，降低维护成本
 
-  3. 将来的版本可能会用到，可以自行删除不需要的样式
+  - 将来的版本可能会用到，可以自行删除不需要的样式
 
 - 更细粒度（组件级）的颜色变量支持？
 

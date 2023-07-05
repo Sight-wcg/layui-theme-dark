@@ -265,8 +265,8 @@
         //   $('[lay-filter="toggle-theme"]').prop('checked',true)
         // }
 
-        var hash = location.hash.slice(1)
-        renderView({path:hash,type: $(`[data-path='${hash}']`).data('type')});
+        var path = location.hash.slice(1) || 'view/button';
+        renderView({path, type: $(`[data-path='${path}']`).data('type')});
 
         util.event('lay-header-event',{
           menuLeft: function() {

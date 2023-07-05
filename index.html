@@ -154,14 +154,16 @@
             </dl>
           </li>
           <li class="layui-nav-item">
-            <a href="javascript:;">其他</a>
+            <a href="javascript:;">第三方模块</a>
             <dl class="layui-nav-child">
-              <dd><a data-path="view/color-mode" href="javascript:;">colorMode 模块</a></dd>
+              <dd><a data-path="view/color-mode" href="javascript:;">colorMode 模块(WIP)</a></dd>
               <dd><a data-path="view/layui-soul-table" href="javascript:;">layui-soul-table</a></dd>
               <dd><a data-path="view/xm-select" href="javascript:;">xm-select</a></dd>
             </dl>
-           
           </li>
+          <!-- <li class="layui-nav-item">
+            <a data-type="iframe" data-path="view/iframe/iframe-test" href="javascript:;">iframe</a>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -176,12 +178,12 @@
     </div> -->
   </div>
   <script>
-    var layuicss="https://unpkg.com/layui@"+VERSION+"/dist/css/layui.css";
-    var layuijs="https://unpkg.com/layui@"+VERSION+"/dist/layui.js";
-    // var layuicss="https://cdn.jsdelivr.net/gh/layui/layui@"+VERSION+"/dist/css/layui.css";
-    // var layuijs="https://cdn.jsdelivr.net/gh/layui/layui@"+VERSION+"/dist/layui.js";
+    var layuicss=`https://unpkg.com/layui@${VERSION}/dist/css/layui.css`;
+    var layuijs=`https://unpkg.com/layui@${VERSION}/dist/layui.js`;
+    // var layuicss=`https://cdn.jsdelivr.net/gh/layui/layui@${VERSION}/dist/css/layui.css`;
+    // var layuijs=`https://cdn.jsdelivr.net/gh/layui/layui@${VERSION}/dist/layui.js`;
     addLink({href: layuicss});
-    addLink({id: "layui_theme_css",href: ""});
+    addLink({id: 'layui_theme_css',href: ''});
     loadScript(layuijs,function() {
       layui
         .config({
@@ -263,7 +265,8 @@
         //   $('[lay-filter="toggle-theme"]').prop('checked',true)
         // }
 
-        renderView('#body-container',location.hash.slice(1)||'view/button');
+        var hash = location.hash.slice(1)
+        renderView({path:hash,type: $(`[data-path='${hash}']`).data('type')});
 
         util.event('lay-header-event',{
           menuLeft: function() {
@@ -282,9 +285,10 @@
         });
 
         element.on('nav(nav-side)',function(elem) {
-          var path=elem.data('path');
+          var path = elem.data('path');
+          var type = elem.data('type');
           if(path) {
-            renderView('#body-container',path);
+            renderView({path,type});
             if($(window).width()<=768) {
               $('.layui-layout-admin .layui-side').animate({left: '-300px'});
             }
@@ -350,12 +354,24 @@
 
         // }
 
-        function renderView(elem,path,prefix,suffix) {
+        function renderView({
+          elem = '#body-container', 
+          path = 'view/button', 
+          type,
+          prefix = './docs/', 
+          suffix = '.html'}
+        ) {
           var containerDom=$(elem);
-          prefix=prefix||'./docs/';
-          suffix=suffix||'.html';
+          var url = prefix + path + suffix
+
+          history.replaceState({}, '', '#' + path); // 因为并没有处理路由变化
+          if(type === 'iframe'){
+            containerDom.html($('<iframe >').attr('src', url).css({ width: '100%',height: '90vh', border: 'none' }))
+            return;
+          }
+
           $.ajax({
-            url: prefix+path+suffix,
+            url: url,
             dataType: 'html',
             success: function(res) {
               containerDom.html(res);
@@ -363,7 +379,6 @@
               form.render();
             },
           });
-          history.replaceState({},'','#'+path);
           $('#ws-nav-side')
             .find("[data-path='"+path+"']")
             .parent('dd')

@@ -1,3 +1,7 @@
+const rootPath = (function (src) {
+  src = document.currentScript ? document.currentScript.src : document.scripts[document.scripts.length - 1].src;
+  return src.substring(0, src.lastIndexOf('/') + 1);
+})();
 const VERSION = '2.8.10';
 const layuicss = `https://unpkg.com/layui@${VERSION}/dist/css/layui.css`;
 const layuijs = `https://unpkg.com/layui@${VERSION}/dist/layui.js`;
@@ -24,7 +28,7 @@ loadScript(layuijs, function () {
       initialValue: 'dark',
       modes: {
         light: '',
-        dark: `${location.origin}/dist/layui-theme-dark.css`,
+        dark: `${rootPath}/dist/layui-theme-dark.css`,
       },
       storageKey: APPERANCE_KEY,
       onChanged(mode, defaultHandler) {

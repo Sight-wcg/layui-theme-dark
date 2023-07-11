@@ -1,434 +1,164 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>layui-theme-dark</title>
-  <script>
-    var VERSION='2.8.9';
-  </script>
-  <style>
-    .aside-right {
-      position: fixed;
-      top: 60px;
-      width: 200px;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      z-index: 999;
-      width: 200px;
-      overflow-x: hidden;
-    }
-
-    /* 移动端 */
-    @media screen and (max-width: 768px) {
-
-      .layui-layout-admin .layui-layout-left,
-      .layui-layout-admin .layui-body,
-      .layui-layout-admin .layui-footer {
-        left: 0;
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>layui-theme-dark</title>
+    <style>
+      .layui-layout-right .layui-nav-bar {
+        background-color: unset !important;
       }
 
       .layui-layout-admin .layui-side {
-        left: -300px;
+        top: 0 !important;
+        z-index: 1001;
       }
 
-      .site-mobile-shade {
-        content: '';
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: rgba(0, 0, 0, 0.8);
+      .layui-layout-admin .layui-logo {
+        position: relative !important;
+        height: 60px !important;
+        top: -2px !important;
+      }
+
+      .layui-side,
+      .layui-header,
+      .layui-body,
+      .layui-footer {
+        transition: left 0.3s;
+      }
+
+      .collapse .layui-layout-admin .layui-side,
+      .collapse .layui-layout-admin .layui-header {
+        left: -200px;
+      }
+
+      .collapse .layui-layout-admin .layui-footer,
+      .collapse .layui-layout-admin .layui-body {
+        left: 0px;
+      }
+    </style>
+    <style>
+      ::view-transition-old(root),
+      ::view-transition-new(root) {
+        animation: none;
+        mix-blend-mode: normal;
+      }
+
+      ::view-transition-old(root) {
         z-index: 9999;
       }
-    }
 
-    .layui-layout-right .layui-nav-bar {
-      background-color: unset !important;
-    }
-  </style>
-  <style>
-    ::view-transition-old(root),
-    ::view-transition-new(root) {
-      animation: none;
-      mix-blend-mode: normal;
-    }
+      ::view-transition-new(root) {
+        z-index: 1;
+      }
 
-    ::view-transition-old(root) {
-      z-index: 9999;
-    }
+      .dark::view-transition-old(root) {
+        z-index: 1;
+      }
 
-    ::view-transition-new(root) {
-      z-index: 1;
-    }
+      .dark::view-transition-new(root) {
+        z-index: 9999;
+      }
+    </style>
+  </head>
 
-    .dark::view-transition-old(root) {
-      z-index: 1;
-    }
-
-    .dark::view-transition-new(root) {
-      z-index: 9999;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="layui-layout layui-layout-admin">
-    <div class="layui-header">
-      <div class="layui-logo layui-hide-xs layui-bg-black">dark demo</div>
-      <!-- 头部区域（可配合layui 已有的水平导航） -->
-      <ul class="layui-nav layui-layout-left">
-        <!-- 移动端显示 -->
-        <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
-          <i class="layui-icon layui-icon-spread-left"></i>
-        </li>
-        <li class="layui-nav-item"><span id="layuiv" style="margin-left: 10px; font-size: 10px"></span></li>
-      </ul>
-      <ul class="layui-nav layui-layout-right">
-        <li class="layui-nav-item">
-          <div class="layui-form">
-            <div class="layui-form-item">
-              <input type="checkbox" name="theme" value="dark" lay-skin="switch" lay-filter="toggle-theme">
-              <div lay-checkbox>
-                <i class="layui-icon layui-icon-moon"></i> |
-                <i class="layui-icon layui-icon-light"></i>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="layui-nav-item" lay-unselect>
-          <a href="https://github.com/Sight-wcg/layui-theme-dark" target="_blank" style="background-color: unset;">
-            <i class="layui-icon layui-icon-github" style="font-size: 20px"></i>
-          </a>
-        </li>
-        <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
-          <a href="javascript:;" style="background-color: unset;padding-left: 0;">
-           <i class="layui-icon layui-icon-more-vertical"></i>
-         </a>
-        </li>
-      </ul>
-    </div>
-    <div class="layui-side layui-bg-black">
-      <div class="layui-side-scroll">
-        <!-- 左侧导航区域 -->
-        <ul class="layui-nav layui-nav-tree" lay-shrink="all" lay-unselect lay-filter="nav-side" id="ws-nav-side">
-          <li class="layui-nav-item">
-            <a class="" href="javascript:;">基本元素</a>
-            <dl class="layui-nav-child">
-              <dd><a data-path="view/button" href="javascript:;">按钮</a></dd>
-              <dd><a data-path="view/element.nav" href="javascript:;">导航/面包屑</a></dd>
-              <dd><a data-path="view/form" href="javascript:;">表单</a></dd>
-              <dd><a data-path="view/menu" href="javascript:;">基础菜单</a></dd>
-              <dd><a data-path="view/element.tab" href="javascript:;">选项卡</a></dd>
-              <dd><a data-path="view/progress" href="javascript:;">进度条</a></dd>
-              <dd><a data-path="view/panel" href="javascript:;">面板</a></dd>
-              <dd><a data-path="view/badge" href="javascript:;">徽章</a></dd>
-              <dd><a data-path="view/timeline" href="javascript:;">时间线</a></dd>
-              <dd><a data-path="view/table-static" href="javascript:;">静态表格</a></dd>
-              <dd><a data-path="view/auxiliar" href="javascript:;">辅助元素</a></dd>
-            </dl>
+  <body>
+    <div class="layui-layout layui-layout-admin">
+      <div class="layui-header">
+        <!-- 头部区域（可配合layui 已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+          <!-- 移动端显示 -->
+          <li class="layui-nav-item layui-show-xs-inline-block" lay-header-event="menuLeft">
+            <i class="layui-icon layui-icon-spread-left"></i>
           </li>
+          <li class="layui-nav-item"><span id="layuiv" style="margin-left: 20px; font-size: 10px"></span></li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
           <li class="layui-nav-item">
-            <a href="javascript:;">组件示例</a>
-            <dl class="layui-nav-child">
-              <dd><a data-path="view/layer" href="javascript:;">弹出层</a></dd>
-              <dd><a data-path="view/laydate" href="javascript:;">日期与时间选择</a></dd>
-              <dd><a data-path="view/table" href="javascript:;">表格综合</a></dd>
-              <dd><a data-path="view/table-test" href="javascript:;">表格操作</a></dd>
-              <dd><a data-path="view/treeTable" href="javascript:;">树形表格</a></dd>
-              <dd><a data-path="view/laypage" href="javascript:;">分页</a></dd>
-              <dd><a data-path="view/upload" href="javascript:;">上传</a></dd>
-              <dd><a data-path="view/dropdown" href="javascript:;">下拉菜单</a></dd>
-              <dd><a data-path="view/transfer" href="javascript:;">穿梭框</a></dd>
-              <dd><a data-path="view/tree" href="javascript:;">树形组件</a></dd>
-              <dd><a data-path="view/colorpicker" href="javascript:;">颜色选择器</a></dd>
-              <dd><a data-path="view/slider" href="javascript:;">滑块</a></dd>
-              <dd><a data-path="view/rate" href="javascript:;">评分</a></dd>
-              <dd><a data-path="view/carousel" href="javascript:;">轮播</a></dd>
-              <dd><a data-path="view/flow" href="javascript:;">流加载</a></dd>
-              <dd><a data-path="view/util" href="javascript:;">工具模块</a></dd>
-              <dd><a data-path="view/code" href="javascript:;">文本行修饰</a></dd>
-            </dl>
+            <i id="change-theme" class="layui-icon layui-icon-theme" style="font-size: 20px"></i>
           </li>
-          <li class="layui-nav-item">
-            <a href="javascript:;">第三方模块</a>
-            <dl class="layui-nav-child">
-              <dd><a data-path="view/color-mode" href="javascript:;">colorMode 模块(WIP)</a></dd>
-              <dd><a data-path="view/layui-soul-table" href="javascript:;">layui-soul-table</a></dd>
-              <dd><a data-path="view/xm-select" href="javascript:;">xm-select</a></dd>
-            </dl>
+          <li class="layui-nav-item" lay-unselect>
+            <a href="https://github.com/Sight-wcg/layui-theme-dark" target="_blank" style="background-color: unset">
+              <i class="layui-icon layui-icon-github" style="font-size: 20px"></i>
+            </a>
           </li>
-          <!-- <li class="layui-nav-item">
-            <a data-type="iframe" data-path="view/iframe/iframe-test" href="javascript:;">iframe</a>
-          </li> -->
+          <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+            <a href="javascript:;" style="background-color: unset; padding-left: 0">
+              <i class="layui-icon layui-icon-more-vertical"></i>
+            </a>
+          </li>
         </ul>
       </div>
-    </div>
+      <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+          <!-- 左侧导航区域 -->
+          <div class="layui-logo layui-bg-black">dark demo</div>
+          <ul class="layui-nav layui-nav-tree" lay-shrink="all" lay-unselect lay-filter="nav-side" id="ws-nav-side">
+            <li class="layui-nav-item">
+              <a class="" href="javascript:;">基本元素</a>
+              <dl class="layui-nav-child">
+                <dd><a data-path="view/button" href="javascript:;">按钮</a></dd>
+                <dd><a data-path="view/element.nav" href="javascript:;">导航/面包屑</a></dd>
+                <dd><a data-path="view/form" href="javascript:;">表单</a></dd>
+                <dd><a data-path="view/menu" href="javascript:;">基础菜单</a></dd>
+                <dd><a data-path="view/element.tab" href="javascript:;">选项卡</a></dd>
+                <dd><a data-path="view/progress" href="javascript:;">进度条</a></dd>
+                <dd><a data-path="view/panel" href="javascript:;">面板</a></dd>
+                <dd><a data-path="view/badge" href="javascript:;">徽章</a></dd>
+                <dd><a data-path="view/timeline" href="javascript:;">时间线</a></dd>
+                <dd><a data-path="view/table-static" href="javascript:;">静态表格</a></dd>
+                <dd><a data-path="view/auxiliar" href="javascript:;">辅助元素</a></dd>
+              </dl>
+            </li>
+            <li class="layui-nav-item">
+              <a href="javascript:;">组件示例</a>
+              <dl class="layui-nav-child">
+                <dd><a data-path="view/layer" href="javascript:;">弹出层</a></dd>
+                <dd><a data-path="view/laydate" href="javascript:;">日期与时间选择</a></dd>
+                <dd><a data-path="view/table" href="javascript:;">表格综合</a></dd>
+                <dd><a data-path="view/table-test" href="javascript:;">表格操作</a></dd>
+                <dd><a data-path="view/treeTable" href="javascript:;">树形表格</a></dd>
+                <dd><a data-path="view/laypage" href="javascript:;">分页</a></dd>
+                <dd><a data-path="view/upload" href="javascript:;">上传</a></dd>
+                <dd><a data-path="view/dropdown" href="javascript:;">下拉菜单</a></dd>
+                <dd><a data-path="view/transfer" href="javascript:;">穿梭框</a></dd>
+                <dd><a data-path="view/tree" href="javascript:;">树形组件</a></dd>
+                <dd><a data-path="view/colorpicker" href="javascript:;">颜色选择器</a></dd>
+                <dd><a data-path="view/slider" href="javascript:;">滑块</a></dd>
+                <dd><a data-path="view/rate" href="javascript:;">评分</a></dd>
+                <dd><a data-path="view/carousel" href="javascript:;">轮播</a></dd>
+                <dd><a data-path="view/flow" href="javascript:;">流加载</a></dd>
+                <dd><a data-path="view/util" href="javascript:;">工具模块</a></dd>
+                <dd><a data-path="view/code" href="javascript:;">文本行修饰</a></dd>
+              </dl>
+            </li>
+            <li class="layui-nav-item">
+              <a href="javascript:;">第三方模块</a>
+              <dl class="layui-nav-child">
+                <dd><a data-path="view/color-mode" href="javascript:;">colorMode 模块(WIP)</a></dd>
+                <dd><a data-path="view/layui-soul-table" href="javascript:;">layui-soul-table</a></dd>
+                <dd><a data-path="view/xm-select" href="javascript:;">xm-select</a></dd>
+              </dl>
+            </li>
+            <li class="layui-nav-item">
+              <a data-type="iframe" data-path="view/iframe/iframe-test" href="javascript:;">iframe-1</a>
+            </li>
+            <li class="layui-nav-item">
+              <a data-type="iframe" data-path="view/iframe/iframe-test2" href="javascript:;">iframe-2</a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-    <div class="layui-body">
-      <!-- 内容主体区域 -->
-      <div id="body-container" style="padding: 15px"></div>
-    </div>
+      <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div id="body-container" style="padding: 15px"></div>
+      </div>
 
-    <!-- <div class="layui-footer">
+      <!-- <div class="layui-footer">
       底部固定区域
     </div> -->
-  </div>
-  <script>
-    var layuicss=`https://unpkg.com/layui@${VERSION}/dist/css/layui.css`;
-    var layuijs=`https://unpkg.com/layui@${VERSION}/dist/layui.js`;
-    // var layuicss=`https://cdn.jsdelivr.net/gh/layui/layui@${VERSION}/dist/css/layui.css`;
-    // var layuijs=`https://cdn.jsdelivr.net/gh/layui/layui@${VERSION}/dist/layui.js`;
-    addLink({href: layuicss});
-    addLink({id: 'layui_theme_css',href: ''});
-    loadScript(layuijs,function() {
-      layui
-        .config({
-          base: './docs/lib/',
-        })
-        .extend({
-          drawer: 'drawer/drawer',
-        });
-      layui.use(['element','layer','util','drawer','colorMode'],function() {
-        var element=layui.element;
-        var form=layui.form;
-        var layer=layui.layer;
-        var util=layui.util;
-        var $=layui.$;
-        var drawer=layui.drawer;
-        var colorMode = layui.colorMode;
-
-        var APPERANCE_KEY='layui-theme-demo-prefer-dark'
-
-        // 为方便定制主题，这里用改变 href 属性的方式切换主题
-        var theme = colorMode.init({
-          selector: '#layui_theme_css',
-          attribute: 'href',
-          initialValue: 'dark',
-          modes: {
-            light: '',
-            dark: './dist/layui-theme-dark.css'
-          },
-          storageKey: APPERANCE_KEY,
-          disableTransition: false,
-          onChanged: function(mode, defaultHandler){
-            var isAppearanceTransition = document.startViewTransition &&
-              !window.matchMedia(`(prefers-reduced-motion: reduce)`).matches
-            var isDark = mode === 'dark';
-
-            if(isDark) $('[lay-filter="toggle-theme"]').prop('checked', true)
-
-            if (!isAppearanceTransition) defaultHandler();
-
-            // 移植自 https://github.com/vuejs/vitepress/pull/2347
-            var x = event.clientX
-            var y = event.clientY
-            var endRadius = Math.hypot(
-              Math.max(x, innerWidth - x),
-              Math.max(y, innerHeight - y),
-            )
-            var transition = document.startViewTransition(function () {
-              // 动画需要
-              document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
-              defaultHandler();
-            })
-            transition.ready.then(function () {
-              const clipPath = [
-                `circle(0px at ${x}px ${y}px)`,
-                `circle(${endRadius}px at ${x}px ${y}px)`,
-              ]
-              document.documentElement.animate(
-                {
-                  clipPath: isDark ? clipPath : [...clipPath].reverse(),
-                },
-                {
-                  duration: 300,
-                  easing: 'ease-in',
-                  pseudoElement: isDark ? '::view-transition-new(root)' : '::view-transition-old(root)',
-                },
-              )
-            })
-
-          }
-        });
-
-        // var savedPreferDark=localStorage.getItem(APPERANCE_KEY)
-        // if(
-        //   savedPreferDark==='true'||
-        //   (!savedPreferDark&&window.matchMedia('(prefers-color-scheme: dark)').matches)
-        // ) {
-        //   document.documentElement.classList.add('dark')
-        //   $('#layui_theme_css').prop("href",'./dist/layui-theme-dark.css');
-        //   $('[lay-filter="toggle-theme"]').prop('checked',true)
-        // }
-
-        var path = location.hash.slice(1) || 'view/button';
-        renderView({path, type: $(`[data-path='${path}']`).data('type')});
-
-        util.event('lay-header-event',{
-          menuLeft: function() {
-            var side=$('.layui-layout-admin .layui-side');
-            side.animate({left: side.css('left')==='0px'? '-300px':'0px'});
-          },
-          menuRight: function() {
-            drawer.open({
-              area: '600px',
-              url: './docs/tpl/theme.html',
-              hideOnClose: true,
-              id: 'drawer-theme-tpl',
-              shade: 0.01
-            })
-          }
-        });
-
-        element.on('nav(nav-side)',function(elem) {
-          var path = elem.data('path');
-          var type = elem.data('type');
-          if(path) {
-            renderView({path,type});
-            if($(window).width()<=768) {
-              $('.layui-layout-admin .layui-side').animate({left: '-300px'});
-            }
-          }
-        });
-
-        form.on('switch(toggle-theme)',function(data) {
-          // toggleDark({appearanceTransition: true})
-          theme.setMode(data.elem.checked ? 'dark' : 'light')
-        });
-
-        $(window).resize(function() {
-          if($(window).width()>768) {
-            $('.layui-layout-admin .layui-side').animate({left: '0px'});
-          }
-        });
-        $('#layuiv').text(layui.v);
-
-        // function toggleDark(opt) {
-        //   var isAppearanceTransition=document.startViewTransition&&
-        //     !window.matchMedia(`(prefers-reduced-motion: reduce)`).matches&&
-        //     opt.appearanceTransition;
-        //   var isDark=false;
-        //   var themeLink=$('#layui_theme_css');
-        //   var cls=document.documentElement.classList;
-
-        //   if(!isAppearanceTransition) {
-        //     cls.toggle('dark');
-        //     isDark=cls.contains('dark')
-        //     themeLink.prop("href",isDark? './dist/layui-theme-dark.css':'');
-        //     localStorage.setItem(APPERANCE_KEY,String(isDark))
-        //     return
-        //   }
-        //   //移植自 https://github.com/vuejs/vitepress/pull/2347，支持 chrome 111
-        //   var x=event.clientX
-        //   var y=event.clientY
-        //   var endRadius=Math.hypot(
-        //     Math.max(x,innerWidth-x),
-        //     Math.max(y,innerHeight-y),
-        //   )
-        //   var transition=document.startViewTransition(function() {
-        //     cls.toggle('dark');
-        //     isDark=cls.contains('dark')
-        //     themeLink.prop("href",isDark? './dist/layui-theme-dark.css':'');
-        //     localStorage.setItem(APPERANCE_KEY,String(isDark))
-        //   })
-        //   transition.ready.then(function() {
-        //     const clipPath=[
-        //       `circle(0px at ${x}px ${y}px)`,
-        //       `circle(${endRadius}px at ${x}px ${y}px)`,
-        //     ]
-        //     document.documentElement.animate(
-        //       {
-        //         clipPath: isDark? clipPath:[...clipPath].reverse(),
-        //       },
-        //       {
-        //         duration: 300,
-        //         easing: 'ease-in',
-        //         pseudoElement: isDark? '::view-transition-new(root)':'::view-transition-old(root)',
-        //       },
-        //     )
-        //   })
-
-        // }
-
-        function renderView({
-          elem = '#body-container', 
-          path = 'view/button', 
-          type,
-          prefix = './docs/', 
-          suffix = '.html'}
-        ) {
-          var containerDom=$(elem);
-          var url = prefix + path + suffix
-
-          history.replaceState({}, '', '#' + path); // 因为并没有处理路由变化
-          if(type === 'iframe'){
-            containerDom.html($('<iframe >').attr('src', url).css({ width: '100%',height: '90vh', border: 'none' }))
-            return;
-          }
-
-          $.ajax({
-            url: url,
-            dataType: 'html',
-            success: function(res) {
-              containerDom.html(res);
-              element.render();
-              form.render();
-            },
-          });
-          $('#ws-nav-side')
-            .find("[data-path='"+path+"']")
-            .parent('dd')
-            .addClass('layui-this')
-            .closest('.layui-nav-item')
-            .addClass('layui-nav-itemed')
-        }
-      });
-
-    });
-
-    function addStyle(id,cssStr) {
-      var el=document.getElementById(id)||document.createElement('style');
-      if(!el.isConnected) {
-        el.type='text/css';
-        el.id=id;
-        document.head.appendChild(el);
-      }
-      el.textContent=cssStr;
-    }
-
-    function addLink(opt) {
-      var link=document.createElement('link');
-      link.id=opt.id;
-      link.rel='stylesheet';
-      link.href=opt.href;
-      document.head.appendChild(link);
-    }
-
-    function loadScript(url,callback) {
-      var script=document.createElement('script');
-      script.type='text/javascript';
-      script.async='async';
-      script.src=url;
-      document.body.appendChild(script);
-      if(script.readyState) {
-        script.onreadystatechange=function() {
-          if(script.readyState=='complete'||script.readyState=='loaded') {
-            script.onreadystatechange=null;
-            callback&&callback();
-          }
-        };
-      } else {
-        script.onload=function() {
-          callback&&callback();
-        };
-      }
-    }
-
-  </script>
-</body>
-
+    </div>
+    <script src="./app.js"></script>
+  </body>
 </html>

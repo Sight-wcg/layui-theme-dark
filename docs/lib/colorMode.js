@@ -1,5 +1,5 @@
 /**
- * WIP 
+ * WIP
  * 移植自 https://github.com/vueuse/vueuse/tree/main/packages/core/useColorMode
  */
 // @ts-ignore
@@ -10,7 +10,8 @@ layui.define(['jquery'], function (exports) {
   var $ = layui.jquery;
 
   var MOD_NAME = 'colorMode';
-  var document = window.document;
+  var defaultWindow = window;
+  var document = defaultWindow.document;
 
   var colorMode = {
     /**
@@ -19,7 +20,7 @@ layui.define(['jquery'], function (exports) {
      * @prop {string} [attribute="class"] - 应用于目标元素的 HTML 属性
      * @prop {string} [initialValue='auto'] - 初始颜色模式
      * @prop {Object.<string, string>} [modes]- 颜色模式。value 为添加到 HTML 属性上的值
-     * @prop {(mode: string, defaultHandler: () => void) => void} [onChanged] - 用于处理更新的自定义处理程序，指定时，默认行为将被覆盖。
+     * @prop {(mode: string, defaultHandler: (window?: Window) => void) => void} [onChanged] - 用于处理更新的自定义处理程序，指定时，默认行为将被覆盖。
      * @prop {Storage} [storage=localStorage] - 将数据持久化到 localStorage/sessionStorage 的键。传递 `null` 以禁用持久性
      * @prop {string | null} [storageKey='color-scheme'] - 持久化使用的 key
      * @prop {boolean} [disableTransition=true] - 禁用切换时的过渡 {@link https://paco.me/writing/disable-theme-transitions}
@@ -29,7 +30,7 @@ layui.define(['jquery'], function (exports) {
     /**
      *
      * @param {initOptions} options
-     * @returns {{mode: () => string; setMode: (mode: string) => void; }}
+     * @returns {{mode: () => string; setMode: (mode: string, window?: Window) => void; }}
      */
     init: function (options) {
       var defaults = {
@@ -70,8 +71,11 @@ layui.define(['jquery'], function (exports) {
        * @param {String} selector
        * @param {String} attribute
        * @param {String} value
+       * @param {Window} win
        */
-      var updateHTMLAttrs = function (selector, attribute, value) {
+      var updateHTMLAttrs = function (selector, attribute, value, win) {
+        win = win || defaultWindow;
+        var document = win.document;
         var el = typeof selector === 'string' ? document.querySelector(selector) : undefined;
         if (!el) return;
 
@@ -106,7 +110,7 @@ layui.define(['jquery'], function (exports) {
 
         if (opts.disableTransition) {
           // 调用 getComputedStyle 强制浏览器重绘
-          // @ts-expect-error unused variable
+          // @ts-expect-error 未使用的变量
           var _ = window.getComputedStyle(style).opacity;
           document.head.removeChild(style);
         }
@@ -122,7 +126,7 @@ layui.define(['jquery'], function (exports) {
         state = store === 'auto' ? system : store;
       };
 
-      var prefersColorScheme = (function () {
+      var prefersColorScheme = function () {
         var isSupported = window && 'matchMedia' in window && typeof window.matchMedia === 'function';
         if (!isSupported) {
           system = 'light';
@@ -143,27 +147,29 @@ layui.define(['jquery'], function (exports) {
           // @ts-ignore 已弃用
           darkThemeMediaQuery.addListener(update);
         }
-      })();
+      };
 
-      function defaultOnChanged() {
-        updateHTMLAttrs(opts.selector, opts.attribute, opts.modes[state]);
+      prefersColorScheme();
+
+      function defaultOnChanged(win) {
+        updateHTMLAttrs(opts.selector, opts.attribute, opts.modes[state], win);
       }
 
-      function onChanged(mode) {
+      function onChanged(mode, win) {
         updateState(mode);
         if (opts.onChanged) {
           opts.onChanged(state, defaultOnChanged);
         } else {
-          defaultOnChanged();
+          defaultOnChanged(win);
         }
       }
 
       return {
-        setMode: function (mode) {
+        setMode: function (mode, win) {
           if (opts.storageKey) {
             opts.storage.setItem(opts.storageKey, mode);
           }
-          onChanged(mode);
+          onChanged(mode, win);
         },
         mode: function () {
           return state;

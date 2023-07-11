@@ -105,52 +105,44 @@
         modes: {
           contrast: 'dark contrast',
           cafe: 'cafe',
-        }
+        },
+        storageKey: null
       })
-
-      var dropdownItemTpl = `<span style="display: flex;"><i class="layui-icon {{= d.icon}}" style="margin-right: 8px"></i>{{= d.title }}</span>`
 
       dropdown.render({
         elem: '#ID-dropdown-theme',
         style: 'height: 100px',
+        templet: `<span style="display: flex;"><i class="layui-icon {{= d.icon}}" style="margin-right: 8px"></i>{{= d.title }}</span>`,
         data: [
         {
           title: '暗色模式',
           id: 'dark',
           icon: 'layui-icon-moon',
-          templet: dropdownItemTpl,
         },
         {
           title: '亮色模式',
           id: 'light',
           icon: 'layui-icon-light',
-          templet: dropdownItemTpl, 
         },
         {
           title: '跟随系统',
           id: 'auto',
           icon: 'layui-icon-console',
-          templet: dropdownItemTpl,
         },
         {
           title: '高对比度(dark)',
           id: 'contrast',
           icon: 'layui-icon-rate-half',
-          templet: dropdownItemTpl,
         },
         {
           title: '护眼模式？',
           id: 'cafe',
           icon: 'layui-icon-eye',
-          templet: dropdownItemTpl,
         }
        ],
         click: function(obj){
-          this.elem.attr('class','').addClass(`layui-icon ${obj.icon}`);
+          this.elem.attr('class',`layui-icon ${obj.icon}`);
           theme.setMode(obj.id);
-          if(obj.id === 'auto'){
-            layer.msg('尝试更改系统主题，观察界面主题变化')
-          }
         }
       })
 

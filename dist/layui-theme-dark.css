@@ -40,27 +40,27 @@
   --lay-color-lightblue-9: #064E74;
   --lay-color-lightblue-10: #002F4D;
 
-  --lay-color-green-1: #E8FFF9;
-  --lay-color-green-2: #B5F1E3;
-  --lay-color-green-3: #87E3D1;
-  --lay-color-green-4: #5DD6C1;
-  --lay-color-green-5: #37C8B5;
-  --lay-color-green-6: #16BAAA;
-  --lay-color-green-7: #0E9F95;
-  --lay-color-green-8: #08837F;
-  --lay-color-green-9: #036868;
-  --lay-color-green-10: #004A4D;
+  --lay-color-layuigreen-1: #E8FFF9;
+  --lay-color-layuigreen-2: #B5F1E3;
+  --lay-color-layuigreen-3: #87E3D1;
+  --lay-color-layuigreen-4: #5DD6C1;
+  --lay-color-layuigreen-5: #37C8B5;
+  --lay-color-layuigreen-6: #16BAAA;
+  --lay-color-layuigreen-7: #0E9F95;
+  --lay-color-layuigreen-8: #08837F;
+  --lay-color-layuigreen-9: #036868;
+  --lay-color-layuigreen-10: #004A4D;
 
-  --lay-color-lightgreen-1: #E8FFF2;
-  --lay-color-lightgreen-2: #B5F1D1;
-  --lay-color-lightgreen-3: #86E2B4;
-  --lay-color-lightgreen-4: #5CD49C;
-  --lay-color-lightgreen-5: #37C588;
-  --lay-color-lightgreen-6: #16B777;
-  --lay-color-lightgreen-7: #0E9C68;
-  --lay-color-lightgreen-8: #088259;
-  --lay-color-lightgreen-9: #036749;
-  --lay-color-lightgreen-10: #004D38;
+  --lay-color-green-1: #E8FFF2;
+  --lay-color-green-2: #B5F1D1;
+  --lay-color-green-3: #86E2B4;
+  --lay-color-green-4: #5CD49C;
+  --lay-color-green-5: #37C588;
+  --lay-color-green-6: #16B777;
+  --lay-color-green-7: #0E9C68;
+  --lay-color-green-8: #088259;
+  --lay-color-green-9: #036749;
+  --lay-color-green-10: #004D38;
 
   --lay-color-orange-1: #FFFCE8;
   --lay-color-orange-2: #FFF5BA;
@@ -123,18 +123,18 @@
 
   /* =====语义===== */
   /* 主色 */
-  --lay-color-primary: var(--lay-color-green-6); 
-  --lay-color-primary-hover: var(--lay-color-green-5);
-  --lay-color-primary-active: var(--lay-color-green-7);
-  --lay-color-primary-disabled: var(--lay-color-green-3);
-  --lay-color-primary-light: var(--lay-color-green-4);
+  --lay-color-primary: var(--lay-color-layuigreen-6); 
+  --lay-color-primary-hover: var(--lay-color-layuigreen-5);
+  --lay-color-primary-active: var(--lay-color-layuigreen-7);
+  --lay-color-primary-disabled: var(--lay-color-layuigreen-3);
+  --lay-color-primary-light: var(--lay-color-layuigreen-4);
 
   /* 次色 */
-  --lay-color-secondary: var(--lay-color-lightgreen-6);
-  --lay-color-secondary-hover: var(--lay-color-lightgreen-5);
-  --lay-color-secondary-active: var(--lay-color-lightgreen-7);
-  --lay-color-secondary-disabled: var(--lay-color-lightgreen-3);
-  --lay-color-secondary-light: var(--lay-color-lightgreen-4);
+  --lay-color-secondary: var(--lay-color-green-6);
+  --lay-color-secondary-hover: var(--lay-color-green-5);
+  --lay-color-secondary-active: var(--lay-color-green-7);
+  --lay-color-secondary-disabled: var(--lay-color-green-3);
+  --lay-color-secondary-light: var(--lay-color-green-4);
 
   /* 引导 */
   --lay-color-info: var(--lay-color-lightblue-6);
@@ -158,11 +158,11 @@
   --lay-color-warning-light: var(--lay-color-orange-4);
 
   /* 成功 */
-  --lay-color-success: var(--lay-color-lightgreen-6);
-  --lay-color-success-hover: var(--lay-color-lightgreen-5);
-  --lay-color-success-active: var(--lay-color-lightgreen-7);
-  --lay-color-success-disabled: var(--lay-color-lightgreen-3);
-  --lay-color-success-light: var(--lay-color-lightgreen-4);
+  --lay-color-success: var(--lay-color-green-6);
+  --lay-color-success-hover: var(--lay-color-green-5);
+  --lay-color-success-active: var(--lay-color-green-7);
+  --lay-color-success-disabled: var(--lay-color-green-3);
+  --lay-color-success-light: var(--lay-color-green-4);
 
   /* 错误 */
   --lay-color-danger: var(--lay-color-red-6);
@@ -235,7 +235,7 @@ a:hover{color:var(--lay-color-text-3)}
 /* 背景颜色 */
 .layui-bg-red{background-color:var(--lay-color-red-6)!important;color: var(--lay-color-white)!important}
 .layui-bg-orange{background-color:var(--lay-color-orange-6)!important;color: var(--lay-color-white)!important}
-.layui-bg-green{background-color:var(--lay-color-green-6)!important;color: var(--lay-color-white)!important}
+.layui-bg-green{background-color:var(--lay-color-layuigreen-6)!important;color: var(--lay-color-white)!important}
 .layui-bg-cyan{background-color:var(--lay-color-cyan-6)!important;color: var(--lay-color-white)!important}
 .layui-bg-blue{background-color: var(--lay-color-blue-6)!important;color: var(--lay-color-white)!important}
 .layui-bg-black{background-color:var(--lay-color-black-6)!important;color: var(--lay-color-white)!important}
@@ -247,7 +247,7 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-border{color:var(--lay-color-text-1)!important}
 .layui-border-red{border-color:var(--lay-color-red-6)!important;color:var(--lay-color-red-6)!important}
 .layui-border-orange{border-color:var(--lay-color-orange-6)!important;color:var(--lay-color-orange-6)!important}
-.layui-border-green{border-color:var(--lay-color-green-6)!important;color:var(--lay-color-green-6)!important}
+.layui-border-green{border-color:var(--lay-color-layuigreen-6)!important;color:var(--lay-color-layuigreen-6)!important}
 .layui-border-cyan{border-color:var(--lay-color-cyan-6)!important;color:var(--lay-color-cyan-6)!important}
 .layui-border-blue{border-color: var(--lay-color-blue-6)!important;color: var(--lay-color-blue-6)!important}
 .layui-border-purple{border-color: var(--lay-color-purple-6)!important; color: var(--lay-color-purple-6)!important;}
@@ -262,7 +262,7 @@ a:hover{color:var(--lay-color-text-3)}
 /* 字体颜色 */
 .layui-font-red{color:var(--lay-color-red-6)!important}
 .layui-font-orange{color:var(--lay-color-orange-6)!important}
-.layui-font-green{color:var(--lay-color-green-6)!important}
+.layui-font-green{color:var(--lay-color-layuigreen-6)!important}
 .layui-font-cyan{color:var(--lay-color-cyan-6)!important}
 .layui-font-blue{color:var(--lay-color-lightblue-6)!important}
 .layui-font-black{color:var(--lay-color-black)!important}
@@ -586,7 +586,7 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-laydate-content td.laydate-day-now{color:var(--lay-color-secondary)}
 .layui-laydate-content td.laydate-day-now:after{border:1px solid var(--lay-color-secondary)}
 .layui-laydate-linkage .layui-laydate-content td.laydate-selected>div{background-color:var(--lay-color-secondary-light)}
-.layui-laydate-linkage .laydate-selected:hover>div{background-color:var(--lay-color-lightgreen-4)!important}
+.layui-laydate-linkage .laydate-selected:hover>div{background-color:var(--lay-color-green-4)!important}
 .layui-laydate-content td>div:hover,.layui-laydate-list li:hover,.layui-laydate-shortcut>li:hover{background-color: var(--lay-color-fill-2);color: var(--lay-color-text-2)}
 .laydate-time-list li ol{border:1px solid  var(--lay-color-border-2)}
 .layui-laydate-content .laydate-day-next,.layui-laydate-content .laydate-day-prev{color: var(--lay-color-text-4)}
@@ -645,8 +645,8 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-layer-lan .layui-layer-btn{border-top:1px solid var(--lay-color-border-3)}
 .layui-layer-lan .layui-layer-btn a{background: var(--lay-color-white);border-color:var(--lay-color-border-3);color: var(--lay-color-black-7)}
 .layui-layer-lan .layui-layer-btn .layui-layer-btn1{background: var(--lay-color-gray-7)}
-.layui-layer-molv .layui-layer-title{background:var(--lay-color-green-6);color: var(--lay-color-text-1)}
-.layui-layer-molv .layui-layer-btn a{background:var(--lay-color-green-6);border-color:var(--lay-color-green-6)}
+.layui-layer-molv .layui-layer-title{background:var(--lay-color-layuigreen-6);color: var(--lay-color-text-1)}
+.layui-layer-molv .layui-layer-btn a{background:var(--lay-color-layuigreen-6);border-color:var(--lay-color-layuigreen-6)}
 .layui-layer-molv .layui-layer-btn .layui-layer-btn1{background:var(--lay-color-gray-7)}
 .layui-layer-prompt .layui-layer-input{border:1px solid  var(--lay-color-border-2);color: var(--lay-color-text-2)}
 .layui-layer-tab{box-shadow:1px 1px 50px rgba(0,0,0,.4)}

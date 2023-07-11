@@ -37,7 +37,7 @@ a:hover{color:var(--lay-color-text-3)}
 /* 背景颜色 */
 .layui-bg-red{background-color:var(--lay-color-red-6)!important;color: var(--lay-color-white)!important}
 .layui-bg-orange{background-color:var(--lay-color-orange-6)!important;color: var(--lay-color-white)!important}
-.layui-bg-green{background-color:var(--lay-color-green-6)!important;color: var(--lay-color-white)!important}
+.layui-bg-green{background-color:var(--lay-color-layuigreen-6)!important;color: var(--lay-color-white)!important}
 .layui-bg-cyan{background-color:var(--lay-color-cyan-6)!important;color: var(--lay-color-white)!important}
 .layui-bg-blue{background-color: var(--lay-color-blue-6)!important;color: var(--lay-color-white)!important}
 .layui-bg-black{background-color:var(--lay-color-black-6)!important;color: var(--lay-color-white)!important}
@@ -49,7 +49,7 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-border{color:var(--lay-color-text-1)!important}
 .layui-border-red{border-color:var(--lay-color-red-6)!important;color:var(--lay-color-red-6)!important}
 .layui-border-orange{border-color:var(--lay-color-orange-6)!important;color:var(--lay-color-orange-6)!important}
-.layui-border-green{border-color:var(--lay-color-green-6)!important;color:var(--lay-color-green-6)!important}
+.layui-border-green{border-color:var(--lay-color-layuigreen-6)!important;color:var(--lay-color-layuigreen-6)!important}
 .layui-border-cyan{border-color:var(--lay-color-cyan-6)!important;color:var(--lay-color-cyan-6)!important}
 .layui-border-blue{border-color: var(--lay-color-blue-6)!important;color: var(--lay-color-blue-6)!important}
 .layui-border-purple{border-color: var(--lay-color-purple-6)!important; color: var(--lay-color-purple-6)!important;}
@@ -64,7 +64,7 @@ a:hover{color:var(--lay-color-text-3)}
 /* 字体颜色 */
 .layui-font-red{color:var(--lay-color-red-6)!important}
 .layui-font-orange{color:var(--lay-color-orange-6)!important}
-.layui-font-green{color:var(--lay-color-green-6)!important}
+.layui-font-green{color:var(--lay-color-layuigreen-6)!important}
 .layui-font-cyan{color:var(--lay-color-cyan-6)!important}
 .layui-font-blue{color:var(--lay-color-lightblue-6)!important}
 .layui-font-black{color:var(--lay-color-black)!important}
@@ -388,7 +388,7 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-laydate-content td.laydate-day-now{color:var(--lay-color-secondary)}
 .layui-laydate-content td.laydate-day-now:after{border:1px solid var(--lay-color-secondary)}
 .layui-laydate-linkage .layui-laydate-content td.laydate-selected>div{background-color:var(--lay-color-secondary-light)}
-.layui-laydate-linkage .laydate-selected:hover>div{background-color:var(--lay-color-lightgreen-4)!important}
+.layui-laydate-linkage .laydate-selected:hover>div{background-color:var(--lay-color-green-4)!important}
 .layui-laydate-content td>div:hover,.layui-laydate-list li:hover,.layui-laydate-shortcut>li:hover{background-color: var(--lay-color-fill-2);color: var(--lay-color-text-2)}
 .laydate-time-list li ol{border:1px solid  var(--lay-color-border-2)}
 .layui-laydate-content .laydate-day-next,.layui-laydate-content .laydate-day-prev{color: var(--lay-color-text-4)}
@@ -447,8 +447,8 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-layer-lan .layui-layer-btn{border-top:1px solid var(--lay-color-border-3)}
 .layui-layer-lan .layui-layer-btn a{background: var(--lay-color-white);border-color:var(--lay-color-border-3);color: var(--lay-color-black-7)}
 .layui-layer-lan .layui-layer-btn .layui-layer-btn1{background: var(--lay-color-gray-7)}
-.layui-layer-molv .layui-layer-title{background:var(--lay-color-green-6);color: var(--lay-color-text-1)}
-.layui-layer-molv .layui-layer-btn a{background:var(--lay-color-green-6);border-color:var(--lay-color-green-6)}
+.layui-layer-molv .layui-layer-title{background:var(--lay-color-layuigreen-6);color: var(--lay-color-text-1)}
+.layui-layer-molv .layui-layer-btn a{background:var(--lay-color-layuigreen-6);border-color:var(--lay-color-layuigreen-6)}
 .layui-layer-molv .layui-layer-btn .layui-layer-btn1{background:var(--lay-color-gray-7)}
 .layui-layer-prompt .layui-layer-input{border:1px solid  var(--lay-color-border-2);color: var(--lay-color-text-2)}
 .layui-layer-tab{box-shadow:1px 1px 50px rgba(0,0,0,.4)}

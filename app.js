@@ -5,8 +5,8 @@ const rootPath = (function (src) {
 const VERSION = '2.8.10';
 const layuicss = `https://unpkg.com/layui@${VERSION}/dist/css/layui.css`;
 const layuijs = `https://unpkg.com/layui@${VERSION}/dist/layui.js`;
-// var layuicss=`https://cdn.jsdelivr.net/gh/layui/layui@${VERSION}/dist/css/layui.css`;
-// var layuijs=`https://cdn.jsdelivr.net/gh/layui/layui@${VERSION}/dist/layui.js`;
+// const layuicss=`https://cdn.jsdelivr.net/gh/layui/layui@${VERSION}/dist/css/layui.css`;
+// const layuijs=`https://cdn.jsdelivr.net/gh/layui/layui@${VERSION}/dist/layui.js`;
 addLink({ href: layuicss });
 addLink({ id: 'layui_theme_css', href: '' });
 loadScript(layuijs, function () {

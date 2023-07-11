@@ -24,9 +24,9 @@ layui 深色主题
 /** JavaScript */
 // 设置为深色主题
 document.documentElement.classList.add('dark')
-// 恢复亮色主题
+// 恢复浅色主题
 document.documentElement.classList.remove('dark')
-// 切换亮/暗主题
+// 切换深/浅色主题
 document.documentElement.classList.toggle('dark')
 ```
 
@@ -57,7 +57,7 @@ document.documentElement.classList.toggle('dark')
 /** JavaScript */
 // 设置为深色主题
 document.documentElement.setAttribute('theme-mode', 'dark')
-// 恢复亮色主题
+// 恢复浅色主题
 document.documentElement.removeAttribute('theme-mode')
 ```
 
@@ -87,7 +87,7 @@ document.documentElement.removeAttribute('theme-mode')
 /** JavaScript */
 // 设置为深色主题
 document.getElementById('#layui_theme_css').setAttribute('href','./layui-theme-dark.css')
-// 恢复亮色主题
+// 恢复浅色主题
 document.getElementById('#layui_theme_css').removeAttribute('href')
 ```
 
@@ -121,7 +121,7 @@ if(
 }
 
 document.querySelector('#toggle-dark').addEventListener('click', function(){
-  var cls=document.documentElement.classList;
+  var cls = document.documentElement.classList;
   cls.toggle("dark");
   localStorage.setItem(APPERANCE_KEY, String(cls.contains("dark")))
 })
@@ -187,12 +187,16 @@ npm run build
     使用方法请参考该项目的[官方文档](https://jhildenbiddle.github.io/css-vars-ponyfill)，测试支持 IE10+
 
 - iframe 版 Admin，打开新页面会有闪烁？
+ 
+  方案一：创建 iframe 时，使用 `display:none` 隐藏 iframe 元素, 然后在 iframe 的 onload 事件回调中更改 display 属性为 `display:block`
 
-  创建 iframe 时，使用 `display:none` 隐藏 iframe 元素, 然后在 iframe 的 onload 事件回调中更改 display 属性为 `display:block`
-
-  ```html
-  <iframe onload="this.style.display='block';" style="display:none;" >
-  ```
+    ```html
+    <iframe onload="this.style.display='block';" style="display:none;" >
+    ```
+ 
+  方案二：将切换主题的代码放在 `<head>` 中，缺点是会阻塞页面加载
+  
+  方案三：在服务端实现主题切换，以便在加载 HTML 时直接加载所选主题
 
 - 如何处理图片？
 
@@ -223,7 +227,7 @@ npm run build
    }
   ```
 
-- 为什么包含所有的颜色规则，而不是仅包含深色必须的颜色规则？
+- 为什么包含所有的颜色规则，而不是仅包含深色模式必须的颜色规则？
 
   - 暗色色板降低饱和度，提高亮度，深色模式下看起来更舒适一些，可以在主题面板自定义是否使用暗色色板
 

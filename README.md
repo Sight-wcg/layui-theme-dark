@@ -118,19 +118,18 @@ if(
   (!savedPreferDark && window.matchMedia("(prefers-color-scheme: dark)").matches)
 ){
   document.documentElement.classList.add("dark")
-  $('[lay-filter="toggle-theme"]').prop("checked", true)
 }
 
-form.on("switch(toggle-theme)", function(data) {
+document.querySelector('#toggle-dark').addEventListener('click', function(){
   var cls=document.documentElement.classList;
   cls.toggle("dark");
   localStorage.setItem(APPERANCE_KEY, String(cls.contains("dark")))
-});
+})
 ```
 
 # 第三方模块
 
-对一些高质量且使用广泛的第三方模块行了支持，存放在 ext 目录，默认未集成
+对一些高质量且使用广泛的第三方模块行了支持，存放在 [ext](https://github.com/Sight-wcg/layui-theme-dark/tree/master/ext) 目录，默认未集成
 
 - [layui-soul-table](https://github.com/yelog/layui-soul-table)
 
@@ -155,8 +154,6 @@ npm install
 - 运行
 
 ```bash
-npm run watch
-
 npm run dev
 ```
 
@@ -191,7 +188,7 @@ npm run build
 
 - iframe 版 Admin，打开新页面会有闪烁？
 
-  和您的主题应用/实现方式有关系，这里不做讨论，有变通的解决方法。创建 iframe 时，使用 `display:none` 隐藏 iframe 元素, 然后在 iframe 的 onload 事件回调中更改 display 属性为 `display:block`
+  创建 iframe 时，使用 `display:none` 隐藏 iframe 元素, 然后在 iframe 的 onload 事件回调中更改 display 属性为 `display:block`
 
   ```html
   <iframe onload="this.style.display='block';" style="display:none;" >
@@ -228,13 +225,13 @@ npm run build
 
 - 为什么包含所有的颜色规则，而不是仅包含深色必须的颜色规则？
 
-  - 暗色色板降低饱和度，提高亮度，暗色下看起来更舒适一些，可以在主题面板自定义是否使用暗色色板
+  - 暗色色板降低饱和度，提高亮度，深色模式下看起来更舒适一些，可以在主题面板自定义是否使用暗色色板
 
   - 避免意外破坏样式优先级，降低维护成本
 
-  - 将来的版本可能会用到，可以自行删除不需要的样式
+  - 将来可能会用到，如果不需要可以自行删除
 
-- 项目对 layui 的样式二次定制过，可以使用吗？
+- 我的项目对 layui 的样式二次定制过，可以使用吗？
 
   根据使用后的效果、适配成本和难度酌情使用
 

@@ -8,7 +8,7 @@
     "dev": "run-p server watch",
     "server": "http-server ./ -p 5503",
     "watch": "gulp watch",
-    "build": "gulp build",
+    "build": "gulp build && gulp buildTiny",
     "genCssVar": "node ./script/gen-css-var.js",
     "genJson": "node ./script/gen-json.js",
     "test": "echo \"Error: no test specified\" && exit 1"

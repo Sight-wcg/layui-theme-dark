@@ -22,10 +22,14 @@ export function build() {
 
 // WIP
 export function buildTiny() {
+  const commentRE = /\/\*[^*]*\*+([^/][^*]*\*+)*\//g;
+  const rootRE = /:root\s*{([\s\S\n]*?)}/m;
   const fileName = 'layui-theme-dark-tiny';
   return src('src/*.css')
     .pipe(concat('full.css', { newLine: '' }))
-    .pipe(postcss([baseColorRuleExtractor()]))
+    .pipe(postcss([baseColorRulesExtractor(), cssvar({ preserve: false, preserveInjectedVariables: false })]))
+    .pipe(replace(commentRE, ''))
+    .pipe(replace(rootRE, ''))
     .pipe(rename({ basename: fileName }))
     .pipe(dest('./dist'));
 }
@@ -34,19 +38,45 @@ export function watch() {
   gulp.watch('src/*.css', gulp.series(['build']));
 }
 
-// FIXME 部分样式优先级
-function baseColorRuleExtractor() {
+// WIP
+function baseColorRulesExtractor() {
   // 保留阴影和部分深色背景优化
   const ignoreDeclProp = ['box-shadow', 'opacity', 'filter', 'color-scheme'];
-  const ignoreDeclVal = ['transparent', 'initial', 'none', '0', '0 0']; //
-  const propRE = /--lay-color-(bg|text|border|fill|hover|active|white|black|gray)(-[1-13]|-white)?/;
+  const ignoreDeclVal = ['transparent', 'initial', 'none', '0', '0 0'];
+  // 保留以避免破坏样式优先级
+  const ignoreRules = [
+    '.layui-input:focus,.layui-textarea:focus',
+    '.layui-form-danger+.layui-form-select .layui-input,.layui-form-danger:focus',
+    '.layui-input-wrap .layui-input:focus+.layui-input-split',
+    '.layui-form-onswitch',
+    '.layui-form-checked,.layui-form-checked:hover',
+    '.layui-form-checked > div,.layui-form-checked:hover > div',
+    '.layui-form-checked > i,.layui-form-checked:hover > i',
+    '.layui-form-checkbox[lay-skin=primary]:hover > i',
+    '.layui-form-checked[lay-skin=primary] > i',
+    /** 边框宽度处理 */
+    '.layui-code-view',
+  ];
+  // 移除以避免破坏样式优先级
+  const shouldRemovedRules = [
+    '.layui-bg-black',
+    '.layui-bg-gray',
+    '.layui-font-black',
+    '.layui-font-gray',
+    '.layui-layer-dialog .layui-layer-content .layui-layer-face',
+    '.layui-layer-loading-2:after',
+    '.layui-layer-loading-2:after,.layui-layer-loading-2:before',
+  ];
+  const propRE = /--lay-color-(bg|text|border|fill|hover|active|black|gray)(-[1-13])?/;
   return {
     postcssPlugin: 'postcss-layui-theme-remove',
     Once(root) {
       root.walkDecls((decl) => {
-        if (ignoreDeclProp.includes(decl.prop) || ignoreDeclVal.includes(decl.value)) return;
-        if (decl.parent.selector === ':root' && !propRE.test(decl.prop)) {
-          decl.remove();
+        if (
+          ignoreDeclProp.includes(decl.prop) ||
+          ignoreDeclVal.includes(decl.value) ||
+          ignoreRules.includes(decl.parent.selector)
+        ) {
           return;
         }
 
@@ -56,7 +86,7 @@ function baseColorRuleExtractor() {
       });
 
       root.walkRules((rule) => {
-        if (rule && !rule.nodes?.length) {
+        if ((rule && !rule.nodes?.length) || shouldRemovedRules.includes(rule.selector)) {
           rule.remove();
         }
       });

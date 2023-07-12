@@ -28,7 +28,7 @@ loadScript(layuijs, function () {
       initialValue: 'dark',
       modes: {
         light: '',
-        dark: `${rootPath}/dist/layui-theme-dark.css`,
+        dark: `${rootPath}dist/layui-theme-dark.css`,
       },
       storageKey: APPERANCE_KEY,
       onChanged(mode, defaultHandler) {

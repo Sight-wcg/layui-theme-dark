@@ -6,10 +6,12 @@ layui 深色主题
 
 # 使用
 
-#### 方式一
+**方式一**
 
 通过[演示](https://sight-wcg.github.io/layui-theme-dark/)中的主题面板，自定义主题类选择器，例如 `.dark`，通过改变 HTML 标签的类名切换主题
 
+<details>
+  
 ```css
 /** CSS 生成 */
 :root{                      :root.dark{
@@ -39,9 +41,13 @@ document.documentElement.classList.toggle('dark')
 <html class="dark"> ... </html>
 ```
 
-#### 方式二
+</details>
+
+**方式二**
 
 通过[演示](https://sight-wcg.github.io/layui-theme-dark/)中的主题面板，自定义主题属性选择器，例如`[theme-mode='dark']`，通过改变 HTML 标签上 `theme-mode` 属性的值切换主题
+
+<details>
 
 ```css
 /** CSS 生成 */
@@ -70,9 +76,13 @@ document.documentElement.removeAttribute('theme-mode')
 <html theme-mode="dark"> ... </html>
 ```
 
-#### 方式三
+</details>
+
+**方式三**
 
 将 `dist` 文件夹中的 `layui-theme-dark.css` 添加到 layui 样式之后，通过切换 href 属性改变主题
+
+<details>
 
 ```html
 <!-- HTML -->
@@ -91,7 +101,9 @@ document.getElementById('#layui_theme_css').setAttribute('href','./layui-theme-d
 document.getElementById('#layui_theme_css').removeAttribute('href')
 ```
 
-跟随系统主题自动切换
+</details>
+
+<details><summary>跟随系统主题自动切换</summary>
 
 ```js
 var darkThemeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -106,7 +118,10 @@ darkThemeMediaQuery.addEventListener(function(e){
 
 ```
 
-持久化
+</details>
+
+<details>
+<summary>持久化</summary>
 
 ```js
 var APPERANCE_KEY = "layui-theme-mode-prefer-dark"
@@ -126,6 +141,9 @@ document.querySelector('#toggle-dark').addEventListener('click', function(){
   localStorage.setItem(APPERANCE_KEY, String(cls.contains("dark")))
 })
 ```
+
+</details>
+
 
 # 第三方模块
 

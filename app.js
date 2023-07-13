@@ -1,12 +1,12 @@
-const rootPath = (function (src) {
-  src = document.currentScript ? document.currentScript.src : document.scripts[document.scripts.length - 1].src;
-  return src.substring(0, src.lastIndexOf('/') + 1);
-})();
-const VERSION = '2.8.10';
+const VERSION = '2.8.11';
 const layuicss = `https://unpkg.com/layui@${VERSION}/dist/css/layui.css`;
 const layuijs = `https://unpkg.com/layui@${VERSION}/dist/layui.js`;
 // const layuicss=`https://cdn.jsdelivr.net/gh/layui/layui@${VERSION}/dist/css/layui.css`;
 // const layuijs=`https://cdn.jsdelivr.net/gh/layui/layui@${VERSION}/dist/layui.js`;
+const rootPath = (function (src) {
+  src = document.currentScript ? document.currentScript.src : document.scripts[document.scripts.length - 1].src;
+  return src.substring(0, src.lastIndexOf('/') + 1);
+})();
 addLink({ href: layuicss });
 addLink({ id: 'layui_theme_css', href: '' });
 loadScript(layuijs, function () {

@@ -10,7 +10,6 @@ layui 深色主题
 
 ```html
 <!-- HTML -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/layui@2.8.0-rc.13/dist/css/layui.min.css">
 <!--light-->
 <link id="layui_theme_css" rel="stylesheet">
 <!--dark-->
@@ -26,8 +25,6 @@ document.getElementById('#layui_theme_css').removeAttribute('href')
 ```
 
 也可以通过[演示](https://sight-wcg.github.io/layui-theme-dark/)中的主题面板，自定义使用方式，例如自定义主题类选择器 `.dark`，通过改变 HTML 标签的类名切换主题
-
-<details>
   
 ```css
 /** CSS 生成 */
@@ -57,8 +54,6 @@ document.documentElement.classList.toggle('dark')
 <!--dark-->
 <html class="dark"> ... </html>
 ```
-
-</details>
 
 <details><summary>跟随系统主题自动切换</summary>
 
@@ -104,7 +99,7 @@ document.querySelector('#toggle-dark').addEventListener('click', function(){
 
 # 第三方模块
 
-对一些高质量且使用广泛的第三方模块行了支持，存放在 [ext](https://github.com/Sight-wcg/layui-theme-dark/tree/master/ext) 目录，默认未集成
+对一些高质量且使用广泛的第三方模块行了支持，存放在 [ext](./ext) 目录，默认未集成
 
 - [layui-soul-table](https://github.com/yelog/layui-soul-table)
 

@@ -6,9 +6,26 @@ layui 深色主题
 
 # 使用
 
-**方式一**
+将 [dist](./dist) 文件夹中的 `layui-theme-dark.css` 添加到 layui 样式之后，通过切换 href 属性改变主题
 
-通过[演示](https://sight-wcg.github.io/layui-theme-dark/)中的主题面板，自定义主题类选择器，例如 `.dark`，通过改变 HTML 标签的类名切换主题
+```html
+<!-- HTML -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/layui@2.8.0-rc.13/dist/css/layui.min.css">
+<!--light-->
+<link id="layui_theme_css" rel="stylesheet">
+<!--dark-->
+<link id="layui_theme_css" rel="stylesheet" href="./layui-theme-dark.css">
+```
+
+```js
+/** JavaScript */
+// 设置为深色主题
+document.getElementById('#layui_theme_css').setAttribute('href','./layui-theme-dark.css')
+// 恢复浅色主题
+document.getElementById('#layui_theme_css').removeAttribute('href')
+```
+
+也可以通过[演示](https://sight-wcg.github.io/layui-theme-dark/)中的主题面板，自定义使用方式，例如自定义主题类选择器 `.dark`，通过改变 HTML 标签的类名切换主题
 
 <details>
   
@@ -39,66 +56,6 @@ document.documentElement.classList.toggle('dark')
 
 <!--dark-->
 <html class="dark"> ... </html>
-```
-
-</details>
-
-**方式二**
-
-通过[演示](https://sight-wcg.github.io/layui-theme-dark/)中的主题面板，自定义主题属性选择器，例如`[theme-mode='dark']`，通过改变 HTML 标签上 `theme-mode` 属性的值切换主题
-
-<details>
-
-```css
-/** CSS 生成 */
-:root{                      :root[theme-mode='dark']{
-  --color-bg: #000;           --color-bg: #000;
-}                     ==>   }
-.lay-card{                  [theme-mode='dark'] .lay-card{
-  color: #FFF;                color: #FFF;
-}                           }
-```
-
-```js
-/** JavaScript */
-// 设置为深色主题
-document.documentElement.setAttribute('theme-mode', 'dark')
-// 恢复浅色主题
-document.documentElement.removeAttribute('theme-mode')
-```
-
-```html
-<!-- HTML -->
-<!--light-->
-<html> ... </html>
-
-<!--dark-->
-<html theme-mode="dark"> ... </html>
-```
-
-</details>
-
-**方式三**
-
-将 `dist` 文件夹中的 `layui-theme-dark.css` 添加到 layui 样式之后，通过切换 href 属性改变主题
-
-<details>
-
-```html
-<!-- HTML -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/layui@2.8.0-rc.13/dist/css/layui.min.css">
-<!--light-->
-<link id="layui_theme_css" rel="stylesheet">
-<!--dark-->
-<link id="layui_theme_css" rel="stylesheet" href="./layui-theme-dark.css">
-```
-
-```js
-/** JavaScript */
-// 设置为深色主题
-document.getElementById('#layui_theme_css').setAttribute('href','./layui-theme-dark.css')
-// 恢复浅色主题
-document.getElementById('#layui_theme_css').removeAttribute('href')
 ```
 
 </details>
@@ -194,70 +151,81 @@ npm run build
 <img src="https://api.iconify.design/logos:internetexplorer.svg" style="margin-right: 0.4em; vertical-align: text-bottom;"> *IE 9+
 
 # 常见问题
-- IE 下如何使用？
 
-  方案一：使用 `dist/layui-theme-dark-legacy.css` 文件
+<details><summary>IE 下如何使用？</summary>
+
+  - 方案一：使用 `dist/layui-theme-dark-legacy.css` 文件
 
     该文件将 CSS 变量转换为实际颜色，并针对 IE 做了一些兼容性转换，测试支持 IE9+。 二次定制后如果需要支持 IE，可以通过 PostCSS 插件将 CSS 变量转换为实际颜色，这里有一个 [PostCSS-CSS-Variables Playground](https://madlittlemods.github.io/postcss-css-variables/playground/) 支持在线转换
 
-  方案二：使用 [css-vars-ponyfill](https://github.com/jhildenbiddle/css-vars-ponyfill)
+  - 方案二：使用 [css-vars-ponyfill](https://github.com/jhildenbiddle/css-vars-ponyfill)
 
     使用方法请参考该项目的[官方文档](https://jhildenbiddle.github.io/css-vars-ponyfill)，测试支持 IE10+
 
-- iframe 版 Admin，打开新页面会有闪烁？
+</details>
+
+<details><summary>iframe 版 Admin，打开新页面会有闪烁?</summary>
  
-  方案一：创建 iframe 时，使用 `display:none` 隐藏 iframe 元素, 然后在 iframe 的 onload 事件回调中更改 display 属性为 `display:block`
+  - 方案一：创建 iframe 时，使用 `display:none` 隐藏 iframe 元素, 然后在 iframe 的 onload 事件回调中更改 display 属性为 `display:block`
 
     ```html
     <iframe onload="this.style.display='block';" style="display:none;" >
     ```
  
-  方案二：将切换主题的代码放在 `<head>` 中，缺点是会阻塞页面加载
+  - 方案二：将切换主题的代码放在 `<head>` 中，缺点是会阻塞页面加载
   
-  方案三：在服务端实现主题切换，以便在加载 HTML 时直接加载所选主题
+  - 方案三：在服务端实现主题切换，以便在加载 HTML 时直接加载所选主题
 
-- 如何处理图片？
+</details>
 
-  方案一：增加透明度，适用于简单图片和纯色背景
+<details><summary>如何处理图片？</summary>
+  
+  - 方案一：增加透明度，适用于简单图片和纯色背景
+    
+    ```css  
+    .dark body img {
+       opacity: 0.8;
+    }
+    ```
 
-  ```css  
-  .dark body img {
-    opacity: 0.8;
-  }
-  ```
+  - 方案二：叠加一个灰色半透明的层，适用于背景图，非纯色背景等
 
-  方案二：叠加一个灰色半透明的层，适用于背景图，非纯色背景等
+    ```css
+    .dark body .dark-mode-image-overlay {
+      position: relative;
+    }
 
-  ```css
-  .dark body .dark-mode-image-overlay {
-    position: relative;
-  }
+    .daek body .dark-mode-image-overlay::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(50, 50, 50, 0.5);
+    }
+    ```
 
-  .daek body .dark-mode-image-overlay::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(50, 50, 50, 0.5);
-   }
-  ```
+</details>
 
-- 为什么包含所有的颜色规则，而不是仅包含深色模式必须的颜色规则？
+<details><summary>为什么包含所有的颜色规则，而不是仅包含深色模式必须的颜色规则？</summary>
 
-  - 暗色色板降低饱和度，提高亮度，深色模式下看起来更舒适一些，可以在主题面板自定义是否使用暗色色板
+  1. 暗色色板降低饱和度，提高亮度，深色模式下看起来更舒适一些，可以在主题面板自定义是否使用暗色色板
 
-  - 避免意外破坏样式优先级，降低维护成本
+  2. 避免意外破坏样式优先级，降低维护成本
 
-  - 将来可能会用到，如果不需要可以自行删除
+  3. 将来可能会用到，如果不需要可以自行删除
 
-- 我的项目对 layui 的样式二次定制过，可以使用吗？
+</details>
 
+<details><summary>我的项目对 layui 的样式二次定制过，可以使用吗？</summary><br>
+  
   根据使用后的效果、适配成本和难度酌情使用
 
-- 一些可能有用的链接
+</details>
+
+**一些可能有用的链接**
   - [使用 CSS 自定义属性（变量）](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_custom_properties)
   - [使用编程方法测试媒体查询](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_media_queries/Testing_media_queries)
   - [prefers-color-scheme](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media/prefers-color-scheme)
@@ -265,4 +233,4 @@ npm run build
 
 # 许可证
 
-[MIT © 2023-present, morning-star](./LICENSE)
+[MIT © 2023-present morning-star](./LICENSE)

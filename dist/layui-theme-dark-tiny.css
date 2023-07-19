@@ -183,6 +183,7 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-laypage a{background-color: #232324;color: rgba(255,255,255,.7)}
 .layui-laypage span{background-color: #232324;color: rgba(255,255,255,.7)}
 .layui-laypage a[data-page]{color:rgba(255,255,255,.7)}
+.layui-laypage a:hover{color: #16BAAA}
 .layui-laypage .layui-laypage-spr{color:rgba(255,255,255,.5)}
 .layui-laypage .layui-laypage-skip{color:rgba(255,255,255,.5)}
 .layui-laypage button{background-color: #232324}

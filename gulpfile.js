@@ -54,6 +54,7 @@ function baseColorRulesExtractor() {
     '.layui-form-checked > i,.layui-form-checked:hover > i',
     '.layui-form-checkbox[lay-skin=primary]:hover > i',
     '.layui-form-checked[lay-skin=primary] > i',
+    '.layui-laypage a:hover',
     /** 边框宽度处理 */
     '.layui-code-view',
   ];

@@ -99,13 +99,13 @@ document.querySelector('#toggle-dark').addEventListener('click', function(){
 
 # 第三方模块
 
-对一些高质量且使用广泛的第三方模块行了支持，存放在 [ext](./ext) 目录，默认未集成
+对一些使用广泛的第三方模块行了支持，存放在 [ext](./ext) 目录，默认未集成
 
 - [layui-soul-table](https://github.com/yelog/layui-soul-table)
 
 - [xm-select](https://gitee.com/maplemei/xm-select)
 
-# 构建指南
+# 构建
 
 - 拉取代码
 
@@ -209,8 +209,6 @@ npm run build
   1. 暗色色板降低饱和度，提高亮度，深色模式下看起来更舒适一些，可以在主题面板自定义是否使用暗色色板
 
   2. 避免意外破坏样式优先级，降低维护成本
-
-  3. 将来可能会用到，如果不需要可以自行删除
 
 </details>
 

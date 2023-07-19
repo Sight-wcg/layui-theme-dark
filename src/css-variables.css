@@ -195,4 +195,8 @@
 
   --lay-color-hover: var(--lay-color-fill-3); /*bg*/
   --lay-color-active: var(--lay-color-fill-3); /*bg*/
+
+  --lay-shadow-1: 0 4px 6px rgba(0, 0, 0, 6%), 0 1px 10px rgba(0, 0, 0, 8%), 0 2px 4px rgba(0, 0, 0, 12%);/*基础/下层投影 卡片面板*/
+  --lay-shadow-2: 0 8px 10px rgba(0, 0, 0, 12%), 0 3px 14px rgba(0, 0, 0, 10%), 0 5px 5px rgba(0, 0, 0, 16%);/*中层投影 下拉菜单,选择器*/
+  --lay-shadow-3: 0 16px 24px rgba(0, 0, 0, 14%), 0 6px 30px rgba(0, 0, 0, 12%), 0 8px 10px rgba(0, 0, 0, 20%);/*上层投影 弹窗*/
 }

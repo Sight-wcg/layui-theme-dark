@@ -28,10 +28,11 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-colla-title{color: var(--lay-color-text-1);background-color: var(--lay-color-bg-2)}
 .layui-colla-content{color:var(--lay-color-text-2)}
 /* 卡片面板 */
-.layui-card{background-color: var(--lay-color-bg-2);box-shadow:0 1px 2px 0 rgba(0,0,0,.05)}
+.layui-card{background-color: var(--lay-color-bg-2);box-shadow:var(--lay-shadow-1)}
 .layui-card-header{border-bottom:1px solid var(--lay-color-border-2);color:var(--lay-color-text-1)}
 /* 常规面板 */
-.layui-panel{box-shadow:1px 1px 4px rgb(0 0 0 / 8%);background-color: var( --lay-color-bg-2);color: var(--lay-color-text-1)}
+.layui-panel{box-shadow:var(--lay-shadow-1);background-color: var( --lay-color-bg-2);color: var(--lay-color-text-1)}
+.layui-menu-body-panel{box-shadow: var(--lay-shadow-2)}
 /* 窗口面板 */
 .layui-panel-window{border-top:5px solid var(--lay-color-border-2);background-color: var(--lay-color-bg-2)}
 /* 背景颜色 */
@@ -105,7 +106,7 @@ a:hover{color:var(--lay-color-text-3)}
 /* 下拉选择 */
 .layui-form-select{color:var(--lay-color-text-2)}
 .layui-form-select .layui-edge{border-top-color:var(--lay-color-gray-8)}
-.layui-form-select dl{border:1px solid  var( --lay-color-border-2);background-color: var(--lay-color-bg-5);box-shadow:1px 1px 4px rgb(0 0 0 / 8%)}
+.layui-form-select dl{border:1px solid  var( --lay-color-border-2);background-color: var(--lay-color-bg-5);box-shadow:var(--lay-shadow-2)}
 .layui-form-select dl dt{color:var(--lay-color-gray-8)}
 .layui-form-select dl dd:hover{background-color:var(--lay-color-active)}
 .layui-form-select dl dd.layui-select-tips{color:var(--lay-color-text-2)}
@@ -192,7 +193,7 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-table-tool{background-color: var(--lay-color-bg-2);}
 .layui-table-tool .layui-inline[lay-event]{color:var(--lay-color-text-3);border:1px solid var(--lay-color-border-2)}
 .layui-table-tool .layui-inline[lay-event]:hover{border:1px solid var(--lay-color-border-3)}
-.layui-table-tool-panel{color: var(--lay-color-text-1); border:1px solid  var(--lay-color-border-2);background-color: var(--lay-color-bg-5);box-shadow:0 2px 4px rgba(0,0,0,.12)}
+.layui-table-tool-panel{color: var(--lay-color-text-1); border:1px solid  var(--lay-color-border-2);background-color: var(--lay-color-bg-5);box-shadow:var(--lay-shadow-2)}
 .layui-table-tool-panel li:hover{background-color:var(--lay-color-active)}
 .layui-table-col-set{background-color: var(--lay-color-white)}
 .layui-table-sort .layui-table-sort-asc{border-bottom-color:var(--lay-color-border-4)}
@@ -205,15 +206,15 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-table-body .layui-none{color:var(--lay-color-gray-8)}
 .layui-table-fixed-l{box-shadow:1px 0 8px rgba(0,0,0,1)}
 .layui-table-fixed-r{box-shadow:-1px 0 8px rgba(0,0,0,1)}
-.layui-table-edit{box-shadow:1px 1px 20px rgba(0,0,0,.15);background-color: var(--lay-color-bg-2)}
+.layui-table-edit{box-shadow:var(--lay-shadow-1);background-color: var(--lay-color-bg-2)}
 .layui-table-edit:focus{border-color:var(--lay-color-secondary)!important}
 select.layui-table-edit{border-color:var(--lay-color-border-2)}
 .layui-table-grid-down{background-color: var(--lay-color-bg-5);color:var(--lay-color-gray-8)}
 .layui-table-grid-down:hover{background-color:var(--lay-color-bg-5)}
-body .layui-table-tips .layui-layer-content{box-shadow:0 1px 6px rgba(0,0,0,.12)}
+body .layui-table-tips .layui-layer-content{box-shadow:var(--lay-shadow-3)}
 .layui-table-tips-main{background-color: var(--lay-color-bg-5);color: var(--lay-color-text-3)}
-.layui-table-tips-c{background-color:var(--lay-color-gray-7);color: var(--lay-color-text-1)}
-.layui-table-tips-c:hover{background-color:var(--lay-color-gray-8)}
+.layui-table-tips-c{background-color:var(--lay-color-gray-13);color: var(--lay-color-text-1)}
+.layui-table-tips-c:hover{background-color:var(--lay-color-gray-10)}
 /** 文件上传 **/
 .layui-upload-choose{color:var(--lay-color-gray-8)}
 .layui-upload-drag{border:1px dashed var( --lay-color-border-2);background-color: var(--lay-color-bg-4);color: var(--lay-color-text-2)}
@@ -236,14 +237,14 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 1px 6px rgba(0,0,0,.12)
 .layui-menu-lg .layui-menu-body-title a:hover,.layui-menu-lg li:hover{color:var(--lay-color-secondary)}
 /* 下拉菜单 */
 .layui-dropdown{background-color: var(--lay-color-bg-5)}
-.layui-dropdown.layui-panel,.layui-dropdown .layui-panel{background-color: var(--lay-color-bg-5)}
+.layui-dropdown.layui-panel,.layui-dropdown .layui-panel{background-color: var(--lay-color-bg-5);box-shadow: var(--lay-shadow-2)}
 .layui-dropdown.layui-panel .layui-menu{background-color: var(--lay-color-bg-5)}
 /** 导航菜单 **/
 .layui-nav{background-color:var(--lay-color-black-6);color: var(--lay-color-white)}
 .layui-nav .layui-nav-item a{color: var(--lay-color-text-1);}
 .layui-nav .layui-this:after,.layui-nav-bar{background-color:var(--lay-color-secondary)}
 .layui-nav .layui-nav-item a:hover,.layui-nav .layui-this a{color: var(--lay-color-text-1)}
-.layui-nav-child{box-shadow:0 2px 4px rgba(0,0,0,.12);border:1px solid var(--lay-color-border-2);background-color: var(--lay-color-bg-5)}
+.layui-nav-child{box-shadow:var(--lay-shadow-2);border:1px solid var(--lay-color-border-2);background-color: var(--lay-color-bg-5)}
 .layui-nav .layui-nav-child a{color: var(--lay-color-text-1)}
 .layui-nav .layui-nav-child a:hover{background-color: var(--lay-color-bg-5);color: var(--lay-color-text-1)}
 .layui-nav-child dd.layui-this{background-color: var(--lay-color-bg-5);color: var(--lay-color-text-1)}
@@ -273,7 +274,7 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 1px 6px rgba(0,0,0,.12)
 .layui-tab-title li .layui-tab-close:hover{background-color:var(--lay-color-danger);color: var(--lay-color-white)}
 .layui-tab-brief>.layui-tab-title .layui-this{color:var( --lay-color-primary)}
 .layui-tab-brief>.layui-tab-more li.layui-this:after,.layui-tab-brief>.layui-tab-title .layui-this:after{border-bottom:2px solid var(--lay-color-secondary)}
-.layui-tab-card{box-shadow:0 2px 5px 0 rgba(0,0,0,.1)}
+.layui-tab-card{box-shadow: var(--lay-shadow-1)}
 .layui-tab-card>.layui-tab-title{background-color: var(--lay-color-bg-2)}
 .layui-tab-card>.layui-tab-title .layui-this{background-color: var(--lay-color-bg-1)}
 .layui-tab-card>.layui-tab-title .layui-this:after{border-bottom-color: var(--lay-color-bg-1)}
@@ -300,7 +301,7 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 1px 6px rgba(0,0,0,.12)
 .layui-fixbar li{background-color:var(--lay-color-black-5);color: var(--lay-color-text-1)}
 /** 表情面板 **/
 body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-5);color:var(--lay-color-text-2)}
-.layui-util-face ul{border:1px solid var(--lay-color-border-3);background-color: var(--lay-color-bg-5);box-shadow:0 0 20px rgba(0,0,0,.2)}
+.layui-util-face ul{border:1px solid var(--lay-color-border-3);background-color: var(--lay-color-bg-5);box-shadow:var(--lay-shadow-2)}
 .layui-util-face ul li{border:1px solid var(--lay-color-border-2)}
 .layui-util-face ul li:hover{border:1px solid var(--lay-color-red-7);background: var(--lay-color-text-1)}
 /** 代码文本修饰 **/
@@ -318,30 +319,31 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 /** 评分组件 **/
 .layui-rate li i.layui-icon{color:var(--lay-color-orange-6)}
 /** 颜色选择器 **/
-.layui-colorpicker{border:1px solid  var(--lay-color-border-2)}
+.layui-colorpicker{border:1px solid var(--lay-color-border-2)}
 .layui-colorpicker:hover{border-color: var( --lay-color-border-2)}
 .layui-colorpicker-trigger-span{border:1px solid var(--lay-color-black)}
 .layui-colorpicker-trigger-i{color: var(--lay-color-white)}
 .layui-colorpicker-trigger-i.layui-icon-close{color:var(--lay-color-black-7)}
-.layui-colorpicker-main{background: var(--lay-color-bg-2);border:1px solid var( --lay-color-border-2);box-shadow:0 2px 4px rgba(0,0,0,.12)}
+.layui-colorpicker-main{background: var(--lay-color-bg-2);border:1px solid var( --lay-color-border-2);box-shadow:var(--lay-shadow-2)}
 .layui-colorpicker-basis-white{background:linear-gradient(90deg, #fff,hsla(0,0%,100%,0))} /* danger: 勿改*/
 .layui-colorpicker-basis-black{background:linear-gradient(0deg,#000,transparent)} /* danger: 勿改*/
-.layui-colorpicker-basis-cursor{border:1px solid  var(--lay-color-white)}
+.layui-colorpicker-basis-cursor{border:1px solid var(--lay-color-white)}
 .layui-colorpicker-side{background:linear-gradient(linear-gradient(#F00, #FF0, #0F0, #0FF, #00F, #F0F, #F00))} /* danger: 勿改*/
-.layui-colorpicker-side-slider{box-shadow:0 0 1px #888;background: var(--lay-color-white);border:1px solid var(--lay-color-gray-2)}
-.layui-colorpicker-alpha-slider{box-shadow:0 0 1px #888;background: var(--lay-color-white);border:1px solid var(--lay-color-gray-2)}
-.layui-colorpicker-pre.layui-this{box-shadow:0 0 3px 2px rgba(0,0,0,.15)}
+.layui-colorpicker-side-slider{box-shadow:var(--lay-shadow-1);background: var(--lay-color-white);border:1px solid var(--lay-color-gray-2)}
+.layui-colorpicker-alpha-slider{box-shadow:var(--lay-shadow-1);background: var(--lay-color-white);border:1px solid var(--lay-color-gray-2)}
+.layui-colorpicker-pre.layui-this{box-shadow:var(--lay-shadow-1)}
+.layui-colorpicker-pre.selected{box-shadow:var(--lay-shadow-1)}
 .layui-colorpicker-main-input input.layui-input{color: var(--lay-color-text-2)}
 /** 滑块 **/
 .layui-slider{background: var( --lay-color-bg-5)}
 .layui-slider-step{background: var(--lay-color-fill-4)}
 .layui-slider-wrap-btn{background: var(--lay-color-bg-4)}
-.layui-slider-tips{color: var(--lay-color-text-1);background:var(--lay-color-black)}
+.layui-slider-tips{color: var(--lay-color-text-1);background:var(--lay-color-black);box-shadow: var(--lay-shadow-3)}
 .layui-slider-tips:after{border-color:var(--lay-color-black) transparent transparent transparent}
-.layui-slider-input{border:1px solid  var(--lay-color-border-2)}
-.layui-slider-input-btn{border-left:1px solid  var(--lay-color-border-2)}
+.layui-slider-input{border:1px solid  var(--lay-color-border-1)}
+.layui-slider-input-btn{border-left:1px solid  var(--lay-color-border-1)}
 .layui-slider-input-btn i{color:var(--lay-color-gray-9)}
-.layui-slider-input-btn i:first-child{border-bottom:1px solid  var(--lay-color-border-2)}
+.layui-slider-input-btn i:first-child{border-bottom:1px solid  var(--lay-color-border-1)}
 .layui-slider-input-btn i:hover{color:var(--lay-color-primary)}
 /** 树组件 **/
 .layui-tree-line .layui-tree-set .layui-tree-set:after{border-top:1px dotted var(--lay-color-gray-7)}
@@ -380,7 +382,9 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-laydate .layui-laydate-list{background-color: var(--lay-color-bg-5)}
 .layui-laydate-hint{color:var(--lay-color-danger)}
 .layui-laydate-range .laydate-main-list-1 .layui-laydate-content,.layui-laydate-range .laydate-main-list-1 .layui-laydate-header{border-left:1px solid  var(--lay-color-border-2)}
-.layui-laydate,.layui-laydate-hint{border:1px solid  var(--lay-color-border-2);box-shadow:0 2px 4px rgba(0,0,0,.12);background-color: var(--lay-color-bg-5);color: var(--lay-color-text-1)}
+.layui-laydate,.layui-laydate-hint{border:1px solid var(--lay-color-border-2);box-shadow:var(--lay-shadow-3);background-color: var(--lay-color-bg-5);color: var(--lay-color-text-1)}
+.layui-laydate{box-shadow: var(--lay-shadow-2)}
+.layui-laydate-hint{border-color:var(--lay-color-border-1)}
 .layui-laydate-header{border-bottom:1px solid  var( --lay-color-border-2)}
 .layui-laydate-header i:hover,.layui-laydate-header span:hover{color:var(--lay-color-secondary)}
 .layui-laydate-content th{color: var(--lay-color-text-1)}
@@ -409,8 +413,8 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-laydate-linkage.laydate-theme-grid .laydate-selected.laydate-day-next,.layui-laydate-linkage.laydate-theme-grid .laydate-selected.laydate-day-prev{color:var(--lay-color-gray-6)!important}
 .layui-laydate.laydate-theme-circle .layui-laydate-content table td.layui-this{background-color:transparent!important}
 /*layer*/
-.layui-layer{background-color: var(--lay-color-bg-3);box-shadow:1px 1px 50px rgba(0,0,0,.3)}
-.layui-layer-border{border:1px solid var(--lay-color-border-2);box-shadow:1px 1px 5px rgba(0,0,0,.2)}
+.layui-layer{background-color: var(--lay-color-bg-3);box-shadow:var(--lay-shadow-3)}
+.layui-layer-border{border:1px solid var(--lay-color-border-2);box-shadow:var(--lay-shadow-3)}
 .layui-layer-move{background-color: var(--lay-color-bg-5)}
 .layui-layer-title{border-bottom:1px solid var(--lay-color-border-2);color: var(--lay-color-text-1)}
 .layui-layer-setwin span{color: var(--lay-color-text-1)}
@@ -433,13 +437,13 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-layer-dialog .layui-layer-content .layui-icon-face-cry{color:var(--lay-color-danger)}
 .layui-layer-dialog .layui-layer-content .layui-icon-face-smile{color:var(--lay-color-success)}
 .layui-layer-rim{border:6px solid var(--lay-color-gray-8);border:6px solid var(--lay-color-border-2)}
-.layui-layer-msg{border:1px solid var( --lay-color-border-2)}
+.layui-layer-msg{border:1px solid var( --lay-color-border-1)}
 .layui-layer-hui{background-color: var(--lay-color-bg-3);color: var(--lay-color-text-1)}
 .layui-layer-hui .layui-layer-close{color: var(--lay-color-white)}
 .layui-layer-loading-icon{color:var(--lay-color-gray-9)}
 .layui-layer-loading-2:after,.layui-layer-loading-2:before{border:3px solid var(--lay-color-gray-6)}
 .layui-layer-loading-2:after{border-color:transparent;border-left-color: var(--lay-color-normal)}
-.layui-layer-tips .layui-layer-content{box-shadow:1px 1px 3px rgba(0,0,0,.2);background-color: var(--lay-color-bg-5);color: var(--lay-color-text-1)}
+.layui-layer-tips .layui-layer-content{box-shadow: var(--lay-shadow-3);background-color: var(--lay-color-bg-5);color: var(--lay-color-text-1)}
 .layui-layer-tips i.layui-layer-TipsG{border-color:transparent}
 .layui-layer-tips i.layui-layer-TipsB,.layui-layer-tips i.layui-layer-TipsT{border-right-color:var(--lay-color-black)}
 .layui-layer-tips i.layui-layer-TipsL,.layui-layer-tips i.layui-layer-TipsR{border-bottom-color:var(--lay-color-black)}
@@ -450,8 +454,8 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-layer-molv .layui-layer-title{background:var(--lay-color-layuigreen-6);color: var(--lay-color-text-1)}
 .layui-layer-molv .layui-layer-btn a{background:var(--lay-color-layuigreen-6);border-color:var(--lay-color-layuigreen-6)}
 .layui-layer-molv .layui-layer-btn .layui-layer-btn1{background:var(--lay-color-gray-7)}
-.layui-layer-prompt .layui-layer-input{border:1px solid  var(--lay-color-border-2);color: var(--lay-color-text-2)}
-.layui-layer-tab{box-shadow:1px 1px 50px rgba(0,0,0,.4)}
+.layui-layer-prompt .layui-layer-input{border:1px solid var(--lay-color-border-2);color: var(--lay-color-text-2)}
+.layui-layer-tab{box-shadow:var(--lay-shadow-3)}
 .layui-layer-tab .layui-layer-title span.layui-this{border-left:1px solid  var(--lay-color-border-2);border-right:1px solid  var(--lay-color-border-2);background-color: var(--lay-color-bg-3)}
 .layui-layer-imgnext,.layui-layer-imgprev{color:var(--lay-color-gray-9)}
 .layui-layer-imgnext:hover,.layui-layer-imgprev:hover{color:var(--lay-color-gray-8)}
@@ -464,7 +468,7 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-layer-prompt .layui-layer-input:focus{outline:0}
 
 /*fix style*/
-.layui-layer-loading{background:0 0}
+.layui-layer-loading{background:0 0;box-shadow:0 0}
 .layui-btn-primary{border-color:transparent}
 .layui-btn-group .layui-btn:first-child{border-left:none}
 .layui-btn-group .layui-btn-primary:hover{border-top-color:transparent; border-bottom-color: transparent;}
@@ -484,11 +488,5 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-slider-input.layui-input,
 .layui-slider-input .layui-input {background-color: var(--lay-color-bg-2);}
 
-a {
-  color: var(--lay-color-text-1)
-}
-
-.layui-code,
-pre>code {
-  background-color: var(--lay-color-bg-2)
-}
+a {color: var(--lay-color-text-1)}
+.layui-code,pre>code {background-color: var(--lay-color-bg-2)}

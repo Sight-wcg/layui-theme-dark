@@ -27,10 +27,11 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-colla-title{color: rgba(255,255,255,.9);background-color: #232324}
 .layui-colla-content{color:rgba(255,255,255,.7)}
 
-.layui-card{background-color: #232324;box-shadow:0 1px 2px 0 rgba(0,0,0,.05)}
+.layui-card{background-color: #232324;box-shadow:0 4px 6px rgba(0, 0, 0, 6%), 0 1px 10px rgba(0, 0, 0, 8%), 0 2px 4px rgba(0, 0, 0, 12%)}
 .layui-card-header{border-bottom:1px solid #484849;color:rgba(255,255,255,.9)}
 
-.layui-panel{box-shadow:1px 1px 4px rgb(0 0 0 / 8%);background-color: #232324;color: rgba(255,255,255,.9)}
+.layui-panel{box-shadow:0 4px 6px rgba(0, 0, 0, 6%), 0 1px 10px rgba(0, 0, 0, 8%), 0 2px 4px rgba(0, 0, 0, 12%);background-color: #232324;color: rgba(255,255,255,.9)}
+.layui-menu-body-panel{box-shadow: 0 8px 10px rgba(0, 0, 0, 12%), 0 3px 14px rgba(0, 0, 0, 10%), 0 5px 5px rgba(0, 0, 0, 16%)}
 
 .layui-panel-window{border-top:5px solid #484849;background-color: #232324}
 
@@ -114,7 +115,7 @@ a:hover{color:rgba(255,255,255,.5)}
 
 .layui-form-select{color:rgba(255,255,255,.7)}
 .layui-form-select .layui-edge{border-top-color:#C2C2C2}
-.layui-form-select dl{border:1px solid  #484849;background-color: #373739;box-shadow:1px 1px 4px rgb(0 0 0 / 8%)}
+.layui-form-select dl{border:1px solid  #484849;background-color: #373739;box-shadow:0 8px 10px rgba(0, 0, 0, 12%), 0 3px 14px rgba(0, 0, 0, 10%), 0 5px 5px rgba(0, 0, 0, 16%)}
 .layui-form-select dl dt{color:#C2C2C2}
 .layui-form-select dl dd:hover{background-color:rgba(255,255,255,.12)}
 .layui-form-select dl dd.layui-select-tips{color:rgba(255,255,255,.7)}
@@ -221,7 +222,7 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-table-tool{background-color: #232324;}
 .layui-table-tool .layui-inline[lay-event]{color:rgba(255,255,255,.5);border:1px solid #484849}
 .layui-table-tool .layui-inline[lay-event]:hover{border:1px solid #5f5f60}
-.layui-table-tool-panel{color: rgba(255,255,255,.9); border:1px solid  #484849;background-color: #373739;box-shadow:0 2px 4px rgba(0,0,0,.12)}
+.layui-table-tool-panel{color: rgba(255,255,255,.9); border:1px solid  #484849;background-color: #373739;box-shadow:0 8px 10px rgba(0, 0, 0, 12%), 0 3px 14px rgba(0, 0, 0, 10%), 0 5px 5px rgba(0, 0, 0, 16%)}
 .layui-table-tool-panel li:hover{background-color:rgba(255,255,255,.12)}
 .layui-table-sort .layui-table-sort-asc{border-bottom-color:#929293}
 .layui-table-sort .layui-table-sort-asc:hover{border-bottom-color:#5f5f60}
@@ -232,14 +233,14 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-table-body .layui-none{color:#C2C2C2}
 .layui-table-fixed-l{box-shadow:1px 0 8px rgba(0,0,0,1)}
 .layui-table-fixed-r{box-shadow:-1px 0 8px rgba(0,0,0,1)}
-.layui-table-edit{box-shadow:1px 1px 20px rgba(0,0,0,.15);background-color: #232324}
+.layui-table-edit{box-shadow:0 4px 6px rgba(0, 0, 0, 6%), 0 1px 10px rgba(0, 0, 0, 8%), 0 2px 4px rgba(0, 0, 0, 12%);background-color: #232324}
 select.layui-table-edit{border-color:#484849}
 .layui-table-grid-down{background-color: #373739;color:#C2C2C2}
 .layui-table-grid-down:hover{background-color:#373739}
-body .layui-table-tips .layui-layer-content{box-shadow:0 1px 6px rgba(0,0,0,.12)}
+body .layui-table-tips .layui-layer-content{box-shadow:0 16px 24px rgba(0, 0, 0, 14%), 0 6px 30px rgba(0, 0, 0, 12%), 0 8px 10px rgba(0, 0, 0, 20%)}
 .layui-table-tips-main{background-color: #373739;color: rgba(255,255,255,.5)}
-.layui-table-tips-c{background-color:#CCCCCC;color: rgba(255,255,255,.9)}
-.layui-table-tips-c:hover{background-color:#C2C2C2}
+.layui-table-tips-c{background-color:#686868;color: rgba(255,255,255,.9)}
+.layui-table-tips-c:hover{background-color:#939393}
 
 .layui-upload-choose{color:#C2C2C2}
 .layui-upload-drag{border:1px dashed #484849;background-color: #313132;color: rgba(255,255,255,.7)}
@@ -260,15 +261,15 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 1px 6px rgba(0,0,0,.12)
 .layui-menu-body-title a{color: rgba(255,255,255,.9)}
 
 .layui-dropdown{background-color: #373739}
-.layui-dropdown.layui-panel{background-color: #373739}
-.layui-dropdown .layui-panel{background-color: #373739}
+.layui-dropdown.layui-panel{background-color: #373739;box-shadow: 0 8px 10px rgba(0, 0, 0, 12%), 0 3px 14px rgba(0, 0, 0, 10%), 0 5px 5px rgba(0, 0, 0, 16%)}
+.layui-dropdown .layui-panel{background-color: #373739;box-shadow: 0 8px 10px rgba(0, 0, 0, 12%), 0 3px 14px rgba(0, 0, 0, 10%), 0 5px 5px rgba(0, 0, 0, 16%)}
 .layui-dropdown.layui-panel .layui-menu{background-color: #373739}
 
 .layui-nav{background-color:#2F363C}
 .layui-nav .layui-nav-item a{color: rgba(255,255,255,.9);}
 .layui-nav .layui-nav-item a:hover{color: rgba(255,255,255,.9)}
 .layui-nav .layui-this a{color: rgba(255,255,255,.9)}
-.layui-nav-child{box-shadow:0 2px 4px rgba(0,0,0,.12);border:1px solid #484849;background-color: #373739}
+.layui-nav-child{box-shadow:0 8px 10px rgba(0, 0, 0, 12%), 0 3px 14px rgba(0, 0, 0, 10%), 0 5px 5px rgba(0, 0, 0, 16%);border:1px solid #484849;background-color: #373739}
 .layui-nav .layui-nav-child a{color: rgba(255,255,255,.9)}
 .layui-nav .layui-nav-child a:hover{background-color: #373739;color: rgba(255,255,255,.9)}
 .layui-nav-child dd.layui-this{background-color: #373739;color: rgba(255,255,255,.9)}
@@ -285,7 +286,7 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 1px 6px rgba(0,0,0,.12)
 .layui-tab-bar{background-color: #2a2a2b}
 .layui-tab-more li.layui-this:after{border-bottom-color:#EEEEEE}
 .layui-tab-title li .layui-tab-close{color:#C2C2C2}
-.layui-tab-card{box-shadow:0 2px 5px 0 rgba(0,0,0,.1)}
+.layui-tab-card{box-shadow: 0 4px 6px rgba(0, 0, 0, 6%), 0 1px 10px rgba(0, 0, 0, 8%), 0 2px 4px rgba(0, 0, 0, 12%)}
 .layui-tab-card>.layui-tab-title{background-color: #232324}
 .layui-tab-card>.layui-tab-title .layui-this{background-color: #17171A}
 .layui-tab-card>.layui-tab-title .layui-this:after{border-bottom-color: #17171A}
@@ -306,7 +307,7 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 1px 6px rgba(0,0,0,.12)
 .layui-fixbar li{background-color:#505B63;color: rgba(255,255,255,.9)}
 
 body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(255,255,255,.7)}
-.layui-util-face ul{border:1px solid #5f5f60;background-color: #373739;box-shadow:0 0 20px rgba(0,0,0,.2)}
+.layui-util-face ul{border:1px solid #5f5f60;background-color: #373739;box-shadow:0 8px 10px rgba(0, 0, 0, 12%), 0 3px 14px rgba(0, 0, 0, 10%), 0 5px 5px rgba(0, 0, 0, 16%)}
 .layui-util-face ul li{border:1px solid #484849}
 .layui-util-face ul li:hover{background: rgba(255,255,255,.9)}
 
@@ -324,25 +325,26 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-transfer-data .layui-none{color:#CCCCCC}
 
 
-.layui-colorpicker{border:1px solid  #484849}
+.layui-colorpicker{border:1px solid #484849}
 .layui-colorpicker:hover{border-color: #484849}
 .layui-colorpicker-trigger-span{border:1px solid #333333}
 .layui-colorpicker-trigger-i.layui-icon-close{color:#23303C}
-.layui-colorpicker-main{background: #232324;border:1px solid #484849;box-shadow:0 2px 4px rgba(0,0,0,.12)}   
-.layui-colorpicker-side-slider{box-shadow:0 0 1px #888;border:1px solid #F6F6F6}
-.layui-colorpicker-alpha-slider{box-shadow:0 0 1px #888;border:1px solid #F6F6F6}
-.layui-colorpicker-pre.layui-this{box-shadow:0 0 3px 2px rgba(0,0,0,.15)}
+.layui-colorpicker-main{background: #232324;border:1px solid #484849;box-shadow:0 8px 10px rgba(0, 0, 0, 12%), 0 3px 14px rgba(0, 0, 0, 10%), 0 5px 5px rgba(0, 0, 0, 16%)}   
+.layui-colorpicker-side-slider{box-shadow:0 4px 6px rgba(0, 0, 0, 6%), 0 1px 10px rgba(0, 0, 0, 8%), 0 2px 4px rgba(0, 0, 0, 12%);border:1px solid #F6F6F6}
+.layui-colorpicker-alpha-slider{box-shadow:0 4px 6px rgba(0, 0, 0, 6%), 0 1px 10px rgba(0, 0, 0, 8%), 0 2px 4px rgba(0, 0, 0, 12%);border:1px solid #F6F6F6}
+.layui-colorpicker-pre.layui-this{box-shadow:0 4px 6px rgba(0, 0, 0, 6%), 0 1px 10px rgba(0, 0, 0, 8%), 0 2px 4px rgba(0, 0, 0, 12%)}
+.layui-colorpicker-pre.selected{box-shadow:0 4px 6px rgba(0, 0, 0, 6%), 0 1px 10px rgba(0, 0, 0, 8%), 0 2px 4px rgba(0, 0, 0, 12%)}
 .layui-colorpicker-main-input input.layui-input{color: rgba(255,255,255,.7)}
 
 .layui-slider{background: #373739}
 .layui-slider-step{background: rgba(255,255,255,.16)}
 .layui-slider-wrap-btn{background: #313132}
-.layui-slider-tips{color: rgba(255,255,255,.9);background:#333333}
+.layui-slider-tips{color: rgba(255,255,255,.9);background:#333333;box-shadow: 0 16px 24px rgba(0, 0, 0, 14%), 0 6px 30px rgba(0, 0, 0, 12%), 0 8px 10px rgba(0, 0, 0, 20%)}
 .layui-slider-tips:after{border-color:#333333 transparent transparent transparent}
-.layui-slider-input{border:1px solid  #484849}
-.layui-slider-input-btn{border-left:1px solid  #484849}
+.layui-slider-input{border:1px solid  #2e2e30}
+.layui-slider-input-btn{border-left:1px solid  #2e2e30}
 .layui-slider-input-btn i{color:#AAAAAA}
-.layui-slider-input-btn i:first-child{border-bottom:1px solid  #484849}
+.layui-slider-input-btn i:first-child{border-bottom:1px solid  #2e2e30}
 
 .layui-tree-line .layui-tree-set .layui-tree-set:after{border-top:1px dotted #CCCCCC}
 .layui-tree-entry:hover{background-color: #313132}
@@ -375,8 +377,10 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-laydate .layui-laydate-list{background-color: #373739}
 .layui-laydate-range .laydate-main-list-1 .layui-laydate-content{border-left:1px solid  #484849}
 .layui-laydate-range .laydate-main-list-1 .layui-laydate-header{border-left:1px solid  #484849}
-.layui-laydate{border:1px solid  #484849;box-shadow:0 2px 4px rgba(0,0,0,.12);background-color: #373739;color: rgba(255,255,255,.9)}
-.layui-laydate-hint{border:1px solid  #484849;box-shadow:0 2px 4px rgba(0,0,0,.12);background-color: #373739;color: rgba(255,255,255,.9)}
+.layui-laydate{border:1px solid #484849;box-shadow:0 16px 24px rgba(0, 0, 0, 14%), 0 6px 30px rgba(0, 0, 0, 12%), 0 8px 10px rgba(0, 0, 0, 20%);background-color: #373739;color: rgba(255,255,255,.9)}
+.layui-laydate-hint{border:1px solid #484849;box-shadow:0 16px 24px rgba(0, 0, 0, 14%), 0 6px 30px rgba(0, 0, 0, 12%), 0 8px 10px rgba(0, 0, 0, 20%);background-color: #373739;color: rgba(255,255,255,.9)}
+.layui-laydate{box-shadow: 0 8px 10px rgba(0, 0, 0, 12%), 0 3px 14px rgba(0, 0, 0, 10%), 0 5px 5px rgba(0, 0, 0, 16%)}
+.layui-laydate-hint{border-color:#2e2e30}
 .layui-laydate-header{border-bottom:1px solid  #484849}
 .layui-laydate-content th{color: rgba(255,255,255,.9)}
 .layui-laydate-content td{color: rgba(255,255,255,.9)}
@@ -405,8 +409,8 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-laydate-linkage.laydate-theme-grid .laydate-selected.laydate-day-prev{color:#D2D2D2!important}
 .layui-laydate.laydate-theme-circle .layui-laydate-content table td.layui-this{background-color:transparent!important}
 
-.layui-layer{background-color: #2a2a2b;box-shadow:1px 1px 50px rgba(0,0,0,.3)}
-.layui-layer-border{border:1px solid #484849;box-shadow:1px 1px 5px rgba(0,0,0,.2)}
+.layui-layer{background-color: #2a2a2b;box-shadow:0 16px 24px rgba(0, 0, 0, 14%), 0 6px 30px rgba(0, 0, 0, 12%), 0 8px 10px rgba(0, 0, 0, 20%)}
+.layui-layer-border{border:1px solid #484849;box-shadow:0 16px 24px rgba(0, 0, 0, 14%), 0 6px 30px rgba(0, 0, 0, 12%), 0 8px 10px rgba(0, 0, 0, 20%)}
 .layui-layer-move{background-color: #373739}
 .layui-layer-title{border-bottom:1px solid #484849;color: rgba(255,255,255,.9)}
 .layui-layer-setwin span{color: rgba(255,255,255,.9)}
@@ -420,10 +424,10 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-layer-btn .layui-layer-btn0{color: rgba(255,255,255,.9)}
 .layui-layer-dialog .layui-layer-content .layui-icon-lock{color: #939393}
 .layui-layer-rim{border:6px solid #C2C2C2;border:6px solid #484849}
-.layui-layer-msg{border:1px solid #484849}
+.layui-layer-msg{border:1px solid #2e2e30}
 .layui-layer-hui{background-color: #2a2a2b;color: rgba(255,255,255,.9)}
 .layui-layer-loading-icon{color:#AAAAAA}
-.layui-layer-tips .layui-layer-content{box-shadow:1px 1px 3px rgba(0,0,0,.2);background-color: #373739;color: rgba(255,255,255,.9)}
+.layui-layer-tips .layui-layer-content{box-shadow: 0 16px 24px rgba(0, 0, 0, 14%), 0 6px 30px rgba(0, 0, 0, 12%), 0 8px 10px rgba(0, 0, 0, 20%);background-color: #373739;color: rgba(255,255,255,.9)}
 .layui-layer-tips i.layui-layer-TipsG{border-color:transparent}
 .layui-layer-tips i.layui-layer-TipsB{border-right-color:#333333}
 .layui-layer-tips i.layui-layer-TipsT{border-right-color:#333333}
@@ -435,8 +439,8 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-layer-lan .layui-layer-btn .layui-layer-btn1{background: #CCCCCC}
 .layui-layer-molv .layui-layer-title{color: rgba(255,255,255,.9)}
 .layui-layer-molv .layui-layer-btn .layui-layer-btn1{background:#CCCCCC}
-.layui-layer-prompt .layui-layer-input{border:1px solid  #484849;color: rgba(255,255,255,.7)}
-.layui-layer-tab{box-shadow:1px 1px 50px rgba(0,0,0,.4)}
+.layui-layer-prompt .layui-layer-input{border:1px solid #484849;color: rgba(255,255,255,.7)}
+.layui-layer-tab{box-shadow:0 16px 24px rgba(0, 0, 0, 14%), 0 6px 30px rgba(0, 0, 0, 12%), 0 8px 10px rgba(0, 0, 0, 20%)}
 .layui-layer-tab .layui-layer-title span.layui-this{border-left:1px solid  #484849;border-right:1px solid  #484849;background-color: #2a2a2b}
 .layui-layer-imgnext{color:#AAAAAA}
 .layui-layer-imgprev{color:#AAAAAA}
@@ -453,7 +457,7 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-layer-prompt .layui-layer-input:focus{outline:0}
 
 
-.layui-layer-loading{background:0 0}
+.layui-layer-loading{background:0 0;box-shadow:0 0}
 .layui-btn-primary{border-color:transparent}
 .layui-btn-group .layui-btn:first-child{border-left:none}
 .layui-btn-group .layui-btn-primary:hover{border-top-color:transparent; border-bottom-color: transparent;}
@@ -478,14 +482,6 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-slider-input.layui-input {background-color: #232324;}
 .layui-slider-input .layui-input {background-color: #232324;}
 
-a {
-  color: rgba(255,255,255,.9)
-}
-
-.layui-code {
-  background-color: #232324
-}
-
-pre>code {
-  background-color: #232324
-}
+a {color: rgba(255,255,255,.9)}
+.layui-code {background-color: #232324}
+pre>code {background-color: #232324}

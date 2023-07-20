@@ -395,6 +395,7 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-laydate-linkage .laydate-selected:hover>div{background-color:var(--lay-color-green-4)!important}
 .layui-laydate-content td>div:hover,.layui-laydate-list li:hover,.layui-laydate-shortcut>li:hover{background-color: var(--lay-color-fill-2);color: var(--lay-color-text-2)}
 .laydate-time-list li ol{border:1px solid  var(--lay-color-border-2)}
+.laydate-time-list>li:hover{background: 0 0;}
 .layui-laydate-content .laydate-day-next,.layui-laydate-content .laydate-day-prev{color: var(--lay-color-text-4)}
 .layui-laydate-linkage .laydate-selected.laydate-day-next>div,.layui-laydate-linkage .laydate-selected.laydate-day-prev>div{background-color: var(--lay-color-bg-5)!important}
 .layui-laydate-footer{border-top:1px solid  var(--lay-color-border-2)}

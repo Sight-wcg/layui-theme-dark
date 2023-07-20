@@ -573,6 +573,7 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 :root .layui-laydate-shortcut>li:hover{filter: none\9
 }
 .laydate-time-list li ol{border:1px solid  #484849}
+.laydate-time-list>li:hover{background: 0 0;}
 .layui-laydate-content .laydate-day-next{color: rgba(255,255,255,.3)}
 .layui-laydate-content .laydate-day-prev{color: rgba(255,255,255,.3)}
 .layui-laydate-linkage .laydate-selected.laydate-day-next>div{background-color: #373739!important}

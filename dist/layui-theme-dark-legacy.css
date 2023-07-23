@@ -350,7 +350,7 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 16px 24px rgba(0, 0, 0,
 .layui-menu li.layui-disabled *{color:rgba(255,255,255,.3)!important}
 .layui-menu .layui-menu-item-group>.layui-menu-body-title{color: rgba(255,255,255,.9)}
 .layui-menu .layui-menu-item-none{color:#333333}
-.layui-menu .layui-menu-item-divider{border-bottom:1px solid  #484849}
+.layui-menu .layui-menu-item-divider{border-bottom:1px solid #484849}
 .layui-menu .layui-menu-item-up>.layui-menu-body-title{color: rgba(255,255,255,.9)}
 .layui-menu .layui-menu-item-down:hover>.layui-menu-body-title>.layui-icon{color: rgba(255,255,255,.9)}
 .layui-menu .layui-menu-item-up>.layui-menu-body-title:hover>.layui-icon{color: rgba(255,255,255,.9)}
@@ -482,9 +482,9 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 /** 评分组件 **/
 .layui-rate li i.layui-icon{color:#FFB800}
 /** 颜色选择器 **/
-.layui-colorpicker{border:1px solid #484849}
+.layui-colorpicker{border:1px solid #2e2e30}
 .layui-colorpicker:hover{border-color: #484849}
-.layui-colorpicker-trigger-span{border:1px solid #333333}
+.layui-colorpicker-trigger-span{border:1px solid #2e2e30}
 .layui-colorpicker-trigger-i{color: #FAFAFA}
 .layui-colorpicker-trigger-i.layui-icon-close{color:#23303C}
 .layui-colorpicker-main{background: #232324;border:1px solid #484849;box-shadow:0 8px 10px rgba(0, 0, 0, 12%), 0 3px 14px rgba(0, 0, 0, 10%), 0 5px 5px rgba(0, 0, 0, 16%)}
@@ -572,10 +572,11 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-laydate-shortcut>li:hover{background-color: rgba(255,255,255,.08);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14ffffff', endColorstr='#14ffffff');color: rgba(255,255,255,.7)}
 :root .layui-laydate-shortcut>li:hover{filter: none\9
 }
+.layui-laydate-content td.laydate-disabled>div:hover{background-color: #373739;color: rgba(255,255,255,.3)}
 .laydate-time-list li ol{border:1px solid  #484849}
 .laydate-time-list>li:hover{background: 0 0;}
-.layui-laydate-content .laydate-day-next{color: rgba(255,255,255,.3)}
-.layui-laydate-content .laydate-day-prev{color: rgba(255,255,255,.3)}
+.layui-laydate-content .laydate-day-next{color: rgba(255,255,255,.5)}
+.layui-laydate-content .laydate-day-prev{color: rgba(255,255,255,.5)}
 .layui-laydate-linkage .laydate-selected.laydate-day-next>div{background-color: #373739!important}
 .layui-laydate-linkage .laydate-selected.laydate-day-prev>div{background-color: #373739!important}
 .layui-laydate-footer{border-top:1px solid  #484849}

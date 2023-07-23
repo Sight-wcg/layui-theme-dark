@@ -423,13 +423,13 @@ body .layui-table-tips .layui-layer-content{box-shadow:var(--lay-shadow-3)}
 .layui-upload-drag .layui-icon{color: var(--lay-color-primary)}
 .layui-upload-drag[lay-over]{border-color: var(--lay-color-primary)}
 /* 基础菜单元素 */
-.layui-menu{background-color: var( --lay-color-bg-2)}
+.layui-menu{background-color: var(--lay-color-bg-2)}
 .layui-menu li{color: var(--lay-color-text-1)}
-.layui-menu li:hover{background-color: var( --lay-color-bg-5)}
+.layui-menu li:hover{background-color: var(--lay-color-bg-5)}
 .layui-menu li.layui-disabled,.layui-menu li.layui-disabled *{color:var(--lay-color-text-4)!important}
 .layui-menu .layui-menu-item-group>.layui-menu-body-title{color: var(--lay-color-text-1)}
 .layui-menu .layui-menu-item-none{color:var(--lay-color-black)}
-.layui-menu .layui-menu-item-divider{border-bottom:1px solid  var( --lay-color-border-2)}
+.layui-menu .layui-menu-item-divider{border-bottom:1px solid var(--lay-color-border-2)}
 .layui-menu .layui-menu-item-up>.layui-menu-body-title{color: var(--lay-color-text-1)}
 .layui-menu .layui-menu-item-down:hover>.layui-menu-body-title>.layui-icon,.layui-menu .layui-menu-item-up>.layui-menu-body-title:hover>.layui-icon{color: var(--lay-color-text-1)}
 .layui-menu .layui-menu-item-checked,.layui-menu .layui-menu-item-checked2{background-color:var(--lay-color-active)!important;color:var(--lay-color-secondary)}
@@ -521,9 +521,9 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 /** 评分组件 **/
 .layui-rate li i.layui-icon{color:var(--lay-color-orange-6)}
 /** 颜色选择器 **/
-.layui-colorpicker{border:1px solid var(--lay-color-border-2)}
-.layui-colorpicker:hover{border-color: var( --lay-color-border-2)}
-.layui-colorpicker-trigger-span{border:1px solid var(--lay-color-black)}
+.layui-colorpicker{border:1px solid var(--lay-color-border-1)}
+.layui-colorpicker:hover{border-color: var(--lay-color-border-2)}
+.layui-colorpicker-trigger-span{border:1px solid var(--lay-color-border-1)}
 .layui-colorpicker-trigger-i{color: var(--lay-color-white)}
 .layui-colorpicker-trigger-i.layui-icon-close{color:var(--lay-color-black-7)}
 .layui-colorpicker-main{background: var(--lay-color-bg-2);border:1px solid var( --lay-color-border-2);box-shadow:var(--lay-shadow-2)}
@@ -596,9 +596,10 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-laydate-linkage .layui-laydate-content td.laydate-selected>div{background-color:var(--lay-color-secondary-light)}
 .layui-laydate-linkage .laydate-selected:hover>div{background-color:var(--lay-color-green-4)!important}
 .layui-laydate-content td>div:hover,.layui-laydate-list li:hover,.layui-laydate-shortcut>li:hover{background-color: var(--lay-color-fill-2);color: var(--lay-color-text-2)}
+.layui-laydate-content td.laydate-disabled>div:hover{background-color: var(--lay-color-bg-5);color: var(--lay-color-text-4)}
 .laydate-time-list li ol{border:1px solid  var(--lay-color-border-2)}
 .laydate-time-list>li:hover{background: 0 0;}
-.layui-laydate-content .laydate-day-next,.layui-laydate-content .laydate-day-prev{color: var(--lay-color-text-4)}
+.layui-laydate-content .laydate-day-next,.layui-laydate-content .laydate-day-prev{color: var(--lay-color-text-3)}
 .layui-laydate-linkage .laydate-selected.laydate-day-next>div,.layui-laydate-linkage .laydate-selected.laydate-day-prev>div{background-color: var(--lay-color-bg-5)!important}
 .layui-laydate-footer{border-top:1px solid  var(--lay-color-border-2)}
 .layui-laydate-hint{color:var(--lay-color-danger)}

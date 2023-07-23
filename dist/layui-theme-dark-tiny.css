@@ -100,6 +100,8 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-textarea:focus.layui-disabled{border-color: #2e2e30!important;box-shadow: 0 0 0 0}
 .layui-form-danger+.layui-form-select .layui-input{border-color:#FF5722!important;box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.08);}
 .layui-form-danger:focus{border-color:#FF5722!important;box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.08);}
+.layui-input:focus:not([disabled]):not(.layui-disabled){background-color: #232324};
+.layui-textarea:focus:not([disabled]):not(.layui-disabled){background-color: #232324};
 
 .layui-input-prefix .layui-icon{color: #C2C2C2}
 .layui-input-split .layui-icon{color: #C2C2C2}
@@ -252,7 +254,7 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 16px 24px rgba(0, 0, 0,
 .layui-menu li.layui-disabled *{color:rgba(255,255,255,.3)!important}
 .layui-menu .layui-menu-item-group>.layui-menu-body-title{color: rgba(255,255,255,.9)}
 .layui-menu .layui-menu-item-none{color:#333333}
-.layui-menu .layui-menu-item-divider{border-bottom:1px solid  #484849}
+.layui-menu .layui-menu-item-divider{border-bottom:1px solid #484849}
 .layui-menu .layui-menu-item-up>.layui-menu-body-title{color: rgba(255,255,255,.9)}
 .layui-menu .layui-menu-item-down:hover>.layui-menu-body-title>.layui-icon{color: rgba(255,255,255,.9)}
 .layui-menu .layui-menu-item-up>.layui-menu-body-title:hover>.layui-icon{color: rgba(255,255,255,.9)}
@@ -325,9 +327,9 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-transfer-data .layui-none{color:#CCCCCC}
 
 
-.layui-colorpicker{border:1px solid #484849}
+.layui-colorpicker{border:1px solid #2e2e30}
 .layui-colorpicker:hover{border-color: #484849}
-.layui-colorpicker-trigger-span{border:1px solid #333333}
+.layui-colorpicker-trigger-span{border:1px solid #2e2e30}
 .layui-colorpicker-trigger-i.layui-icon-close{color:#23303C}
 .layui-colorpicker-main{background: #232324;border:1px solid #484849;box-shadow:0 8px 10px rgba(0, 0, 0, 12%), 0 3px 14px rgba(0, 0, 0, 10%), 0 5px 5px rgba(0, 0, 0, 16%)}   
 .layui-colorpicker-side-slider{box-shadow:0 4px 6px rgba(0, 0, 0, 6%), 0 1px 10px rgba(0, 0, 0, 8%), 0 2px 4px rgba(0, 0, 0, 12%);border:1px solid #F6F6F6}
@@ -387,10 +389,11 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-laydate-content td>div:hover{background-color: rgba(255,255,255,.08);color: rgba(255,255,255,.7)}
 .layui-laydate-list li:hover{background-color: rgba(255,255,255,.08);color: rgba(255,255,255,.7)}
 .layui-laydate-shortcut>li:hover{background-color: rgba(255,255,255,.08);color: rgba(255,255,255,.7)}
+.layui-laydate-content td.laydate-disabled>div:hover{background-color: #373739;color: rgba(255,255,255,.3)}
 .laydate-time-list li ol{border:1px solid  #484849}
 .laydate-time-list>li:hover{background: 0 0;}
-.layui-laydate-content .laydate-day-next{color: rgba(255,255,255,.3)}
-.layui-laydate-content .laydate-day-prev{color: rgba(255,255,255,.3)}
+.layui-laydate-content .laydate-day-next{color: rgba(255,255,255,.5)}
+.layui-laydate-content .laydate-day-prev{color: rgba(255,255,255,.5)}
 .layui-laydate-linkage .laydate-selected.laydate-day-next>div{background-color: #373739!important}
 .layui-laydate-linkage .laydate-selected.laydate-day-prev>div{background-color: #373739!important}
 .layui-laydate-footer{border-top:1px solid  #484849}
@@ -478,6 +481,7 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-table[lay-even] tbody tr:nth-child(even){background-color:rgba(255,255,255,.12)}
 .layui-menu .layui-menu-item-checked{background-color:rgba(255,255,255,.08)!important}
 .layui-menu .layui-menu-item-checked2{background-color:rgba(255,255,255,.08)!important}
+.layui-input-group .layui-input{border-radius: 0;}
 .layui-input-split{background-color: #232324;}
 .layui-layer-tab .layui-layer-title span:first-child{border-left: none !important;}
 .layui-slider-input.layui-input {background-color: #232324;}

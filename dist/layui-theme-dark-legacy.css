@@ -160,6 +160,8 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-textarea:focus.layui-disabled{border-color: #2e2e30!important;box-shadow: 0 0 0 0}
 .layui-form-danger+.layui-form-select .layui-input{border-color:#FF5722!important;box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.08);}
 .layui-form-danger:focus{border-color:#FF5722!important;box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.08);}
+.layui-input:focus:not([disabled]):not(.layui-disabled){background-color: #232324};
+.layui-textarea:focus:not([disabled]):not(.layui-disabled){background-color: #232324};
 /* 输入框点缀  */
 .layui-input-prefix .layui-icon{color: #C2C2C2}
 .layui-input-split .layui-icon{color: #C2C2C2}
@@ -717,6 +719,7 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-menu .layui-menu-item-checked2{background-color:rgba(255,255,255,.08)!important;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14ffffff', endColorstr='#14ffffff')}
 :root .layui-menu .layui-menu-item-checked2{filter: none\9
 }
+.layui-input-group .layui-input{border-radius: 0;}
 .layui-input-split{background-color: #232324;}
 .layui-layer-tab .layui-layer-title span:first-child{border-left: none !important;}
 .layui-slider-input.layui-input {background-color: #232324;}

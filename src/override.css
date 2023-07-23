@@ -93,6 +93,7 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-input:focus[disabled],.layui-textarea:focus[disabled]{border-color: var(--lay-color-border-1)!important;}
 .layui-input:focus.layui-disabled,.layui-textarea:focus.layui-disabled{border-color: var(--lay-color-border-1)!important;box-shadow: 0 0 0 0}
 .layui-form-danger+.layui-form-select .layui-input,.layui-form-danger:focus{border-color:var(--lay-color-danger)!important;box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.08);}
+.layui-input:focus:not([disabled]):not(.layui-disabled),.layui-textarea:focus:not([disabled]):not(.layui-disabled){background-color: var(--lay-color-bg-2)};
 /* 输入框点缀  */
 .layui-input-prefix .layui-icon,.layui-input-split .layui-icon,.layui-input-suffix .layui-icon{color: var(--lay-color-gray-8)}
 .layui-input-wrap .layui-input:hover+.layui-input-split{border-color: var(--lay-color-border-2)}
@@ -485,6 +486,7 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-laypage button{color:var(--lay-color-text-1)}
 .layui-table-click,.layui-table-hover,.layui-table[lay-even] tbody tr:nth-child(even){background-color:var(--lay-color-fill-3)}
 .layui-menu .layui-menu-item-checked,.layui-menu .layui-menu-item-checked2{background-color:var(--lay-color-fill-2)!important}
+.layui-input-group .layui-input{border-radius: 0;}
 .layui-input-split{background-color: var(--lay-color-bg-2);}
 .layui-layer-tab .layui-layer-title span:first-child{border-left: none !important;}
 .layui-slider-input.layui-input,

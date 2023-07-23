@@ -288,12 +288,24 @@ a:hover{color:rgba(255,255,255,.5)}
 /** 表格 **/
 .layui-table{background-color: #232324;color: rgba(255,255,255,.7)}
 .layui-table-mend{background-color: #232324}
-.layui-table-click{background-color:#232324}
-.layui-table-hover{background-color:#232324}
-.layui-table[lay-even] tbody tr:nth-child(even){background-color:#232324}
-.layui-table-checked{background-color: #686868;color: rgba(255,255,255,.9)}
-.layui-table-checked.layui-table-hover{background-color: #7b7b7b;}
-.layui-table-checked.layui-table-click{background-color: #7b7b7b;}
+.layui-table-click{background-color:rgba(255,255,255,.12);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1effffff', endColorstr='#1effffff')}
+:root .layui-table-click{filter: none\9
+}
+.layui-table-hover{background-color:rgba(255,255,255,.12);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1effffff', endColorstr='#1effffff')}
+:root .layui-table-hover{filter: none\9
+}
+.layui-table[lay-even] tbody tr:nth-child(even){background-color:rgba(255,255,255,.12);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1effffff', endColorstr='#1effffff')}
+:root .layui-table[lay-even] tbody tr:nth-child(even){filter: none\9
+}
+.layui-table-checked{background-color: rgba(255,255,255,.08);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14ffffff', endColorstr='#14ffffff');color: rgba(255,255,255,.9)}
+:root .layui-table-checked{filter: none\9
+}
+.layui-table-checked.layui-table-hover{background-color: rgba(255,255,255,.12);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1effffff', endColorstr='#1effffff');}
+:root .layui-table-checked.layui-table-hover{filter: none\9
+}
+.layui-table-checked.layui-table-click{background-color: rgba(255,255,255,.12);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1effffff', endColorstr='#1effffff');}
+:root .layui-table-checked.layui-table-click{filter: none\9
+}
 .layui-table td{border-color: #484849}
 .layui-table th{border-color: #484849}
 .layui-table-col-set{border-color: #484849}
@@ -704,13 +716,7 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 :root .layui-form-select dl dd.layui-this{filter: none\9
 }
 .layui-laypage button{color:rgba(255,255,255,.9)}
-.layui-table-click{background-color:rgba(255,255,255,.12);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1effffff', endColorstr='#1effffff')}
-:root .layui-table-click{filter: none\9
-}
-.layui-table-hover{background-color:rgba(255,255,255,.12);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1effffff', endColorstr='#1effffff')}
-:root .layui-table-hover{filter: none\9
-}
-.layui-table[lay-even] tbody tr:nth-child(even){background-color:rgba(255,255,255,.12);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1effffff', endColorstr='#1effffff')}
+.layui-table[lay-even] tbody tr:nth-child(even){background-color:rgba(255,255,255,.16);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#28ffffff', endColorstr='#28ffffff')}
 :root .layui-table[lay-even] tbody tr:nth-child(even){filter: none\9
 }
 .layui-menu .layui-menu-item-checked{background-color:rgba(255,255,255,.08)!important;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14ffffff', endColorstr='#14ffffff')}

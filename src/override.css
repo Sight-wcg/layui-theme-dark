@@ -183,9 +183,9 @@ a:hover{color:var(--lay-color-text-3)}
 /** 表格 **/
 .layui-table{background-color: var(--lay-color-bg-2);color: var(--lay-color-text-2)}
 .layui-table-mend{background-color: var(--lay-color-bg-2)}
-.layui-table-click,.layui-table-hover,.layui-table[lay-even] tbody tr:nth-child(even){background-color:var(--lay-color-bg-2)}
-.layui-table-checked{background-color: var(--lay-color-gray-13);color: var(--lay-color-text-1)}
-.layui-table-checked.layui-table-hover,.layui-table-checked.layui-table-click{background-color: var(--lay-color-gray-12);}
+.layui-table-click,.layui-table-hover,.layui-table[lay-even] tbody tr:nth-child(even){background-color:var(--lay-color-fill-3)}
+.layui-table-checked{background-color: var(--lay-color-fill-2);color: var(--lay-color-text-1)}
+.layui-table-checked.layui-table-hover,.layui-table-checked.layui-table-click{background-color: var(--lay-color-fill-3);}
 .layui-table td,.layui-table th,.layui-table-col-set,.layui-table-fixed-r,.layui-table-grid-down,.layui-table-header,.layui-table-mend,.layui-table-page,.layui-table-tips-main,.layui-table-tool,.layui-table-total,.layui-table-view,.layui-table[lay-skin=line],.layui-table[lay-skin=row]{border-color: var(--lay-color-border-2)}
 .layui-table-view .layui-table td[data-edit]:hover:after{border:1px solid var(--lay-color-primary-active)}
 .layui-table-init{background-color: var(--lay-color-bg-2);}
@@ -484,7 +484,7 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-form-select dl dd:hover{background-color:var(--lay-color-fill-2)}
 .layui-form-select dl dd.layui-this{background-color:var(--lay-color-fill-2)}
 .layui-laypage button{color:var(--lay-color-text-1)}
-.layui-table-click,.layui-table-hover,.layui-table[lay-even] tbody tr:nth-child(even){background-color:var(--lay-color-fill-3)}
+.layui-table[lay-even] tbody tr:nth-child(even){background-color:var(--lay-color-fill-4)}
 .layui-menu .layui-menu-item-checked,.layui-menu .layui-menu-item-checked2{background-color:var(--lay-color-fill-2)!important}
 .layui-input-group .layui-input{border-radius: 0;}
 .layui-input-split{background-color: var(--lay-color-bg-2);}

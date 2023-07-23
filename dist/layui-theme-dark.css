@@ -399,12 +399,12 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-table-tool-panel{color: var(--lay-color-text-1); border:1px solid  var(--lay-color-border-2);background-color: var(--lay-color-bg-5);box-shadow:var(--lay-shadow-2)}
 .layui-table-tool-panel li:hover{background-color:var(--lay-color-active)}
 .layui-table-col-set{background-color: var(--lay-color-white)}
-.layui-table-sort .layui-table-sort-asc{border-bottom-color:var(--lay-color-border-4)}
-.layui-table-sort .layui-table-sort-asc:hover{border-bottom-color:var(--lay-color-border-3)}
-.layui-table-sort .layui-table-sort-desc{border-top-color:var(--lay-color-border-4)}
-.layui-table-sort .layui-table-sort-desc:hover{border-top-color:var(--lay-color-border-3)}
-.layui-table-sort[lay-sort=asc] .layui-table-sort-asc{border-bottom-color:var(--lay-color-bg-5)}
-.layui-table-sort[lay-sort=desc] .layui-table-sort-desc{border-top-color:var(--lay-color-bg-5)}
+.layui-table-sort .layui-table-sort-asc{border-bottom-color:var(--lay-color-gray-8)}
+.layui-table-sort .layui-table-sort-asc:hover{border-bottom-color:var(--lay-color-gray-11)}
+.layui-table-sort .layui-table-sort-desc{border-top-color:var(--lay-color-gray-8)}
+.layui-table-sort .layui-table-sort-desc:hover{border-top-color:var(--lay-color-gray-11)}
+.layui-table-sort[lay-sort=asc] .layui-table-sort-asc{border-bottom-color:var(--lay-color-gray-13)}
+.layui-table-sort[lay-sort=desc] .layui-table-sort-desc{border-top-color:var(--lay-color-gray-13)}
 .layui-table-cell .layui-table-link{color: var(--lay-color-lightblue-5)}
 .layui-table-body .layui-none{color:var(--lay-color-gray-8)}
 .layui-table-fixed-l{box-shadow:1px 0 8px rgba(0,0,0,1)}

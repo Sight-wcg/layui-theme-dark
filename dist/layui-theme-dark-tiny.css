@@ -198,12 +198,12 @@ a:hover{color:rgba(255,255,255,.5)}
 
 .layui-table{background-color: #232324;color: rgba(255,255,255,.7)}
 .layui-table-mend{background-color: #232324}
-.layui-table-click{background-color:#232324}
-.layui-table-hover{background-color:#232324}
-.layui-table[lay-even] tbody tr:nth-child(even){background-color:#232324}
-.layui-table-checked{background-color: #686868;color: rgba(255,255,255,.9)}
-.layui-table-checked.layui-table-hover{background-color: #7b7b7b;}
-.layui-table-checked.layui-table-click{background-color: #7b7b7b;}
+.layui-table-click{background-color:rgba(255,255,255,.12)}
+.layui-table-hover{background-color:rgba(255,255,255,.12)}
+.layui-table[lay-even] tbody tr:nth-child(even){background-color:rgba(255,255,255,.12)}
+.layui-table-checked{background-color: rgba(255,255,255,.08);color: rgba(255,255,255,.9)}
+.layui-table-checked.layui-table-hover{background-color: rgba(255,255,255,.12);}
+.layui-table-checked.layui-table-click{background-color: rgba(255,255,255,.12);}
 .layui-table td{border-color: #484849}
 .layui-table th{border-color: #484849}
 .layui-table-col-set{border-color: #484849}
@@ -226,12 +226,12 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-table-tool .layui-inline[lay-event]:hover{border:1px solid #5f5f60}
 .layui-table-tool-panel{color: rgba(255,255,255,.9); border:1px solid  #484849;background-color: #373739;box-shadow:0 8px 10px rgba(0, 0, 0, 12%), 0 3px 14px rgba(0, 0, 0, 10%), 0 5px 5px rgba(0, 0, 0, 16%)}
 .layui-table-tool-panel li:hover{background-color:rgba(255,255,255,.12)}
-.layui-table-sort .layui-table-sort-asc{border-bottom-color:#929293}
-.layui-table-sort .layui-table-sort-asc:hover{border-bottom-color:#5f5f60}
-.layui-table-sort .layui-table-sort-desc{border-top-color:#929293}
-.layui-table-sort .layui-table-sort-desc:hover{border-top-color:#5f5f60}
-.layui-table-sort[lay-sort=asc] .layui-table-sort-asc{border-bottom-color:#373739}
-.layui-table-sort[lay-sort=desc] .layui-table-sort-desc{border-top-color:#373739}
+.layui-table-sort .layui-table-sort-asc{border-bottom-color:#C2C2C2}
+.layui-table-sort .layui-table-sort-asc:hover{border-bottom-color:#858585}
+.layui-table-sort .layui-table-sort-desc{border-top-color:#C2C2C2}
+.layui-table-sort .layui-table-sort-desc:hover{border-top-color:#858585}
+.layui-table-sort[lay-sort=asc] .layui-table-sort-asc{border-bottom-color:#686868}
+.layui-table-sort[lay-sort=desc] .layui-table-sort-desc{border-top-color:#686868}
 .layui-table-body .layui-none{color:#C2C2C2}
 .layui-table-fixed-l{box-shadow:1px 0 8px rgba(0,0,0,1)}
 .layui-table-fixed-r{box-shadow:-1px 0 8px rgba(0,0,0,1)}
@@ -476,9 +476,7 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-form-select dl dd:hover{background-color:rgba(255,255,255,.08)}
 .layui-form-select dl dd.layui-this{background-color:rgba(255,255,255,.08)}
 .layui-laypage button{color:rgba(255,255,255,.9)}
-.layui-table-click{background-color:rgba(255,255,255,.12)}
-.layui-table-hover{background-color:rgba(255,255,255,.12)}
-.layui-table[lay-even] tbody tr:nth-child(even){background-color:rgba(255,255,255,.12)}
+.layui-table[lay-even] tbody tr:nth-child(even){background-color:rgba(255,255,255,.16)}
 .layui-menu .layui-menu-item-checked{background-color:rgba(255,255,255,.08)!important}
 .layui-menu .layui-menu-item-checked2{background-color:rgba(255,255,255,.08)!important}
 .layui-input-group .layui-input{border-radius: 0;}

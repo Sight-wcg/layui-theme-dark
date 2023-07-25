@@ -18,7 +18,8 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-layout-admin .layui-footer{box-shadow:-1px 0 4px rgb(0 0 0 / 12%);background-color:var(--lay-color-bg-2)}
 .layui-layout-admin .layui-logo{color:var(--lay-color-primary);box-shadow:0 1px 2px 0 rgb(0 0 0 / 15%)}
 /* 引用 */
-.layui-elem-quote{border-left:5px solid var(--lay-color-secondary);background-color:var(--lay-color-bg-2)}
+.layui-elem-quote{border-left:5px solid var(--lay-color-secondary);background-color:var(--lay-color-fill-1)}
+.layui-quote-nm{border-color: var(--lay-color-fill-1)}
 /* 进度条 */
 .layui-progress{background-color: var(--lay-color-bg-3)}
 .layui-progress-bar{background-color:var( --lay-color-secondary)}
@@ -45,7 +46,7 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-bg-purple{background-color: var(--lay-color-purple-6)!important; color: var(--lay-color-white)!important;}
 .layui-bg-gray{background-color:var(--lay-color-gray-1)!important;color: var(--lay-color-black-6)!important}
 /* 徽章 */
-.layui-badge-rim,.layui-border,.layui-colla-content,.layui-colla-item,.layui-collapse,.layui-elem-field,.layui-form-pane .layui-form-item[pane],.layui-form-pane .layui-form-label,.layui-input,.layui-input-split,.layui-panel,.layui-quote-nm,.layui-select,.layui-tab-bar,.layui-tab-card,.layui-tab-title,.layui-tab-title .layui-this:after,.layui-textarea{border-color: var(--lay-color-border-1)}
+.layui-badge-rim,.layui-border,.layui-colla-content,.layui-colla-item,.layui-collapse,.layui-elem-field,.layui-form-pane .layui-form-item[pane],.layui-form-pane .layui-form-label,.layui-input,.layui-input-split,.layui-panel,.layui-select,.layui-tab-bar,.layui-tab-card,.layui-tab-title,.layui-tab-title .layui-this:after,.layui-textarea{border-color: var(--lay-color-border-1)}
 /* 边框颜色 */
 .layui-border{color:var(--lay-color-text-1)!important}
 .layui-border-red{border-color:var(--lay-color-red-6)!important;color:var(--lay-color-red-6)!important}

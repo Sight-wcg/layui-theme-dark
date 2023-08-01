@@ -173,7 +173,7 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-input-affix .layui-icon-clear{color:rgba(255,255,255,.7)}
 .layui-input-affix .layui-icon:hover{color:rgba(255,255,255,.5)}
 /* 数字输入框动态点缀  */
-.layui-input-number .layui-icon:first-child{border-bottom-color:#2e2e30}
+.layui-input-wrap .layui-input-number .layui-icon:first-child{border-bottom-color:#2e2e30}
 /* 下拉选择 */
 .layui-form-select{color:rgba(255,255,255,.7)}
 .layui-form-select .layui-edge{border-top-color:#C2C2C2}

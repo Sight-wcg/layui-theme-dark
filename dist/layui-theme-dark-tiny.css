@@ -269,9 +269,12 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 16px 24px rgba(0, 0, 0,
 .layui-nav .layui-nav-child a{color: rgba(255,255,255,.9)}
 .layui-nav .layui-nav-child a:hover{background-color: #373739;color: rgba(255,255,255,.9)}
 .layui-nav-child dd.layui-this{background-color: #373739;color: rgba(255,255,255,.9)}
-.layui-nav-tree.layui-bg-gray a{color: #73818A}
-.layui-nav.layui-bg-gray .layui-nav-item a{color: #73818A}
-.layui-nav.layui-bg-gray .layui-nav-child{background-color: #FAFAFA;}
+.layui-nav.layui-bg-gray{background-color: #232324 !important;color: rgba(255,255,255,.9);}
+.layui-nav-tree.layui-bg-gray{background-color: #232324 !important;color: rgba(255,255,255,.9);}
+.layui-nav-tree.layui-bg-gray a{color: rgba(255,255,255,.9)}
+.layui-nav.layui-bg-gray .layui-nav-item a{color: rgba(255,255,255,.9)}
+.layui-nav.layui-bg-gray .layui-nav-child{background-color: #373739;}
+.layui-nav-tree.layui-bg-gray .layui-nav-itemed>a{color: rgba(255,255,255,.9)!important}
 
 .layui-breadcrumb a{color:#CCCCCC!important}
 .layui-breadcrumb a cite{color:#C2C2C2}

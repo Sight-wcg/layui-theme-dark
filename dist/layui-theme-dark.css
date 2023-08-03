@@ -454,12 +454,14 @@ body .layui-table-tips .layui-layer-content{box-shadow:var(--lay-shadow-3)}
 .layui-nav-tree .layui-nav-child a{color: var(--lay-color-white);color: var(--lay-color-white)}
 .layui-nav-tree .layui-nav-child,.layui-nav-tree .layui-nav-child a:hover{color: var(--lay-color-white)}
 .layui-nav-itemed>.layui-nav-child{background-color:rgba(0, 0, 0, .3) !important}
-.layui-nav-tree.layui-bg-gray a,.layui-nav.layui-bg-gray .layui-nav-item a{color: var(--lay-color-black-4)}
-.layui-nav.layui-bg-gray .layui-nav-child{background-color: var(--lay-color-gray-1);}
-.layui-nav-tree.layui-bg-gray .layui-nav-itemed>a{color:#333!important}
+.layui-nav.layui-bg-gray,.layui-nav-tree.layui-bg-gray{background-color: var(--lay-color-bg-2) !important;color: var(--lay-color-text-1);}
+.layui-nav-tree.layui-bg-gray .layui-nav-itemed>.layui-nav-child{background-color: rgba(0, 0, 0, .3) !important;}
+.layui-nav-tree.layui-bg-gray a,.layui-nav.layui-bg-gray .layui-nav-item a{color: var(--lay-color-text-1)}
+.layui-nav.layui-bg-gray .layui-nav-child{background-color: var(--lay-color-bg-5);}
+.layui-nav-tree.layui-bg-gray .layui-nav-itemed>a{color: var(--lay-color-text-1)!important}
 .layui-nav.layui-bg-gray .layui-this a{color:var(--lay-color-secondary)}
 .layui-nav-tree.layui-bg-gray .layui-nav-child dd.layui-this,.layui-nav-tree.layui-bg-gray .layui-nav-child dd.layui-this a,.layui-nav-tree.layui-bg-gray .layui-this,.layui-nav-tree.layui-bg-gray .layui-this>a{color:var(--lay-color-secondary)!important}
-.layui-nav-tree.layui-bg-gray .layui-nav-bar{background-color:var( --lay-color-secondary)}
+.layui-nav-tree.layui-bg-gray .layui-nav-bar{background-color:var(--lay-color-secondary)}
 /** 面包屑 **/
 .layui-breadcrumb a{color:var(--lay-color-gray-7)!important}
 .layui-breadcrumb a:hover{color:var(--lay-color-secondary)!important}

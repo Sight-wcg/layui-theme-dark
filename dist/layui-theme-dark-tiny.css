@@ -233,10 +233,7 @@ a:hover{color:rgba(255,255,255,.5)}
 select.layui-table-edit{border-color:#484849}
 .layui-table-grid-down{background-color: #373739;color:#C2C2C2}
 .layui-table-grid-down:hover{background-color:#373739}
-body .layui-table-tips .layui-layer-content{box-shadow:0 16px 24px rgba(0, 0, 0, 14%), 0 6px 30px rgba(0, 0, 0, 12%), 0 8px 10px rgba(0, 0, 0, 20%)}
-.layui-table-tips-main{background-color: #373739;color: rgba(255,255,255,.5)}
-.layui-table-tips-c{background-color:#686868;color: rgba(255,255,255,.9)}
-.layui-table-tips-c:hover{background-color:#939393}
+.layui-table-cell-c{background-color: #686868;color: rgba(255,255,255,.9); border-color: #5f5f60;}
 
 .layui-upload-choose{color:#C2C2C2}
 .layui-upload-drag{border:1px dashed #484849;background-color: #313132;color: rgba(255,255,255,.7)}
@@ -415,14 +412,14 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-layer-move{background-color: #373739}
 .layui-layer-title{border-bottom:1px solid #484849;color: rgba(255,255,255,.9)}
 .layui-layer-setwin span{color: rgba(255,255,255,.9)}
-.layui-layer-setwin .layui-layer-min:before{background-color:rgba(255,255,255,.5)}
+.layui-layer-setwin .layui-layer-min:before{border-bottom-color:rgba(255,255,255,.9)}
 .layui-layer-setwin .layui-layer-max:after{border:1px solid rgba(255,255,255,.5)}
 .layui-layer-setwin .layui-layer-max:before{border:1px solid rgba(255,255,255,.5)}
 .layui-layer-setwin .layui-layer-maxmin:after{background-color: #373739}
 .layui-layer-setwin .layui-layer-maxmin:before{background-color: #373739}
 .layui-layer-setwin .layui-layer-close2{color:rgba(255,255,255,.9);background-color:#939393}
 .layui-layer-btn a{border:1px solid  #484849;background-color: #2a2a2b;color: rgba(255,255,255,.7)}
-.layui-layer-btn .layui-layer-btn0{color: rgba(255,255,255,.9)}
+.layui-layer-btn .layui-layer-btn0{border-color: transparent;color: rgba(255,255,255,.9)}
 .layui-layer-dialog .layui-layer-content .layui-icon-lock{color: #939393}
 .layui-layer-rim{border:6px solid #C2C2C2;border:6px solid #484849}
 .layui-layer-msg{border:1px solid #2e2e30}

@@ -209,10 +209,8 @@ a:hover{color:var(--lay-color-text-3)}
 select.layui-table-edit{border-color:var(--lay-color-border-2)}
 .layui-table-grid-down{background-color: var(--lay-color-bg-5);color:var(--lay-color-gray-8)}
 .layui-table-grid-down:hover{background-color:var(--lay-color-bg-5)}
-body .layui-table-tips .layui-layer-content{box-shadow:var(--lay-shadow-3)}
-.layui-table-tips-main{background-color: var(--lay-color-bg-5);color: var(--lay-color-text-3)}
-.layui-table-tips-c{background-color:var(--lay-color-gray-13);color: var(--lay-color-text-1)}
-.layui-table-tips-c:hover{background-color:var(--lay-color-gray-10)}
+.layui-table-cell-c{background-color: var(--lay-color-gray-13);color: var(--lay-color-text-1); border-color: var(--lay-color-border-3);}
+.layui-table-cell-c:hover{border-color: var(--lay-color-secondary-hover);}
 /** 文件上传 **/
 .layui-upload-choose{color:var(--lay-color-gray-8)}
 .layui-upload-drag{border:1px dashed var( --lay-color-border-2);background-color: var(--lay-color-bg-4);color: var(--lay-color-text-2)}
@@ -420,16 +418,15 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-layer-move{background-color: var(--lay-color-bg-5)}
 .layui-layer-title{border-bottom:1px solid var(--lay-color-border-2);color: var(--lay-color-text-1)}
 .layui-layer-setwin span{color: var(--lay-color-text-1)}
-.layui-layer-setwin .layui-layer-min:before{background-color:var(--lay-color-text-3)}
-.layui-layer-setwin .layui-layer-min:hover:before{background-color:var(--lay-color-info-hover)}
+.layui-layer-setwin .layui-layer-min:before{border-bottom-color:var(--lay-color-text-1)}
+.layui-layer-setwin .layui-layer-min:hover:before{border-bottom-color:var(--lay-color-info-hover)}
 .layui-layer-setwin .layui-layer-max:after,.layui-layer-setwin .layui-layer-max:before{border:1px solid var(--lay-color-text-3)}
 .layui-layer-setwin .layui-layer-max:hover:after,.layui-layer-setwin .layui-layer-max:hover:before{border-color:var(--lay-color-info-hover)}
-.layui-layer-setwin .layui-layer-min:hover:before{background-color:var(--lay-color-info-hover)}
 .layui-layer-setwin .layui-layer-maxmin:after,.layui-layer-setwin .layui-layer-maxmin:before{background-color: var(--lay-color-bg-5)}
 .layui-layer-setwin .layui-layer-close2{color:var(--lay-color-text-1);background-color:var(--lay-color-gray-10)}
 .layui-layer-setwin .layui-layer-close2:hover{background-color:var(--lay-color-normal)}
 .layui-layer-btn a{border:1px solid  var(--lay-color-border-2);background-color: var( --lay-color-bg-3);color: var(--lay-color-text-2)}
-.layui-layer-btn .layui-layer-btn0{border-color: var(--lay-color-normal);background-color: var(--lay-color-normal);color: var(--lay-color-text-1)}
+.layui-layer-btn .layui-layer-btn0{border-color: transparent;background-color: var(--lay-color-normal);color: var(--lay-color-text-1)}
 .layui-layer-dialog .layui-layer-content .layui-layer-face{color:var(--lay-color-gray-9)}
 .layui-layer-dialog .layui-layer-content .layui-icon-tips{color:var(--lay-color-warning)}
 .layui-layer-dialog .layui-layer-content .layui-icon-success{color: var(--lay-color-success)}

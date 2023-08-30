@@ -440,13 +440,15 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-layer-prompt .layui-layer-input{border:1px solid #484849;color: rgba(255,255,255,.7)}
 .layui-layer-tab{box-shadow:0 16px 24px rgba(0, 0, 0, 14%), 0 6px 30px rgba(0, 0, 0, 12%), 0 8px 10px rgba(0, 0, 0, 20%)}
 .layui-layer-tab .layui-layer-title span.layui-this{border-left:1px solid  #484849;border-right:1px solid  #484849;background-color: #2a2a2b}
-.layui-layer-imgnext{color:#AAAAAA}
-.layui-layer-imgprev{color:#AAAAAA}
-.layui-layer-imgnext:hover{color:#C2C2C2}
-.layui-layer-imgprev:hover{color:#C2C2C2}
-.layui-layer-imgbar{background-color: #373739;color: rgba(255,255,255,.9)}
-.layui-layer-imgtit *{color: rgba(255,255,255,.9)}
-.layui-layer-imgtit a:hover{color: rgba(255,255,255,.7)}
+.layui-layer-photos{background: none; box-shadow: none;}
+.layui-layer-photos-prev{color:#AAAAAA}
+.layui-layer-photos-next{color:#AAAAAA}
+.layui-layer-photos-prev:hover{color:rgba(255,255,255,.9)}
+.layui-layer-photos-next:hover{color:rgba(255,255,255,.9)}
+.layui-layer-photos-toolbar{background-color: #373739;color: rgba(255,255,255,.9)}
+.layui-layer-photos-toolbar *{color: rgba(255,255,255,.9)}
+.layui-layer-photos-toolbar a:hover{color: rgba(255,255,255,.7)}
+.layui-layer-photos-header > span:hover{background-color: rgba(255,255,255,.08)}
 .layui-layer-tips i.layui-layer-TipsB{border-right-color: #373739}
 .layui-layer-tips i.layui-layer-TipsT{border-right-color: #373739}
 .layui-layer-tips i.layui-layer-TipsL{border-bottom-color: #373739}

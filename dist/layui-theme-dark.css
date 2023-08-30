@@ -658,11 +658,13 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-layer-prompt .layui-layer-input{border:1px solid var(--lay-color-border-2);color: var(--lay-color-text-2)}
 .layui-layer-tab{box-shadow:var(--lay-shadow-3)}
 .layui-layer-tab .layui-layer-title span.layui-this{border-left:1px solid  var(--lay-color-border-2);border-right:1px solid  var(--lay-color-border-2);background-color: var(--lay-color-bg-3)}
-.layui-layer-imgnext,.layui-layer-imgprev{color:var(--lay-color-gray-9)}
-.layui-layer-imgnext:hover,.layui-layer-imgprev:hover{color:var(--lay-color-gray-8)}
-.layui-layer-imgbar{background-color:#333\9;background-color: var(--lay-color-bg-5);color: var(--lay-color-text-1)}
-.layui-layer-imgtit *{color: var(--lay-color-text-1)}
-.layui-layer-imgtit a:hover{color: var(--lay-color-text-2)}
+.layui-layer-photos{background: none; box-shadow: none;}
+.layui-layer-photos-prev,.layui-layer-photos-next{color:var(--lay-color-gray-9)}
+.layui-layer-photos-prev:hover,.layui-layer-photos-next:hover{color:var(--lay-color-text-1)}
+.layui-layer-photos-toolbar{background-color:#333\9;background-color: var(--lay-color-bg-5);color: var(--lay-color-text-1)}
+.layui-layer-photos-toolbar *{color: var(--lay-color-text-1)}
+.layui-layer-photos-toolbar a:hover{color: var(--lay-color-text-2)}
+.layui-layer-photos-header > span:hover{background-color: var(--lay-color-fill-2)}
 .layui-layer-tips i.layui-layer-TipsB,.layui-layer-tips i.layui-layer-TipsT{border-right-color: var(--lay-color-bg-5)}
 .layui-layer-tips i.layui-layer-TipsL,.layui-layer-tips i.layui-layer-TipsR{border-bottom-color: var(--lay-color-bg-5)}
 .layui-layer-prompt .layui-layer-input{border:1px solid var(--lay-color-border-2);color:var(--lay-color-text-1);background-color:var(--lay-color-black)}

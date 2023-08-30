@@ -55,6 +55,12 @@ document.documentElement.classList.toggle('dark')
 <html class="dark"> ... </html>
 ```
 
+**CDN**
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/layui-theme-dark/dist/layui-theme-dark.css">
+```
+
 <details><summary>跟随系统主题自动切换</summary>
 
 ```js

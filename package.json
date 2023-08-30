@@ -1,8 +1,7 @@
 {
   "name": "layui-theme-dark",
-  "version": "1.0.0",
+  "version": "2.8.16",
   "description": "layui 深色主题",
-  "main": "index.js",
   "type": "module",
   "scripts": {
     "dev": "run-p server watch",
@@ -11,14 +10,33 @@
     "build": "gulp build && gulp buildTiny",
     "genCssVar": "node ./script/gen-css-var.js",
     "genJson": "node ./script/gen-json.js",
+    "public": "npm publish --access public",
+    "prepare": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "exports": {
+    ".": {
+      "require": "./index.js",
+      "import": "./index.mjs"
+    },
+    "./*": "./*",
+    "./src/*": "./src/*",
+    "./dist/*": "./dist/*"
+  },
+  "main": "index.js",
+  "module": "index.mjs",
+  "files": [
+    "dist",
+    "src",
+    "index.js",
+    "index.mjs"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Sight-wcg/layui-theme-dark.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "morning-star",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Sight-wcg/layui-theme-dark/issues"
   },

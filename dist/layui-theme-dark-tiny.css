@@ -68,7 +68,6 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-text-em{color: rgba(255,255,255,.7)!important}
 .layui-word-aux{color: rgba(255,255,255,.7)!important}
 .layui-text blockquote:not(.layui-elem-quote){border-left:5px solid #929293}
-.layui-text pre>code:not(.layui-code){background-color:#f6f6f6}
 
 
 .layui-btn{color: rgba(255,255,255,.9)}
@@ -107,7 +106,7 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-input-affix .layui-icon-clear{color:rgba(255,255,255,.7)}
 .layui-input-affix .layui-icon:hover{color:rgba(255,255,255,.5)}
 
-.layui-input-wrap .layui-input-number .layui-icon:first-child{border-bottom-color:#2e2e30}
+.layui-input-wrap .layui-input-number .layui-icon-up{border-bottom-color:#2e2e30}
 
 .layui-form-select{color:rgba(255,255,255,.7)}
 .layui-form-select .layui-edge{border-top-color:#C2C2C2}
@@ -233,7 +232,13 @@ a:hover{color:rgba(255,255,255,.5)}
 select.layui-table-edit{border-color:#484849}
 .layui-table-grid-down{background-color: #373739;color:#C2C2C2}
 .layui-table-grid-down:hover{background-color:#373739}
+
 .layui-table-cell-c{background-color: #686868;color: rgba(255,255,255,.9); border-color: #5f5f60;}
+
+body .layui-table-tips .layui-layer-content{box-shadow:0 16px 24px rgba(0, 0, 0, 14%), 0 6px 30px rgba(0, 0, 0, 12%), 0 8px 10px rgba(0, 0, 0, 20%)}
+.layui-table-tips-main{background-color: #373739;color: rgba(255,255,255,.5)}
+.layui-table-tips-c{background-color:#686868;color: rgba(255,255,255,.9)}
+.layui-table-tips-c:hover{background-color:#939393}
 
 .layui-upload-choose{color:#C2C2C2}
 .layui-upload-drag{border:1px dashed #484849;background-color: #313132;color: rgba(255,255,255,.7)}
@@ -307,7 +312,7 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-util-face ul li{border:1px solid #484849}
 .layui-util-face ul li:hover{background: rgba(255,255,255,.9)}
 
-.layui-code{border:1px solid #484849;background-color: #f6f6f6;color: #505B63}
+.layui-code{border:1px solid #484849;background-color: #f6f6f6;color: rgba(255,255,255,.7)}
 
 .layui-transfer-box{border-color: #484849}
 .layui-transfer-header{border-color: #484849}
@@ -358,11 +363,17 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-tree-editInput{background-color:rgba(255,255,255,.08)}
 .layui-tree-emptyText{color:rgba(255,255,255,.7)}
 
-.layui-code-view{border:1px solid #2e2e30;background-color: #232324;color: rgba(255,255,255,.7); border-left-width: 6px;}
-.layui-code-title{border-bottom:1px solid #484849}
-.layui-code-view>.layui-code-ol>li{border-left:1px solid #484849;background-color: #232324}
-.layui-code-view>.layui-code-ul>li{background-color: #232324}
-.layui-code-dark{color:#C2C2C2}
+.layui-code-view{border:1px solid #2e2e30;}
+.layui-code-view:not(.layui-code-hl){background-color: #232324;color: rgba(255,255,255,.7);}
+.layui-code-header{border-bottom: 1px solid #2e2e30; background-color: #232324}
+.layui-code-header > .layui-code-header-about{color: rgba(255,255,255,.7);}
+.layui-code-view:not(.layui-code-hl) .layui-code-ln-side{border-color: #2e2e30; background-color: #232324;}
+.layui-code-nowrap > .layui-code-ln-side{background: none !important;}
+.layui-code-fixbar > span{color: rgba(255,255,255,.5);}
+.layui-code-theme-dark > .layui-code-ln-side{ background: none;}
+
+.layui-code-view.layui-code-hl > .layui-code-ln-side{background-color: transparent;}
+
 .layui-code-full{background-color: #17171A}
 
 .layui-laydate-header i{color:#C2C2C2}
@@ -480,7 +491,3 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-layer-tab .layui-layer-title span:first-child{border-left: none !important;}
 .layui-slider-input.layui-input {background-color: #232324;}
 .layui-slider-input .layui-input {background-color: #232324;}
-
-a {color: rgba(255,255,255,.9)}
-.layui-code {background-color: #232324}
-pre>code {background-color: #232324}

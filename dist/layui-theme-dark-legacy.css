@@ -106,7 +106,6 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-word-aux{color: rgba(255,255,255,.7)!important}
 .layui-text a:not(.layui-btn){color:#31BDEC}
 .layui-text blockquote:not(.layui-elem-quote){border-left:5px solid #929293}
-.layui-text pre>code:not(.layui-code){background-color:#f6f6f6}
 /* 字体颜色 */
 .layui-font-red{color:#FF5722!important}
 .layui-font-orange{color:#FFB800!important}
@@ -173,7 +172,7 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-input-affix .layui-icon-clear{color:rgba(255,255,255,.7)}
 .layui-input-affix .layui-icon:hover{color:rgba(255,255,255,.5)}
 /* 数字输入框动态点缀  */
-.layui-input-wrap .layui-input-number .layui-icon:first-child{border-bottom-color:#2e2e30}
+.layui-input-wrap .layui-input-number .layui-icon-up{border-bottom-color:#2e2e30}
 /* 下拉选择 */
 .layui-form-select{color:rgba(255,255,255,.7)}
 .layui-form-select .layui-edge{border-top-color:#C2C2C2}
@@ -347,8 +346,14 @@ a:hover{color:rgba(255,255,255,.5)}
 select.layui-table-edit{border-color:#484849}
 .layui-table-grid-down{background-color: #373739;color:#C2C2C2}
 .layui-table-grid-down:hover{background-color:#373739}
+/* 单元格多行展开风格  */
 .layui-table-cell-c{background-color: #686868;color: rgba(255,255,255,.9); border-color: #5f5f60;}
 .layui-table-cell-c:hover{border-color: #37C588;}
+/* 单元格 TIPS 展开风格  */
+body .layui-table-tips .layui-layer-content{box-shadow:0 16px 24px rgba(0, 0, 0, 14%), 0 6px 30px rgba(0, 0, 0, 12%), 0 8px 10px rgba(0, 0, 0, 20%)}
+.layui-table-tips-main{background-color: #373739;color: rgba(255,255,255,.5)}
+.layui-table-tips-c{background-color:#686868;color: rgba(255,255,255,.9)}
+.layui-table-tips-c:hover{background-color:#939393}
 /** 文件上传 **/
 .layui-upload-choose{color:#C2C2C2}
 .layui-upload-drag{border:1px dashed #484849;background-color: #313132;color: rgba(255,255,255,.7)}
@@ -481,7 +486,7 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 :root .layui-util-face ul li:hover{filter: none\9
 }
 /** 代码文本修饰 **/
-.layui-code{border:1px solid #484849;background-color: #f6f6f6;color: #505B63}
+.layui-code{border:1px solid #484849;background-color: #f6f6f6;color: rgba(255,255,255,.7)}
 /** 穿梭框 **/
 .layui-transfer-box{border-color: #484849}
 .layui-transfer-header{border-color: #484849}
@@ -546,13 +551,22 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 }
 .layui-tree-emptyText{color:rgba(255,255,255,.7)}
 /*code 不处理*/
-.layui-code-view{border:1px solid #2e2e30;background-color: #232324;color: rgba(255,255,255,.7); border-left-width: 6px;}
-.layui-code-title{border-bottom:1px solid #484849}
-.layui-code-title>.layui-code-about{color:#c5c5c5}
-.layui-code-view>.layui-code-ol>li{border-left:1px solid #484849;background-color: #232324}
-.layui-code-view>.layui-code-ul>li{background-color: #232324}
-.layui-code-dark{border:1px solid #3d3d3d;border-left-color:#656565;background-color:#3d3d3d;color:#C2C2C2}
-.layui-code-dark>.layui-code-ol>li,.layui-code-dark>.layui-code-ul>li{background-color:#3f3f3f}
+.layui-code-view{border:1px solid #2e2e30;}
+.layui-code-view:not(.layui-code-hl){background-color: #232324;color: rgba(255,255,255,.7);}
+.layui-code-header{border-bottom: 1px solid #2e2e30; background-color: #232324}
+.layui-code-header > .layui-code-header-about{color: rgba(255,255,255,.7);}
+.layui-code-view:not(.layui-code-hl) .layui-code-ln-side{border-color: #2e2e30; background-color: #232324;}
+.layui-code-nowrap > .layui-code-ln-side{background: none !important;}
+.layui-code-fixbar > span{color: rgba(255,255,255,.5);}
+.layui-code-fixbar > span:hover{color: #37C588;}
+
+.layui-code-theme-dark{border-color: rgb(126 122 122 / 15%); background-color: #1f1f1f; color: #ccc;}
+.layui-code-theme-dark > .layui-code-ln-side{border-right-color: #2a2a2a; background: none; color: #6e7681;}
+
+.layui-code-view.layui-code-hl > .layui-code-ln-side{background-color: transparent;}
+.layui-code-theme-dark.layui-code-hl,
+.layui-code-theme-dark.layui-code-hl > .layui-code-ln-side{border-color: rgb(126 122 122 / 15%);}
+
 .layui-code-full{background-color: #17171A}
 /*日期选择器*/
 .layui-laydate-header i{color:#C2C2C2}
@@ -736,7 +750,3 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-layer-tab .layui-layer-title span:first-child{border-left: none !important;}
 .layui-slider-input.layui-input {background-color: #232324;}
 .layui-slider-input .layui-input {background-color: #232324;}
-
-a {color: rgba(255,255,255,.9)}
-.layui-code {background-color: #232324}
-pre>code {background-color: #232324}

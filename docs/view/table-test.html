@@ -327,6 +327,12 @@ layui.use(['table', 'dropdown'], function(){
         },{
           id: 'delete',
           title: '删除'
+        },{
+          id: 'cellExpandedMode_wrap',
+          title: '单元格多行展开'
+        },{
+          id: 'cellExpandedMode_tips',
+          title: '单元格 tips 展开'
         }]
         //菜单被点击的事件
         ,click: function(obj){
@@ -356,6 +362,12 @@ layui.use(['table', 'dropdown'], function(){
               }
               layer.msg('delete event');
             break;
+            case 'cellExpandedMode_wrap':
+              table.reload('test', {cellExpandedMode: 'default'})
+            break;
+            case 'cellExpandedMode_tips':
+              table.reload('test', {cellExpandedMode: 'tips'})
+            break
           }
         }
       });

@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width" />
     <title>layui-theme-dark</title>
     <style>
+      wc-include{
+        padding: 15px;
+        display: block;
+      }
       .layui-layout-right .layui-nav-bar {
         background-color: unset !important;
       }
@@ -60,6 +64,7 @@
         z-index: 9999;
       }
     </style>
+    <script type="module" src="./docs/lib/include.js"></script>
   </head>
 
   <body>
@@ -140,16 +145,13 @@
                 <dd><a data-path="view/xm-select" href="javascript:;">xm-select</a></dd>
               </dl>
             </li>
-            <li class="layui-nav-item">
-              <a data-type="iframe" data-path="view/iframe/iframe-test" href="javascript:;">iframe-1</a>
-            </li>
           </ul>
         </div>
       </div>
 
       <div class="layui-body">
         <!-- 内容主体区域 -->
-        <div id="body-container" style="padding: 15px"></div>
+        <wc-include id="router-view" allow-scripts></wc-include>
       </div>
 
       <!-- <div class="layui-footer">

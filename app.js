@@ -38,26 +38,19 @@ loadScript(layuijs, function () {
 
         $('#change-theme').attr('class', `layui-icon layui-icon-${isDark ? 'moon' : 'light'}`);
 
-        const changeIframe = function () {
-          const frames = window.frames;
-          for (var i = 0; i < frames.length; i++) {
-            defaultHandler(frames[i]);
-          }
-        };
-
         if (!isAppearanceTransition) {
           defaultHandler();
-          changeIframe();
         } else {
           rippleViewTransition(isDark, function () {
             // 动画需要
             document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
             defaultHandler();
-            changeIframe();
           });
         }
       },
     });
+
+    routerTo({path: location.hash.slice(1) || 'view/button'});
 
     dropdown.render({
       elem: '#change-theme',
@@ -92,18 +85,6 @@ loadScript(layuijs, function () {
       },
     });
 
-    const path = location.hash.slice(1) || 'view/button';
-    const type = $(`[data-path='${path}']`).data('type');
-    loadView({
-      path,
-      type,
-      done() {
-        if (type === 'iframe') {
-          theme.setMode(theme.mode());
-        }
-      },
-    });
-
     util.event('lay-header-event', {
       menuLeft() {
         $('body').toggleClass('collapse');
@@ -121,17 +102,8 @@ loadScript(layuijs, function () {
 
     element.on('nav(nav-side)', function (elem) {
       var path = elem.data('path');
-      var type = elem.data('type');
       if (path) {
-        loadView({
-          path,
-          type,
-          done() {
-            if (type === 'iframe') {
-              theme.setMode(theme.mode());
-            }
-          },
-        });
+        routerTo({path});
         if ($(window).width() <= 768) {
           $('body').toggleClass('collapse', false);
         }
@@ -140,49 +112,28 @@ loadScript(layuijs, function () {
 
     $('#layuiv').text(layui.v);
 
-    function loadView({
-      elem = '#body-container',
+    function routerTo({
+      elem = '#router-view',
       path = 'view/button',
-      type,
       prefix = './docs/',
       suffix = '.html',
-      done,
     } = {}) {
-      var containerDom = $(elem);
+      var routerView = $(elem);
       var url = prefix + path + suffix;
 
       var loadTimer = setTimeout(() => {
         layer.load(2);
       }, 100);
 
-      history.replaceState({}, '', '#' + path); // 因为并没有处理路由
-      if (type === 'iframe') {
-        var iframeEl = $('<iframe>')
-          .attr('src', url)
-          .css({ width: '100%', height: '90vh', border: 'none' })
-          .hide()
-          .on('load', function () {
-            //clearTimeout(loadTimer);
-            done && done();
-            setTimeout(() => {
-              layer.closeLast('loading');
-              iframeEl.show();
-            }, 100);
-          });
-        containerDom.html(iframeEl);
-      } else {
-        $.ajax({
-          url: url,
-          dataType: 'html',
-        }).done(function (res) {
-          containerDom.html(res);
-          done && done();
-          element.render();
-          form.render();
-          clearTimeout(loadTimer);
-          layer.closeLast('loading');
-        });
-      }
+      history.replaceState({}, '', `#${path}`); // 因为并没有处理路由
+      routerView.attr('src', url)
+      routerView.off('load').on('load',function(){
+        element.render();
+        form.render();
+        clearTimeout(loadTimer);
+        layer.closeLast('loading');
+      })
+      
       // 选中, 展开菜单
       $('#ws-nav-side')
         .find("[data-path='" + path + "']")
@@ -191,6 +142,7 @@ loadScript(layuijs, function () {
         .closest('.layui-nav-item')
         .addClass('layui-nav-itemed');
     }
+
   });
 });
 

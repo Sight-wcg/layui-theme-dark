@@ -227,7 +227,7 @@ body .layui-table-tips .layui-layer-content{box-shadow:var(--lay-shadow-3)}
 .layui-menu li{color: var(--lay-color-text-1)}
 .layui-menu li:hover{background-color: var(--lay-color-bg-5)}
 .layui-menu li.layui-disabled,.layui-menu li.layui-disabled *{color:var(--lay-color-text-4)!important}
-.layui-menu .layui-menu-item-group>.layui-menu-body-title{color: var(--lay-color-text-1)}
+.layui-menu .layui-menu-item-group>.layui-menu-body-title{color: var(--lay-color-text-3)}
 .layui-menu .layui-menu-item-none{color:var(--lay-color-black)}
 .layui-menu .layui-menu-item-divider{border-bottom:1px solid var(--lay-color-border-2)}
 .layui-menu .layui-menu-item-up>.layui-menu-body-title{color: var(--lay-color-text-1)}

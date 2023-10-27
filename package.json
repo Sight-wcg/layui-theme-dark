@@ -7,7 +7,7 @@
     "dev": "run-p server watch",
     "server": "http-server ./ -p 5503",
     "watch": "gulp watch",
-    "build": "gulp build && gulp buildTiny",
+    "build": "gulp build",
     "genCssVar": "node ./script/gen-css-var.js",
     "genJson": "node ./script/gen-json.js",
     "public": "npm publish --access public",

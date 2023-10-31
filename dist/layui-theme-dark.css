@@ -303,6 +303,7 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-input-affix .layui-icon:hover{color:var(--lay-color-text-3)}
 /* 数字输入框动态点缀  */
 .layui-input-wrap .layui-input-number .layui-icon-up{border-bottom-color:var(--lay-color-border-1)}
+.layui-input-wrap .layui-input[type="number"].layui-input-number-out-of-range{color:var(--lay-color-danger)}
 /* 下拉选择 */
 .layui-form-select{color:var(--lay-color-text-2)}
 .layui-form-select .layui-edge{border-top-color:var(--lay-color-gray-8)}

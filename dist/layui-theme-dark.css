@@ -219,6 +219,8 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-layout-admin .layui-header{background-color:var(--lay-color-bg-2)}
 .layui-layout-admin .layui-footer{box-shadow:-1px 0 4px rgb(0 0 0 / 12%);background-color:var(--lay-color-bg-2)}
 .layui-layout-admin .layui-logo{color:var(--lay-color-primary);box-shadow:0 1px 2px 0 rgb(0 0 0 / 15%)}
+.layui-layout-admin .layadmin-pagetabs {background-color:var(--lay-color-bg-2)}
+    .layui-layout-admin .layadmin-pagetabs .layui-tab .layui-tab-title li {background-color:var(--lay-color-bg-2)}
 /* 引用 */
 .layui-elem-quote{border-left:5px solid var(--lay-color-secondary);background-color:var(--lay-color-fill-1)}
 .layui-quote-nm{border-color: var(--lay-color-fill-1)}

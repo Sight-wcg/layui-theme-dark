@@ -37,6 +37,8 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-layout-admin .layui-header{background-color:#232324}
 .layui-layout-admin .layui-footer{box-shadow:-1px 0 4px rgb(0 0 0 / 12%);background-color:#232324}
 .layui-layout-admin .layui-logo{color:#16BAAA;box-shadow:0 1px 2px 0 rgb(0 0 0 / 15%)}
+.layui-layout-admin .layadmin-pagetabs {background-color:#232324}
+    .layui-layout-admin .layadmin-pagetabs .layui-tab .layui-tab-title li {background-color:#232324}
 /* 引用 */
 .layui-elem-quote{border-left:5px solid #16B777;background-color:rgba(255,255,255,.04);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0affffff', endColorstr='#0affffff')}
 :root .layui-elem-quote{filter: none\9

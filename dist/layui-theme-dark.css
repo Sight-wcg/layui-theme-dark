@@ -456,7 +456,7 @@ body .layui-table-tips .layui-layer-content{box-shadow:var(--lay-shadow-3)}
 .layui-nav-tree .layui-nav-child dd.layui-this,.layui-nav-tree .layui-nav-child dd.layui-this a,.layui-nav-tree .layui-this,.layui-nav-tree .layui-this>a,.layui-nav-tree .layui-this>a:hover{background-color: var(--lay-color-primary);color: var(--lay-color-white)}
 .layui-nav-itemed>a,.layui-nav-tree .layui-nav-title a,.layui-nav-tree .layui-nav-title a:hover{color: var(--lay-color-white)!important}
 .layui-nav-tree .layui-nav-bar{background-color:var(--lay-color-primary)}
-.layui-nav-tree .layui-nav-child{background-color:rgba(0, 0, 0, .3)}
+.layui-nav-tree .layui-nav-child{background: none;background-color:rgba(0, 0, 0, .3)}
 .layui-nav-tree .layui-nav-child a{color: var(--lay-color-white);color: var(--lay-color-text-1)}
 .layui-nav-tree .layui-nav-child a:hover{background: none; color: var(--lay-color-white)}
 .layui-nav.layui-bg-gray,.layui-nav-tree.layui-bg-gray{background-color: var(--lay-color-bg-2) !important;color: var(--lay-color-text-1);}

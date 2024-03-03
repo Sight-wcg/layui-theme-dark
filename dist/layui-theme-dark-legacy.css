@@ -410,7 +410,7 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 16px 24px rgba(0, 0, 0,
 .layui-nav-tree .layui-nav-title a{color: #FAFAFA!important}
 .layui-nav-tree .layui-nav-title a:hover{color: #FAFAFA!important}
 .layui-nav-tree .layui-nav-bar{background-color:#16BAAA}
-.layui-nav-tree .layui-nav-child{background-color:rgba(0, 0, 0, .3);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4c000000', endColorstr='#4c000000')}
+.layui-nav-tree .layui-nav-child{background: none;background-color:rgba(0, 0, 0, .3);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4c000000', endColorstr='#4c000000')}
 :root .layui-nav-tree .layui-nav-child{filter: none\9
 }
 .layui-nav-tree .layui-nav-child a{color: #FAFAFA;color: rgba(255,255,255,.9)}

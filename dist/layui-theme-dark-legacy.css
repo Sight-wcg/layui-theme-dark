@@ -323,7 +323,7 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-table[lay-skin=row]{border-color: #484849}
 .layui-table-view .layui-table td[data-edit]:hover:after{border:1px solid #0E9F95}
 .layui-table-init{background-color: #232324;}
-.layui-table-init .layui-icon{color:#C2C2C2;}
+.layui-table-loading-icon .layui-icon{color:#C2C2C2;}
 .layui-table-page{background-color: #232324;}
 .layui-table-tool{background-color: #232324;}
 .layui-table-tool .layui-inline[lay-event]{color:rgba(255,255,255,.5);border:1px solid #484849}
@@ -595,8 +595,8 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-laydate-content td{color: rgba(255,255,255,.9)}
 .layui-laydate-content td.laydate-day-now{color:#16B777}
 .layui-laydate-content td.laydate-day-now:after{border:1px solid #16B777}
-.layui-laydate-linkage .layui-laydate-content td.laydate-selected>div{background-color:#5CD49C}
-.layui-laydate-linkage .laydate-selected:hover>div{background-color:#5CD49C!important}
+.layui-laydate-linkage .layui-laydate-content td.laydate-selected>div{background-color:#088259;}
+.layui-laydate-linkage .laydate-selected:hover>div{background-color:#088259!important}
 .layui-laydate-content td>div:hover{background-color: rgba(255,255,255,.08);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14ffffff', endColorstr='#14ffffff');color: rgba(255,255,255,.7)}
 :root .layui-laydate-content td>div:hover{filter: none\9
 }
@@ -611,22 +611,29 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .laydate-time-list>li:hover{background: 0 0;}
 .layui-laydate-content .laydate-day-next{color: rgba(255,255,255,.5)}
 .layui-laydate-content .laydate-day-prev{color: rgba(255,255,255,.5)}
-.layui-laydate-linkage .laydate-selected.laydate-day-next>div{background-color: #373739!important}
-.layui-laydate-linkage .laydate-selected.laydate-day-prev>div{background-color: #373739!important}
+.layui-laydate-linkage .laydate-selected.laydate-day-next>div,.layui-laydate-linkage .laydate-selected.laydate-day-prev>div{background: none!important}
 .layui-laydate-footer{border-top:1px solid  #484849}
 .layui-laydate-hint{color:#FF5722}
 .laydate-day-mark:after{background-color:#16B777}
 .layui-laydate-footer span[lay-type=date]{color:#16B777}
-.layui-laydate .layui-this{background-color:#16BAAA!important;color: #FAFAFA!important}
-.layui-laydate .layui-this>div{background-color:#16BAAA!important;color: #FAFAFA!important}
+.layui-laydate .layui-this{background-color:#16B777!important;color: #FAFAFA!important}
+.layui-laydate .layui-this>div{background-color:#16B777!important;color: #FAFAFA!important}
 .layui-laydate .laydate-disabled{color: rgba(255,255,255,.3)!important}
 .layui-laydate .laydate-disabled:hover{color: rgba(255,255,255,.3)!important}
+.layui-laydate .layui-this.laydate-disabled{background-color: rgba(255,255,255,.04) !important;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0affffff', endColorstr='#0affffff');color: rgba(255,255,255,.3) !important;}
+:root .layui-laydate .layui-this.laydate-disabled{filter: none\9
+}
+.layui-laydate .layui-this.laydate-disabled>div{background-color: rgba(255,255,255,.04) !important;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0affffff', endColorstr='#0affffff');color: rgba(255,255,255,.3) !important;}
+:root .layui-laydate .layui-this.laydate-disabled>div{filter: none\9
+}
 .laydate-theme-molv .layui-laydate-header{background-color:#16BAAA}
 .laydate-theme-molv .layui-laydate-header i{color:#F6F6F6}
 .laydate-theme-molv .layui-laydate-header span{color:#F6F6F6}
 .laydate-theme-molv .layui-laydate-header i:hover{color: #FAFAFA}
 .laydate-theme-molv .layui-laydate-header span:hover{color: #FAFAFA}
 .laydate-theme-molv .layui-laydate-content{border:1px solid #484849}
+.laydate-theme-molv .layui-this{background-color: #16BAAA !important;}
+.laydate-theme-molv .layui-this>div{background-color: #16BAAA !important;}
 .laydate-theme-molv .layui-laydate-footer{border:1px solid #484849}
 .laydate-theme-grid .laydate-month-list>li{border:1px solid  #484849}
 .laydate-theme-grid .laydate-year-list>li{border:1px solid  #484849}

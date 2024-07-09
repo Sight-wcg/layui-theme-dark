@@ -389,7 +389,7 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-table td,.layui-table th,.layui-table-col-set,.layui-table-fixed-r,.layui-table-grid-down,.layui-table-header,.layui-table-mend,.layui-table-page,.layui-table-tips-main,.layui-table-tool,.layui-table-total,.layui-table-view,.layui-table[lay-skin=line],.layui-table[lay-skin=row]{border-color: var(--lay-color-border-2)}
 .layui-table-view .layui-table td[data-edit]:hover:after{border:1px solid var(--lay-color-primary-active)}
 .layui-table-init{background-color: var(--lay-color-bg-2);}
-.layui-table-init .layui-icon{color:var(--lay-color-gray-8);}
+.layui-table-loading-icon .layui-icon{color:var(--lay-color-gray-8);}
 .layui-table-page{background-color: var(--lay-color-bg-2);}
 .layui-table-tool{background-color: var(--lay-color-bg-2);}
 .layui-table-tool .layui-inline[lay-event]{color:var(--lay-color-text-3);border:1px solid var(--lay-color-border-2)}
@@ -609,24 +609,26 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-laydate-content td{color: var(--lay-color-text-1)}
 .layui-laydate-content td.laydate-day-now{color:var(--lay-color-secondary)}
 .layui-laydate-content td.laydate-day-now:after{border:1px solid var(--lay-color-secondary)}
-.layui-laydate-linkage .layui-laydate-content td.laydate-selected>div{background-color:var(--lay-color-secondary-light)}
-.layui-laydate-linkage .laydate-selected:hover>div{background-color:var(--lay-color-green-4)!important}
+.layui-laydate-linkage .layui-laydate-content td.laydate-selected>div{background-color:var(--lay-color-green-8);}
+.layui-laydate-linkage .laydate-selected:hover>div{background-color:var(--lay-color-green-8)!important}
 .layui-laydate-content td>div:hover,.layui-laydate-list li:hover,.layui-laydate-shortcut>li:hover{background-color: var(--lay-color-fill-2);color: var(--lay-color-text-2)}
 .layui-laydate-content td.laydate-disabled>div:hover{background-color: var(--lay-color-bg-5);color: var(--lay-color-text-4)}
 .laydate-time-list li ol{border:1px solid  var(--lay-color-border-2)}
 .laydate-time-list>li:hover{background: 0 0;}
 .layui-laydate-content .laydate-day-next,.layui-laydate-content .laydate-day-prev{color: var(--lay-color-text-3)}
-.layui-laydate-linkage .laydate-selected.laydate-day-next>div,.layui-laydate-linkage .laydate-selected.laydate-day-prev>div{background-color: var(--lay-color-bg-5)!important}
+.layui-laydate-linkage .laydate-selected.laydate-day-next>div,.layui-laydate-linkage .laydate-selected.laydate-day-prev>div{background: none!important}
 .layui-laydate-footer{border-top:1px solid  var(--lay-color-border-2)}
 .layui-laydate-hint{color:var(--lay-color-danger)}
 .laydate-day-mark::after{background-color:var(--lay-color-secondary)}
 .layui-laydate-footer span[lay-type=date]{color:var(--lay-color-secondary)}
-.layui-laydate .layui-this,.layui-laydate .layui-this>div{background-color:var(--lay-color-primary)!important;color: var(--lay-color-white)!important}
+.layui-laydate .layui-this,.layui-laydate .layui-this>div{background-color:var(--lay-color-secondary)!important;color: var(--lay-color-white)!important}
 .layui-laydate .laydate-disabled,.layui-laydate .laydate-disabled:hover{color: var(--lay-color-text-4)!important}
+.layui-laydate .layui-this.laydate-disabled,.layui-laydate .layui-this.laydate-disabled>div{background-color: var(--lay-color-fill-1) !important;color: var(--lay-color-text-4) !important;}
 .laydate-theme-molv .layui-laydate-header{background-color:var(--lay-color-primary)}
 .laydate-theme-molv .layui-laydate-header i,.laydate-theme-molv .layui-laydate-header span{color:var(--lay-color-gray-2)}
 .laydate-theme-molv .layui-laydate-header i:hover,.laydate-theme-molv .layui-laydate-header span:hover{color: var(--lay-color-white)}
 .laydate-theme-molv .layui-laydate-content{border:1px solid var(--lay-color-border-2)}
+.laydate-theme-molv .layui-this, .laydate-theme-molv .layui-this>div{background-color: var(--lay-color-primary) !important;}
 .laydate-theme-molv .layui-laydate-footer{border:1px solid var(--lay-color-border-2)}
 .laydate-theme-grid .laydate-month-list>li,.laydate-theme-grid .laydate-year-list>li,.laydate-theme-grid .layui-laydate-content td,.laydate-theme-grid .layui-laydate-content thead{border:1px solid  var(--lay-color-border-2)}
 .layui-laydate-linkage.laydate-theme-grid .laydate-selected,.layui-laydate-linkage.laydate-theme-grid .laydate-selected:hover{background-color:var(--lay-color-gray-3)!important;color:var(--lay-color-primary)!important}

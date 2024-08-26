@@ -19,9 +19,9 @@ layui 深色主题
 ```js
 /** JavaScript */
 // 设置为深色主题
-document.getElementById('#layui_theme_css').setAttribute('href','./layui-theme-dark.css')
+document.querySelector('#layui_theme_css').setAttribute('href','./layui-theme-dark.css')
 // 恢复浅色主题
-document.getElementById('#layui_theme_css').removeAttribute('href')
+document.querySelector('#layui_theme_css').removeAttribute('href')
 ```
 
 也可以通过[演示](https://sight-wcg.github.io/layui-theme-dark/)中的主题面板，自定义使用方式，例如自定义主题类选择器 `.dark`，通过改变 HTML 标签的类名切换主题
@@ -64,7 +64,7 @@ document.documentElement.classList.toggle('dark')
 <details><summary>跟随系统主题自动切换</summary>
 
 ```js
-var darkThemeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+var darkThemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
 darkThemeMediaQuery.addEventListener(function(e){
   if(e.matches) {
@@ -82,21 +82,21 @@ darkThemeMediaQuery.addEventListener(function(e){
 <summary>持久化</summary>
 
 ```js
-var APPERANCE_KEY = "layui-theme-mode-prefer-dark"
+var APPERANCE_KEY = 'layui-theme-mode-prefer-dark'
 
 var savedPreferDark = localStorage.getItem(APPERANCE_KEY)
 
 if(
-  savedPreferDark === "true" ||
-  (!savedPreferDark && window.matchMedia("(prefers-color-scheme: dark)").matches)
+  savedPreferDark === 'true' ||
+  (!savedPreferDark && window.matchMedia('(prefers-color-scheme: dark)').matches)
 ){
-  document.documentElement.classList.add("dark")
+  document.documentElement.classList.add('dark')
 }
 
 document.querySelector('#toggle-dark').addEventListener('click', function(){
   var cls = document.documentElement.classList;
-  cls.toggle("dark");
-  localStorage.setItem(APPERANCE_KEY, String(cls.contains("dark")))
+  cls.toggle('dark');
+  localStorage.setItem(APPERANCE_KEY, String(cls.contains('dark')))
 })
 ```
 
@@ -166,14 +166,33 @@ npm run build
 </details>
 
 <details><summary>iframe 版 Admin，打开新页面会有闪烁?</summary>
+
+  - 方案一：将切换主题的代码放在 `<head>` 标签中(推荐)
+
+    ```js
+    <script>
+    (function(){
+      window.APPERANCE_KEY = 'theme-mode'
+      var headTagEl = document.getElementsByTagName('head')
+      var linkTagEl = document.createElement('link')
+      var savedPreferTheme= localStorage.getItem(APPERANCE_KEY)
+
+      if(savedPreferTheme === 'dark'){
+        linkTagEl.href = '' // 这里写文件链接
+        linkTagEl.rel='stylesheet'
+        linkTagEl.id='layui_theme_css'
+        headTagEl[0].appendChild(linkTagEl)
+        document.documentElement.className += ' dark'
+      }
+    })();
+    </script>
+    ```
  
-  - 方案一：创建 iframe 时，使用 `display:none` 隐藏 iframe 元素, 然后在 iframe 的 onload 事件回调中更改 display 属性为 `display:block`
+  - 方案二：创建 iframe 时，使用 `display:none` 隐藏 iframe 元素, 然后在 iframe 的 onload 事件回调中更改 display 属性为 `display:block`
 
     ```html
     <iframe onload="this.style.display='block';" style="display:none;" >
     ```
- 
-  - 方案二：将切换主题的代码放在 `<head>` 中，缺点是会阻塞页面加载
   
   - 方案三：在服务端实现主题切换，以便在加载 HTML 时直接加载所选主题
 

@@ -165,7 +165,7 @@ layui.use('laydate', function(laydate){
     ,type: 'datetime'
     ,trigger: 'click'
     //,lang: 'en'
-    //,theme: 'grid'
+    ,theme: ['molv', 'grid']
     ,range: true //开启日期范围，默认使用“-”分割
     //,min: '1970-1-1'
     //,max: '2021-5-9'
@@ -178,7 +178,61 @@ layui.use('laydate', function(laydate){
     }
     ,change: function(value, date, endDate){
       console.log(value, date, endDate);
-    }
+    },
+    shortcuts: [
+      {
+        text: "昨天",
+        value: function(){
+          var now = new Date();
+          now.setDate(now.getDate() - 1);
+          return now;
+        }
+      },
+      { 
+        text: "今天", 
+        value: function(){
+          return Date.now();
+        } 
+      },
+      {
+        text: "明天",
+        value: function(){
+          var now = new Date();
+          now.setDate(now.getDate() + 1);
+          return now;
+        }
+      },
+      {
+        text: "上个月",
+        value: function(){
+          var now = new Date();
+          var month = now.getMonth() - 1;
+          now.setMonth(month);
+          // 若上个月数不匹配，则表示天数溢出
+          if (now.getMonth() !== month) {
+            now.setDate(0); // 重置天数
+          }
+          return [now];
+        }
+      },
+      {
+        text: "下个月",
+        value: function(){
+          var now = new Date();
+          var month = now.getMonth() + 1;
+          now.setMonth(month);
+          // 若下个月数不匹配，则表示天数溢出
+          if (now.getMonth() !== month) {
+            now.setDate(0); // 重置天数
+          }
+          return [now];
+        }
+      },
+      {
+        text: "某一天",
+        value: "2016-10-14"
+      }
+    ]
   });
   
   //return;

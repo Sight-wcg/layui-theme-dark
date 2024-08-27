@@ -398,7 +398,7 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-laydate .layui-laydate-list{background-color: var(--lay-color-bg-5)}
 .layui-laydate-hint{color:var(--lay-color-danger)}
 .layui-laydate-range .laydate-main-list-1 .layui-laydate-content,.layui-laydate-range .laydate-main-list-1 .layui-laydate-header{border-left:1px solid  var(--lay-color-border-2)}
-.layui-laydate,.layui-laydate-hint{border:1px solid var(--lay-color-border-2);box-shadow:var(--lay-shadow-3);background-color: var(--lay-color-bg-5);color: var(--lay-color-text-1)}
+.layui-laydate,.layui-laydate-hint{border-color: var(--lay-color-border-2);box-shadow:var(--lay-shadow-3);background-color: var(--lay-color-bg-5);color: var(--lay-color-text-1)}
 .layui-laydate{box-shadow: var(--lay-shadow-2)}
 .layui-laydate-hint{border-color:var(--lay-color-border-1)}
 .layui-laydate-header{border-bottom:1px solid  var( --lay-color-border-2)}

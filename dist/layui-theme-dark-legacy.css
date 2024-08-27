@@ -584,8 +584,8 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-laydate-hint{color:#FF5722}
 .layui-laydate-range .laydate-main-list-1 .layui-laydate-content{border-left:1px solid  #484849}
 .layui-laydate-range .laydate-main-list-1 .layui-laydate-header{border-left:1px solid  #484849}
-.layui-laydate{border:1px solid #484849;box-shadow:0 16px 24px rgba(0, 0, 0, 14%), 0 6px 30px rgba(0, 0, 0, 12%), 0 8px 10px rgba(0, 0, 0, 20%);background-color: #373739;color: rgba(255,255,255,.9)}
-.layui-laydate-hint{border:1px solid #484849;box-shadow:0 16px 24px rgba(0, 0, 0, 14%), 0 6px 30px rgba(0, 0, 0, 12%), 0 8px 10px rgba(0, 0, 0, 20%);background-color: #373739;color: rgba(255,255,255,.9)}
+.layui-laydate{border-color: #484849;box-shadow:0 16px 24px rgba(0, 0, 0, 14%), 0 6px 30px rgba(0, 0, 0, 12%), 0 8px 10px rgba(0, 0, 0, 20%);background-color: #373739;color: rgba(255,255,255,.9)}
+.layui-laydate-hint{border-color: #484849;box-shadow:0 16px 24px rgba(0, 0, 0, 14%), 0 6px 30px rgba(0, 0, 0, 12%), 0 8px 10px rgba(0, 0, 0, 20%);background-color: #373739;color: rgba(255,255,255,.9)}
 .layui-laydate{box-shadow: 0 8px 10px rgba(0, 0, 0, 12%), 0 3px 14px rgba(0, 0, 0, 10%), 0 5px 5px rgba(0, 0, 0, 16%)}
 .layui-laydate-hint{border-color:#2e2e30}
 .layui-laydate-header{border-bottom:1px solid  #484849}

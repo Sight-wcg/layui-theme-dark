@@ -1,4 +1,4 @@
-const VERSION = '2.9.13';
+const VERSION = '2.9.16';
 const layuicss = `https://unpkg.com/layui@${VERSION}/dist/css/layui.css`;
 const layuijs = `https://unpkg.com/layui@${VERSION}/dist/layui.js`;
 // const layuicss=`https://cdn.jsdelivr.net/gh/layui/layui@${VERSION}/dist/css/layui.css`;

@@ -229,8 +229,12 @@ body .layui-table-tips .layui-layer-content{box-shadow:var(--lay-shadow-3)}
 .layui-menu li:hover{background-color: var(--lay-color-bg-5)}
 .layui-menu li.layui-disabled,.layui-menu li.layui-disabled *{color:var(--lay-color-text-4)!important}
 .layui-menu .layui-menu-item-group>.layui-menu-body-title{color: var(--lay-color-text-3)}
-.layui-menu .layui-menu-item-none{color:var(--lay-color-black)}
+.layui-menu .layui-menu-item-none{color: var(--lay-color-text-3);}
+.layui-menu .layui-menu-item-group:hover,
+.layui-menu .layui-menu-item-none:hover,
+.layui-menu .layui-menu-item-none{color: var(--lay-color-black);}
 .layui-menu .layui-menu-item-divider{border-bottom:1px solid var(--lay-color-border-2)}
+.layui-menu .layui-menu-item-divider:hover{background: none;}
 .layui-menu .layui-menu-item-up>.layui-menu-body-title{color: var(--lay-color-text-1)}
 .layui-menu .layui-menu-item-down:hover>.layui-menu-body-title>.layui-icon,.layui-menu .layui-menu-item-up>.layui-menu-body-title:hover>.layui-icon{color: var(--lay-color-text-1)}
 .layui-menu .layui-menu-item-checked,.layui-menu .layui-menu-item-checked2{background-color:var(--lay-color-active)!important;color:var(--lay-color-secondary)}
@@ -254,7 +258,7 @@ body .layui-table-tips .layui-layer-content{box-shadow:var(--lay-shadow-3)}
 .layui-nav-tree .layui-nav-child dd.layui-this,.layui-nav-tree .layui-nav-child dd.layui-this a,.layui-nav-tree .layui-this,.layui-nav-tree .layui-this>a,.layui-nav-tree .layui-this>a:hover{background-color: var(--lay-color-primary);color: var(--lay-color-white)}
 .layui-nav-itemed>a,.layui-nav-tree .layui-nav-title a,.layui-nav-tree .layui-nav-title a:hover{color: var(--lay-color-white)!important}
 .layui-nav-tree .layui-nav-bar{background-color:var(--lay-color-primary)}
-.layui-nav-tree .layui-nav-child{background: none;background-color:rgba(0, 0, 0, .3)}
+.layui-nav-tree .layui-nav-child{background: none; background-color:rgba(0, 0, 0, .3); border: none; box-shadow: none;}
 .layui-nav-tree .layui-nav-child a{color: var(--lay-color-white);color: var(--lay-color-text-1)}
 .layui-nav-tree .layui-nav-child a:hover{background: none; color: var(--lay-color-white)}
 .layui-nav.layui-bg-gray,.layui-nav-tree.layui-bg-gray{background-color: var(--lay-color-bg-2) !important;color: var(--lay-color-text-1);}

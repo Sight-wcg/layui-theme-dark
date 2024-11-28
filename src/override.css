@@ -232,7 +232,6 @@ body .layui-table-tips .layui-layer-content{box-shadow:var(--lay-shadow-3)}
 .layui-menu .layui-menu-item-none{color: var(--lay-color-text-3);}
 .layui-menu .layui-menu-item-group:hover,
 .layui-menu .layui-menu-item-none:hover,
-.layui-menu .layui-menu-item-none{color: var(--lay-color-black);}
 .layui-menu .layui-menu-item-divider{border-bottom:1px solid var(--lay-color-border-2)}
 .layui-menu .layui-menu-item-divider:hover{background: none;}
 .layui-menu .layui-menu-item-up>.layui-menu-body-title{color: var(--lay-color-text-1)}

@@ -7,8 +7,14 @@ const rootPath = (function (src) {
   src = document.currentScript ? document.currentScript.src : document.scripts[document.scripts.length - 1].src;
   return src.substring(0, src.lastIndexOf('/') + 1);
 })();
-addLink({ href: layuicss });
+
+const app = document.querySelector('#app')
+
+addLink({ href: layuicss }).then(() => {
+  app.style.display = 'block';
+});
 addLink({ id: 'layui_theme_css', href: '' });
+
 loadScript(layuijs, function () {
   layui
     .config({
@@ -133,7 +139,7 @@ loadScript(layuijs, function () {
         clearTimeout(loadTimer);
         layer.closeLast('loading');
       })
-      
+
       // 选中, 展开菜单
       $('#ws-nav-side')
         .find("[data-path='" + path + "']")
@@ -181,11 +187,15 @@ function addStyle(id, cssStr) {
 }
 
 function addLink(opt) {
-  const link = document.createElement('link');
-  link.id = opt.id;
-  link.rel = 'stylesheet';
-  link.href = opt.href;
-  document.head.appendChild(link);
+  return new Promise((resolve) => {
+    const link = Object.assign(document.createElement('link'), {
+      rel: 'stylesheet',
+      onload: () => resolve({ ...opt, status: 'success' }),
+      onerror: () => resolve({ ...opt, status: 'error' }), // 为了在 Promise.all 的使用场景
+      ...opt,
+    });
+    document.head.appendChild(link);
+  });
 }
 
 function loadScript(url, callback) {

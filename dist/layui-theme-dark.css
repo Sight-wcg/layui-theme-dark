@@ -260,7 +260,6 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-border-black{border-color:var(--lay-color-black-6)!important;color:var(--lay-color-text-1)!important}
 /* 文本区域 */
 .layui-text{color:var(--lay-color-text-3)}
-.layui-text h1,.layui-text h2,.layui-text h3,.layui-text h4,.layui-text h5,.layui-text h6{color: var(--lay-color-text-2)}
 .layui-text-em,.layui-word-aux{color: var(--lay-color-text-2)!important}
 .layui-text a:not(.layui-btn){color:var(--lay-color-lightblue-6)}
 .layui-text blockquote:not(.layui-elem-quote){border-left:5px solid var(--lay-color-border-4)}
@@ -387,8 +386,8 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-table-checked{background-color: var(--lay-color-fill-2);color: var(--lay-color-text-1)}
 .layui-table-checked.layui-table-hover,.layui-table-checked.layui-table-click{background-color: var(--lay-color-fill-3);}
 .layui-table td,.layui-table th,.layui-table-col-set,.layui-table-fixed-r,.layui-table-grid-down,.layui-table-header,.layui-table-mend,.layui-table-page,.layui-table-tips-main,.layui-table-tool,.layui-table-total,.layui-table-view,.layui-table[lay-skin=line],.layui-table[lay-skin=row]{border-color: var(--lay-color-border-2)}
+.layui-table-view:after {background-color: var(--lay-color-border-2);}
 .layui-table-view .layui-table td[data-edit]:hover:after{border:1px solid var(--lay-color-primary-active)}
-.layui-table-init{background-color: var(--lay-color-bg-2);}
 .layui-table-loading-icon .layui-icon{color:var(--lay-color-gray-8);}
 .layui-table-page{background-color: var(--lay-color-bg-2);}
 .layui-table-tool{background-color: var(--lay-color-bg-2);}
@@ -431,8 +430,11 @@ body .layui-table-tips .layui-layer-content{box-shadow:var(--lay-shadow-3)}
 .layui-menu li:hover{background-color: var(--lay-color-bg-5)}
 .layui-menu li.layui-disabled,.layui-menu li.layui-disabled *{color:var(--lay-color-text-4)!important}
 .layui-menu .layui-menu-item-group>.layui-menu-body-title{color: var(--lay-color-text-3)}
-.layui-menu .layui-menu-item-none{color:var(--lay-color-black)}
+.layui-menu .layui-menu-item-none{color: var(--lay-color-text-3);}
 .layui-menu .layui-menu-item-divider{border-bottom:1px solid var(--lay-color-border-2)}
+.layui-menu .layui-menu-item-group:hover,
+.layui-menu .layui-menu-item-none:hover,
+.layui-menu .layui-menu-item-divider:hover{background: none;}
 .layui-menu .layui-menu-item-up>.layui-menu-body-title{color: var(--lay-color-text-1)}
 .layui-menu .layui-menu-item-down:hover>.layui-menu-body-title>.layui-icon,.layui-menu .layui-menu-item-up>.layui-menu-body-title:hover>.layui-icon{color: var(--lay-color-text-1)}
 .layui-menu .layui-menu-item-checked,.layui-menu .layui-menu-item-checked2{background-color:var(--lay-color-active)!important;color:var(--lay-color-secondary)}
@@ -456,7 +458,7 @@ body .layui-table-tips .layui-layer-content{box-shadow:var(--lay-shadow-3)}
 .layui-nav-tree .layui-nav-child dd.layui-this,.layui-nav-tree .layui-nav-child dd.layui-this a,.layui-nav-tree .layui-this,.layui-nav-tree .layui-this>a,.layui-nav-tree .layui-this>a:hover{background-color: var(--lay-color-primary);color: var(--lay-color-white)}
 .layui-nav-itemed>a,.layui-nav-tree .layui-nav-title a,.layui-nav-tree .layui-nav-title a:hover{color: var(--lay-color-white)!important}
 .layui-nav-tree .layui-nav-bar{background-color:var(--lay-color-primary)}
-.layui-nav-tree .layui-nav-child{background: none;background-color:rgba(0, 0, 0, .3)}
+.layui-nav-tree .layui-nav-child{background: none; background-color:rgba(0, 0, 0, .3); border: none; box-shadow: none;}
 .layui-nav-tree .layui-nav-child a{color: var(--lay-color-white);color: var(--lay-color-text-1)}
 .layui-nav-tree .layui-nav-child a:hover{background: none; color: var(--lay-color-white)}
 .layui-nav.layui-bg-gray,.layui-nav-tree.layui-bg-gray{background-color: var(--lay-color-bg-2) !important;color: var(--lay-color-text-1);}

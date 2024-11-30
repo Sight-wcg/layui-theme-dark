@@ -58,7 +58,6 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-border-black{border-color:var(--lay-color-black-6)!important;color:var(--lay-color-text-1)!important}
 /* 文本区域 */
 .layui-text{color:var(--lay-color-text-3)}
-.layui-text h1,.layui-text h2,.layui-text h3,.layui-text h4,.layui-text h5,.layui-text h6{color: var(--lay-color-text-2)}
 .layui-text-em,.layui-word-aux{color: var(--lay-color-text-2)!important}
 .layui-text a:not(.layui-btn){color:var(--lay-color-lightblue-6)}
 .layui-text blockquote:not(.layui-elem-quote){border-left:5px solid var(--lay-color-border-4)}
@@ -185,8 +184,8 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-table-checked{background-color: var(--lay-color-fill-2);color: var(--lay-color-text-1)}
 .layui-table-checked.layui-table-hover,.layui-table-checked.layui-table-click{background-color: var(--lay-color-fill-3);}
 .layui-table td,.layui-table th,.layui-table-col-set,.layui-table-fixed-r,.layui-table-grid-down,.layui-table-header,.layui-table-mend,.layui-table-page,.layui-table-tips-main,.layui-table-tool,.layui-table-total,.layui-table-view,.layui-table[lay-skin=line],.layui-table[lay-skin=row]{border-color: var(--lay-color-border-2)}
+.layui-table-view:after {background-color: var(--lay-color-border-2);}
 .layui-table-view .layui-table td[data-edit]:hover:after{border:1px solid var(--lay-color-primary-active)}
-.layui-table-init{background-color: var(--lay-color-bg-2);}
 .layui-table-loading-icon .layui-icon{color:var(--lay-color-gray-8);}
 .layui-table-page{background-color: var(--lay-color-bg-2);}
 .layui-table-tool{background-color: var(--lay-color-bg-2);}

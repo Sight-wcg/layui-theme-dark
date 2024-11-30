@@ -96,12 +96,6 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-border-black{border-color:#2F363C!important;color:rgba(255,255,255,.9)!important}
 /* 文本区域 */
 .layui-text{color:rgba(255,255,255,.5)}
-.layui-text h1{color: rgba(255,255,255,.7)}
-.layui-text h2{color: rgba(255,255,255,.7)}
-.layui-text h3{color: rgba(255,255,255,.7)}
-.layui-text h4{color: rgba(255,255,255,.7)}
-.layui-text h5{color: rgba(255,255,255,.7)}
-.layui-text h6{color: rgba(255,255,255,.7)}
 .layui-text-em{color: rgba(255,255,255,.7)!important}
 .layui-word-aux{color: rgba(255,255,255,.7)!important}
 .layui-text a:not(.layui-btn){color:#31BDEC}
@@ -321,8 +315,8 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-table-view{border-color: #484849}
 .layui-table[lay-skin=line]{border-color: #484849}
 .layui-table[lay-skin=row]{border-color: #484849}
+.layui-table-view:after {background-color: #484849;}
 .layui-table-view .layui-table td[data-edit]:hover:after{border:1px solid #0E9F95}
-.layui-table-init{background-color: #232324;}
 .layui-table-loading-icon .layui-icon{color:#C2C2C2;}
 .layui-table-page{background-color: #232324;}
 .layui-table-tool{background-color: #232324;}
@@ -368,8 +362,11 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 16px 24px rgba(0, 0, 0,
 .layui-menu li.layui-disabled{color:rgba(255,255,255,.3)!important}
 .layui-menu li.layui-disabled *{color:rgba(255,255,255,.3)!important}
 .layui-menu .layui-menu-item-group>.layui-menu-body-title{color: rgba(255,255,255,.5)}
-.layui-menu .layui-menu-item-none{color:#333333}
+.layui-menu .layui-menu-item-none{color: rgba(255,255,255,.5);}
 .layui-menu .layui-menu-item-divider{border-bottom:1px solid #484849}
+.layui-menu .layui-menu-item-group:hover,
+.layui-menu .layui-menu-item-none:hover,
+.layui-menu .layui-menu-item-divider:hover{background: none;}
 .layui-menu .layui-menu-item-up>.layui-menu-body-title{color: rgba(255,255,255,.9)}
 .layui-menu .layui-menu-item-down:hover>.layui-menu-body-title>.layui-icon{color: rgba(255,255,255,.9)}
 .layui-menu .layui-menu-item-up>.layui-menu-body-title:hover>.layui-icon{color: rgba(255,255,255,.9)}
@@ -410,7 +407,7 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 16px 24px rgba(0, 0, 0,
 .layui-nav-tree .layui-nav-title a{color: #FAFAFA!important}
 .layui-nav-tree .layui-nav-title a:hover{color: #FAFAFA!important}
 .layui-nav-tree .layui-nav-bar{background-color:#16BAAA}
-.layui-nav-tree .layui-nav-child{background: none;background-color:rgba(0, 0, 0, .3);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4c000000', endColorstr='#4c000000')}
+.layui-nav-tree .layui-nav-child{background: none; background-color:rgba(0, 0, 0, .3); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4c000000', endColorstr='#4c000000'); border: none; box-shadow: none;}
 :root .layui-nav-tree .layui-nav-child{filter: none\9
 }
 .layui-nav-tree .layui-nav-child a{color: #FAFAFA;color: rgba(255,255,255,.9)}

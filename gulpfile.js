@@ -1,16 +1,64 @@
 import gulp from 'gulp';
 import concat from 'gulp-concat';
 import postcss from 'gulp-postcss';
+import less from 'gulp-less';
 import rename from 'gulp-rename';
 import replace from 'gulp-replace';
 import * as cssgrace from 'cssgrace';
 import cssnested from 'postcss-nested';
 import cssvar from 'postcss-css-variables';
+import yargs from 'yargs';
+import { Transform } from 'node:stream';
 
 const { src, dest } = gulp;
 
-export function build() {
-  const fileName = 'layui-theme-dark';
+// 命令行参数
+const argv = yargs.default({
+  selector: '.dark' // 自定义选择器
+}).help().argv;
+
+// 文件名
+const fileName = 'layui-theme-dark';
+
+/**
+ * 生成带自定义选择器的主题库
+ */
+export function buildSelector() {
+  return src('src/*.css')
+    .pipe(
+      new Transform({
+        objectMode: true,
+        transform(chunk, enc, callback) {
+          if (chunk.isNull()) {
+            return callback(null, chunk);
+          }
+
+          const selector = argv.selector;
+          const basename = chunk.basename;
+          let contents = chunk.contents.toString();
+
+          contents = basename === 'css-variables.css'
+            ? contents.replace(/:root/g, `:root${selector}`)
+            : `${selector}{${contents}}`;
+
+          chunk.contents = Buffer.from(contents);
+          callback(null, chunk);
+        }
+      })
+    )
+    .pipe(less())
+    .pipe(concat('full.css', { newLine: '' }))
+    .pipe(rename({ basename: `${fileName}-selector` }))
+    .pipe(dest('./dist'));
+}
+
+/**
+ * Build
+ * @example
+ * # 生成选择器为 .dark 的主题库
+ * gulp build --selector .dark
+ */
+export const build = gulp.parallel(buildSelector, () => {
   return src('src/*.css')
     .pipe(concat('full.css', { newLine: '' }))
     .pipe(rename({ basename: fileName }))
@@ -18,7 +66,7 @@ export function build() {
     .pipe(postcss([/*ie8RgbaReplace(),*/ cssvar({ preserve: false, preserveInjectedVariables: false }), cssgrace]))
     .pipe(rename({ basename: `${fileName}-legacy` }))
     .pipe(dest('./dist'));
-}
+})
 
 // WIP
 export function buildTiny() {

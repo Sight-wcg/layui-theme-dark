@@ -188,6 +188,8 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-table-view .layui-table td[data-edit]:hover:after{border:1px solid var(--lay-color-primary-active)}
 .layui-table-loading-icon .layui-icon{color:var(--lay-color-gray-8);}
 .layui-table-page{background-color: var(--lay-color-bg-2);}
+.layui-table-page .layui-laypage a,
+.layui-table-page .layui-laypage span{border: none;}
 .layui-table-tool{background-color: var(--lay-color-bg-2);}
 .layui-table-tool .layui-inline[lay-event]{color:var(--lay-color-text-3);border:1px solid var(--lay-color-border-2)}
 .layui-table-tool .layui-inline[lay-event]:hover{border:1px solid var(--lay-color-border-3)}

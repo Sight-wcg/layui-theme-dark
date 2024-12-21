@@ -319,6 +319,8 @@ a:hover{color:rgba(255,255,255,.5)}
 .layui-table-view .layui-table td[data-edit]:hover:after{border:1px solid #0E9F95}
 .layui-table-loading-icon .layui-icon{color:#C2C2C2;}
 .layui-table-page{background-color: #232324;}
+.layui-table-page .layui-laypage a,
+.layui-table-page .layui-laypage span{border: none;}
 .layui-table-tool{background-color: #232324;}
 .layui-table-tool .layui-inline[lay-event]{color:rgba(255,255,255,.5);border:1px solid #484849}
 .layui-table-tool .layui-inline[lay-event]:hover{border:1px solid #5f5f60}
@@ -433,6 +435,7 @@ body .layui-table-tips .layui-layer-content{box-shadow:0 16px 24px rgba(0, 0, 0,
 .layui-breadcrumb a cite{color:#C2C2C2}
 .layui-breadcrumb span[lay-separator]{color:#CCCCCC}
 /** Tab 选项卡 **/
+.layui-tab-title:after{border-bottom-color: #2e2e30;}
 .layui-tab-title .layui-this{color: rgba(255,255,255,.7)}
 .layui-tab-title .layui-this:after{border-bottom-color: #484849}
 .layui-tab-bar{background-color: #2a2a2b}

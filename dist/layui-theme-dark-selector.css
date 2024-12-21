@@ -896,6 +896,10 @@
 .dark .layui-table-page {
   background-color: var(--lay-color-bg-2);
 }
+.dark .layui-table-page .layui-laypage a,
+.dark .layui-table-page .layui-laypage span {
+  border: none;
+}
 .dark .layui-table-tool {
   background-color: var(--lay-color-bg-2);
 }
@@ -1167,6 +1171,9 @@
 }
 .dark .layui-breadcrumb span[lay-separator] {
   color: var(--lay-color-gray-7);
+}
+.dark .layui-tab-title:after {
+  border-bottom-color: var(--lay-color-border-1);
 }
 .dark .layui-tab-title .layui-this {
   color: var(--lay-color-text-2);

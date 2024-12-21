@@ -1,4 +1,4 @@
-const VERSION = '2.9.20';
+const VERSION = '2.9.21-rc';
 const layuicss = `https://unpkg.com/layui@${VERSION}/dist/css/layui.css`;
 const layuijs = `https://unpkg.com/layui@${VERSION}/dist/layui.js`;
 // const layuicss=`https://cdn.jsdelivr.net/gh/layui/layui@${VERSION}/dist/css/layui.css`;
@@ -34,7 +34,7 @@ loadScript(layuijs, function () {
       initialValue: 'dark',
       modes: {
         light: '',
-        dark: `${rootPath}dist/layui-theme-dark.css`,
+        dark: `${rootPath}dist/layui-theme-dark-selector.css`,
       },
       storageKey: APPERANCE_KEY,
       onChanged(mode, defaultHandler) {

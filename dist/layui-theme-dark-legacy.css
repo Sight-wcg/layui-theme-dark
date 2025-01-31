@@ -691,6 +691,11 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-layer-molv .layui-layer-title{background:#16BAAA;color: rgba(255,255,255,.9)}
 .layui-layer-molv .layui-layer-btn a{background:#16BAAA;border-color:#16BAAA}
 .layui-layer-molv .layui-layer-btn .layui-layer-btn1{background:#CCCCCC}
+.layui-layer-win10{border-color: #484849}
+.layui-layer-win10 .layui-layer-btn{background-color: #232324;border-color: #484849}
+.layui-layer-win10.layui-layer-dialog .layui-layer-content{color: #1379D2}
+.layui-layer-win10 .layui-layer-btn .layui-layer-btn0{border-color: #043A79;background-color: #373739;color: rgba(255,255,255,.9)}
+.layui-layer-win10 .layui-layer-btn a:hover{background-color: #00214D;border-color: #0A58A6}
 .layui-layer-prompt .layui-layer-input{border:1px solid #484849;color: rgba(255,255,255,.7)}
 .layui-layer-tab{box-shadow:0 16px 24px rgba(0, 0, 0, 14%), 0 6px 30px rgba(0, 0, 0, 12%), 0 8px 10px rgba(0, 0, 0, 20%)}
 .layui-layer-tab .layui-layer-title span.layui-this{border-left:1px solid  #484849;border-right:1px solid  #484849;background-color: #2a2a2b}
@@ -699,7 +704,7 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-layer-photos-next{color:#AAAAAA}
 .layui-layer-photos-prev:hover{color:rgba(255,255,255,.9)}
 .layui-layer-photos-next:hover{color:rgba(255,255,255,.9)}
-.layui-layer-photos-toolbar{background-color:#333\9;background-color: #373739;color: rgba(255,255,255,.9)}
+.layui-layer-photos-toolbar{background-color:#333;background-color: #373739;color: rgba(255,255,255,.9)}
 .layui-layer-photos-toolbar *{color: rgba(255,255,255,.9)}
 .layui-layer-photos-toolbar a:hover{color: rgba(255,255,255,.7)}
 .layui-layer-photos-header > span:hover{background-color: rgba(255,255,255,.08);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14ffffff', endColorstr='#14ffffff')}

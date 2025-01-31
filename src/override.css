@@ -478,13 +478,18 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-layer-molv .layui-layer-title{background:var(--lay-color-layuigreen-6);color: var(--lay-color-text-1)}
 .layui-layer-molv .layui-layer-btn a{background:var(--lay-color-layuigreen-6);border-color:var(--lay-color-layuigreen-6)}
 .layui-layer-molv .layui-layer-btn .layui-layer-btn1{background:var(--lay-color-gray-7)}
+.layui-layer-win10{border-color: var(--lay-color-border-2)}
+.layui-layer-win10 .layui-layer-btn{background-color: var(--lay-color-bg-2);border-color: var(--lay-color-border-2)}
+.layui-layer-win10.layui-layer-dialog .layui-layer-content{color: var(--lay-color-blue-7)}
+.layui-layer-win10 .layui-layer-btn .layui-layer-btn0{border-color: var(--lay-color-blue-9);background-color: var(--lay-color-bg-5);color: var(--lay-color-text-1)}
+.layui-layer-win10 .layui-layer-btn a:hover{background-color: var(--lay-color-blue-10);border-color: var(--lay-color-blue-8)}
 .layui-layer-prompt .layui-layer-input{border:1px solid var(--lay-color-border-2);color: var(--lay-color-text-2)}
 .layui-layer-tab{box-shadow:var(--lay-shadow-3)}
 .layui-layer-tab .layui-layer-title span.layui-this{border-left:1px solid  var(--lay-color-border-2);border-right:1px solid  var(--lay-color-border-2);background-color: var(--lay-color-bg-3)}
 .layui-layer-photos{background: none; box-shadow: none;}
 .layui-layer-photos-prev,.layui-layer-photos-next{color:var(--lay-color-gray-9)}
 .layui-layer-photos-prev:hover,.layui-layer-photos-next:hover{color:var(--lay-color-text-1)}
-.layui-layer-photos-toolbar{background-color:#333\9;background-color: var(--lay-color-bg-5);color: var(--lay-color-text-1)}
+.layui-layer-photos-toolbar{background-color:#333;background-color: var(--lay-color-bg-5);color: var(--lay-color-text-1)}
 .layui-layer-photos-toolbar *{color: var(--lay-color-text-1)}
 .layui-layer-photos-toolbar a:hover{color: var(--lay-color-text-2)}
 .layui-layer-photos-header > span:hover{background-color: var(--lay-color-fill-2)}

@@ -1814,6 +1814,25 @@
 .dark .layui-layer-molv .layui-layer-btn .layui-layer-btn1 {
   background: var(--lay-color-gray-7);
 }
+.dark .layui-layer-win10 {
+  border-color: var(--lay-color-border-2);
+}
+.dark .layui-layer-win10 .layui-layer-btn {
+  background-color: var(--lay-color-bg-2);
+  border-color: var(--lay-color-border-2);
+}
+.dark .layui-layer-win10.layui-layer-dialog .layui-layer-content {
+  color: var(--lay-color-blue-7);
+}
+.dark .layui-layer-win10 .layui-layer-btn .layui-layer-btn0 {
+  border-color: var(--lay-color-blue-9);
+  background-color: var(--lay-color-bg-5);
+  color: var(--lay-color-text-1);
+}
+.dark .layui-layer-win10 .layui-layer-btn a:hover {
+  background-color: var(--lay-color-blue-10);
+  border-color: var(--lay-color-blue-8);
+}
 .dark .layui-layer-prompt .layui-layer-input {
   border: 1px solid var(--lay-color-border-2);
   color: var(--lay-color-text-2);
@@ -1839,7 +1858,7 @@
   color: var(--lay-color-text-1);
 }
 .dark .layui-layer-photos-toolbar {
-  background-color: #333 \9;
+  background-color: #333;
   background-color: var(--lay-color-bg-5);
   color: var(--lay-color-text-1);
 }

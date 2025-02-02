@@ -1829,6 +1829,11 @@
   background-color: var(--lay-color-bg-5);
   color: var(--lay-color-text-1);
 }
+.dark .layui-layer-win10 .layui-layer-btn .layui-layer-btn1 {
+  border-color: var(--lay-color-border-2);
+  background-color: var(--lay-color-bg-5);
+  color: var(--lay-color-text-1);
+}
 .dark .layui-layer-win10 .layui-layer-btn a:hover {
   background-color: var(--lay-color-blue-10);
   border-color: var(--lay-color-blue-8);

@@ -1,4 +1,4 @@
-const VERSION = '2.9.21-rc';
+const VERSION = '2.9.21';
 const layuicss = `https://unpkg.com/layui@${VERSION}/dist/css/layui.css`;
 const layuijs = `https://unpkg.com/layui@${VERSION}/dist/layui.js`;
 // const layuicss=`https://cdn.jsdelivr.net/gh/layui/layui@${VERSION}/dist/css/layui.css`;
@@ -34,12 +34,11 @@ loadScript(layuijs, function () {
       initialValue: 'dark',
       modes: {
         light: '',
-        dark: `${rootPath}dist/layui-theme-dark-selector.css`,
+        dark: `${rootPath}dist/layui-theme-dark.css`,
       },
       storageKey: APPERANCE_KEY,
       onChanged(mode, defaultHandler) {
-        const isAppearanceTransition =
-          document.startViewTransition && !window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
+        const isAppearanceTransition = document.startViewTransition && !window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
         const isDark = mode === 'dark';
 
         $('#change-theme').attr('class', `layui-icon layui-icon-${isDark ? 'moon' : 'light'}`);

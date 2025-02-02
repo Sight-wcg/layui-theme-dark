@@ -17,6 +17,7 @@
   <button class="layui-btn" lay-on="test8">Tab</button>
   <button class="layui-btn" lay-on="test9">Photo</button>
   <button class="layui-btn" lay-on="testTime">自动关闭</button>
+  <button class="layui-btn" lay-on="fluent">fluent</button>
   <a href="https://layui.dev/docs/2/layer/" target="_blank" class="layui-btn">更多例子</a>
 </div>
 
@@ -86,6 +87,13 @@ layui.use(['layer', 'util'], function(layer, util){
   
   // 触发事件
   util.on('lay-on', {
+    fluent: function(){
+      layer.alert('Windows 10 风格主题', {
+        skin: 'layui-layer-win10', // 2.8+
+        shade: 0.01,
+        btn: ['确定', '取消']
+      })
+    },
     test: function(){
       var icon = -1;
       (function changeIcon(){

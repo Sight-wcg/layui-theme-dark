@@ -578,7 +578,7 @@ body .layui-util-face .layui-layer-content{background-color: #373739;color:rgba(
 .layui-laydate-footer span{border:1px solid  #484849;background-color: #373739}
 .layui-laydate-footer span:hover{color:#16B777}
 .layui-laydate-footer span.layui-laydate-preview{border-color:transparent!important;}
-.layui-laydate-footer span.layui-laydate-preview:hover{color:#23303C}
+.layui-laydate-footer span.layui-laydate-preview:hover{color:rgba(255,255,255,.9)}
 .layui-laydate-shortcut+.layui-laydate-main{border-left:1px solid  #484849}
 .layui-laydate .layui-laydate-list{background-color: #373739}
 .layui-laydate-hint{color:#FF5722}

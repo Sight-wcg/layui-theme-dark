@@ -1527,7 +1527,7 @@
   border-color: transparent!important;
 }
 .dark .layui-laydate-footer span.layui-laydate-preview:hover {
-  color: var(--lay-color-black-7);
+  color: var(--lay-color-text-1);
 }
 .dark .layui-laydate-shortcut + .layui-laydate-main {
   border-left: 1px solid var(--lay-color-border-2);

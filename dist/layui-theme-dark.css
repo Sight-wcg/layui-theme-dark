@@ -600,7 +600,7 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-laydate-footer span{border:1px solid  var(--lay-color-border-2);background-color: var(--lay-color-bg-5)}
 .layui-laydate-footer span:hover{color:var(--lay-color-secondary)}
 .layui-laydate-footer span.layui-laydate-preview{border-color:transparent!important;}
-.layui-laydate-footer span.layui-laydate-preview:hover{color:var(--lay-color-black-7)}
+.layui-laydate-footer span.layui-laydate-preview:hover{color:var(--lay-color-text-1)}
 .layui-laydate-shortcut+.layui-laydate-main{border-left:1px solid  var(--lay-color-border-2)}
 .layui-laydate .layui-laydate-list{background-color: var(--lay-color-bg-5)}
 .layui-laydate-hint{color:var(--lay-color-danger)}

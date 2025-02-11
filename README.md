@@ -147,10 +147,10 @@ npm run build
     ```
  
   - 方案二：创建 iframe 时，使用 `display:none` 隐藏 iframe 元素, 然后在 iframe 的 onload 事件回调中更改 display 属性为 `display:block`
-  > iframe 类型的 Admin 模板中的子页面，通过切换 href 属性动态引入样式文件会更方便，参考以下代码：[layui-theme-dark/commit/8b36a8](https://github.com/Sight-wcg/layui-theme-dark/commit/8b36a878673beb105b1ae633d121b5c2c7005358#diff-e07d531ac040ce3f40e0ce632ac2a059d7cd60f20e61f78268ac3be015b3b28fL41)
     ```html
     <iframe onload="this.style.display='block';" style="display:none;" >
     ```
+    > iframe 类型的 Admin 模板中的子页面，通过切换 href 属性动态引入样式文件会更方便，参考以下代码：[layui-theme-dark/commit/8b36a8](https://github.com/Sight-wcg/layui-theme-dark/commit/8b36a878673beb105b1ae633d121b5c2c7005358#diff-e07d531ac040ce3f40e0ce632ac2a059d7cd60f20e61f78268ac3be015b3b28fL41)
 
 </details>
 

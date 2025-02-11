@@ -1,6 +1,4 @@
 :root.dark {
-  /* =====色板===== */
-  /*常量,不随明暗主题变化*/
   --color-white: #FFFFFF;
   --color-black: #000000;
   --lay-color-white: #FAFAFA;
@@ -108,150 +106,64 @@
   --lay-color-gray-11: #858585;
   --lay-color-gray-12: #7b7b7b;
   --lay-color-gray-13: #686868;
-  /* =====语义===== */
-  /* 主色 */
   --lay-color-primary: var(--lay-color-layuigreen-6);
   --lay-color-primary-hover: var(--lay-color-layuigreen-5);
   --lay-color-primary-active: var(--lay-color-layuigreen-7);
   --lay-color-primary-disabled: var(--lay-color-layuigreen-3);
   --lay-color-primary-light: var(--lay-color-layuigreen-4);
-  /* 次色 */
   --lay-color-secondary: var(--lay-color-green-6);
   --lay-color-secondary-hover: var(--lay-color-green-5);
   --lay-color-secondary-active: var(--lay-color-green-7);
   --lay-color-secondary-disabled: var(--lay-color-green-3);
   --lay-color-secondary-light: var(--lay-color-green-4);
-  /* 引导 */
   --lay-color-info: var(--lay-color-lightblue-6);
   --lay-color-info-hover: var(--lay-color-lightblue-5);
   --lay-color-info-active: var(--lay-color-lightblue-7);
   --lay-color-info-disabled: var(--lay-color-lightblue-3);
   --lay-color-info-light: var(--lay-color-lightblue-4);
-  /* 百搭 */
   --lay-color-normal: var(--lay-color-blue-6);
   --lay-color-normal-hover: var(--lay-color-blue-5);
   --lay-color-normal-active: var(--lay-color-blue-7);
   --lay-color-normal-disabled: var(--lay-color-blue-3);
   --lay-color-normal-light: var(--lay-color-blue-4);
-  /* 警示 */
   --lay-color-warning: var(--lay-color-orange-6);
   --lay-color-warning-hover: var(--lay-color-orange-5);
   --lay-color-warning-active: var(--lay-color-orange-7);
   --lay-color-warning-disabled: var(--lay-color-orange-3);
   --lay-color-warning-light: var(--lay-color-orange-4);
-  /* 成功 */
   --lay-color-success: var(--lay-color-green-6);
   --lay-color-success-hover: var(--lay-color-green-5);
   --lay-color-success-active: var(--lay-color-green-7);
   --lay-color-success-disabled: var(--lay-color-green-3);
   --lay-color-success-light: var(--lay-color-green-4);
-  /* 错误 */
   --lay-color-danger: var(--lay-color-red-6);
   --lay-color-danger-hover: var(--lay-color-red-5);
   --lay-color-danger-active: var(--lay-color-red-7);
   --lay-color-danger-disabled: var(--lay-color-red-3);
   --lay-color-danger-light: var(--lay-color-red-4);
   --lay-color-bg-1: #17171A;
-  /*整体背景*/
   --lay-color-bg-2: #232324;
-  /*一级容器背景,卡片,面板*/
   --lay-color-bg-3: #2a2a2b;
-  /*二级容器背景*/
   --lay-color-bg-4: #313132;
-  /*三级容器背景*/
   --lay-color-bg-5: #373739;
-  /*下拉弹出框、Tooltip 背景颜色*/
   --lay-color-bg-white: #f6f6f6;
-  /*白色背景*/
   --lay-color-text-1: rgba(255, 255, 255, 0.9);
-  /*强调/正文标题*/
   --lay-color-text-2: rgba(255, 255, 255, 0.7);
-  /*次强调/语句*/
   --lay-color-text-3: rgba(255, 255, 255, 0.5);
-  /*次要信息*/
   --lay-color-text-4: rgba(255, 255, 255, 0.3);
-  /*禁用状态文字 */
   --lay-color-border-1: #2e2e30;
   --lay-color-border-2: #484849;
   --lay-color-border-3: #5f5f60;
   --lay-color-border-4: #929293;
   --lay-color-fill-1: rgba(255, 255, 255, 0.04);
-  /*浅/禁用*/
   --lay-color-fill-2: rgba(255, 255, 255, 0.08);
-  /*常规/白底悬浮*/
   --lay-color-fill-3: rgba(255, 255, 255, 0.12);
-  /*深/灰底悬浮*/
   --lay-color-fill-4: rgba(255, 255, 255, 0.16);
-  /*重/特殊场景*/
   --lay-color-hover: var(--lay-color-fill-3);
-  /*bg*/
   --lay-color-active: var(--lay-color-fill-3);
-  /*bg*/
   --lay-shadow-1: 0 4px 6px rgba(0, 0, 0, 0.06), 0 1px 10px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.12);
-  /*基础/下层投影 卡片面板*/
   --lay-shadow-2: 0 8px 10px rgba(0, 0, 0, 0.12), 0 3px 14px rgba(0, 0, 0, 0.1), 0 5px 5px rgba(0, 0, 0, 0.16);
-  /*中层投影 下拉菜单,选择器*/
   --lay-shadow-3: 0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 0.12), 0 8px 10px rgba(0, 0, 0, 0.2);
-  /*上层投影 弹窗*/
-}
-.dark {
-  /*danger: 勿改*/
-  /* 三角形 */
-  /* 禁用文字 */
-  /* 图标 */
-  /* admin 布局 */
-  /* 引用 */
-  /* 进度条 */
-  /* 折叠面板 */
-  /* 卡片面板 */
-  /* 常规面板 */
-  /* 窗口面板 */
-  /* 背景颜色 */
-  /* 徽章 */
-  /* 边框颜色 */
-  /* 文本区域 */
-  /* 字体颜色 */
-  /* 按钮 */
-  /*表单*/
-  /* 输入框点缀  */
-  /* 数字输入框动态点缀  */
-  /* 下拉选择 */
-  /* 复选框 */
-  /* 复选框-默认风格 */
-  /* 复选框-开关风格 */
-  /*复选框背景优化*/
-  /*单选框*/
-  /* 表单方框风格 */
-  /** 分页 **/
-  /** 流加载 **/
-  /** 表格 **/
-  /* 单元格多行展开风格  */
-  /* 单元格 TIPS 展开风格  */
-  /** 文件上传 **/
-  /* 基础菜单元素 */
-  /* 下拉菜单 */
-  /** 导航菜单 **/
-  /** 面包屑 **/
-  /** Tab 选项卡 **/
-  /*时间线*/
-  /*徽章*/
-  /* carousel 轮播 */
-  /** fixbar **/
-  /** 表情面板 **/
-  /** 代码文本修饰 **/
-  /** 穿梭框 **/
-  /* chrome 105 */
-  /** 评分组件 **/
-  /** 颜色选择器 **/
-  /* danger: 勿改*/
-  /* danger: 勿改*/
-  /* danger: 勿改*/
-  /** 滑块 **/
-  /** 树组件 **/
-  /*code 不处理*/
-  /*日期选择器*/
-  /*layer*/
-  /*fix style*/
 }
 .dark blockquote,
 .dark body,
@@ -1172,20 +1084,20 @@
 .dark .layui-breadcrumb span[lay-separator] {
   color: var(--lay-color-gray-7);
 }
-.dark .layui-tab-title:after {
+.dark .layui-tab .layui-tab-title:after {
   border-bottom-color: var(--lay-color-border-1);
 }
 .dark .layui-tab-title .layui-this {
   color: var(--lay-color-text-2);
 }
 .dark .layui-tab-title .layui-this:after {
-  border-bottom-color: var(--lay-color-border-2);
+  border-bottom-color: var(--lay-color-bg-1);
 }
 .dark .layui-tab-bar {
   background-color: var(--lay-color-bg-3);
 }
 .dark .layui-tab-more li.layui-this:after {
-  border-bottom-color: var(--lay-color-gray-3);
+  border-bottom-color: var(--lay-color-border-1);
 }
 .dark .layui-tab-title li .layui-tab-close {
   color: var(--lay-color-gray-8);
@@ -1527,7 +1439,7 @@
   border-color: transparent!important;
 }
 .dark .layui-laydate-footer span.layui-laydate-preview:hover {
-  color: var(--lay-color-text-1);
+  color: var(--lay-color-text-1) !important;
 }
 .dark .layui-laydate-shortcut + .layui-laydate-main {
   border-left: 1px solid var(--lay-color-border-2);
@@ -1922,8 +1834,7 @@
 .dark .layui-nav-child dd.layui-this {
   background-color: var(--lay-color-fill-2);
 }
-.dark .layui-tab-card > .layui-tab-title .layui-this:after,
-.dark .layui-tab-title .layui-this:after {
+.dark .layui-tab-card > .layui-tab-title .layui-this:after {
   border-bottom-color: var(--lay-color-bg-1);
 }
 .dark .layui-form-select dl dd:hover {
@@ -1961,3 +1872,5 @@
 .dark .layui-slider-input .layui-input {
   background-color: var(--lay-color-bg-2);
 }
+
+/*# sourceMappingURL=layui-theme-dark-selector.css.map */

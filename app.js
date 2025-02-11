@@ -13,7 +13,6 @@ const app = document.querySelector('#app')
 addLink({ href: layuicss }).then(() => {
   app.style.display = 'block';
 });
-addLink({ id: 'layui_theme_css', href: '' });
 
 loadScript(layuijs, function () {
   layui
@@ -27,14 +26,14 @@ loadScript(layuijs, function () {
     const { $, element, form, layer, util, dropdown, drawer, colorMode } = layui;
 
     const APPERANCE_KEY = 'layui-theme-demo-prefer-dark';
-    // 为方便定制主题，这里用改变 href 属性的方式切换主题
+
     const theme = colorMode.init({
-      selector: '#layui_theme_css',
-      attribute: 'href',
+      selector: 'html',
+      attribute: 'class',
       initialValue: 'dark',
       modes: {
         light: '',
-        dark: `${rootPath}dist/layui-theme-dark.css`,
+        dark: 'dark',
       },
       storageKey: APPERANCE_KEY,
       onChanged(mode, defaultHandler) {
@@ -47,8 +46,6 @@ loadScript(layuijs, function () {
           defaultHandler();
         } else {
           rippleViewTransition(isDark, function () {
-            // 动画需要
-            document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
             defaultHandler();
           });
         }

@@ -6,35 +6,7 @@ layui 深色主题
 
 # 使用
 
-将 [dist](./dist) 文件夹中的 `layui-theme-dark.css` 添加到 layui 样式之后，通过切换 href 属性改变主题
-
-```html
-<!-- HTML -->
-<!--light-->
-<link id="layui_theme_css" rel="stylesheet">
-<!--dark-->
-<link id="layui_theme_css" rel="stylesheet" href="./layui-theme-dark.css">
-```
-
-```js
-/** JavaScript */
-// 设置为深色主题
-document.querySelector('#layui_theme_css').setAttribute('href','./layui-theme-dark.css')
-// 恢复浅色主题
-document.querySelector('#layui_theme_css').removeAttribute('href')
-```
-
-也可以通过[演示](https://sight-wcg.github.io/layui-theme-dark/)中的主题面板，自定义使用方式，例如自定义主题类选择器 `.dark`，通过改变 HTML 标签的类名切换主题
-  
-```css
-/** CSS 生成 */
-:root{                      :root.dark{
-  --color-bg: #000;           --color-bg: #000;
-}                     ==>   }
-.lay-card{                  .dark .lay-card{
-  color: #FFF;                color: #FFF;
-}                           }
-```
+将 [dist](./dist) 文件夹中的 `layui-theme-dark-selector.css` 添加到 layui 样式之后，通过改变 HTML 标签的类名切换主题
 
 ```js
 /** JavaScript */
@@ -58,7 +30,7 @@ document.documentElement.classList.toggle('dark')
 **CDN**
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/layui-theme-dark/dist/layui-theme-dark.css">
+<link rel="stylesheet" href="https://unpkg.com/layui-theme-dark/dist/layui-theme-dark-selector.css">
 ```
 
 <details><summary>跟随系统主题自动切换</summary>
@@ -148,22 +120,8 @@ npm run build
 <img src="https://api.iconify.design/logos:firefox.svg" style="margin-right: 0.4em; vertical-align: text-bottom;"> Firefox 31+
 <br>
 <img src="https://api.iconify.design/devicon:safari.svg" style="margin-right: 0.4em; vertical-align: text-bottom;"> Safari 10+
-<br>
-<img src="https://api.iconify.design/logos:internetexplorer.svg" style="margin-right: 0.4em; vertical-align: text-bottom;"> *IE 9+
 
 # 常见问题
-
-<details><summary>IE 下如何使用？</summary>
-
-  - 方案一：使用 `dist/layui-theme-dark-legacy.css` 文件
-
-    该文件将 CSS 变量转换为实际颜色，并针对 IE 做了一些兼容性转换，测试支持 IE9+。 二次定制后如果需要支持 IE，可以通过 PostCSS 插件将 CSS 变量转换为实际颜色，这里有一个 [PostCSS-CSS-Variables Playground](https://madlittlemods.github.io/postcss-css-variables/playground/) 支持在线转换
-
-  - 方案二：使用 [css-vars-ponyfill](https://github.com/jhildenbiddle/css-vars-ponyfill)
-
-    使用方法请参考该项目的[官方文档](https://jhildenbiddle.github.io/css-vars-ponyfill)，测试支持 IE10+
-
-</details>
 
 <details><summary>iframe 版 Admin，打开新页面会有闪烁?</summary>
 
@@ -189,12 +147,10 @@ npm run build
     ```
  
   - 方案二：创建 iframe 时，使用 `display:none` 隐藏 iframe 元素, 然后在 iframe 的 onload 事件回调中更改 display 属性为 `display:block`
-
+  > iframe 类型的 Admin 模板中的子页面，通过切换 href 属性动态引入样式文件会更方便，参考以下代码：[layui-theme-dark/commit/8b36a8](https://github.com/Sight-wcg/layui-theme-dark/commit/8b36a878673beb105b1ae633d121b5c2c7005358#diff-e07d531ac040ce3f40e0ce632ac2a059d7cd60f20e61f78268ac3be015b3b28fL41)
     ```html
     <iframe onload="this.style.display='block';" style="display:none;" >
     ```
-  
-  - 方案三：在服务端实现主题切换，以便在加载 HTML 时直接加载所选主题
 
 </details>
 

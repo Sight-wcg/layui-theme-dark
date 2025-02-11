@@ -477,11 +477,11 @@ body .layui-table-tips .layui-layer-content{box-shadow:var(--lay-shadow-3)}
 .layui-breadcrumb a cite{color:var(--lay-color-gray-8)}
 .layui-breadcrumb span[lay-separator]{color:var(--lay-color-gray-7)}
 /** Tab 选项卡 **/
-.layui-tab-title:after{border-bottom-color: var(--lay-color-border-1);}
+.layui-tab .layui-tab-title:after{border-bottom-color: var(--lay-color-border-1);}
 .layui-tab-title .layui-this{color: var(--lay-color-text-2)}
-.layui-tab-title .layui-this:after{border-bottom-color: var(--lay-color-border-2)}
+.layui-tab-title .layui-this:after{border-bottom-color: var(--lay-color-bg-1)}
 .layui-tab-bar{background-color: var(--lay-color-bg-3)}
-.layui-tab-more li.layui-this:after{border-bottom-color:var(--lay-color-gray-3)}
+.layui-tab-more li.layui-this:after{border-bottom-color:var(--lay-color-border-1)}
 .layui-tab-title li .layui-tab-close{color:var(--lay-color-gray-8)}
 .layui-tab-title li .layui-tab-close:hover{background-color:var(--lay-color-danger);color: var(--lay-color-white)}
 .layui-tab-brief>.layui-tab-title .layui-this{color:var( --lay-color-primary)}
@@ -600,7 +600,7 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-laydate-footer span{border:1px solid  var(--lay-color-border-2);background-color: var(--lay-color-bg-5)}
 .layui-laydate-footer span:hover{color:var(--lay-color-secondary)}
 .layui-laydate-footer span.layui-laydate-preview{border-color:transparent!important;}
-.layui-laydate-footer span.layui-laydate-preview:hover{color:var(--lay-color-text-1)}
+.layui-laydate-footer span.layui-laydate-preview:hover{color:var(--lay-color-text-1) !important}
 .layui-laydate-shortcut+.layui-laydate-main{border-left:1px solid  var(--lay-color-border-2)}
 .layui-laydate .layui-laydate-list{background-color: var(--lay-color-bg-5)}
 .layui-laydate-hint{color:var(--lay-color-danger)}
@@ -711,7 +711,7 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-nav .layui-nav-child a:hover{background-color:var(--lay-color-fill-2)}
 .layui-nav .layui-nav-item a:hover,.layui-nav .layui-this a{background-color: var(--lay-color-fill-2)}
 .layui-nav-child dd.layui-this{background-color: var(--lay-color-fill-2)}
-.layui-tab-card>.layui-tab-title .layui-this:after,.layui-tab-title .layui-this:after{border-bottom-color:var(--lay-color-bg-1)}
+.layui-tab-card>.layui-tab-title .layui-this:after{border-bottom-color:var(--lay-color-bg-1)}
 .layui-form-select dl dd:hover{background-color:var(--lay-color-fill-2)}
 .layui-form-select dl dd.layui-this{background-color:var(--lay-color-fill-2)}
 .layui-laypage button{color:var(--lay-color-text-1)}
@@ -724,3 +724,5 @@ body .layui-util-face .layui-layer-content{background-color: var(--lay-color-bg-
 .layui-layer-tab .layui-layer-title span:first-child{border-left: none !important;}
 .layui-slider-input.layui-input,
 .layui-slider-input .layui-input {background-color: var(--lay-color-bg-2);}
+
+/*# sourceMappingURL=layui-theme-dark.css.map */

@@ -14,6 +14,11 @@ addLink({ href: layuicss }).then(() => {
   app.style.display = 'block';
 });
 
+addLink({ id: 'layui_theme_css', href: `${rootPath}dist/layui-theme-dark-selector.css` });
+
+// TODO 弃用，下个版本只支持选择器模式
+//addLink({ id: 'layui_theme_css', href: `${rootPath}dist/layui-theme-dark.css` });
+
 loadScript(layuijs, function () {
   layui
     .config({

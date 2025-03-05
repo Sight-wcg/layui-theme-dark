@@ -129,8 +129,10 @@ code line
   About
 </pre>
 
-<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
-<script src="https://cdn.staticfile.org/prism/1.29.0/prism.min.js"></script>
+<!-- 第三方语法高亮库 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
 <script>
 layui.use(['code', 'dropdown'], function(){
   var dropdown = layui.dropdown;
@@ -141,17 +143,17 @@ layui.use(['code', 'dropdown'], function(){
   // 高亮主题 css 库
   var themeData = $.map([
     // hljs 主题库
-    'https://cdn.staticfile.org/highlight.js/11.8.0/styles/vs2015.min.css',
-    'https://cdn.staticfile.org/highlight.js/11.8.0/styles/vs.min.css',
-    'https://cdn.staticfile.org/highlight.js/11.8.0/styles/github-dark.min.css',
-    'https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css',
-    'https://cdn.staticfile.org/highlight.js/11.8.0/styles/base16/google-dark.min.css',
-    'https://cdn.staticfile.org/highlight.js/11.8.0/styles/base16/google-light.min.css',
-    'https://cdn.staticfile.org/highlight.js/11.8.0/styles/monokai-sublime.min.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/vs2015.min.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/vs.min.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/google-dark.min.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/google-light.min.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai-sublime.min.css',
     '-',
     // prism 主题库
-    'https://cdn.staticfile.org/prism/1.29.0/themes/prism-dark.min.css',
-    'https://cdn.staticfile.org/prism/1.29.0/themes/prism.min.css'
+    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-dark.min.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css'
   ], function(v, index) {
     return {
       title: v,
@@ -221,6 +223,7 @@ layui.use(['code', 'dropdown'], function(){
                     );
                   }
                 };
+
                 // 重载
                 codeInst.reload({
                   highlighter: data.highlighter,

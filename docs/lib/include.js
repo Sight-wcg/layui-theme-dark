@@ -1,6 +1,6 @@
 /**
  * @typedef {object} IncludeFile
- * 
+ *
  * @prop {boolean} ok
  * @prop {number} status
  * @prop {string} html
@@ -13,7 +13,7 @@ const includeFiles = new Map();
  *
  * @param {string} src
  * @param {'cors' | 'no-cors' | 'same-origin'} [mode='cors']
- * 
+ *
  * @returns {Promise<IncludeFile>}
  */
 export function requestInclude(src, mode = 'cors'){
@@ -68,14 +68,26 @@ class HtmlImport extends HTMLElement {
   }
 
   /**
-   * 
-   * @param {HTMLScriptElement} script 
+   * 执行 innerHTML 中的 <script></script>
+   * @param {HTMLScriptElement} scripts
    */
-  executeScript(script) {
-    const newScript = document.createElement('script');
-    [...script.attributes].forEach(attr => newScript.setAttribute(attr.name, attr.value));
-    newScript.textContent = script.textContent;
-    script.parentNode && script.parentNode.replaceChild(newScript, script);
+  async executeScript(scripts) {
+    const execQueue = function (script) {
+      const newScript = document.createElement('script');
+      [...script.attributes].forEach(attr => newScript.setAttribute(attr.name, attr.value));
+      newScript.textContent = script.textContent;
+      script.parentNode && script.parentNode.replaceChild(newScript, script);
+      return script.src ? new Promise((resolve) => {
+        newScript.async = false;
+        newScript.addEventListener('load', e => resolve(e));
+        newScript.addEventListener('error', e => resolve(e));
+      }) : Promise.resolve();
+    };
+    // 按 <script> 顺序执行，确保上下文关联
+    for (const script of scripts) {
+      await execQueue(script);
+      // console.log(`${script.src||script} loaded`, Date.now());
+    }
   }
 
   async handleSrcChange() {
@@ -95,7 +107,7 @@ class HtmlImport extends HTMLElement {
       this.innerHTML = file.html;
 
       if (this.allowScripts) {
-        [...this.querySelectorAll('script')].forEach(script => this.executeScript(script));
+        await this.executeScript(this.querySelectorAll('script'));
       }
 
       this.emit('load');

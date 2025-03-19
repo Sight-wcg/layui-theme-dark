@@ -57,8 +57,8 @@ a:hover{color:var(--lay-color-text-3)}
 .layui-border-purple{border-color: var(--lay-color-purple-6)!important; color: var(--lay-color-purple-6)!important;}
 .layui-border-black{border-color:var(--lay-color-black-6)!important;color:var(--lay-color-text-1)!important}
 /* 文本区域 */
-.layui-text{color:var(--lay-color-text-3)}
-.layui-text-em,.layui-word-aux{color: var(--lay-color-text-2)!important}
+.layui-text{color:var(--lay-color-text-2)}
+.layui-text-em,.layui-word-aux{color: var(--lay-color-text-3)!important}
 .layui-text a:not(.layui-btn){color:var(--lay-color-lightblue-6)}
 .layui-text blockquote:not(.layui-elem-quote){border-left:5px solid var(--lay-color-border-4)}
 /* 字体颜色 */
@@ -289,6 +289,16 @@ body .layui-table-tips .layui-layer-content{box-shadow:var(--lay-shadow-3)}
 .layui-tab-card>.layui-tab-title .layui-this{background-color: var(--lay-color-bg-1)}
 .layui-tab-card>.layui-tab-title .layui-this:after{border-bottom-color: var(--lay-color-bg-1)}
 .layui-tab-card>.layui-tab-more .layui-this{color:var(--lay-color-secondary)}
+
+/** tabs 标签页 **/
+.layui-tabs-header:after,
+.layui-tabs-scroll:after{border-bottom-color: var(--lay-color-border-1);}
+.layui-tabs-card>.layui-tabs-header .layui-this{background-color: transparent;}
+.layui-tabs-card>.layui-tabs-header .layui-this:after{border-color: var(--lay-color-border-1); border-bottom-color: var(--lay-color-bg-1);}
+.layui-tabs-card.layui-panel>.layui-tabs-header .layui-this:after{border-bottom-color: var(--lay-color-bg-2);}
+.layui-tabs-bar .layui-icon{background-color: var(--lay-color-bg-1); color: var(--lay-color-text-2); border-color: var(--lay-color-border-1); box-shadow: 2px 0 5px 0 rgb(0 0 0 / 32%);}
+.layui-tabs-bar .layui-icon-next{box-shadow: -2px 0 5px 0 rgb(0 0 0 / 32%);}
+
 /*时间线*/
 .layui-timeline-axis{background-color: var(--lay-color-bg-4);color:var(--lay-color-secondary)}
 .layui-timeline-axis:hover{color:var(--lay-color-red-6)}

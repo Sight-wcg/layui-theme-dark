@@ -366,11 +366,11 @@
   color: var(--lay-color-text-1) !important;
 }
 .dark .layui-text {
-  color: var(--lay-color-text-3);
+  color: var(--lay-color-text-2);
 }
 .dark .layui-text-em,
 .dark .layui-word-aux {
-  color: var(--lay-color-text-2) !important;
+  color: var(--lay-color-text-3) !important;
 }
 .dark .layui-text a:not(.layui-btn) {
   color: var(--lay-color-lightblue-6);
@@ -1127,6 +1127,29 @@
 }
 .dark .layui-tab-card > .layui-tab-more .layui-this {
   color: var(--lay-color-secondary);
+}
+.dark .layui-tabs-header:after,
+.dark .layui-tabs-scroll:after {
+  border-bottom-color: var(--lay-color-border-1);
+}
+.dark .layui-tabs-card > .layui-tabs-header .layui-this {
+  background-color: transparent;
+}
+.dark .layui-tabs-card > .layui-tabs-header .layui-this:after {
+  border-color: var(--lay-color-border-1);
+  border-bottom-color: var(--lay-color-bg-1);
+}
+.dark .layui-tabs-card.layui-panel > .layui-tabs-header .layui-this:after {
+  border-bottom-color: var(--lay-color-bg-2);
+}
+.dark .layui-tabs-bar .layui-icon {
+  background-color: var(--lay-color-bg-1);
+  color: var(--lay-color-text-2);
+  border-color: var(--lay-color-border-1);
+  box-shadow: 2px 0 5px 0 rgba(0, 0, 0, 0.32);
+}
+.dark .layui-tabs-bar .layui-icon-next {
+  box-shadow: -2px 0 5px 0 rgba(0, 0, 0, 0.32);
 }
 .dark .layui-timeline-axis {
   background-color: var(--lay-color-bg-4);

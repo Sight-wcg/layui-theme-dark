@@ -1,4 +1,4 @@
-const VERSION = '2.9.21';
+const VERSION = '2.10.1';
 const layuicss = `https://unpkg.com/layui@${VERSION}/dist/css/layui.css`;
 const layuijs = `https://unpkg.com/layui@${VERSION}/dist/layui.js`;
 // const layuicss=`https://cdn.jsdelivr.net/gh/layui/layui@${VERSION}/dist/css/layui.css`;
@@ -156,6 +156,15 @@ loadScript(layuijs, function () {
 function rippleViewTransition(isDark, callback) {
   // 移植自 https://github.com/vuejs/vitepress/pull/2347
   // 支持 Chrome 111+
+
+  // 兼容 jQuery 3 下隐式 event 全局对象不可用的问题
+  if (!window.event) {
+    window.event = new MouseEvent('click', {
+      clientX: document.documentElement.clientWidth,
+      clientY: 60,
+    });
+  }
+
   const x = event.clientX;
   const y = event.clientY;
   const endRadius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
